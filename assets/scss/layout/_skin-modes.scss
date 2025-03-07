@@ -1,0 +1,317 @@
+/*------------------------------------------------------------------
+[Skin Modes Styles]
+
+Project        :   Templist - HTML5 Premium Digital goods marketplace directory jquery css responsive website Template
+Version        :   V.1
+Create Date    :   28/02/20
+Copyright      :   Spruko Technologies Private Limited 
+Author         :   SprukoSoft
+Author URL     :   https://themeforest.net/user/sprukosoft
+Support		   :   support@spruko.com
+License        :   Licensed under ThemeForest License
+
+-------------------------------------------------------------------*/
+
+@import "../scss/variables";
+
+
+/*--- Header-Style1 ---*/
+
+.headerstyle1 {
+	.header-search {
+		background: $white;
+		position: relative;
+		border-block-end: 1px solid $border;
+	}
+	.header-white {
+		display: none;
+	}
+	.header-style-2 .header-search-logo .header-white {
+		margin: 0 auto;
+		text-align: center;
+	}
+	.header-search .header-icons .header-icons-link li a {
+		background: $background;
+		border: 1px solid $border;
+		box-shadow: 0 5px 10px rgba(245, 246, 253, 0.5);
+	}
+	.top-bar {
+		background: $white;
+		position: relative;
+		border-block-end: 1px solid $border;
+	}
+	.top-bar-right span,
+	.top-bar-left span {
+		color: #2e384d;
+	}
+	.top-bar .contact i {
+		color: #2e384d ;
+		.text-white.ms-1 {
+			color: #2e384d !important;
+		}
+	}
+	.top-bar-left .select2-container--default .select2-selection--single .select2-selection__arrow b {
+		border-color: $border transparent transparent transparent;
+	}
+	.horizontal-header i {
+		color: $white;
+	}
+	.header-icons-link .header-icons-link1 i {
+		color: #566580;
+	}
+}
+
+.header-main .profile-scroll  .dropdown-item i {
+	color: $primary1;
+}
+
+/*--- Header-Style2 ---*/
+
+.headerstyle2 {
+	.top-bar {
+		background: #212332;
+		position: relative;
+		border-block-end: 1px solid $white-1;
+		.top-bar-left {
+			.socials li {
+				border-inline-start: 1px solid $white-1;
+			}
+			.contact li {
+				border-inline-start: 1px solid $white-1;
+				&:last-child {
+					border-inline-end: 1px solid $white-1;
+				}
+			}
+			.social-icon.text-dark{
+				color: #d7d6d6 !important;
+			}
+		}
+		.top-bar-right{
+			.custom .text-dark{
+				color: #d7d6d6 !important;
+
+			}
+		}
+	}
+	.header-main .top-bar-right .custom li {
+		border-inline-start: 1px solid $white-1;
+		&:last-child {
+			border-inline-end: 1px solid $white-1;
+		}
+	}
+	.top-bar-right span,
+	.top-bar-left span {
+		color: $white;
+	}
+	.top-bar .contact i {
+		color: $white;
+		.text-white.ms-1 {
+			color: $white !important;
+		}
+	}
+	.top-bar-left .select2-container--default .select2-selection--single .select2-selection__arrow b {
+		border-color: $white transparent transparent transparent;
+	}
+	.header-main .header-search-icon .nav-link.icon i,
+	.header-icons-link .header-icons-link1 i {
+		color: $white-9;
+	}
+	.header-icons .nav-link.icon{
+		background-color: transparent;
+		border:1px solid $white-2;
+		box-shadow: none;
+	}
+	
+}
+
+
+/*--- Header-Style3 ---*/
+
+.headerstyle3 {
+	.top-bar {
+		background: linear-gradient(86deg, #42aaf3 0%, $primary1 100%);
+		position: relative;
+		border-block-end: 1px solid $white-1;
+		.top-bar-left {
+			.socials li {
+				border-inline-start: 1px solid $white-1;
+			}
+			.contact li {
+				border-inline-start: 1px solid $white-1;
+				&:last-child {
+					border-inline-end: 1px solid $white-1;
+				}
+			}
+			.social-icon i{
+				color: $white !important;
+			}
+		}
+		.top-bar-right{
+			.custom i{
+				color: $white !important;
+			}
+		}
+	}
+	.header-main .top-bar-right .custom li {
+		border-inline-start: 1px solid $white-1;
+		&:last-child {
+			border-inline-end: 1px solid $white-1;
+		}
+	}
+	.top-bar-right span,
+	.top-bar-left span {
+		color: $white;
+	}
+	.top-bar .contact i {
+		color: $white !important;
+		.text-white.ms-1 {
+			color: $white !important;
+		}
+	}
+	.top-bar-left .select2-container--default .select2-selection--single .select2-selection__arrow b {
+		border-color: $white transparent transparent transparent;
+	}
+	.header-main .header-search-icon .nav-link.icon i,
+	.header-icons-link .header-icons-link1 i {
+		color: $white-9;
+	}
+	.header-icons .nav-link.icon{
+		background-color: transparent;
+		border:1px solid $white-2;
+		box-shadow: none;
+	}
+		@media (min-width: 992px) {
+		.header-search.header-logosec{
+			.desktoplogo{
+				display: none;
+			}
+			.desktoplogo-1{
+				display: block;
+			}
+		}
+	}
+}
+
+/*--- Horizontal-menu Style1 ---*/
+
+@media (min-width: 992px) {
+	.menu-style1 {
+		.horizontal-main {
+			background: $black-3 !important;
+		}
+		.horizontalMenu>.horizontalMenu-list>li>a {
+			color: $white;
+		}
+		.is-sticky .horizontalMenu>.horizontalMenu-list>li>a {
+			color: $color;
+		}
+		.desktoplogo {
+			.header-white {
+				display: none;
+			}
+			.header-brand-img1 {
+				display: block;
+			}
+		}
+		.second-horizontal-tabs {
+			background: $black-3;
+		}
+		.sticky-wrapper.is-sticky .second-horizontal-tabs {
+			background: #f4f4fb;
+		}
+		&.headerstyle2 .header-search {
+			border-block-end: 1px solid $white-1;
+		}
+		.sticky-wrapper.is-sticky .horizontal-main{
+			background: $primary1 !important;
+
+		}
+		.sticky-wrapper.is-sticky .horizontalMenu>.horizontalMenu-list>li>a.active{
+			color: $white ;
+		}
+		.is-sticky .horizontalMenu>.horizontalMenu-list>li>a{
+			color: $white ;
+		}
+		.sticky-wrapper.is-sticky .horizontalMenu>.horizontalMenu-list>li>a.active{
+			color: $primary1;
+		}
+	}
+}
+
+/*--- Horizontal-menu Style2 ---*/
+
+@media (min-width: 992px) {
+	.menu-style2 {
+		.horizontal-main {
+			background: #212332;
+		}
+		.horizontalMenu>.horizontalMenu-list>li>a {
+			color: $white;
+		}
+		.is-sticky .horizontalMenu>.horizontalMenu-list>li>a {
+			color: $color;
+		}
+		.desktoplogo {
+			.header-white {
+				display: none;
+			}
+			.header-brand-img1 {
+				display: block;
+			}
+		}
+		.second-horizontal-tabs {
+			background: #212332;
+		}
+		.sticky-wrapper.is-sticky .second-horizontal-tabs {
+			background: #f4f4fb;
+		}
+		.horizontalMenu>.horizontalMenu-list>li>ul.sub-menu>li>a,
+		.horizontalMenu>.horizontalMenu-list>li>ul.sub-menu>li>ul.sub-menu>li>a,
+		.horizontalMenu>.horizontalMenu-list>li>ul.sub-menu>li>ul.sub-menu>li>ul.sub-menu>li>a,
+		.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .megamenu-content,
+		.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .link-list li a,
+		.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .title,
+		.horizontalMenu>.horizontalMenu-list>li>ul.sub-menu>li a i{
+			color: $white-9;
+		}
+		.horizontalMenu>.horizontalMenu-list>li>ul.sub-menu,
+		.horizontalMenu>.horizontalMenu-list>li>ul.sub-menu>li>ul.sub-menu,
+		.horizontalMenu>.horizontalMenu-list>li>ul.sub-menu>li>ul.sub-menu>li:hover>ul.sub-menu,
+		//.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .title,
+		.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .megamenu-content,
+		.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .megamenu-content,
+		.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .link-list li a{
+			background-color: #212332;
+			border: 1px solid $white-1;
+		}
+		.horizontalMenu-list .sub-menu:after {
+			border-block-end: 5px solid $white-1;
+		}
+		.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .link-list li a{
+			border: 0px solid $white-1;
+		}
+		@media (min-width: 1024px){
+			.horizontalMenu>.horizontalMenu-list>li>.horizontal-megamenu .link-list {
+				border-inline-start: 1px solid $white-05;
+			}	
+		}
+		&.headerstyle2 .header-search {
+			border-block-end: 1px solid $white-1;
+		}
+		.sticky-wrapper.is-sticky .horizontal-main{
+			background: $black;
+		}
+		 .is-sticky .horizontalMenu>.horizontalMenu-list>li>a{
+			color: $white;
+		}
+		&.dark-theme .horizontalMenu>.horizontalMenu-list>li>a{
+			color: $color;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.headerstyle2 .header-search {
+		border-block-end: 1px solid $white-1;
+	}
+}

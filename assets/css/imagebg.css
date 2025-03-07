@@ -1,0 +1,23 @@
+
+/** image-bg css for Emu **/
+
+
+.preloader{
+  background-image:url(../images/preloader.gif);
+}
+
+.grow-business .single-column:before{
+  background: url(../images/icons/arrow-1.png);
+}
+
+.grow-business .single-column:nth-child(2):before{
+  background: url(../images/icons/arrow-2.png);
+}
+
+.service-details-content .upper-inner h2:before{
+  background: url(../images/icons/pattern-24.png);
+}
+
+.main_page.active_boxlayout{
+	background: url(../images/icons/pattern.jpg);
+}

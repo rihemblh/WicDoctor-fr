@@ -1,0 +1,60 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 17/12/2019 10:15
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff2") format("woff2"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+}
+
+.flaticon-diamond:before { content: "\f100"; }
+.flaticon-target:before { content: "\f101"; }
+.flaticon-click:before { content: "\f102"; }
+.flaticon-cursor:before { content: "\f103"; }
+.flaticon-click-1:before { content: "\f104"; }
+.flaticon-statistics:before { content: "\f105"; }
+.flaticon-configuration:before { content: "\f106"; }
+.flaticon-target-1:before { content: "\f107"; }
+.flaticon-social-media:before { content: "\f108"; }
+.flaticon-email:before { content: "\f109"; }
+.flaticon-chat:before { content: "\f10a"; }
+.flaticon-arrow-pointing-to-right:before { content: "\f10b"; }
+.flaticon-valentines-heart:before { content: "\f10c"; }
+.flaticon-multiple-users-silhouette:before { content: "\f10d"; }
+.flaticon-star:before { content: "\f10e"; }
+.flaticon-checked:before { content: "\f10f"; }
+.flaticon-portfolio:before { content: "\f110"; }
+.flaticon-3d-modeling:before { content: "\f111"; }
+.flaticon-launch:before { content: "\f112"; }
+.flaticon-link:before { content: "\f113"; }
+.flaticon-chat-1:before { content: "\f114"; }
+.flaticon-play-button-arrowhead:before { content: "\f115"; }
+.flaticon-shield:before { content: "\f116"; }
+.flaticon-review:before { content: "\f117"; }
+.flaticon-goal:before { content: "\f118"; }
+.flaticon-puzzle:before { content: "\f119"; }
+.flaticon-group-of-people:before { content: "\f11a"; }
+.flaticon-download:before { content: "\f11b"; }
+.flaticon-settings:before { content: "\f11c"; }
+.flaticon-payment:before { content: "\f11d"; }

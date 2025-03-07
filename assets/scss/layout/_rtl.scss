@@ -1,0 +1,89 @@
+
+/* ###### Rtl  ###### */
+body.rtl {
+  text-align: right !important;
+  direction: rtl !important;
+}
+.rtl{
+  .dropdown-menu-end {
+    --bs-position: start;
+  }
+   .dropdown-menu-end {
+    right: auto !important;
+    left: 0 !important;
+  }
+   .select2-container .select2-dropdown{
+	  direction: ltr !important;
+   }
+   [dir=rtl] .tooltip.show {
+    direction: ltr;
+  }
+  //  .select2-container {
+  //   direction: rtl;
+  // }
+  .sp-container{
+    direction: ltr;
+  }
+   [type=email], [type=number], [type=tel], [type=url]{
+    direction: rtl;
+   }
+  .demo_changer .form_holder {
+    border-radius:0 10px 10px 0;
+  }
+  // .carousel-control-next {
+  //   transform: rotate(180deg);
+  // }
+  // .carousel-control-prev {
+  //   transform: rotate(180deg);
+  // }
+	.slider-wrap {
+		.thumb-carousel-control-next {
+			transform: rotate(180deg) translateY(50%) !important;
+		}
+		.thumb-carousel-control-prev {
+			transform: rotate(180deg) translateY(50%) !important;
+		}
+	}
+    .select2-container--default[dir=rtl] .select2-selection--single .select2-selection__arrow {
+      inset-inline-end: 1px;
+      inset-inline-start: auto;
+  }
+  .fa-angle-left:before {
+    content: "\f105";
+  }
+  .fa-angle-right:before {
+    content: "\f104";
+  }
+  .power-ribbon-top-left span {
+      transform: rotate(45deg);
+  }
+    .ribbon-top-left span {
+      transform: rotate(45deg);
+  }
+  .nice-select {
+    direction: rtl;
+  }
+  .ui-datepicker .ui-datepicker-header .ui-datepicker-next:before{
+    content: "\f104";
+  }
+  .ui-datepicker .ui-datepicker-header .ui-datepicker-prev:before{
+    content: "\f105";
+  }
+  .ui-datepicker {
+    box-shadow: 0 8px 16px 0 $white-1;
+  }
+    @media (min-width: 1366px){
+      .illustrate-img.owl-carousel {
+          transform: translateX(0px);
+      }
+    }
+    .typcn-chevron-right:before {
+      content: '\e047';
+  }
+  .typcn-chevron-left:before {
+    content: '\e049';
+  }
+}
+  
+   
+/* ###### Rtl End ###### */

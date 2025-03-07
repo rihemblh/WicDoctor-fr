@@ -1,0 +1,100 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 17/12/2019 10:15
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-diamond:before { content: "\f100"; }
+.flaticon-target:before { content: "\f101"; }
+.flaticon-click:before { content: "\f102"; }
+.flaticon-cursor:before { content: "\f103"; }
+.flaticon-click-1:before { content: "\f104"; }
+.flaticon-statistics:before { content: "\f105"; }
+.flaticon-configuration:before { content: "\f106"; }
+.flaticon-target-1:before { content: "\f107"; }
+.flaticon-social-media:before { content: "\f108"; }
+.flaticon-email:before { content: "\f109"; }
+.flaticon-chat:before { content: "\f10a"; }
+.flaticon-arrow-pointing-to-right:before { content: "\f10b"; }
+.flaticon-valentines-heart:before { content: "\f10c"; }
+.flaticon-multiple-users-silhouette:before { content: "\f10d"; }
+.flaticon-star:before { content: "\f10e"; }
+.flaticon-checked:before { content: "\f10f"; }
+.flaticon-portfolio:before { content: "\f110"; }
+.flaticon-3d-modeling:before { content: "\f111"; }
+.flaticon-launch:before { content: "\f112"; }
+.flaticon-link:before { content: "\f113"; }
+.flaticon-chat-1:before { content: "\f114"; }
+.flaticon-play-button-arrowhead:before { content: "\f115"; }
+.flaticon-shield:before { content: "\f116"; }
+.flaticon-review:before { content: "\f117"; }
+.flaticon-goal:before { content: "\f118"; }
+.flaticon-puzzle:before { content: "\f119"; }
+.flaticon-group-of-people:before { content: "\f11a"; }
+.flaticon-download:before { content: "\f11b"; }
+.flaticon-settings:before { content: "\f11c"; }
+.flaticon-payment:before { content: "\f11d"; }
+    
+    $font-Flaticon-diamond: "\f100";
+    $font-Flaticon-target: "\f101";
+    $font-Flaticon-click: "\f102";
+    $font-Flaticon-cursor: "\f103";
+    $font-Flaticon-click-1: "\f104";
+    $font-Flaticon-statistics: "\f105";
+    $font-Flaticon-configuration: "\f106";
+    $font-Flaticon-target-1: "\f107";
+    $font-Flaticon-social-media: "\f108";
+    $font-Flaticon-email: "\f109";
+    $font-Flaticon-chat: "\f10a";
+    $font-Flaticon-arrow-pointing-to-right: "\f10b";
+    $font-Flaticon-valentines-heart: "\f10c";
+    $font-Flaticon-multiple-users-silhouette: "\f10d";
+    $font-Flaticon-star: "\f10e";
+    $font-Flaticon-checked: "\f10f";
+    $font-Flaticon-portfolio: "\f110";
+    $font-Flaticon-3d-modeling: "\f111";
+    $font-Flaticon-launch: "\f112";
+    $font-Flaticon-link: "\f113";
+    $font-Flaticon-chat-1: "\f114";
+    $font-Flaticon-play-button-arrowhead: "\f115";
+    $font-Flaticon-shield: "\f116";
+    $font-Flaticon-review: "\f117";
+    $font-Flaticon-goal: "\f118";
+    $font-Flaticon-puzzle: "\f119";
+    $font-Flaticon-group-of-people: "\f11a";
+    $font-Flaticon-download: "\f11b";
+    $font-Flaticon-settings: "\f11c";
+    $font-Flaticon-payment: "\f11d";

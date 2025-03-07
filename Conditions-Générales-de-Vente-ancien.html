@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr-fr"  translate="no">
+
+<head>
+
+	<!-- Google tag (gtag.js) -->
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRK4SDDB4H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TRK4SDDB4H');
+</script>
+	<meta charset="UTF-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '623852967108851');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description"
+		content="Rejoignez WIC Doctor, la plateforme de télémédecine qui vous permet de réserver des rdv médicaux et de consulter votre médecin en ligne">
+	<meta name="author" content="WIC Doctor">
+
+
+	<!-- Favicon -->
+	<link rel="icon" alt="WIC Doctor" href="assets/images/brand/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" alt="WIC Doctor" type="image/x-icon" href="assets/images/brand/favicon.png">
+
+	<meta name="title" content="WIC Doctor : plateforme de télémédecine" id="metaTitle">
+	<title>WIC Doctor : plateforme de télémédecine</title>
+	<!-- Bootstrap Css -->
+	<link id="style" href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Style Css -->
+	<link href="assets/css/style.css" rel="stylesheet">
+
+	<!--Icons  Css -->
+	<link href="assets/css/icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+	<!--Loader-->
+	<div id="global-loader">
+		<img alt="loader.svg" class="loader-img" src="assets/images/loader.svg">
+	</div>
+	<!--/Loader-->
+
+	<!-- Top Header -->
+	<div class="header-top">
+		<div class="container">
+			<!-- Contact Info -->
+			<div class="contact-info">
+				<p>Nous sommes disponibles sur <span class="span-info">+216 26 311 777 / +33
+						743 13 00 13</span></p>
+			</div>
+
+			<!-- Buttons -->
+
+			<div>
+				<div class="buttons">
+					<a href="https://wic-doctor.com/inscription-professionnel/" class="btn-danger" id="B2B">Vous êtes un
+						praticien?</a>
+					<a href="https://wic-doctor.com/login.html" class="btn-primary" id="SeConnecter">Connexion</a>
+					<!-- 		<a class="nav-item dropdown d-flex align-items-center" id="Login">
+							<div class="avatar-initial rounded-circle me-2" id="userAvatar"></div>
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+								<li><a class="dropdown-item" href="https://wic-doctor.com/profil.html">Mon Profil</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item"  onclick="Deconexion()">Se déconnecter</a></li>
+							</ul>
+						</a> -->
+					<style>
+
+					</style>
+					<div class="nav-item dropdown d-flex align-items-center" id="Login">
+						<div class="avatar-initial rounded-circle me-2" id="userAvatar" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false"></div>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userAvatar">
+							<li><a class="dropdown-item profile" href="https://wic-doctor.com/profil.html">Mon Profil</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+							<li><a class="dropdown-item" onclick="Deconexion()">Se déconnecter</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- Main Header -->
+	<section>
+		<div class="banner-2 cover-image sptb-2 sptb-tab banner-section position-relative">
+			<div class="header-main">
+				<div class="container">
+					<!-- Hamburger Menu -->
+					<div class="hamburger-menu" id="hamburger-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<!-- Logo -->
+					<div class="logo">
+						<a href="https://wic-doctor.com/">
+							<img class="logo-mb" src="assets/images/brand/logo-dr-wic.png" alt="WIC Doctor Logo">
+						</a>
+					</div>
+		
+		
+		
+					<!-- Menu mobile -->
+					<div class="menu-mobile" id="menu-mobile">
+						<button class="close-menu" id="close-menu">X</button> <!-- Bouton de fermeture -->
+						<ul>
+							<li><a href="https://wic-doctor.com/" >Accueil</a></li>
+							<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
+							<li><a href="https://wic-doctor.com/nos-solutions.html">Nos Solutions</a></li>
+							<li><a href="https://wic-doctor.com/inscription-professionnel/offres.html">Nos Tarifs</a></li>
+							<li class="dropdown">
+								<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
+								<ul class="submenu">
+									<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a></li>
+									<li><a href="https://wic-doctor.com/intervention.html">Interventions</a></li>
+									<li><a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a></li>
+								</ul>
+							</li>
+							</li>
+							<li><a href="https://wic-doctor.com/contact.html">Contact</a></li>
+							<li><a href="https://wic-doctor.com/inscription-professionnel/" class="btn-danger">Vous êtes un
+									professionnel?</a></li>
+							<li><a href="https://wic-doctor.com/login.html" class="btn-primary">Connexion</a></li>
+							<li><a href="https://wic-doctor.com/inscription-professionnel/" class="btn-partenaire">Devenir
+									Partenaire</a></li>
+						</ul>
+					</div>
+					<!-- Navigation (visible uniquement sur desktop) -->
+					<nav>
+						<ul>
+							<li><a href="https://wic-doctor.com/" >Accueil</a></li>
+							<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
+							<li class="mega-menu">
+								<a href="#">Nos Solutions</a>
+								<div class="mega-menu-content">
+									<div class="mega-menu-item">
+										<img src="./assets/images/media/photos/medecin-solution.png"
+											alt="Logo Praticiens" />
+										<a href="https://wic-doctor.com/nos-solutions-praticien.html">Praticiens</a>
+									</div>
+									<div class="mega-menu-item">
+										<img src="./assets/images/media/photos/patient-solution.png"
+											alt="Logo Patients" />
+										<a href="https://wic-doctor.com/nos-solutions-patient.html">Patients</a>
+									</div>
+									<div class="mega-menu-item">
+										<img src="./assets/images/media/photos/Télémédecine-soltion.png"
+											alt="Logo Télémédecine" />
+										<a href="https://wic-doctor.com/Telemedecine.html">Télémédecine</a>
+									</div>
+									<div class="mega-menu-item">
+										<img src="./assets/images/media/photos/technologie-solution.png"
+											alt="Logo Technologie" />
+										<a href="https://wic-doctor.com/technologies-de-pointe.html">Technologie de pointe</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="https://wic-doctor.com/inscription-professionnel/offres.html">Nos Tarifs</a></li>
+							<li class="dropdown">
+								<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
+								<ul class="submenu">
+									<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a></li>
+									<li><a href="https://wic-doctor.com/intervention.html">Interventions</a></li>
+									<li><a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a></li>
+								</ul>
+							</li>
+							</li>
+							<li><a href="https://wic-doctor.com/contact.html">Contact</a></li>
+						</ul>
+					</nav>
+
+					<style>
+						nav {
+							position: relative;
+						}
+
+						.mega-menu-content {
+							display: none;
+							position: absolute;
+							top: 100%;
+							left: 0;
+							width: 600px;
+							background: #ffffff;
+							border-radius: 2%;
+							box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+							padding: 20px;
+							grid-template-columns: repeat(2, 1fr);
+							gap: 20px;
+							z-index: 999;
+						}
+
+						.mega-menu:hover .mega-menu-content {
+							display: inline-flex;
+						}
+
+						.mega-menu-item {
+							text-align: center;
+							border: 2px solid #83D1C3;
+							border-radius: 8px;
+							padding: 10px;
+							transition: transform 0.3s ease, box-shadow 0.3s ease;
+						}
+
+						.mega-menu-item:hover {
+							transform: scale(1.05);
+							box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+						}
+
+						.mega-menu-item img {
+							width: 100px;
+							height: 100px;
+							margin-bottom: 10px;
+						}
+
+						.mega-menu-item a {
+							display: block;
+							font-size: 12px;
+							text-decoration: none;
+							color: #18167A;
+							font-weight: bold;
+						}
+					</style>
+		
+					<!-- Extra Button -->
+					<div class="buttons">
+						<a href="#" class="btn-danger">Devenir Partenaire</a>
+					</div>
+				</div>
+			</div>
+		
+			
+				<div class="header-text mb-0">
+					<div class="container">
+						<div class="text-center text-white ">
+							<h1 style="padding: 0rem 0rem 6rem 0rem;" class="">Conditions générales de vente en ligne
+							</h1>
+	
+						</div>
+					</div>
+				</div>
+			
+		
+		
+			<!-- JavaScript -->
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+					const hamburgerMenu = document.getElementById("hamburger-menu");
+					const menuMobile = document.getElementById("menu-mobile");
+					const closeMenuButton = document.getElementById("close-menu");
+		
+					// Ouvrir le menu mobile en cliquant sur l'icône hamburger
+					hamburgerMenu.addEventListener("click", () => {
+						menuMobile.classList.add("active"); // Affiche le menu
+					});
+		
+					// Fermer le menu mobile en cliquant sur le bouton "X"
+					closeMenuButton.addEventListener("click", () => {
+						menuMobile.classList.remove("active"); // Cache le menu
+					});
+				});
+				// Sélectionner tous les liens du menu
+				const menuLinks = document.querySelectorAll('.menu-mobile ul li a');
+		
+				// Ajouter un écouteur d'événements pour chaque lien
+				menuLinks.forEach(link => {
+					link.addEventListener('click', function (event) {
+						// Supprimer la classe active de tous les liens
+						menuLinks.forEach(link => link.classList.remove('active'));
+		
+						// Ajouter la classe active au lien cliqué
+						event.target.classList.add('active');
+					});
+				});
+				// Sélectionner tous les liens du menu desktop
+				const desktopLinks = document.querySelectorAll('nav ul li a');
+		
+				// Ajouter un écouteur d'événements pour chaque lien
+				desktopLinks.forEach(link => {
+					link.addEventListener('click', function (event) {
+						// Supprimer la classe active de tous les liens
+						desktopLinks.forEach(link => link.classList.remove('active'));
+		
+						// Ajouter la classe active au lien cliqué
+						event.target.classList.add('active');
+					});
+				});
+			</script>
+			
+		</div>
+	</section>
+	
+	
+	<!--Breadcrumb-->
+	<div>
+		
+	</div>
+	<!--/Breadcrumb-->
+	<section class="sptb section-bg section-politique">
+		<div class="container">
+
+			<h2>Article 1 : Champ d’application</h2>
+			<p>
+				Les présentes Conditions Générales de Vente s’appliquent aux ventes conclues par le biais du site
+				«wic-doctor.com» “WIC Doctor”. Ces offres pour certains services, peuvent être assorties de conditions
+				spécifiques propres.
+			</p>
+
+			<h2>Article 2 : Loi applicable</h2>
+			<p>
+				Toutes les clauses figurant dans les présentes conditions générales de vente, ainsi que toutes les
+				conditions spécifiques présentes sur le site web «wic-doctor.com» sont soumises au droit français. Il
+				est convenu de porter tout litige relatif à une ou plusieurs commandes, et à défaut de règlement
+				amiable, devant les tribunaux relevant de la cour d’Appel de Paris.
+			</p>
+
+			<h2>Article 3 : Offres proposées</h2>
+			<p>
+				Elles sont commercialisées par plusieurs catégories de produits et services, avec ou sans abonnement.
+				Une sélection des offres de WIC Doctor et,ou de ses partenaires est réalisée pour constituer le
+				catalogue des produits et services mis en vente. Certaines offres ne sont disponibles qu’exclusivement
+				sur le site web «https://www.way-interactive-convergence». Les fournitures (piles, papier…), autres que
+				celles présentées dans les coffrets, packs du fabricant, ne sont pas fournies avec les produits. Way
+				Interactive Convergence n’a pas pour vocation la vente en gros. Pour toute commande liée à une activité
+				de revente, veuillez vous adresser à vos fournisseurs habituels.
+			</p>
+
+			<h2>Article 4 : Commande</h2>
+			<p>
+				Toute commande implique votre acceptation des présentes conditions générales de vente et/ou conditions
+				spécifiques. Après avoir consulté l’ensemble des informations disponibles pour effectuer votre choix,
+				pour valider votre commande vous devrez préalablement vous identifier. A cet effet, vous remplirez un
+				formulaire à l’aide des indications qui vous sont fournies. Vous êtes informé et acceptez que la saisie
+				de ces informations fasse preuve de votre identité et de votre engagement. L’enregistrement de la
+				commande intervient dès la validation du paiement par vos soins. Le numéro et le récapitulatif de la
+				commande sont affichés à l’écran et envoyés par e-mail, à l’adresse électronique préalablement
+				enregistrée. Cette confirmation tient lieu d’engagement. A réception de la commande, Way Interactive
+				Convergence réalise les contrôles nécessaires à sa prise en compte (conformité de la commande,
+				coordonnées, etc.). Way Interactive Convergence peut être amenée à vous demander des justificatifs
+				supplémentaires. Way Interactive Convergence se réserve le droit de refuser de fournir le produit prévu
+				si vous ne remplissez pas les conditions pour en bénéficier.
+			</p>
+
+			<h2>Article 5 : Pour les commandes d’offres de WIC Doctor</h2>
+			<h3>5.1 Création d'un Espace Médecin</h3>
+			<p>
+				Pour les nouveaux clients, la création d’un Espace Médecin correspond à l’inscription du client, en la
+				personne du gestionnaire dûment habilité à cet effet, suivant la procédure suivante : le client doit
+				s’identifier en renseignant les champs demandés sur le formulaire et valider les conditions générales du
+				service Espace Médecin. Way Interactive Convergence transmettra par e-mail à l’adresse communiquée par
+				le Client, l’identifiant et le mot de passe. Ces codes d’accès seront nécessaires pour chaque commande
+				d’une offre Way Interactive Convergence.
+			</p>
+
+			<h3>5.3 Oubli de l'identifiant et, ou du mot de passe</h3>
+			<p>
+				En cas d’oubli du mot de passe, une fonctionnalité “mot de passe perdu ?”. Le Client saisit son
+				identifiant et reçoit par mail son mot de passe, sur l’adresse connue par Way Interactive Convergence.
+				En cas de perte de l’identifiant et du mot de passe, le Client devra prendre contact auprès du service
+				client par téléphone, dont les coordonnées figurent sur son compte.
+			</p>
+
+			<h3>5.6 Engagements et responsabilités</h3>
+			<p>
+				L’ensemble des éléments permettant au Client de s’identifier (identifiant et mot de passe “les Codes
+				d’accès “) et d’accéder à son Espace Médecin sont personnels et confidentiels. Le Client s’engage à
+				conserver les Codes d’accès secrets et à ne pas les divulguer sous quelque forme que ce soit. Par
+				l’utilisation de ces Codes d’accès, le Client dispose d’un accès personnalisé et exclusif à l’espace de
+				gestion médicale.
+			</p>
+
+			<h3>5.7 Engagements et responsabilités de Way Interactive Convergence</h3>
+			<p>
+				Way Interactive Convergence met en œuvre tous les moyens dont elle dispose pour assurer l’accès au
+				compte utilisateur (Espace Médecin).
+			</p>
+
+			<h2>Article 6 : Prix</h2>
+			<p>
+				Les tarifs des différents packs sont affichés en euros, toutes taxes comprises (TTC), sur notre site
+				internet. Way Interactive Convergence se réserve le droit de modifier ses tarifs à tout moment. Les
+				modifications tarifaires ne s’appliqueront pas aux abonnements en cours, sauf en cas de renouvellement.
+				Le paiement s’effectue en ligne via carte bancaire, compte Paypal ou prélèvement SEPA sécurisé.
+			</p>
+
+			<h2>Article 7 : Preuve des transactions</h2>
+			<p>
+				Les données enregistrées par le système de paiement utilisé et choisi par vous-même constituent la
+				preuve de l’ensemble des transactions financières passées.
+			</p>
+
+			<h2>Article 8 : Protection des données</h2>
+			<p>
+				Le traitement des données personnelles se fait dans le respect de la Loi relative à l’Informatique, aux
+				fichiers et aux Libertés du 6 janvier 1978.
+			</p>
+
+			<h2>Article 15 : Force majeure</h2>
+			<p>
+				La responsabilité de la boutique Way Interactive Convergence, ou de ses partenaires, ne peut pas être
+				engagée au cas où l’inexécution ou le retard dans l’exécution de l’une ou plusieurs obligations
+				contenues résulte d’un cas de force majeure.
+			</p>
+		</div>
+	</section>
+	<!--Footer Section-->
+	<section>
+		<footer class="text-white footer-bg">
+			<div class="footer-main">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-12">
+							<p class="footer-title">À propos </p>
+							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="https://wic-doctor.com/qui-sommes-nous.html">Qui sommes-nous ?</a>
+								</li>
+								<li>
+									<a href="javascript:;">Témoignages</a>
+								</li>
+
+								<li>
+									<a href="https://wic-doctor.com/FAQ.html">FAQ</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/contact.html">Contactez-nous</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="col-lg-3 col-md-12">
+							<p class="footer-title">Trouvez</p>
+							<hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+							<div class="clearfix"></div>
+								<ul class="list-unstyled mb-0">
+								<li>
+									<a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies & Parapharmacies</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="col-lg-3 col-md-12">
+							<p class="footer-title">Ressources</p>
+							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="https://wic-doctor.com/pathologies.html">Pathologies</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/intervention.html">Interventions</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/journal-medical.html">Journal Médical</a>
+								</li>
+								<!-- <li>
+									<a href="javascript:;">Forum Médical</a>
+								</li> -->
+								<!-- <li>
+									<a href="javascript:;">La technologie Médicale</a>
+								</li> -->
+
+							</ul>
+						</div>
+
+
+						<div class="col-lg-3 col-md-12">
+							<p class="footer-title">Les conditions</p>
+							<hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+							<div class="clearfix"></div>
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="https://wic-doctor.com/Conditions-Générales-de-Vente.html">Conditions
+										générales de vente en ligne</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Conditions-utilisation.html">Conditions
+										d'utilisation</a>
+									</a>
+								</li>
+								<li>
+									<a
+										href="https://wic-doctor.com/Politique-de-confidentialité-et-d_utilisation-pour-les-sous-traitants.html">Politique
+										de confidentialité des données personnelles</a>
+									</a>
+								</li>
+								<li>
+									<a href="#">Termes et licences d'utilisation
+									</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Mentions-légales.html">Mentions légales</a>
+								</li>
+								<!-- <li>
+									<a href="javascript:;">Support technique</a>
+								</li>
+								<li>
+									<a href="javascript:;">Réseaux Sociaux</a>
+								</li> -->
+							</ul>
+						</div>
+						<!-- 	<div class="col-lg-3 col-md-12">
+							<h6>Contact</p>
+							<hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+							<ul class="list-unstyled mb-0 contact-footer">
+								<li>
+									<i class="fa fa-map-marker"></i> 22 S. Rock Creek StreetSan Carlos, Uniontown CA
+									94070, USA
+								</li>
+								<li>
+									<i class="fa fa-envelope "></i>contact@way-interactive-convergence.com
+								</li>
+								<li>
+									<i class="fa fa-phone"></i>+33 2 55 04 55 04
+								</li>
+								<li>
+									<i class="fa fa-print"></i>+ 01 234 567 89
+								</li>
+							</ul>
+						</div> -->
+
+					</div>
+				</div>
+			</div>
+			<div class="text-white p-0">
+				<div class="container">
+					<div class="row d-flex">
+						<div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center">
+							Copyright © 2024 WIC DOCTOR All
+							rights reserved.
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</section>
+	<!--Footer Section-->
+
+	<!-- Popup Login-->
+	<div class="modal" id="exampleModal">
+		<div class="modal-dialog modal-lg modal-appoint" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Make an Appointment</h5><button aria-label="Close"
+						class="close" data-bs-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-label">Your Name</label>
+								<input class="form-control" placeholder="Enter Your Name" type="text">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-label">Your Email</label>
+								<input class="form-control" placeholder="Enter your Email" type="email">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-label">Your Number</label>
+								<input class="form-control" placeholder="Enter your Phone Number" type="number">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-label">Select Gender</label>
+								<select class="form-control select2" name="user[hour]">
+									<option value="">Male</option>
+									<option value="0">Female</option>
+									<option value="1">Others</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label class="form-label">Select Date</label>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+										</div>
+									</div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY"
+										type="text">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-label">Select City</label>
+								<select class="form-control form-select select2-show-search" name="city">
+									<option selected value="0">Select City</option>
+									<option value="1">Hyderabad</option>
+									<option value="2">Mumbai</option>
+									<option value="3">Delhi</option>
+									<option value="4">Bangalore</option>
+									<option value="5">Ahmedabad</option>
+									<option value="6">Chennai</option>
+									<option value="7">Kolkata</option>
+									<option value="8">Lucknow</option>
+									<option value="9">Jaipur</option>
+									<option value="10">Bhopal</option>
+									<option value="11">Visakhapatnam</option>
+									<option value="12">Patna</option>
+									<option value="13">Srinagar</option>
+									<option value="14">Lucknow</option>
+									<option value="15">Bhubaneswar</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-label">Select Hospital</label>
+								<select class="form-control form-select select2-show-search" name="Hospital">
+									<option selected value="0">Select Hospital</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-label">Select Specialist</label>
+								<select class="form-control form-select select2-show-search" name="Specialist">
+									<option selected value="0">Select Specialist</option>
+									<option value="1">Cardiologist</option>
+									<option value="2">Neurosurgeon</option>
+									<option value="3">Orthopaedic Surgeon</option>
+									<option value="4">Oncologist</option>
+									<option value="5">Neurologist</option>
+									<option value="6">Gastroenterologist</option>
+									<option value="7">ENT</option>
+									<option value="8">Dentist</option>
+									<option value="9">Psychiatrist</option>
+									<option value="10">Urologist</option>
+									<option value="11">Gynecologist</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-label">Select Slot</label>
+								<select class="form-control form-select select2-show-search" name="Slot">
+									<option selected value="0">Select Hospital</option>
+									<option value="1">morning</option>
+									<option value="2">Afternoon</option>
+									<option value="3">Evening</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="">
+						<a class="btn btn-orange btn-block" href="javascript:void(0);">Book Appointment</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Popup Login-->
+
+	<!-- Back to top -->
+	<a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+	<style>
+		.social-icons {
+    position: fixed;
+    top: 50%;
+    right: 10px; /* Positionné à droite */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 40px; /* Taille des icônes */
+    height: 40px;
+    border-radius: 50%; /* Pour un effet arrondi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet plus pro */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+	</style>
+	<!-- End Popup Login-->
+	<div class="social-icons" style="z-index: 9999;">
+		<a href="https://www.facebook.com/people/WIC-Doctor/61567242383619/?locale=fr_FR" target="_blank">
+			<img src="./assets/images/icons/fb.png" alt="Facebook">
+		</a>
+		<a href="https://www.youtube.com/@WICDoctor" target="_blank">
+			<img src="./assets/images/icons/youtube.png" alt="Twitter">
+		</a>
+		<a href="https://www.instagram.com/wic_doctor_tunisia/" target="_blank">
+			<img src="./assets/images/icons/insta.png" alt="Instagram">
+		</a>
+		<a href="https://www.linkedin.com/company/wic-doctor/posts/" target="_blank">
+			<img src="./assets/images/icons/linkidin.png" alt="Instagram">
+		</a>
+		<a href="https://x.com/WicDoctor" target="_blank">
+			<img src="./assets/images/icons/twitter.png" alt="Instagram">
+		</a>
+		<a href="https://api.whatsapp.com/send?phone=21626311722&text&context=ARCA4kG0-ji3IZZVIl0SGy-pasvzA9NGu6rAMyFGkteYpSXEy5aiifugPiOP2mfw5L4BpCxqvb9uRbiVxMSkhC0EsNP8_hOi8YUDxIOg66_ulRmNB6d7nsPxbmi2nm1aGpD7yzr4G7e7XetamHR9ineByQ&source&app=facebook" target="_blank">
+			<img src="./assets/images/icons/whats.png" alt="Instagram">
+		</a>
+	</div>
+	<!-- JQuery js-->
+	<script src="assets/js/jquery.min.js"></script>
+
+	<!-- Bootstrap js -->
+	<script src="assets/plugins/bootstrap/js/popper.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!--JQueryVehiclerkline Js-->
+	<script src="assets/js/jquery.sparkline.min.js"></script>
+
+	<!-- Circle Progress Js-->
+	<script src="assets/js/circle-progress.min.js"></script>
+
+
+
+	<!-- Star Rating Js-->
+	<script src="assets/plugins/rating/jquery.rating-stars.js"></script>
+
+	<!--Owl Carousel js -->
+	<script src="assets/plugins/owl-carousel/owl.carousel.js"></script>
+
+	<!--Horizontal Menu-->
+	<script src="assets/plugins/horizontal/horizontal.js"></script>
+
+	<!--Counters -->
+	<script src="assets/plugins/counters/counterup.min.js"></script>
+	<script src="assets/plugins/counters/waypoints.min.js"></script>
+	<script src="assets/plugins/counters/numeric-counter.js"></script>
+
+	<!-- Datepicker js -->
+	<script src="assets/plugins/date-picker/spectrum.js"></script>
+	<script src="assets/plugins/date-picker/jquery-ui.js"></script>
+	<script src="assets/plugins/date-picker/datepicker.js"></script>
+
+	<!--JQuery TouchSwipe js-->
+	<script src="assets/js/jquery.touchSwipe.min.js"></script>
+
+	<!--Select2 js -->
+	<script src="assets/plugins/select2/select2.full.min.js"></script>
+	<script src="assets/js/select2.js"></script>
+
+	<!-- Cookie js -->
+	<script src="assets/plugins/cookie/jquery.ihavecookies.js"></script>
+	<script src="assets/plugins/cookie/cookie.js"></script>
+
+	<!-- sticky Js-->
+	<script src="assets/js/sticky.js"></script>
+
+	<!-- Swipe Js-->
+	<script src="assets/js/swipe.js"></script>
+
+	<!--Owl-Carousel Js-->
+	<script src="assets/js/owl-carousel.js"></script>
+	<!--Cryptojs-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+	<!-- Typewritter Js-->
+	<script src="assets/js/typewritter.js"></script>
+
+	<!--Dotcors-->
+	<script src="assets/js/doctor.js"></script>
+
+	<!--Dotcors-->
+	<script src="assets/js/recherche.js"></script>
+	<!-- Theme-color js -->
+	<script src="assets/js/themeColors.js"></script>
+
+	<!-- Custom Js-->
+	<script src="assets/js/custom.js"></script>
+
+
+	<!-- switcher-custom js -->
+	<script src="assets/js/switcher-custom.js"></script>
+
+</body>
+
+</html>

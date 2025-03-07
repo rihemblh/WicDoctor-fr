@@ -1,0 +1,983 @@
+<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
+	<link href="assets/css/color.css" rel="stylesheet">
+	<!-- Top Header -->
+	<div class="header-top">
+		<div class="container">
+			<!-- Contact Info -->
+			<div class="contact-info">
+				<p>Nous sommes disponibles sur <span class="span-info">+216 26 311 777 / +33
+						743 13 00 13</span></p>
+			</div>
+
+			<!-- Buttons -->
+
+			<div>
+				<div class="buttons">
+					<a href="https://wic-doctor.com/inscription-professionnel/" class="btn-danger" id="B2B">Vous êtes un
+						praticien?</a>
+					<a href="https://wic-doctor.com/login.html" class="btn-primary" id="SeConnecter">Connexion</a>
+					<!-- 		<a class="nav-item dropdown d-flex align-items-center" id="Login">
+						<div class="avatar-initial rounded-circle me-2" id="userAvatar"></div>
+						<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+							<li><a class="dropdown-item" href="https://wic-doctor.com/profil.html">Mon Profil</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item"  onclick="Deconexion()">Se déconnecter</a></li>
+						</ul>
+					</a> -->
+					<style>
+
+					</style>
+					<div class="nav-item dropdown d-flex align-items-center" id="Login">
+						<div class="avatar-initial rounded-circle me-2" id="userAvatar" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false"></div>
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userAvatar">
+							<li><a class="dropdown-item profile" href="https://wic-doctor.com/profil.html">Mon
+									Profil</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+							<li><a class="dropdown-item" onclick="Deconexion()">Se déconnecter</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+	<!-- Main Header -->
+	<section>
+		<style>
+			.page-title {
+				position: relative;
+
+			}
+
+			.page-title {
+				/* background: -webkit-linear-gradient(0deg, #2e2ffb, #40c7ff 100%); */
+				background: -webkit-linear-gradient(0deg, #d6eae4, #24a788 100%);
+				z-index: 9;
+			}
+
+			.float-bob-x {
+				animation-name: float-bob-x;
+				animation-duration: 15s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				-webkit-animation-name: float-bob-x;
+				-webkit-animation-duration: 15s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				-moz-animation-name: float-bob-x;
+				-moz-animation-duration: 15s;
+				-moz-animation-iteration-count: infinite;
+				-moz-animation-timing-function: linear;
+				-ms-animation-name: float-bob-x;
+				-ms-animation-duration: 15s;
+				-ms-animation-iteration-count: infinite;
+				-ms-animation-timing-function: linear;
+				-o-animation-name: float-bob-x;
+				-o-animation-duration: 15s;
+				-o-animation-iteration-count: infinite;
+				-o-animation-timing-function: linear;
+			}
+
+			.float-bob-x-2 {
+				animation-name: float-bob-x;
+				animation-duration: 25s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				-webkit-animation-name: float-bob-x;
+				-webkit-animation-duration: 25s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				-moz-animation-name: float-bob-x;
+				-moz-animation-duration: 25s;
+				-moz-animation-iteration-count: infinite;
+				-moz-animation-timing-function: linear;
+				-ms-animation-name: float-bob-x;
+				-ms-animation-duration: 25s;
+				-ms-animation-iteration-count: infinite;
+				-ms-animation-timing-function: linear;
+				-o-animation-name: float-bob-x;
+				-o-animation-duration: 25s;
+				-o-animation-iteration-count: infinite;
+				-o-animation-timing-function: linear;
+			}
+
+			.float-bob-y {
+				animation-name: float-bob-y;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				-webkit-animation-name: float-bob-y;
+				-webkit-animation-duration: 2s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				-moz-animation-name: float-bob-y;
+				-moz-animation-duration: 2s;
+				-moz-animation-iteration-count: infinite;
+				-moz-animation-timing-function: linear;
+				-ms-animation-name: float-bob-y;
+				-ms-animation-duration: 2s;
+				-ms-animation-iteration-count: infinite;
+				-ms-animation-timing-function: linear;
+				-o-animation-name: float-bob-y;
+				-o-animation-duration: 2s;
+				-o-animation-iteration-count: infinite;
+				-o-animation-timing-function: linear;
+			}
+
+			.float-bob-x {
+				animation-name: float-bob-x;
+				animation-duration: 15s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				-webkit-animation-name: float-bob-x;
+				-webkit-animation-duration: 15s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				-moz-animation-name: float-bob-x;
+				-moz-animation-duration: 15s;
+				-moz-animation-iteration-count: infinite;
+				-moz-animation-timing-function: linear;
+				-ms-animation-name: float-bob-x;
+				-ms-animation-duration: 15s;
+				-ms-animation-iteration-count: infinite;
+				-ms-animation-timing-function: linear;
+				-o-animation-name: float-bob-x;
+				-o-animation-duration: 15s;
+				-o-animation-iteration-count: infinite;
+				-o-animation-timing-function: linear;
+			}
+
+			.float-bob-x-2 {
+				animation-name: float-bob-x;
+				animation-duration: 25s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				-webkit-animation-name: float-bob-x;
+				-webkit-animation-duration: 25s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				-moz-animation-name: float-bob-x;
+				-moz-animation-duration: 25s;
+				-moz-animation-iteration-count: infinite;
+				-moz-animation-timing-function: linear;
+				-ms-animation-name: float-bob-x;
+				-ms-animation-duration: 25s;
+				-ms-animation-iteration-count: infinite;
+				-ms-animation-timing-function: linear;
+				-o-animation-name: float-bob-x;
+				-o-animation-duration: 25s;
+				-o-animation-iteration-count: infinite;
+				-o-animation-timing-function: linear;
+			}
+
+			.rotate-me {
+				animation-name: rotateme !important;
+				animation-duration: 30s !important;
+				animation-iteration-count: infinite !important;
+				animation-timing-function: linear !important;
+				-webkit-animation-name: rotateme !important;
+				-webkit-animation-duration: 30s !important;
+				-webkit-animation-iteration-count: infinite !important;
+				-webkit-animation-timing-function: linear !important;
+				-moz-animation-name: rotateme !important;
+				-moz-animation-duration: 30s !important;
+				-moz-animation-iteration-count: infinite !important;
+				-moz-animation-timing-function: linear !important;
+				-ms-animation-name: rotateme !important;
+				-ms-animation-duration: 30s !important;
+				-ms-animation-iteration-count: infinite !important;
+				-ms-animation-timing-function: linear !important;
+				-o-animation-name: rotateme !important;
+				-o-animation-duration: 30s !important;
+				-o-animation-iteration-count: infinite !important;
+				-o-animation-timing-function: linear !important;
+			}
+
+			.page-title .content-box .bread-crumb li:before {
+				background: #71e9ff;
+			}
+
+			.page-title .content-box h1 {
+				position: relative;
+				font-size: 40px;
+				line-height: 50px;
+				font-weight: 700;
+				color: #fff;
+				margin-bottom: 13px;
+				text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+			}
+
+			.page-title .content-box .bread-crumb li {
+				position: relative;
+				display: inline-block;
+				font-size: 15px;
+				color: #fff;
+				padding-right: 22px;
+				margin-right: 6px;
+			}
+
+			.page-title .content-box .bread-crumb li a {
+				color: #fff;
+			}
+
+			.page-title .content-box .bread-crumb li a:hover {
+				text-decoration: underline;
+			}
+
+			.page-title .content-box .bread-crumb li:last-child {
+				padding: 0px;
+				margin: 0px;
+			}
+
+			.page-title .content-box .bread-crumb li:before {
+				position: absolute;
+				content: '';
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				top: 11px;
+				right: 0px;
+			}
+
+			.page-title .content-box .bread-crumb li:last-child::before {
+				display: none;
+			}
+
+			.page-title .pattern-layer .pattern-1 {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				width: 636px;
+				height: 370px;
+				background-repeat: no-repeat;
+			}
+
+			.page-title .pattern-layer .pattern-2 {
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				width: 742px;
+				height: 370px;
+				background-repeat: no-repeat;
+			}
+
+			.page-title .pattern-layer .pattern-3 {
+				position: absolute;
+				left: 50px;
+				top: 80px;
+				width: 171px;
+				height: 119px;
+				background-repeat: no-repeat;
+			}
+
+			.page-title .bubble-box .bubble-1 {
+				left: 170px;
+				top: 170px;
+				width: 148px;
+				height: 148px;
+				background-repeat: no-repeat;
+				-webkit-animation: zoom-fade 5s infinite linear;
+				animation: zoom-fade 5s infinite linear;
+			}
+
+			.page-title .bubble-box .bubble-2 {
+				left: 230px;
+				top: 270px;
+				width: 209px;
+				height: 209px;
+				background-repeat: no-repeat;
+				z-index: 1;
+			}
+
+			.page-title .bubble-box .bubble-3 {
+				right: 300px;
+				bottom: 80px;
+				width: 119px;
+				height: 119px;
+				background-repeat: no-repeat;
+				-webkit-animation: zoom-fade 3s infinite linear;
+				animation: zoom-fade 3s infinite linear;
+			}
+
+			.page-title .bubble-box .bubble-4 {
+				background: rgba(255, 255, 255, 0.2);
+				width: 150px;
+				height: 150px;
+				top: -75px;
+				right: 150px;
+				border-radius: 50%;
+				-webkit-animation: zoom-fade 4s infinite linear;
+				animation: zoom-fade 4s infinite linear;
+			}
+		</style>
+		<!--Page Title-->
+		<section class="page-title centred">
+			<div class="pattern-layer">
+				<div class="pattern-1" style="background-image: url(assets/images/icons/pattern-21.png);"></div>
+				<div class="pattern-2" style="background-image: url(assets/images/icons/pattern-22.png);"></div>
+				<div class="pattern-3 float-bob-x" style="background-image: url(assets/images/icons/pattern-23.png);">
+				</div>
+			</div>
+			<div class="bubble-box">
+				<div class="bubble bubble-1"
+					style="background-image: url(assets/images/icons/bubble-14.png) !important;background-repeat: no-repeat !important;">
+				</div>
+				<div class="bubble bubble-2 rotate-me"
+					style="background-image: url(assets/images/icons/bubble-15.png) !important;background-repeat: no-repeat !important;z-index: 0;">
+				</div>
+				<div class="bubble bubble-4"></div>
+			</div>
+			<div class="auto-container">
+				<div class="header-main">
+					<div class="container">
+						<!-- Hamburger Menu -->
+						<div class="hamburger-menu" id="hamburger-menu">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<!-- Logo -->
+						<div class="logo">
+							<a href="https://wic-doctor.com/">
+								<img class="logo-mb" src="assets/images/brand/logo-dr-wic.png" alt="WIC Doctor Logo">
+							</a>
+						</div>
+
+
+
+						<!-- Menu mobile -->
+						<div class="menu-mobile" id="menu-mobile">
+							<button class="close-menu" id="close-menu">X</button> <!-- Bouton de fermeture -->
+							<ul>
+								<li><a href="https://wic-doctor.com/" class="active">Accueil</a></li>
+								<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
+								<li><a href="https://wic-doctor.com/nos-solutions.html">Nos Solutions</a></li>
+								<li><a href="https://wic-doctor.com/inscription-professionnel/offres.html">Nos Tarifs</a>
+								</li>
+								<li class="dropdown">
+									<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
+									<ul class="submenu">
+										<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a></li>
+										<li><a href="https://wic-doctor.com/intervention.html">Interventions</a></li>
+										<li><a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a></li>
+									</ul>
+								</li>
+								</li>
+								<li><a href="https://wic-doctor.com/contact.html">Contact</a></li>
+								<li><a href="https://wic-doctor.com/inscription-professionnel/" class="btn-danger">Vous
+										êtes
+										un
+										professionnel?</a></li>
+								<li><a href="https://wic-doctor.com/login.html" class="btn-primary">Connexion</a></li>
+								</li>
+							</ul>
+						</div>
+						<!-- Navigation (visible uniquement sur desktop) -->
+						<nav>
+							<ul>
+								<li><a href="https://wic-doctor.com/" class="active">Accueil</a></li>
+								<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
+								<li class="mega-menu">
+									<a href="#">Nos Solutions</a>
+									<div class="mega-menu-content">
+										<div class="mega-menu-item">
+											<img src="./assets/images/media/photos/medecin-solution.png"
+												alt="Logo Praticiens" />
+											<a href="https://wic-doctor.com/nos-solutions-praticien.html">Praticiens</a>
+										</div>
+										<div class="mega-menu-item">
+											<img src="./assets/images/media/photos/patient-solution.png"
+												alt="Logo Patients" />
+											<a href="https://wic-doctor.com/nos-solutions-patient.html">Patients</a>
+										</div>
+										<div class="mega-menu-item">
+											<img src="./assets/images/media/photos/Télémédecine-soltion.png"
+												alt="Logo Télémédecine" />
+											<a href="https://wic-doctor.com/Telemedecine.html">Télémédecine</a>
+										</div>
+										<div class="mega-menu-item">
+											<img src="./assets/images/media/photos/technologie-solution.png"
+												alt="Logo Technologie" />
+											<a href="https://wic-doctor.com/technologies-de-pointe.html">Technologie de
+												pointe</a>
+										</div>
+									</div>
+								</li>
+								<li><a href="https://wic-doctor.com/inscription-professionnel/offres.html">Nos Tarifs</a>
+								</li>
+								<li class="dropdown">
+									<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
+									<ul class="submenu">
+										<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a></li>
+										<li><a href="https://wic-doctor.com/intervention.html">Interventions</a></li>
+										<li><a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a></li>
+									</ul>
+								</li>
+								</li>
+								<li><a href="https://wic-doctor.com/contact.html">Contact</a></li>
+							</ul>
+						</nav>
+
+						<style>
+							nav {
+								position: relative;
+							}
+
+							.mega-menu-content {
+								display: none;
+								position: absolute;
+								top: 100%;
+								left: 0;
+								width: 600px;
+								background: #ffffff;
+								border-radius: 2%;
+								box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+								padding: 20px;
+								grid-template-columns: repeat(2, 1fr);
+								gap: 20px;
+								z-index: 999;
+							}
+
+							.mega-menu:hover .mega-menu-content {
+								display: inline-flex;
+							}
+
+							.mega-menu-item {
+								text-align: center;
+								border: 2px solid #83D1C3;
+								border-radius: 8px;
+								padding: 10px;
+								transition: transform 0.3s ease, box-shadow 0.3s ease;
+							}
+
+							.mega-menu-item:hover {
+								transform: scale(1.05);
+								box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+							}
+
+							.mega-menu-item img {
+								width: 100px;
+								height: 100px;
+								margin-bottom: 10px;
+							}
+
+							.mega-menu-item a {
+								display: block;
+								font-size: 12px;
+								text-decoration: none;
+								color: #18167A;
+								font-weight: bold;
+							}
+						</style>
+
+
+						<!-- Extra Button -->
+						<div class="buttons">
+							<a href="#" class="btn-danger"></a>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<!-- JavaScript -->
+				<script>
+					document.addEventListener("DOMContentLoaded", () => {
+						const hamburgerMenu = document.getElementById("hamburger-menu");
+						const menuMobile = document.getElementById("menu-mobile");
+						const closeMenuButton = document.getElementById("close-menu");
+
+						// Ouvrir le menu mobile en cliquant sur l'icône hamburger
+						hamburgerMenu.addEventListener("click", () => {
+							menuMobile.classList.add("active"); // Affiche le menu
+						});
+
+						// Fermer le menu mobile en cliquant sur le bouton "X"
+						closeMenuButton.addEventListener("click", () => {
+							menuMobile.classList.remove("active"); // Cache le menu
+						});
+					});
+					// Sélectionner tous les liens du menu
+					const menuLinks = document.querySelectorAll('.menu-mobile ul li a');
+
+					// Ajouter un écouteur d'événements pour chaque lien
+					menuLinks.forEach(link => {
+						link.addEventListener('click', function (event) {
+							// Supprimer la classe active de tous les liens
+							menuLinks.forEach(link => link.classList.remove('active'));
+
+							// Ajouter la classe active au lien cliqué
+							event.target.classList.add('active');
+						});
+					});
+					// Sélectionner tous les liens du menu desktop
+					const desktopLinks = document.querySelectorAll('nav ul li a');
+
+					// Ajouter un écouteur d'événements pour chaque lien
+					desktopLinks.forEach(link => {
+						link.addEventListener('click', function (event) {
+							// Supprimer la classe active de tous les liens
+							desktopLinks.forEach(link => link.classList.remove('active'));
+
+							// Ajouter la classe active au lien cliqué
+							event.target.classList.add('active');
+						});
+					});
+				</script>
+				
+				<div class="header-text mb-0">
+					<div class="container">
+						<div class="text-center text-white mb-0">
+							<h1>
+								<a href="" class="typewrite" data-period="2000">
+									<span class="wrap">Prise de rendez-vous médical en ligne</span>
+								</a>
+							</h1>
+							<p class="subtext">Rapide, gratuit et sécurisé</p>
+						</div>
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 d-block mx-auto">
+								<div class="item-search-tabs">
+									<div class="item-search-menu">
+										<!-- Menu tabs -->
+										<ul class="nav nav-tabs">
+											<li class="">
+												<a class="active" data-bs-toggle="tab" href="#tab1">
+													<i class="fa fa-user-md"></i> Médecins
+												</a>
+											</li>
+											<li>
+												<a data-bs-toggle="tab" href="#tab2"><i class="fa fa-hospital-o"></i>
+													Cliniques</a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content index-search-select">
+										<div class="tab-pane active" id="tab1">
+											<div class="search-background" style="overflow: visible !important;">
+												<div class="form row no-gutters">
+													<div class="form-group col-xl-4 col-lg-3 col-md-12 mb-0 location"
+														style="position: relative;">
+														<input class="form-control border" id="searchInput"
+															placeholder="Nom du professionnel de santé" type="text">
+														<ul id="suggestions" class="dropdown-menu"></ul>
+													</div>
+													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0 location">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectPays">
+														</select>
+													</div>
+													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0 location">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectVille">
+														</select>
+													</div>
+													<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelect">
+														</select>
+													</div>
+													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0">
+														<a class="btn btn-block btn-orange fs-14" style="color: white;"
+															onclick="RechercheDoctor()">
+															<i class="fa fa-search"></i> Rechercher
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<style>
+											.row {
+												overflow: visible !important;
+												/* Assurez-vous que les enfants ne soient pas coupés */
+											}
+
+											#suggestions {
+												position: absolute;
+												top: 100%;
+												left: 0;
+												width: 100%;
+												z-index: 1000;
+												background-color: white;
+												border: 1px solid #ddd;
+												box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+												max-height: 200px;
+												/* Limit the height of the dropdown */
+												overflow-y: auto;
+												/* Add scroll if content exceeds max height */
+											}
+
+											#suggestions li:hover {
+												background-color: #f5f5f5;
+											}
+										</style>
+
+									
+										<div class="tab-pane" id="tab2">
+											<div class="search-background">
+												<div class="form row no-gutters">
+													<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0 location">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectPaysClinic">
+														</select>
+													</div>
+													<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0 location">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectVilleClinic">
+														</select>
+													</div>
+													<div class="form-group col-xl-4 col-lg-4 col-md-12 mb-0">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectClinic">
+														</select>
+													</div>
+													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0">
+														<a class="btn btn-block btn-orange fs-14" onclick="">
+															<i class="fa fa-search"></i> Rechercher
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script>
+
+							function getDoctorSpec(name1) {
+								console.log("*************************************************: ", name1)
+								console.log("!name1: ", !name1)
+					
+								// Vérifiez si `name` est une chaîne JSON
+								console.log("JSON.stringify(name1): ", JSON.stringify(name1))
+								if (JSON.stringify(name1).trim().startsWith('"[') && JSON.stringify(name1).trim().endsWith(']"')) {
+									console.log("naaaaaaaaaaaaaaaaaaaaaaaaaaame", name1)
+									try {
+					
+										console.log("JSON.parse(data[0].name).fr: ", JSON.parse(JSON.parse(name1)[0].name).fr)
+										return JSON.parse(JSON.parse(name1)[0].name).fr; // Vérifiez si la clé 'fr' existe
+									} catch (error) {
+										console.error("Erreur lors du parsing :", error);
+									}
+								}
+								else {
+									return name1
+								}
+							}
+							function getDoctorName(name) {
+								console.log("*************************************************")
+								// Vérifiez si `name` est une chaîne JSON
+								if (typeof name === 'string' && name.trim().startsWith('{') && name.trim().endsWith('}')) {
+									try {
+										const parsedName = JSON.parse(name); // Tentez de parser le JSON
+										return JSON.parse(name).fr; // Vérifiez si la clé 'fr' existe
+									} catch (error) {
+										console.error("Erreur lors du parsing :", error);
+									}
+								}
+								return name; // Retourne false si ce n'est pas un JSON valide
+							}
+							document.addEventListener('DOMContentLoaded', function() {
+
+							document.getElementById('searchInput').addEventListener('input', function () {
+					console.log("****************************************************************************************************************")
+								const query = this.value.trim();
+								const suggestionsContainer = document.getElementById('suggestions');
+					
+								// Liste provisoire de médecins
+								let provisionalDoctors
+					
+					
+								if (query.length >= 3) {
+					
+					
+									//console.log("apiUrl: ", apiUrl)
+									try {
+										fetch(`https://wic-doctor.com:3004/search-doctors-france?query=${query.toLowerCase()}`)
+											.then(response => {
+												if (!response.ok) {
+													throw new Error('Erreur lors de la récupération des catégories');
+												}
+												return response.json();
+											})
+											.then(data => {
+												console.log("doctors: ", data);
+												provisionalDoctors = data.data;
+												// Effacez les suggestions précédentes
+												suggestionsContainer.innerHTML = '';
+					
+												// Filtrez les médecins en fonction du texte saisi
+												const filteredDoctors = provisionalDoctors.filter(doctor =>
+													doctor.name.toLowerCase().includes(query.toLowerCase())
+												);
+					
+												// Ajoutez les suggestions correspondantes
+												if (filteredDoctors.length === 0) {
+													const li = document.createElement('li');
+													li.textContent = "Pas de doc";  // Message when no doctors match
+													li.style.padding = "10px";
+													suggestionsContainer.appendChild(li);
+												} else {
+													filteredDoctors.forEach(doctor => {
+														const li = document.createElement('li');
+														li.textContent = getDoctorName(doctor.name);
+														li.style.padding = "10px";
+														li.style.cursor = "pointer";
+														li.onclick = () => {
+															console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase())
+															console.log("doctor.specialities.replace(/\s+/g, '-').toLowerCase(): ", getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase())
+															console.log("doctor.name.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase())
+															console.log("", `https://wic-doctor.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
+															window.location.href = `https://wic-doctor.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
+															document.getElementById('searchInput').value = getDoctorName(doctor.name);
+															suggestionsContainer.style.display = 'none';
+														};
+														suggestionsContainer.appendChild(li);
+													});
+												}
+					
+												// Affichez le menu des suggestions
+												suggestionsContainer.style.display = filteredDoctors.length > 0 ? 'block' : 'none';
+											});
+									} catch (error) {
+										const li = document.createElement('li');
+										li.textContent = "Pas de doc";  // Message when no doctors match
+										li.style.padding = "10px";
+										suggestionsContainer.appendChild(li);
+									}
+					
+					
+					
+					
+								} else {
+									// Masquez le menu si le texte est trop court
+									suggestionsContainer.style.display = 'none';
+								}
+							});
+					
+							// Cacher les suggestions lorsqu'on clique en dehors
+							document.addEventListener('click', function (event) {
+								const input = document.getElementById('searchInput');
+								const suggestions = document.getElementById('suggestions');
+					
+								if (!input.contains(event.target) && !suggestions.contains(event.target)) {
+									suggestions.style.display = 'none';
+								}
+							});
+						});
+						</script>
+						<div class="floating-elements">
+							<!-- Les formes de fond -->
+
+							<!-- Bulle de message 1 -->
+							<div class="bubble bubble-1">
+								<img src="assets/images/media/Banner/bubble.png" alt="Patient 1" class="bubble-image" />
+							</div>
+
+							<!-- Bulle de message 2 -->
+							<div class="bubble-p  bubble-2">
+								<img src="assets/images/media/Banner/patient.png" alt="Patient 2"
+									class="bubble-image" />
+							</div>
+
+							<!-- L'image du médecin -->
+							<img src="assets/images/media/Banner/Identite-wic-doctor.png" alt="wic doctor télémedecine"
+								class="doctor-image" />
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--End Page Title-->
+
+
+	</section>
+
+	<style>
+		/* Background with gradient */
+		.banner-section {
+			background: linear-gradient(30deg, rgb(145 171 165), rgb(33 30 209));
+			/*background:rgb(66 63 205);*/
+			color: white;
+			padding: 0px 0px 60px 0px;
+			position: relative;
+		}
+
+		/* Header text */
+		.header-text h1 {
+			font-size: 3rem;
+			font-weight: bold;
+			text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+			margin-bottom: 15px;
+		}
+
+		.subtext {
+			font-size: 1.2rem;
+			font-weight: 300;
+			opacity: 0.9;
+		}
+
+		/* Button styles */
+		.search-btn {
+			background-color: #ff5722;
+			color: white;
+			border-radius: 25px;
+			transition: transform 0.3s, background-color 0.3s;
+		}
+
+		.search-btn:hover {
+			background-color: #e64a19;
+			transform: scale(1.05);
+		}
+
+		/* Input fields */
+
+
+		/* Floating image and shapes */
+		.floating-elements {
+			position: absolute;
+
+			bottom: 0;
+			display: flex;
+			align-items: initial;
+			height: 300px;
+			z-index: -1;
+		}
+
+		.bubble {
+			background: transparent !important;
+			position: absolute;
+			animation: pop 4s infinite ease-in-out;
+			overflow: hidden;
+			z-index: 1;
+			border-radius: 0% !important;
+		}
+
+		.bubble-p {
+			background: transparent !important;
+			position: absolute;
+			overflow: hidden;
+			z-index: 1;
+			border-radius: 0% !important;
+		}
+
+		.bubble-1 {
+			top: 0%;
+			left: -50px;
+			width: 140px;
+			height: 140px;
+		}
+
+		.bubble-2 {
+			top: 25%;
+			left: -80px;
+			width: 60px;
+			height: 60px;
+		}
+
+		.bubble-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		/* Animation "pop" */
+		@keyframes pop {
+
+			0%,
+			100% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.2);
+			}
+		}
+
+		/* Background shapes */
+		.background-shape {
+			position: absolute;
+			border-radius: 40%;
+			z-index: -1;
+			/* Derrière l'image */
+			opacity: 0.9;
+		}
+
+
+		/* Doctor image */
+		.doctor-image {
+			width: 100%;
+			border-radius: 10px;
+		}
+
+
+
+		/* Media query for mobile */
+		@media (max-width: 768px) {
+			.doctor-image {
+				display: none;
+			}
+
+			.background-shape {
+				display: none;
+			}
+
+			.bubble {
+				display: none;
+			}
+
+			.bubble-p {
+				display: none;
+			}
+		}
+
+		.doctor-image {
+			width: 100%;
+
+		}
+
+
+
+		/* Tab menu styles */
+		.nav-tabs .nav-link {
+			color: white;
+			background: transparent;
+			border: none;
+			font-size: 1.2rem;
+			margin-right: 10px;
+			transition: color 0.3s;
+		}
+
+		.nav-tabs .nav-link:hover,
+		.nav-tabs .nav-link.active {
+			color: #ff9800;
+			font-weight: bold;
+		}
+
+		/* HIDE IMAGE ON MOBILE */
+		@media (max-width: 768px) {
+			.doctor-image {
+				display: none;
+			}
+		}
+	</style>
+	
+	<!--/Section-->

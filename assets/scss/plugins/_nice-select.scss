@@ -1,0 +1,168 @@
+.nice-select {
+	position: relative;
+	text-align: inset-inline-start !important;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	display: block;
+	width: 100%;
+	color: #3c4858;
+	height: 41px;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: solid 1px $border;
+	border-radius: 2px;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	display: block;
+	padding: .375rem .75rem;
+	font-size: .9375rem;
+	line-height: 1.6;
+	height: 39px;
+	&:after {
+		border-bottom: solid 2px $border;
+		border-right: solid 2px $border;
+		content: '';
+		display: block;
+		height: 5px;
+		margin-block-start: -4px;
+		pointer-events: none;
+		position: absolute;
+		inset-inline-end: 12px;
+		top: 50%;
+		-webkit-transform-origin: 66% 66%;
+		-ms-transform-origin: 66% 66%;
+		transform-origin: 66% 66%;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+		-webkit-transition: all 0.15s ease-in-out;
+		transition: all 0.15s ease-in-out;
+		width: 5px;
+	}
+	.list {
+		background-color: #fff;
+		border-radius: 2px;
+		box-shadow: 0 8px 16px 0 rgba(169, 173, 191, 0.24);
+		box-sizing: border-box;
+		margin-block-start: 0px;
+		opacity: 0;
+		overflow: hidden;
+		padding: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 100%;
+		inset-inline-start: 0;
+		-webkit-transform-origin: 50% 0;
+		-ms-transform-origin: 50% 0;
+		transform-origin: 50% 0;
+		-webkit-transform: scale(0.75) translateY(-21px);
+		-ms-transform: scale(0.75) translateY(-21px);
+		transform: scale(0.75) translateY(-21px);
+		-webkit-transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+		transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+		z-index: 9;
+		width: 100%;
+		border: 1px solid $border;
+	}
+	.option {
+		cursor: pointer;
+		font-weight: 400;
+		line-height: 40px;
+		list-style: none;
+		min-height: 40px;
+		outline: none;
+		padding-inline-start: 18px;
+		padding-inline-end: 29px;
+		text-align: start;
+		-webkit-transition: all 0.2s;
+		transition: all 0.2s;
+		&:hover {
+			background-color: $hover;
+		}
+	}
+	.option.focus {
+		background-color: #f5f6ff;
+	}
+	.option.selected.focus {
+		background-color: #f5f6ff;
+	}
+	.option.selected {
+		font-weight: 500;
+	}
+	.option.disabled {
+		background-color: transparent;
+		color: #807b90;
+		cursor: default;
+	}
+	.current {
+		background: transparent;
+	}
+	.form-control {
+		height: inherit;
+	}
+}
+.nice-select.open {
+	&:after {
+		-webkit-transform: rotate(-135deg);
+		-ms-transform: rotate(-135deg);
+		transform: rotate(-135deg);
+	}
+	.list {
+		opacity: 1;
+		pointer-events: auto;
+		-webkit-transform: scale(1) translateY(0);
+		-ms-transform: scale(1) translateY(0);
+		transform: scale(1) translateY(0);
+	}
+}
+.nice-select.disabled {
+	border-color: #ededed;
+	color: #807b90;
+	pointer-events: none;
+	&:after {
+		border-color: $border;
+	}
+}
+.nice-select.wide {
+	width: 100%;
+	.list {
+		inset-inline-start: 0 !important;
+		inset-inline-end: 0 !important;
+	}
+}
+.nice-select.right {
+	float: $float-right;
+	.list {
+		inset-inline-start: auto;
+		inset-inline-end: 0;
+	}
+}
+.nice-select.small {
+	font-size: 12px;
+	height: 36px;
+	line-height: 34px;
+	&:after {
+		height: 4px;
+		width: 4px;
+	}
+	.option {
+		line-height: 34px;
+		min-height: 34px;
+	}
+}
+.no-csspointerevents {
+	.nice-select {
+		.list {
+			display: none;
+		}
+	}
+	.nice-select.open {
+		.list {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr-fr"  translate="no">
+
+<head>
+<!-- Meta Pixel Code -->
+
+	<meta charset="UTF-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '623852967108851');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description"
+		content="Rejoignez WIC Doctor, la plateforme de télémédecine qui vous permet de réserver des rdv médicaux et de consulter votre médecin en ligne">
+	<meta name="author" content="Spruko Technologies Private Limited">
+	<meta name="keywords"
+		content="appointments, booking, bootstrap list template,  directory listing html template,  directory website template, doctor directory, doctor search, health template, healthcare directory, hospital,  html css templates, html directory listing, listing, medical bootstrap template, medical directory, medical html template , medical template,  medical web templates, medical website templates, pharma website templates, responsive html template,template html css, online directory website,  html5 template, themeforest html,  online directory, simple html templates ">
+
+	<!-- Favicon -->
+	<link rel="icon" href="assets/images/brand/logo-dr-wic.png" type="image/x-icon">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/brand/logo-dr-wic.png">
+
+	<!-- Title -->
+	<title>WIC DOCTOR </title>
+
+	<!-- Bootstrap Css -->
+	<link id="style" href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Style Css -->
+	<link href="assets/css/style.css" rel="stylesheet">
+
+	<!--Icons  Css -->
+	<link href="assets/css/icons.css" rel="stylesheet">
+
+	<meta charset="UTF-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '623852967108851');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Localisation des Médecins</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCBHeywMDkT709Klvza0HxwSdcyisCYEA"></script>
+	<!-- Remplacez YOUR_API_KEY par votre clé API Google Maps -->
+	<style>
+		#map {
+			height: 500px;
+			width: 100%;
+		}
+	</style>
+
+
+<body>
+
+
+	<!--Loader-->
+	<div id="global-loader">
+		<img alt="loader.svg" class="loader-img" src="assets/images/loader.svg">
+	</div>
+	<!--/Loader-->
+	<!--Loader-->
+	<div id="global-loader">
+		<img alt="loader.svg" class="loader-img" src="assets/images/loader.svg">
+	</div>
+	<!--/Loader-->
+
+	<!-- Header-main -->
+	<div class="header-main">
+
+
+
+		<!-- Top Header -->
+		<div class="header-top">
+			<div class="container">
+				<!-- Contact Info -->
+				<div class="contact-info">
+					<p>Nous sommes disponibles sur <span class="span-info">+216 26 311 777 / +33
+							743 13 00 13</span></p>
+				</div>
+	
+				<!-- Buttons -->
+	
+				<div>
+					<div class="buttons">
+						<a href="https://wic-doctor.com/inscription-professionnel/" class="btn-danger" id="B2B">Vous êtes un
+							praticien?</a>
+						<a href="https://wic-doctor.com/login.html" class="btn-primary" id="SeConnecter">Connexion</a>
+						<!-- 		<a class="nav-item dropdown d-flex align-items-center" id="Login">
+							<div class="avatar-initial rounded-circle me-2" id="userAvatar"></div>
+							<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+								<li><a class="dropdown-item" href="https://wic-doctor.com/profil.html">Mon Profil</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item"  onclick="Deconexion()">Se déconnecter</a></li>
+							</ul>
+						</a> -->
+						<style>
+							
+						</style>
+						<div class="nav-item dropdown d-flex align-items-center" id="Login">
+							<div class="avatar-initial rounded-circle me-2" id="userAvatar" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false"></div>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userAvatar">
+								<li><a class="dropdown-item profile" href="https://wic-doctor.com/profil.html">Mon Profil</a></li>
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li><a class="dropdown-item" onclick="Deconexion()">Se déconnecter</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+	
+	
+			</div>
+		</div>
+	
+		<!-- Main Header -->
+		<section>
+			<div class="banner-2 cover-image sptb-2 sptb-tab banner-section position-relative">
+				<div class="header-main">
+					<div class="container">
+						<!-- Hamburger Menu -->
+						<div class="hamburger-menu" id="hamburger-menu">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<!-- Logo -->
+						<div class="logo">
+							<a href="https://wic-doctor.com/">
+								<img class="logo-mb" src="assets/images/brand/logo-dr-wic.png" alt="WIC Doctor Logo">
+							</a>
+						</div>
+			
+			
+			
+						<!-- Menu mobile -->
+						<div class="menu-mobile" id="menu-mobile">
+							<button class="close-menu" id="close-menu">X</button> <!-- Bouton de fermeture -->
+							<ul>
+								<li><a href="https://wic-doctor.com/" class="active">Accueil</a></li>
+								<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
+								<li><a href="https://wic-doctor.com/nos-solutions.html">Nos Solutions</a></li>
+								<li><a href="https://wic-doctor.com/inscription-professionnel/offres.html">Nos Tarifs</a></li>
+								<li class="dropdown">
+									<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
+									<ul class="submenu">
+										<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a></li>
+										<li><a href="https://wic-doctor.com/intervention.html">Interventions</a></li>
+										<li><a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a></li>
+									</ul>
+								</li>
+								</li>
+								<li><a href="https://wic-doctor.com/contact.html">Contact</a></li>
+								<li><a href="https://wic-doctor.com/inscription-professionnel/" class="btn-danger">Vous êtes un
+										professionnel?</a></li>
+								<li><a href="https://wic-doctor.com/login.html" class="btn-primary">Connexion</a></li>
+								<li><a href="https://wic-doctor.com/inscription-professionnel/" class="btn-partenaire">Devenir
+										Partenaire</a></li>
+							</ul>
+						</div>
+						<!-- Navigation (visible uniquement sur desktop) -->
+					<nav>
+						<ul>
+							<li><a href="https://wic-doctor.com/">Accueil</a></li>
+							<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
+							<li class="mega-menu">
+								<a href="#">Nos Solutions</a>
+								<div class="mega-menu-content">
+									<div class="mega-menu-item">
+										<img src="./assets/images/media/photos/medecin-solution.png"
+											alt="Logo Praticiens" />
+										<a href="https://wic-doctor.com/nos-solutions-praticien.html">Praticiens</a>
+									</div>
+									<div class="mega-menu-item">
+										<img src="./assets/images/media/photos/patient-solution.png"
+											alt="Logo Patients" />
+										<a href="https://wic-doctor.com/nos-solutions-patient.html">Patients</a>
+									</div>
+									<div class="mega-menu-item">
+										<img src="./assets/images/media/photos/Télémédecine-soltion.png"
+											alt="Logo Télémédecine" />
+										<a href="https://wic-doctor.com/Telemedecine.html">Télémédecine</a>
+									</div>
+									<div class="mega-menu-item">
+										<img src="./assets/images/media/photos/technologie-solution.png"
+											alt="Logo Technologie" />
+										<a href="https://wic-doctor.com/technologies-de-pointe.html">Technologie de pointe</a>
+									</div>
+								</div>
+							</li>
+							<li><a href="https://wic-doctor.com/inscription-professionnel/offres.html">Nos Tarifs</a></li>
+							<li class="dropdown">
+								<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
+								<ul class="submenu">
+									<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a></li>
+									<li><a href="https://wic-doctor.com/intervention.html">Interventions</a></li>
+									<li><a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a></li>
+								</ul>
+							</li>
+							</li>
+							<li><a href="https://wic-doctor.com/contact.html">Contact</a></li>
+						</ul>
+					</nav>
+
+					<style>
+						nav {
+							position: relative;
+						}
+
+						.mega-menu-content {
+							display: none;
+							position: absolute;
+							top: 100%;
+							left: 0;
+							width: 600px;
+							background: #ffffff;
+							border-radius: 2%;
+							box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+							padding: 20px;
+							grid-template-columns: repeat(2, 1fr);
+							gap: 20px;
+							z-index: 999;
+						}
+
+						.mega-menu:hover .mega-menu-content {
+							display: inline-flex;
+						}
+
+						.mega-menu-item {
+							text-align: center;
+							border: 2px solid #83D1C3;
+							border-radius: 8px;
+							padding: 10px;
+							transition: transform 0.3s ease, box-shadow 0.3s ease;
+						}
+
+						.mega-menu-item:hover {
+							transform: scale(1.05);
+							box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+						}
+
+						.mega-menu-item img {
+							width: 100px;
+							height: 100px;
+							margin-bottom: 10px;
+						}
+
+						.mega-menu-item a {
+							display: block;
+							font-size: 12px;
+							text-decoration: none;
+							color: #18167A;
+							font-weight: bold;
+						}
+					</style>
+						<!-- Extra Button -->
+						<div class="buttons">
+							<a href="#" class="btn-danger">Devenir Partenaire</a>
+						</div>
+					</div>
+				</div>
+			
+			
+			
+			
+				<!-- JavaScript -->
+				<script>
+					document.addEventListener("DOMContentLoaded", () => {
+						const hamburgerMenu = document.getElementById("hamburger-menu");
+						const menuMobile = document.getElementById("menu-mobile");
+						const closeMenuButton = document.getElementById("close-menu");
+			
+						// Ouvrir le menu mobile en cliquant sur l'icône hamburger
+						hamburgerMenu.addEventListener("click", () => {
+							menuMobile.classList.add("active"); // Affiche le menu
+						});
+			
+						// Fermer le menu mobile en cliquant sur le bouton "X"
+						closeMenuButton.addEventListener("click", () => {
+							menuMobile.classList.remove("active"); // Cache le menu
+						});
+					});
+					// Sélectionner tous les liens du menu
+					const menuLinks = document.querySelectorAll('.menu-mobile ul li a');
+			
+					// Ajouter un écouteur d'événements pour chaque lien
+					menuLinks.forEach(link => {
+						link.addEventListener('click', function (event) {
+							// Supprimer la classe active de tous les liens
+							menuLinks.forEach(link => link.classList.remove('active'));
+			
+							// Ajouter la classe active au lien cliqué
+							event.target.classList.add('active');
+						});
+					});
+					// Sélectionner tous les liens du menu desktop
+					const desktopLinks = document.querySelectorAll('nav ul li a');
+			
+					// Ajouter un écouteur d'événements pour chaque lien
+					desktopLinks.forEach(link => {
+						link.addEventListener('click', function (event) {
+							// Supprimer la classe active de tous les liens
+							desktopLinks.forEach(link => link.classList.remove('active'));
+			
+							// Ajouter la classe active au lien cliqué
+							event.target.classList.add('active');
+						});
+					});
+				</script>
+				<div class="header-text mb-0">
+					<div class="container">
+						<div class="text-center text-white mb-0">
+							<h1>
+								<a href="" class="typewrite" data-period="2000">
+									<span class="wrap">Prise de rendez-vous médical en ligne</span>
+								</a>
+							</h1>
+							<p class="subtext">Rapide, gratuit et sécurisé</p>
+						</div>
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 d-block mx-auto">
+								<div class="item-search-tabs">
+									<div class="item-search-menu">
+										<!-- Menu tabs -->
+										<ul class="nav nav-tabs">
+											<li class="">
+												<a class="active" data-bs-toggle="tab" href="#tab1">
+													<i class="fa fa-user-md"></i> Médecins
+												</a>
+											</li>
+											<li>
+												<a data-bs-toggle="tab" href="#tab2"><i class="fa fa-hospital-o"></i> Cliniques</a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content index-search-select">
+										<div class="tab-pane active" id="tab1">
+											<div class="search-background" style="overflow: visible !important;">
+												<div class="form row no-gutters">
+													<div class="form-group col-xl-4 col-lg-3 col-md-12 mb-0 location"
+														style="position: relative;">
+														<input class="form-control border" id="searchInput"
+															placeholder="Nom du professionnel de santé" type="text">
+														<ul id="suggestions" class="dropdown-menu"></ul>
+													</div>
+													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0 location">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectPays">
+														</select>
+													</div>
+													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0 location">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectVille">
+														</select>
+													</div>
+													<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelect">
+														</select>
+													</div>
+													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0">
+														<a class="btn btn-block btn-orange fs-14"
+															onclick="RechercheDoctor()">
+															<i class="fa fa-search"></i> Rechercher
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+		
+										<style>
+											.row {
+												overflow: visible !important;
+												/* Assurez-vous que les enfants ne soient pas coupés */
+											}
+		
+											#suggestions {
+												position: absolute;
+												top: 100%;
+												left: 0;
+												width: 100%;
+												z-index: 1000;
+												background-color: white;
+												border: 1px solid #ddd;
+												box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+												max-height: 200px;
+												/* Limit the height of the dropdown */
+												overflow-y: auto;
+												/* Add scroll if content exceeds max height */
+											}
+		
+											#suggestions li:hover {
+												background-color: #f5f5f5;
+											}
+										</style>
+		
+										<script>
+											function getDoctorSpec(name1) {
+												console.log("*************************************************: ", name1)
+												console.log("!name1: ", !name1)
+		
+												// Vérifiez si `name` est une chaîne JSON
+												console.log("JSON.stringify(name1): ",JSON.stringify(name1))
+												if (JSON.stringify(name1).trim().startsWith('"[') && JSON.stringify(name1).trim().endsWith(']"')) {
+													console.log("naaaaaaaaaaaaaaaaaaaaaaaaaaame", name1)
+													try {
+		
+														console.log("JSON.parse(data[0].name).fr: ", JSON.parse(JSON.parse(name1)[0].name).fr)
+														return JSON.parse(JSON.parse(name1)[0].name).fr; // Vérifiez si la clé 'fr' existe
+													} catch (error) {
+														console.error("Erreur lors du parsing :", error);
+													}
+												}
+												else {
+													return name1
+												}
+											}
+											function getDoctorName(name) {
+												console.log("*************************************************")
+												// Vérifiez si `name` est une chaîne JSON
+												if (typeof name === 'string' && name.trim().startsWith('{') && name.trim().endsWith('}')) {
+													try {
+														const parsedName = JSON.parse(name); // Tentez de parser le JSON
+														return JSON.parse(name).fr; // Vérifiez si la clé 'fr' existe
+													} catch (error) {
+														console.error("Erreur lors du parsing :", error);
+													}
+												}
+												return name; // Retourne false si ce n'est pas un JSON valide
+											}
+											document.getElementById('searchInput').addEventListener('input', function () {
+		
+												const query = this.value.trim();
+												const suggestionsContainer = document.getElementById('suggestions');
+		
+												// Liste provisoire de médecins
+												let provisionalDoctors
+		
+		
+												if (query.length >= 3) {
+		
+		
+													//console.log("apiUrl: ", apiUrl)
+													try {
+														fetch(`https://wic-doctor.com:3004/search-doctors-france?query=${query.toLowerCase()}`)
+															.then(response => {
+																if (!response.ok) {
+																	throw new Error('Erreur lors de la récupération des catégories');
+																}
+																return response.json();
+															})
+															.then(data => {
+																console.log("doctors: ", data);
+																provisionalDoctors = data.data;
+																// Effacez les suggestions précédentes
+																suggestionsContainer.innerHTML = '';
+		
+																// Filtrez les médecins en fonction du texte saisi
+																const filteredDoctors = provisionalDoctors.filter(doctor =>
+																	doctor.name.toLowerCase().includes(query.toLowerCase())
+																);
+		
+																// Ajoutez les suggestions correspondantes
+																if (filteredDoctors.length === 0) {
+																	const li = document.createElement('li');
+																	li.textContent = "Pas de doc";  // Message when no doctors match
+																	li.style.padding = "10px";
+																	suggestionsContainer.appendChild(li);
+																} else {
+																	filteredDoctors.forEach(doctor => {
+																		const li = document.createElement('li');
+																		li.textContent = getDoctorName(doctor.name);
+																		li.style.padding = "10px";
+																		li.style.cursor = "pointer";
+																		li.onclick = () => {
+																			console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase())
+																			console.log("doctor.specialities.replace(/\s+/g, '-').toLowerCase(): ", getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase())
+																			console.log("doctor.name.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase())
+																			console.log("", `https://wic-doctor.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
+																			window.location.href = `https://wic-doctor.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
+																			document.getElementById('searchInput').value =  getDoctorName(doctor.name);
+																			suggestionsContainer.style.display = 'none';
+																		};
+																		suggestionsContainer.appendChild(li);
+																	});
+																}
+		
+																// Affichez le menu des suggestions
+																suggestionsContainer.style.display = filteredDoctors.length > 0 ? 'block' : 'none';
+															});
+													} catch (error) {
+														const li = document.createElement('li');
+														li.textContent = "Pas de doc";  // Message when no doctors match
+														li.style.padding = "10px";
+														suggestionsContainer.appendChild(li);
+													}
+		
+		
+		
+		
+												} else {
+													// Masquez le menu si le texte est trop court
+													suggestionsContainer.style.display = 'none';
+												}
+											});
+		
+											// Cacher les suggestions lorsqu'on clique en dehors
+											document.addEventListener('click', function (event) {
+												const input = document.getElementById('searchInput');
+												const suggestions = document.getElementById('suggestions');
+		
+												if (!input.contains(event.target) && !suggestions.contains(event.target)) {
+													suggestions.style.display = 'none';
+												}
+											});
+										</script>
+										<div class="tab-pane" id="tab2">
+											<div class="search-background">
+												<div class="form row no-gutters">
+													<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0 location">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectPaysClinic">
+														</select>
+													</div>
+													<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0 location">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectVilleClinic">
+														</select>
+													</div>
+													<div class="form-group col-xl-4 col-lg-4 col-md-12 mb-0">
+														<select
+															class="form-control select2-show-search border-bottom-0 w-100"
+															data-placeholder="Select" id="dynamicSelectClinic">
+														</select>
+													</div>
+													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0">
+														<a class="btn btn-block btn-orange fs-14" onclick="">
+															<i class="fa fa-search"></i> Rechercher
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+		
+						<!-- Image and floating shapes -->
+						<div class="floating-elements">
+							<!-- Les formes de fond -->
+							<div class="background-shape shape1"></div>
+							<div class="background-shape shape2"></div>
+							<div class="background-shape shape3"></div>
+						
+							<!-- L'image du médecin -->
+							<img src="assets/images/media/doctors/DOC1.png" alt="wic doctor télémedecine" class="doctor-image" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	
+
+		<!--Map-->
+
+		<div class="d-lg-flex">
+			<!-- Conteneur de la liste -->
+			<div class="map-content-width overflow-hidden mh-500 flex-fill">
+				<div class="card mb-0 map-list-card">
+					<div class="card-body p-3">
+						<div class="vscroll mh-500">
+							<div class="p-2" id="clinic"></div>
+
+
+						</div>
+
+
+						</script>
+					</div>
+				</div>
+			</div>
+			<!-- Conteneur de la carte -->
+			<div class="map-width flex-fill">
+
+
+				<style>
+					#map {
+						height: 550px;
+						width: 100%;
+					}
+				</style>
+				</head>
+
+				<body>
+
+
+					<script>
+						let map;
+
+						$(document).ready(function () {
+							initializeMap();
+							fetchDoctors(); // Charger les médecins
+						});
+
+						function initializeMap() {
+							const center = new google.maps.LatLng(36.805772, 10.139989); // Centre de la carte
+							const mapOptions = {
+								zoom: 9,
+								center: center,
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+							};
+							map = new google.maps.Map(document.getElementById('map'), mapOptions);
+						}
+
+						// Fonction pour récupérer les médecins et afficher les marqueurs
+						function fetchDoctors() {
+							$.getJSON('https://wic-doctor.com:3004/api/clinicsparposition', function (data) {
+								$.each(data, function (i, doctor) {
+									const marker = new google.maps.Marker({
+										position: new google.maps.LatLng(doctor.latitude, doctor.longitude),
+										map: map,
+										title: doctor.description
+									});
+
+									// Optionnel : Ajoutez une InfoWindow
+									const content = `
+                <div>
+                    <h3>${JSON.parse(doctor.description).fr}</h3>
+                    <p></p>
+                    
+                </div>`;
+
+									const infowindow = new google.maps.InfoWindow({
+										content: content
+									});
+
+									// Événement click pour ouvrir l'InfoWindow
+									google.maps.event.addListener(marker, 'click', function () {
+										infowindow.open(map, marker);
+									});
+								});
+							}).fail(function () {
+								console.log('Erreur lors de la récupération des clinic pos.');
+							});
+						}
+					</script>
+
+					<div id="map"></div>
+					<div id="doctors"></div>
+
+
+					<script src="assets/js/clinicplusproche.js"></script>
+
+				</body>
+
+</html>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--/Map-->
+
+<!--Breadcrumb-->
+	<!--Footer Section-->
+	<section>
+		<footer class="text-white footer-bg">
+			<div class="footer-main">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-12">
+							<p class="footer-title">À propos </p>
+							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="https://wic-doctor.com/qui-sommes-nous.html">Qui sommes-nous ?</a>
+								</li>
+								<li>
+									<a href="javascript:;">Témoignages</a>
+								</li>
+							
+								<li>
+									<a href="https://wic-doctor.com/FAQ.html">FAQ</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/contact.html">Contactez-nous</a>
+								</li>
+								
+							</ul>
+						</div>
+						<div class="col-lg-3 col-md-12">
+							<p class="footer-title">Trouvez</p>
+							<hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+							<div class="clearfix"></div>
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies & Parapharmacies</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="col-lg-3 col-md-12">
+							<p  class="footer-title">Ressources</p>
+							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="https://wic-doctor.com/pathologies.html">Pathologies</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/intervention.html">Interventions</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/journal-medical.html">Journal Médical</a>
+								</li>
+								<!-- <li>
+									<a href="javascript:;">Forum Médical</a>
+								</li> -->
+								<!-- <li>
+									<a href="javascript:;">La technologie Médicale</a>
+								</li> -->
+
+							</ul>
+						</div>
+						
+					
+						<div class="col-lg-3 col-md-12">
+							<p class="footer-title">Les conditions</p>
+							<hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+							<div class="clearfix"></div>
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="https://wic-doctor.com/Conditions-Générales-de-Vente.html">Conditions générales de vente en ligne</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Conditions-utilisation.html">Conditions d'utilisation</a>
+									</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Politique-de-confidentialité-et-d_utilisation-pour-les-sous-traitants.html">Politique de confidentialité des données personnelles</a>
+									</a>
+								</li>
+								<li>
+									<a href="#">Termes et licences d'utilisation
+									</a>
+								</li>
+								<li>
+									<a href="https://wic-doctor.com/Mentions-légales.html">Mentions légales</a>
+								</li>
+								<!-- <li>
+									<a href="javascript:;">Support technique</a>
+								</li>
+								<li>
+									<a href="javascript:;">Réseaux Sociaux</a>
+								</li> -->
+							</ul>
+						</div>
+						<!-- 	<div class="col-lg-3 col-md-12">
+							<h6>Contact</p>
+							<hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto">
+							<ul class="list-unstyled mb-0 contact-footer">
+								<li>
+									<i class="fa fa-map-marker"></i> 22 S. Rock Creek StreetSan Carlos, Uniontown CA
+									94070, USA
+								</li>
+								<li>
+									<i class="fa fa-envelope "></i>contact@way-interactive-convergence.com
+								</li>
+								<li>
+									<i class="fa fa-phone"></i>+33 2 55 04 55 04
+								</li>
+								<li>
+									<i class="fa fa-print"></i>+ 01 234 567 89
+								</li>
+							</ul>
+						</div> -->
+
+					</div>
+				</div>
+			</div>
+			<div class="text-white p-0">
+				<div class="container">
+					<div class="row d-flex">
+						<div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center">
+							Copyright © 2024 WIC DOCTOR All
+							rights reserved.
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</section>
+	<!--Footer Section-->
+
+<!-- Popup Login-->
+<div class="modal" id="exampleModal">
+	<div class="modal-dialog modal-lg modal-appoint" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Make an Appointment</h5><button aria-label="Close"
+					class="close" data-bs-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="form-label">Your Name</label>
+							<input class="form-control" placeholder="Enter Your Name" type="text">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="form-label">Your Email</label>
+							<input class="form-control" placeholder="Enter your Email" type="email">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="form-label">Your Number</label>
+							<input class="form-control" placeholder="Enter your Phone Number" type="number">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="form-label">Select Gender</label>
+							<select class="form-control select2" name="user[hour]">
+								<option value="">Male</option>
+								<option value="0">Female</option>
+								<option value="1">Others</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="form-label">Select Date</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<i class="fa fa-calendar tx-16 lh-0 op-6"></i>
+									</div>
+								</div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="form-label">Select City</label>
+							<select class="form-control form-select select2-show-search" name="city">
+								<option selected value="0">Select City</option>
+								<option value="1">Hyderabad</option>
+								<option value="2">Mumbai</option>
+								<option value="3">Delhi</option>
+								<option value="4">Bangalore</option>
+								<option value="5">Ahmedabad</option>
+								<option value="6">Chennai</option>
+								<option value="7">Kolkata</option>
+								<option value="8">Lucknow</option>
+								<option value="9">Jaipur</option>
+								<option value="10">Bhopal</option>
+								<option value="11">Visakhapatnam</option>
+								<option value="12">Patna</option>
+								<option value="13">Srinagar</option>
+								<option value="14">Lucknow</option>
+								<option value="15">Bhubaneswar</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="form-label">Select Hospital</label>
+							<select class="form-control form-select select2-show-search" name="Hospital">
+								<option selected value="0">Select Hospital</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="form-label">Select Specialist</label>
+							<select class="form-control form-select select2-show-search" name="Specialist">
+								<option selected value="0">Select Specialist</option>
+								<option value="1">Cardiologist</option>
+								<option value="2">Neurosurgeon</option>
+								<option value="3">Orthopaedic Surgeon</option>
+								<option value="4">Oncologist</option>
+								<option value="5">Neurologist</option>
+								<option value="6">Gastroenterologist</option>
+								<option value="7">ENT</option>
+								<option value="8">Dentist</option>
+								<option value="9">Psychiatrist</option>
+								<option value="10">Urologist</option>
+								<option value="11">Gynecologist</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="form-label">Select Slot</label>
+							<select class="form-control form-select select2-show-search" name="Slot">
+								<option selected value="0">Select Hospital</option>
+								<option value="1">Moring</option>
+								<option value="2">Afternoon</option>
+								<option value="3">Evening</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="">
+					<a class="btn btn-orange btn-block" href="javascript:void(0);">Book Appointment</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Popup Login-->
+
+<!-- Back to top -->
+<a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+<!-- JQuery js-->
+<script src="assets/js/jquery.min.js"></script>
+
+<!-- Bootstrap js -->
+<script src="assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!--JQueryVehiclerkline Js-->
+<script src="assets/js/jquery.sparkline.min.js"></script>
+
+<!-- Circle Progress Js-->
+<script src="assets/js/circle-progress.min.js"></script>
+
+<!-- P-scroll bar Js-->
+<script src="assets/plugins/pscrollbar/pscrollbar.js"></script>
+<script src="assets/plugins/pscrollbar/p-scroll-1.js"></script>
+
+<!-- Star Rating Js-->
+<script src="assets/plugins/rating/jquery.rating-stars.js"></script>
+
+<!--Owl Carousel js -->
+<script src="assets/plugins/owl-carousel/owl.carousel.js"></script>
+
+<!--Horizontal Menu-->
+<script src="assets/plugins/horizontal/horizontal.js"></script>
+
+<!--JQuery TouchSwipe js-->
+<script src="assets/js/jquery.touchSwipe.min.js"></script>
+
+<!--Select2 js -->
+<script src="assets/plugins/select2/select2.full.min.js"></script>
+<script src="assets/js/select2.js"></script>
+
+<!-- Cookie js -->
+<script src="assets/plugins/cookie/jquery.ihavecookies.js"></script>
+<script src="assets/plugins/cookie/cookie.js"></script>
+
+<!-- Ion.RangeSlider -->
+<script src="assets/plugins/jquery-uislider/jquery-ui.js"></script>
+
+<!-- Datepicker js -->
+<script src="assets/plugins/date-picker/spectrum.js"></script>
+<script src="assets/plugins/date-picker/jquery-ui.js"></script>
+<script src="assets/plugins/date-picker/datepicker.js"></script>
+<!--Cryptojs-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<!--js cLiniques-->
+<script src="assets/js/result-clinique.js"></script>
+<!--Map js -->
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyCW16SmpzDNLsrP-npQii6_8vBu_EJvEjA"></script>
+<script src="assets/plugins/map/jquery.axgmap.js"></script>
+
+<!-- Nice-Select Js-->
+<script src="assets/plugins/jquery-nice-select/js/jquery.nice-select.js"></script>
+<script src="assets/plugins/jquery-nice-select/js/nice-select.js"></script>
+
+<!-- sticky Js-->
+<script src="assets/js/sticky.js"></script>
+<!--Cryptojs-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<!--Showmore Js-->
+<script src="assets/js/jquery.showmore.js"></script>
+<script src="assets/js/showmore.js"></script>
+<script src="assets/js/recherche.js"></script>
+
+<!--Owl-Carousel Js-->
+<script src="assets/js/owl-carousel.js"></script>
+<!-- Typewritter Js-->
+<script src="assets/js/typewritter.js"></script>
+<!-- Typewritter Js-->
+<script src="assets/js/typewritter.js"></script>
+<!-- Theme-color js -->
+<script src="assets/js/themeColors.js"></script>
+
+<!-- Custom Js-->
+<script src="assets/js/custom.js"></script>
+
+<!-- switcher-custom js -->
+<script src="assets/js/switcher-custom.js"></script>
+
+</body>
+
+</html>
