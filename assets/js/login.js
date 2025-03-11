@@ -192,7 +192,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
 
     try {
         // Send POST request to the API
-        const response = await fetch('https://fr.wiccrm.com:3004/api/login', {
+        const response = await fetch('https://wic-doctor.com:3004/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -227,7 +227,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                 if (sessionStorage.getItem("rdv")) {
                     if (sessionStorage.getItem("rdv") == 0) {
                         // Appeler l'API
-                        fetch("https://fr.wiccrm.com:3004/ajouterrendezvous", requestOptions)
+                        fetch("https://wic-doctor.com:3004/ajouterrendezvous", requestOptions)
                             .then(response => {
 
                                 if (!response.ok) {
@@ -261,7 +261,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                     }
                     else {
                         // Appeler l'API
-                        fetch("https://fr.wiccrm.com:3004/ajouterrendezvoustele", requestOptions)
+                        fetch("https://wic-doctor.com:3004/ajouterrendezvoustele", requestOptions)
                             .then(response => {
 
                                 if (!response.ok) {
@@ -301,7 +301,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                     body: JSON.stringify(rendezvousClinic) // Convertir l'objet en chaîne JSON
                 };
                 // Appeler l'API
-                fetch("https://fr.wiccrm.com:3004/ajouterrendezvousclinic", requestOptions)
+                fetch("https://wic-doctor.com:3004/ajouterrendezvousclinic", requestOptions)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Erreur lors de l\'envoi des données');

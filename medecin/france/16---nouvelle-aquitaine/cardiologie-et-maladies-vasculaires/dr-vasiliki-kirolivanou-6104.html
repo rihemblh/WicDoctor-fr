@@ -455,7 +455,7 @@
 				const emailInput = document.getElementById('email-new'); // Référence au champ input
 				const emailError = document.getElementById('email-error'); // Message d'erreur
 				const emailValue = emailInput.value.trim(); // Récupérer la valeur et supprimer les espaces
-				const apiUrl = 'https://fr.wiccrm.com:3004/send-News'; // Remplacez par l'URL de votre API
+				const apiUrl = 'https://wic-doctor.com:3004/send-News'; // Remplacez par l'URL de votre API
 
 				if (emailValue) {
 					// Création de l'objet JSON
@@ -862,7 +862,7 @@
 		let object = {}
 		let rdv = 0
 		function ConfirmerRedezvous() {
-			apiurl = `https://fr.wiccrm.com:3004/send-doctor-details/${Detailsdoctors.doctor_id}`
+			apiurl = `https://wic-doctor.com:3004/send-doctor-details/${Detailsdoctors.doctor_id}`
 			fetch(apiurl)
 			.then(response => {
 				if (!response.ok) {
@@ -879,7 +879,7 @@
 			
 		}
 		//console.log("sessionStorage.getItem('dataDetails'): ", decryptData(sessionStorage.getItem('dataDetails')))
-		fetch('https://fr.wiccrm.com:3004/getdocbyid-france/6104')
+		fetch('https://wic-doctor.com:3004/getdocbyid-france/6104')
 			.then(response => {
 				if (!response.ok) {
 					throw new Error('Erreur lors de la récupération des catégories');
@@ -1220,7 +1220,7 @@ ${textImg}
 				//document.body.appendChild(script);
 				//${Detailsdoctors.doctor_id}
 				console.log("Detailsdoctors.specialite[0].id ", Detailsdoctors.specialite[0])
-				fetch(`https://fr.wiccrm.com:3004/getmotif?specialite_id=${Detailsdoctors.specialite[0].id}&doctor_id=${Detailsdoctors.doctor_id}`)
+				fetch(`https://wic-doctor.com:3004/getmotif?specialite_id=${Detailsdoctors.specialite[0].id}&doctor_id=${Detailsdoctors.doctor_id}`)
 					.then(response => {
 						if (!response.ok) {
 							throw new Error('Erreur lors de la récupération des catégories');
@@ -1296,7 +1296,7 @@ ${textImg}
 				else {
 					console.log("téléonsultation")
 
-					fetch(`https://fr.wiccrm.com:3004/gettempsteleconsultation?doctor_id=${Detailsdoctors.doctor_id}`)
+					fetch(`https://wic-doctor.com:3004/gettempsteleconsultation?doctor_id=${Detailsdoctors.doctor_id}`)
 						.then(response => {
 							if (!response.ok) {
 								throw new Error('Erreur lors de la récupération des créneaux');
@@ -1325,7 +1325,7 @@ ${textImg}
 				}
 
 				/* // Fetching slots data for the doctor
-				fetch(`https://fr.wiccrm.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
+				fetch(`https://wic-doctor.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
 					.then(response => {
 						if (!response.ok) {
 							throw new Error('Erreur lors de la récupération des créneaux');

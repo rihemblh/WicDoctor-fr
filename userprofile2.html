@@ -436,7 +436,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 	
 												//console.log("apiUrl: ", apiUrl)
 												try {
-													fetch(`https://fr.wiccrm.com:3004/search-doctors-france?query=${query.toLowerCase()}`)
+													fetch(`https://wic-doctor.com:3004/search-doctors-france?query=${query.toLowerCase()}`)
 														.then(response => {
 															if (!response.ok) {
 																throw new Error('Erreur lors de la récupération des catégories');

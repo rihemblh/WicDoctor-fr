@@ -353,7 +353,7 @@
 
 											//console.log("apiUrl: ", apiUrl)
 											try {
-												fetch(`https://fr.wiccrm.com:3004/search-doctors?query=${query.toLowerCase()}`)
+												fetch(`https://wic-doctor.com:3004/search-doctors?query=${query.toLowerCase()}`)
 													.then(response => {
 														if (!response.ok) {
 															throw new Error('Erreur lors de la récupération des catégories');
@@ -520,7 +520,7 @@
 		</div>
 	</section>
 	<script>
-		let apiUrlblog = 'https://fr.wiccrm.com:3004/blogs/137'
+		let apiUrlblog = 'https://wic-doctor.com:3004/blogs/137'
 		let href = ""
 		fetchCarouselData5();
 
@@ -667,7 +667,7 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
 				const emailInput = document.getElementById('email-new'); // Référence au champ input
 				const emailError = document.getElementById('email-error'); // Message d'erreur
 				const emailValue = emailInput.value.trim(); // Récupérer la valeur et supprimer les espaces
-				const apiUrl = 'https://fr.wiccrm.com:3004/send-News'; // Remplacez par l'URL de votre API
+				const apiUrl = 'https://wic-doctor.com:3004/send-News'; // Remplacez par l'URL de votre API
 
 				if (emailValue) {
 					// Création de l'objet JSON
@@ -993,8 +993,8 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
 
 	<script>
 		function getCities() {
-			//console.log("https://fr.wiccrm.com:3004/cities/")
-			fetch('https://fr.wiccrm.com:3004/cities/')
+			//console.log("https://wic-doctor.com:3004/cities/")
+			fetch('https://wic-doctor.com:3004/cities/')
 				.then(response => {
 					if (!response.ok) {
 						throw new Error('Erreur lors de la récupération des catégories');
@@ -1145,7 +1145,7 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
 
 
 		// URL de base pour l'API
-		const apiBaseUrl = "https://fr.wiccrm.com:3004/doctorsadd-france?";
+		const apiBaseUrl = "https://wic-doctor.com:3004/doctorsadd-france?";
 		const currentPath = "https://fr.wiccrm.com/";
 		const secretKey = "maCleSecrete"; // Clé secrète pour le décryptage
 		let ListeDoctors = [];

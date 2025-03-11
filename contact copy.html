@@ -481,7 +481,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const formJSON = JSON.stringify(formObject);
 
     // Envoi des données via l'API avec fetch
-    fetch('https://fr.wiccrm.com:3004/send-email', {
+    fetch('https://wic-doctor.com:3004/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

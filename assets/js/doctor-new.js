@@ -1,4 +1,4 @@
-const apiUrl = 'https://fr.wiccrm.com:3004/specialtiesfrance';
+const apiUrl = 'https://wic-doctor.com:3004/specialtiesfrance';
 const secretKey = "maCleSecrete";
  // Fonction pour crypter
  function encryptData(data) {
@@ -111,7 +111,7 @@ $(document).ready(function() {
 	fetchCarouselDataSpecialities();
 });
 
-const apiUrl2 = 'https://fr.wiccrm.com:3004/affalldoctors-france';
+const apiUrl2 = 'https://wic-doctor.com:3004/affalldoctors-france';
 
 
 async function fetchCarouselData2() {
@@ -240,7 +240,7 @@ function GetDetailsDoctor(doctorecrypted,typeRDV,aleatoire){
 $(document).ready(function() {
 	fetchCarouselData5();
   });
-let apiUrlblog= 'https://fr.wiccrm.com:3004/blogs'
+let apiUrlblog= 'https://wic-doctor.com:3004/blogs'
 let href=""
 async function fetchCarouselData5() {
   try {

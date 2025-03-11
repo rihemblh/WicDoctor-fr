@@ -15,7 +15,7 @@ if (sessionStorage.getItem("rdv")) {
     if (sessionStorage.getItem("rdv") == 0) {
         console.log("rendez-vous")
         // Fetching slots data for the doctor
-        fetch(`https://fr.wiccrm.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
+        fetch(`https://wic-doctor.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erreur lors de la récupération des créneaux');
@@ -31,7 +31,7 @@ if (sessionStorage.getItem("rdv")) {
     else {
         console.log("téléonsultation")
 
-        fetch(`https://fr.wiccrm.com:3004/gettempsteleconsultation?doctor_id=${Detailsdoctors.doctor_id}`)
+        fetch(`https://wic-doctor.com:3004/gettempsteleconsultation?doctor_id=${Detailsdoctors.doctor_id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erreur lors de la récupération des créneaux');
@@ -46,7 +46,7 @@ if (sessionStorage.getItem("rdv")) {
     }
 }
 /* // Fetching slots data for the doctor
-fetch(`https://fr.wiccrm.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
+fetch(`https://wic-doctor.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Erreur lors de la récupération des créneaux');
@@ -250,12 +250,12 @@ function ConfirmerRedezvous() {
         console.log("add")
         if (sessionStorage.getItem("rdv")) {
             if (sessionStorage.getItem("rdv") == 0) {
-                apiurl = "https://fr.wiccrm.com:3004/ajouterrendezvous"
+                apiurl = "https://wic-doctor.com:3004/ajouterrendezvous"
                 object = Object.assign(object, { "motif_id": motifSelect })
 
             }
             else {
-                apiurl = "https://fr.wiccrm.com:3004/ajouterrendezvoustele"
+                apiurl = "https://wic-doctor.com:3004/ajouterrendezvoustele"
                 //object = Object.assign(object, { "motif_id": motifSelect })
 
 
@@ -266,7 +266,7 @@ function ConfirmerRedezvous() {
         console.log("edit")
         object = Object.assign({ "end_at": object.ends_at }, { "start_at": object.start_at }, { "patern_id": motifSelect })
         console.log("decryptData(sessionStorage.getItem('id')", decryptData(sessionStorage.getItem("id")))
-        apiurl = `https://fr.wiccrm.com:3004/updateappointement/${decryptData(sessionStorage.getItem("id"))}`
+        apiurl = `https://wic-doctor.com:3004/updateappointement/${decryptData(sessionStorage.getItem("id"))}`
     }
     console.log('apiurl: ', apiurl)
     encryptedData = encryptData(object);

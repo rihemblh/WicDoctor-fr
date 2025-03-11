@@ -1,4 +1,4 @@
-let apiUrl= 'https://fr.wiccrm.com:3004/blogs'
+let apiUrl= 'https://wic-doctor.com:3004/blogs'
 let href=""
 async function fetchblogs() {
 try {

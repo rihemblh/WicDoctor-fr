@@ -18,8 +18,8 @@ Detailsclinic = decryptData(sessionStorage.getItem('dataC'));
 console.log("Detailsclinic: ", Detailsclinic)
 appointment = Object.assign(appointment, { clinic_id: Detailsclinic.clinic_id })
 document.getElementById('titre').textContent = JSON.parse(Detailsclinic.clinic_name).fr
-apiurl = `https://fr.wiccrm.com:3004/getspecialitiesparclinics/19}`
-console.log(`https://fr.wiccrm.com:3004/getspecialitiesparclinics/${Detailsclinic.clinic_id}`)
+apiurl = `https://wic-doctor.com:3004/getspecialitiesparclinics/19}`
+console.log(`https://wic-doctor.com:3004/getspecialitiesparclinics/${Detailsclinic.clinic_id}`)
 // Fetch the data using the constructed URL
 fetch(apiurl)
 	.then(response => {
@@ -224,8 +224,8 @@ function getSelectedSpeciality() {
 	if (selectedSpeciality) {
 		console.log("Selected speciality:", selectedSpeciality.value, selectedSpeciality); // Log the selected value
 		Speciality = selectedSpeciality.value
-		console.log(`https://fr.wiccrm.com:3004/patternsclinic/${Detailsclinic.clinic_id}/${selectedSpeciality.value}`)
-		fetch(`https://fr.wiccrm.com:3004/patternsclinic/${Detailsclinic.clinic_id}/${selectedSpeciality.value}`)
+		console.log(`https://wic-doctor.com:3004/patternsclinic/${Detailsclinic.clinic_id}/${selectedSpeciality.value}`)
+		fetch(`https://wic-doctor.com:3004/patternsclinic/${Detailsclinic.clinic_id}/${selectedSpeciality.value}`)
 			.then(response => {
 				if (!response.ok) {
 					throw new Error('Erreur lors de la récupération des données des Pattern clinic');
@@ -263,8 +263,8 @@ function getSelectedPatern() {
 
 	if (selectedPatern) {
 		appointment = Object.assign(appointment, { motif_id: selectedPatern.value })
-		console.log("Selected Pattern:", selectedPatern.value, selectedPatern, `https://fr.wiccrm.com:3004/doctorsspeciality/${Speciality}/${Detailsclinic.clinic_id}/${selectedPatern.value}`); // Log the selected value
-		fetch(`https://fr.wiccrm.com:3004/doctorsspeciality/${Speciality}/${Detailsclinic.clinic_id}/${selectedPatern.value}`)
+		console.log("Selected Pattern:", selectedPatern.value, selectedPatern, `https://wic-doctor.com:3004/doctorsspeciality/${Speciality}/${Detailsclinic.clinic_id}/${selectedPatern.value}`); // Log the selected value
+		fetch(`https://wic-doctor.com:3004/doctorsspeciality/${Speciality}/${Detailsclinic.clinic_id}/${selectedPatern.value}`)
 			.then(response => {
 				if (!response.ok) {
 					throw new Error('Erreur lors de la récupération des données des doctor clinic');
@@ -325,8 +325,8 @@ function selectDoctor(index) {
 	// Store the selected doctor data
 	selectedDoctor = Doctordispo[index];
 	appointment = Object.assign(appointment, { doctor_id: selectedDoctor.doctor_id })
-	console.log(`https://fr.wiccrm.com:3004/availability/${Detailsclinic.clinic_id}/${selectedDoctor.doctor_id}`)
-	fetch(`https://fr.wiccrm.com:3004/availability/${Detailsclinic.clinic_id}/${selectedDoctor.doctor_id}`)
+	console.log(`https://wic-doctor.com:3004/availability/${Detailsclinic.clinic_id}/${selectedDoctor.doctor_id}`)
+	fetch(`https://wic-doctor.com:3004/availability/${Detailsclinic.clinic_id}/${selectedDoctor.doctor_id}`)
 		.then(response => {
 			if (!response.ok) {
 				throw new Error('Erreur lors de la récupération des données des availability clinic');
@@ -539,7 +539,7 @@ function Confirm() {
 			body: JSON.stringify(rendezvousClinic) // Convertir l'objet en chaîne JSON
 		};
 		// Appeler l'API
-		fetch("https://fr.wiccrm.com:3004/ajouterrendezvousclinic", requestOptions)
+		fetch("https://wic-doctor.com:3004/ajouterrendezvousclinic", requestOptions)
 			.then(response => {
 				if (!response.ok) {
 					throw new Error('Erreur lors de l\'envoi des données');

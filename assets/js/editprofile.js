@@ -161,7 +161,7 @@ document.getElementById("updateProfileButton").addEventListener("click", async (
     if (nomAssurance) updatedProfile.assurance = nomAssurance;
     console.log("updatedProfile: ", JSON.stringify(updatedProfile))
     try {
-        const response = await fetch(`https://fr.wiccrm.com:3004/update/patient/${patientId}`, {
+        const response = await fetch(`https://wic-doctor.com:3004/update/patient/${patientId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

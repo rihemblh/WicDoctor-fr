@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Récupérer les données depuis l'API et créer les <optgroup>
-  fetch('https://fr.wiccrm.com:3004/specialtiesfrance')
+  fetch('https://wic-doctor.com:3004/specialtiesfrance')
     .then(response => {
       if (!response.ok) {
         throw new Error('Erreur lors de la récupération des catégories');
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Récupérer les départements depuis l'API
-  fetch('https://fr.wiccrm.com:3004/getdepartements')
+  fetch('https://wic-doctor.com:3004/getdepartements')
     .then(response => {
       if (!response.ok) {
         throw new Error('Erreur lors de la récupération des départements');
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(departementsData => {
       // Récupérer les régions depuis l'API
-      fetch('https://fr.wiccrm.com:3004/getregions')
+      fetch('https://wic-doctor.com:3004/getregions')
         .then(response => {
           if (!response.ok) {
             throw new Error('Erreur lors de la récupération des régions');
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('Erreur de récupération des départements:', error);
     });
   // Récupérer les données depuis l'API et créer les <optgroup>
-  /*  fetch('https://fr.wiccrm.com:3004/getdepartements')
+  /*  fetch('https://wic-doctor.com:3004/getdepartements')
    .then(response => {
      if (!response.ok) {
        throw new Error('Erreur lors de la récupération des catégories');
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
      selectclinic.appendChild(optgroupclinic);
  
    });
-   fetch('https://fr.wiccrm.com:3004/getregions')
+   fetch('https://wic-doctor.com:3004/getregions')
    .then(response => {
      if (!response.ok) {
        throw new Error('Erreur lors de la récupération des catégories');
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
      selectclinic.appendChild(optgroupclinic);
  
    }); */
-  /* fetch('https://fr.wiccrm.com:3004/getvilles')
+  /* fetch('https://wic-doctor.com:3004/getvilles')
     .then(response => {
       if (!response.ok) {
         throw new Error('Erreur lors de la récupération des catégories');
@@ -436,7 +436,7 @@ function Deconexion() {
   };
   ////console.log("Login.token: ",Login.token)
   // Appeler l'API
-  fetch("https://fr.wiccrm.com:3004/logout", requestOptions)
+  fetch("https://wic-doctor.com:3004/logout", requestOptions)
     .then(response => {
       if (!response.ok) {
         throw new Error('Erreur lors de l\'envoi des données');
@@ -492,7 +492,7 @@ function RechercheDoctor() {
 
 
   var ListeDoctors
-  var apiurlSearch = "https://fr.wiccrm.com:3004/doctorsadd?"
+  var apiurlSearch = "https://wic-doctor.com:3004/doctorsadd?"
   var objectTitle = {}
   let currentPath = "https://fr.wiccrm.com/"
   ////console.log("currentPath: ", currentPath)
@@ -603,7 +603,7 @@ function RechercheDoctor() {
 
 }
 // Récupérer les données depuis l'API et créer les <optgroup>
-fetch('https://fr.wiccrm.com:3004/specialtiesfrance')
+fetch('https://wic-doctor.com:3004/specialtiesfrance')
   .then(response => {
     if (!response.ok) {
       throw new Error('Erreur lors de la récupération des catégories');
@@ -686,7 +686,7 @@ function RechercheClinic() {
 
 
   var ListeClinics
-  var apiurlSearch = "https://fr.wiccrm.com:3004/getclinicsspcitypay?"
+  var apiurlSearch = "https://wic-doctor.com:3004/getclinicsspcitypay?"
 
   if (specialtyIdClinic != "") {
     params.append('speciality_id', specialtyIdClinic);
@@ -739,7 +739,7 @@ function decryptData(cipherText) {
 }
 function SearchSpecialities(id, name) {
   ////console.log("id: ", id)
-  var apiurlSearch = "https://fr.wiccrm.com:3004/doctorsadd?"
+  var apiurlSearch = "https://wic-doctor.com:3004/doctorsadd?"
   const params = new URLSearchParams();
   let currentPath = decryptData(sessionStorage.getItem('origin'))
   ////console.log("currentPath: ", currentPath)
@@ -783,7 +783,7 @@ function toggleDropdown() {
   dropdownMenu.classList.toggle("show");
 }
 // Récupérer les données depuis l'API et créer les <optgroup>
-/* fetch('https://fr.wiccrm.com:3004/specialtiesfrance')
+/* fetch('https://wic-doctor.com:3004/specialtiesfrance')
   .then(response => {
     if (!response.ok) {
       throw new Error('Erreur lors de la récupération des catégories');
@@ -841,7 +841,7 @@ function toggleDropdown() {
     selectclinic.appendChild(optgroupclinic);
 
   }); */
-/* fetch('https://fr.wiccrm.com:3004/getvilles')
+/* fetch('https://wic-doctor.com:3004/getvilles')
   .then(response => {
     if (!response.ok) {
       throw new Error('Erreur lors de la récupération des catégories');
@@ -946,7 +946,7 @@ const populateSelect = (selectId) => {
 populateSelect('dynamicSelectVille');
 populateSelect('dynamicSelectVilleClinic');
 
-fetch('https://fr.wiccrm.com:3004/getpays')
+fetch('https://wic-doctor.com:3004/getpays')
   .then(response => {
     if (!response.ok) {
       throw new Error('Erreur lors de la récupération des catégories');

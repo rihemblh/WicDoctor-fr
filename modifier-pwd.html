@@ -620,7 +620,7 @@ if (authData) {
 console.log("data; ",JSON.stringify(data))
 					try {
 						// Appel API avec fetch
-						const response = await fetch('https://fr.wiccrm.com:3004/reset-password', {
+						const response = await fetch('https://wic-doctor.com:3004/reset-password', {
 							method: 'POST',
 							headers: {
 								'Content-Type': 'application/json',
@@ -681,7 +681,7 @@ console.log("data; ",JSON.stringify(data))
 				const emailInput = document.getElementById('email-new'); // Référence au champ input
 				const emailError = document.getElementById('email-error'); // Message d'erreur
 				const emailValue = emailInput.value.trim(); // Récupérer la valeur et supprimer les espaces
-				const apiUrl = 'https://fr.wiccrm.com:3004/send-News'; // Remplacez par l'URL de votre API
+				const apiUrl = 'https://wic-doctor.com:3004/send-News'; // Remplacez par l'URL de votre API
 
 				if (emailValue) {
 					// Création de l'objet JSON
