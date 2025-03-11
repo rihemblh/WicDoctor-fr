@@ -11,7 +11,7 @@ async function loadPage(page) {
     const offset = (page - 1) * limit;
 
     try {                            
-        const response = await fetch(`https://wic-doctor.com:3004/getannuaire?limit=${limit}&offset=${offset}`);
+        const response = await fetch(`https://fr.wiccrm.com:3004/getannuaire?limit=${limit}&offset=${offset}`);
         const data = await response.json();
 
         // Afficher les résultats

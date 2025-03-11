@@ -245,7 +245,7 @@ script.src = 'assets/js/recherche.js';
 document.body.appendChild(script);
 //${Detailsdoctors.doctor_id}
 console.log("Detailsdoctors.specialities[0].id ", Detailsdoctors.specialities[0])
-fetch(`https://wic-doctor.com:3004/getmotif?specialite_id=${Detailsdoctors.specialities[0].id}&doctor_id=${Detailsdoctors.doctor_id}`)
+fetch(`https://fr.wiccrm.com:3004/getmotif?specialite_id=${Detailsdoctors.specialities[0].id}&doctor_id=${Detailsdoctors.doctor_id}`)
 	.then(response => {
 		if (!response.ok) {
 			throw new Error('Erreur lors de la récupération des catégories');

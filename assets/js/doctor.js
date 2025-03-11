@@ -1,4 +1,4 @@
-const apiUrl = 'https://wic-doctor.com:3004/specialtiesfrance';
+const apiUrl = 'https://fr.wiccrm.com:3004/specialtiesfrance';
 const secretKey = "maCleSecrete";
 // Fonction pour crypter
 function encryptData(data) {
@@ -10,18 +10,18 @@ function decryptData(cipherText) {
 	const bytes = CryptoJS.AES.decrypt(cipherText, secretKey);
 	return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 }
-var currentPath = "https://wic-doctor.com/";
-console.log("currentPath: ", currentPath)
+var currentPath = "https://fr.wiccrm.com/";
+//console.log("currentPath: ", currentPath)
 let url = currentPath
 const indexPosition = url.indexOf("index");
 
 if (indexPosition !== -1) {
 	// Extrait la partie de l'URL à partir de "index"
 	const extractedPart = url.substring(0, indexPosition);
-	console.log(extractedPart);
+	//console.log(extractedPart);
 	url = extractedPart;
 } else {
-	console.log("Le mot 'index' n'est pas trouvé dans l'URL.");
+	//console.log("Le mot 'index' n'est pas trouvé dans l'URL.");
 
 }
 const encryptedData = encryptData(url);
@@ -30,7 +30,7 @@ async function fetchCarouselDataSpecialities() {
 	try {
 		const response = await fetch(apiUrl);
 		const data = await response.json();
-		//console.log("List Spécialité: ",data)
+		////console.log("List Spécialité: ",data)
 		createCarousel(data);
 
 	} catch (error) {
@@ -43,7 +43,7 @@ function createCarousel(data) {
 	const carousel = $('#carouselSpecialities');
 	carousel.empty(); // Vider le conteneur avant d'ajouter de nouveaux éléments
 	data.forEach(item => {
-		//console.log ("icon specialité: ",item.icon)
+		////console.log ("icon specialité: ",item.icon)
 
 		const carouselItem = ` <div class="item">
 						  <div class="card">
@@ -109,7 +109,7 @@ function initializeOwlCarousel() {
 		}
 	})
 	const cards = document.querySelectorAll("#carouselSpecialities .card");
-	console.log("*************************************************************************cards: ", cards)
+	//console.log("*************************************************************************cards: ", cards)
 
 	const colors = [
 		["#daedf7", "#eef2fe"], // Rose Framboise doux  
@@ -130,7 +130,7 @@ $(document).ready(function () {
 
 });
 
-const apiUrl2 = 'https://wic-doctor.com:3004/affalldoctors-france';
+const apiUrl2 = 'https://fr.wiccrm.com:3004/affalldoctors-france';
 
 
 async function fetchCarouselData2() {
@@ -149,19 +149,19 @@ function createCarouselDoctors(data) {
 	const carousel = $('#carouselDoctors');
 	carousel.empty(); // Vider le conteneur avant d'ajouter de nouveaux éléments
 	data.forEach(item => {
-		console.log("item: ", item)
-		//console.log("item.doctor_photo.data: ",item.doctor_photo.data)
+		//console.log("item: ", item)
+		////console.log("item.doctor_photo.data: ",item.doctor_photo.data)
 
-		//console.log("blob: ",blob)
+		////console.log("blob: ",blob)
 
 		// Chiffrement de l'objet doctor
 		const encryptedData = encryptData(item);
-		console.log("Données chiffrées : ", encryptedData);
+		//console.log("Données chiffrées : ", encryptedData);
 
 		const photos = item.doctor_photo || "assets/images/media/doctors/doctor.png";
-		console.log("********************************************************photots doc: ", photos)
+		//console.log("********************************************************photots doc: ", photos)
 		const carouselItem = ` 	<div class="card mb-0" >
-	<a class="text-dark" onclick="GetDetailsDoctor('${encryptedData}',0,${item.aleatoire})" href="https://wic-doctor.com/medecin/tunisie/${JSON.parse(item.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(item.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${JSON.parse(item.name).fr.replace(/\s+/g, '-').toLowerCase()}-${item.aleatoire}.html">
+	<a class="text-dark" onclick="GetDetailsDoctor('${encryptedData}',0,${item.aleatoire})" href="https://fr.wiccrm.com/medecin/france/${JSON.parse(item.Département).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(item.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(item.name).replace(/\s+/g, '-').toLowerCase()}-${item.aleatoire}.html">
 		<div class="card-body padding-body" style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); border-radius: 15px;">
 			<div class="team-section text-center" style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); border-radius: 15px;padding-top: 10%;">
 				<div class="team-img">
@@ -178,8 +178,8 @@ function createCarouselDoctors(data) {
 					<div class="mb-0 mt-0">
 						<ul class="item-card-features mb-0">
 							<li class="mb-0" style="width: 100% !important"><span class="text-muted"><i
-										class="fa fa-map-marker me-1"></i>${JSON.parse(item.gouvernorat).fr} ,
-									${JSON.parse(item.ville).fr}</span></li>
+										class="fa fa-map-marker me-1"></i>${JSON.parse(item.Département).fr} ,
+									${JSON.parse(item.Région).fr}</span></li>
 							<!-- <li><span class="text-muted "><i class="fa fa-briefcase me-1"></i>${item.title} expérience</span></li> -->
 						</ul>
 					</div>
@@ -246,12 +246,11 @@ $(document).ready(function () {
 });
 function GetDetailsDoctor(doctorecrypted, typeRDV, aleatoire) {
 	sessionStorage.setItem("dataDetails", doctorecrypted)
-	console.log("decryptData: ", decryptData(doctorecrypted))
-	doc = decryptData(doctorecrypted)
+	//console.log("decryptData: ", decryptData(doctorecrypted))
+	item = decryptData(doctorecrypted)
 	sessionStorage.setItem("status", "add")
 	sessionStorage.setItem("rdv", typeRDV)
-	console.log("url: ", `https://wic-doctor.com/medecin/tunisie/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(doc.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${JSON.parse(doc.name).fr.replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
-	window.location.href = `https://wic-doctor.com/medecin/tunisie/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(doc.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${JSON.parse(doc.name).fr.replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
+	window.location.href = `https://fr.wiccrm.com/medecin/france/${JSON.parse(item.Département).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(item.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(item.name).replace(/\s+/g, '-').toLowerCase()}-${item.aleatoire}.html`; // Rediriger vers la page 2
 	// window.location.href = 'prise-de-rendez-vous.html'; // Rediriger vers la page 2
 }
 
@@ -259,13 +258,13 @@ function GetDetailsDoctor(doctorecrypted, typeRDV, aleatoire) {
 $(document).ready(function () {
 	fetchCarouselData5();
 });
-let apiUrlblog = 'https://wic-doctor.com:3004/blogs'
+let apiUrlblog = 'https://fr.wiccrm.com:3004/blogs'
 let href = ""
 async function fetchCarouselData5() {
 	try {
 		const response = await fetch(apiUrlblog);
 		const data = await response.json();
-		console.log("BlogsList: ", data.data)
+		//console.log("BlogsList: ", data.data)
 		createCarouselblogs(data.data);
 	} catch (error) {
 		console.error("Erreur lors de la récupération des données :", error);
@@ -282,7 +281,7 @@ function createCarouselblogs(data) {
 	const carousel = $('#blogs');
 	carousel.empty(); // Vider le conteneur avant d'ajouter de nouveaux éléments
 	data.forEach(item => {
-		console.log("item: ", item)
+		//console.log("item: ", item)
 		if (item.titre == "Comment la télémédecine améliore l’accès aux soins dans les zones rurales")
 			href = 'télémédecine-zones-rurales.html'
 		if (item.titre == "Intelligence artificielle et télémédecine : comment les technologies transforment les soins")

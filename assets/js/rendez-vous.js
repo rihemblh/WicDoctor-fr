@@ -15,7 +15,7 @@ if (sessionStorage.getItem("rdv")) {
     if (sessionStorage.getItem("rdv") == 0) {
         console.log("rendez-vous")
         // Fetching slots data for the doctor
-        fetch(`https://wic-doctor.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
+        fetch(`https://fr.wiccrm.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erreur lors de la récupération des créneaux');
@@ -31,7 +31,7 @@ if (sessionStorage.getItem("rdv")) {
     else {
         console.log("téléonsultation")
 
-        fetch(`https://wic-doctor.com:3004/gettempsteleconsultation?doctor_id=${Detailsdoctors.doctor_id}`)
+        fetch(`https://fr.wiccrm.com:3004/gettempsteleconsultation?doctor_id=${Detailsdoctors.doctor_id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Erreur lors de la récupération des créneaux');
@@ -46,7 +46,7 @@ if (sessionStorage.getItem("rdv")) {
     }
 }
 /* // Fetching slots data for the doctor
-fetch(`https://wic-doctor.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
+fetch(`https://fr.wiccrm.com:3004/afftempsdoctorsbyid?doctor_id=${Detailsdoctors.doctor_id}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Erreur lors de la récupération des créneaux');
@@ -250,12 +250,12 @@ function ConfirmerRedezvous() {
         console.log("add")
         if (sessionStorage.getItem("rdv")) {
             if (sessionStorage.getItem("rdv") == 0) {
-                apiurl = "https://wic-doctor.com:3004/ajouterrendezvous"
+                apiurl = "https://fr.wiccrm.com:3004/ajouterrendezvous"
                 object = Object.assign(object, { "motif_id": motifSelect })
 
             }
             else {
-                apiurl = "https://wic-doctor.com:3004/ajouterrendezvoustele"
+                apiurl = "https://fr.wiccrm.com:3004/ajouterrendezvoustele"
                 //object = Object.assign(object, { "motif_id": motifSelect })
 
 
@@ -266,7 +266,7 @@ function ConfirmerRedezvous() {
         console.log("edit")
         object = Object.assign({ "end_at": object.ends_at }, { "start_at": object.start_at }, { "patern_id": motifSelect })
         console.log("decryptData(sessionStorage.getItem('id')", decryptData(sessionStorage.getItem("id")))
-        apiurl = `https://wic-doctor.com:3004/updateappointement/${decryptData(sessionStorage.getItem("id"))}`
+        apiurl = `https://fr.wiccrm.com:3004/updateappointement/${decryptData(sessionStorage.getItem("id"))}`
     }
     console.log('apiurl: ', apiurl)
     encryptedData = encryptData(object);
@@ -322,14 +322,14 @@ function ConfirmerRedezvous() {
                     document.getElementById('overlay').style.display = 'block';
                     alert("🎉 Votre rendez-vous a été confirmé !\n\nVeuillez consulter votre email / Téléphone pour plus de détails.\n\nMerci de votre confiance !");
                     sessionStorage.removeItem("rendezvousClinic")
-                    window.location.href = 'https://wic-doctor.com/profil.html'; // Rediriger vers la page 2
+                    window.location.href = 'https://fr.wiccrm.com/profil.html'; // Rediriger vers la page 2
                     }
                     else{
                         document.getElementById('popup').style.display = 'block';
                         document.getElementById('overlay').style.display = 'block';
                         alert("🎉 Votre demande de téléconsultation a été envoyée !\n\nVeuillez consulter votre email / Téléphone pour plus de détails.\n\nMerci de votre confiance !");
                         sessionStorage.removeItem("rendezvousClinic")
-                        window.location.href = 'https://wic-doctor.com/profil.html'; // Rediriger vers la page 2
+                        window.location.href = 'https://fr.wiccrm.com/profil.html'; // Rediriger vers la page 2
                         sessionStorage.removeItem("rdv")
                     }
                 }

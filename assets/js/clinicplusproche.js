@@ -25,7 +25,7 @@ navigator.geolocation.getCurrentPosition(
         map.setCenter(userPosition);
 
         // Appel à l'API pour récupérer les médecins proches
-        fetch(`https://wic-doctor.com:3004/api/clinicsparposition?latitude=${latitude}&longitude=${longitude}`)
+        fetch(`https://fr.wiccrm.com:3004/api/clinicsparposition?latitude=${latitude}&longitude=${longitude}`)
             .then(response => response.json())
             .then(data => {
                 console.log("localisation clinique: ",data)

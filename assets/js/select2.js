@@ -77,6 +77,7 @@ $(document).ready(function() {
         width: '100%',
 		theme: "classic"
     });
+	
 	$(document).ready(function() {
 		// Initialize Select2 for each select element with individual placeholders
 		$('#dynamicSelectPays').select2({
@@ -87,6 +88,10 @@ $(document).ready(function() {
 			placeholder: "Département",
 			width: '100%'
 		});
+		$("#filterSelect").select2({
+			placeholder: "Région, Département",
+			allowClear: true
+		  });
 		$('#dynamicSelectReg').select2({
 			placeholder: "Région",
 			width: '100%'

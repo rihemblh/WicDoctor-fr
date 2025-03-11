@@ -39,8 +39,8 @@
 		content="Rejoignez WIC Doctor, la plateforme de télémédecine qui vous permet de réserver des rdv médicaux et de consulter votre médecin en ligne">
 	<meta name="author" content="WIC Doctor">
 
-	  <!--canonial-->
-	  <link rel="canonical" href="https://wic-doctor.com">
+	<!--canonial-->
+	<link rel="canonical" href="https://fr.wiccrm.com">
 
 
 	<!-- Google Fonts -->
@@ -81,7 +81,136 @@
 </head>
 
 <body>
+	<style>
+		/* Bouton flottant */
+		.floating-button {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			background-color: #eeefee;
+			color: white;
+			border: none;
+			padding: 5px 10px;
+			border-radius: 50px;
+			cursor: pointer;
+			z-index: 1000;
+			transition: background-color 0.2s;
+			animation: blink 1s infinite;
+		}
 
+		.floating-button:hover {
+			background-color: #eeefee;
+		}
+
+		/* Liste des icônes */
+		.country-icons {
+			position: fixed;
+			top: 60px;
+			right: 20px;
+			background-color: white;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			padding: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			display: none;
+			z-index: 999;
+			opacity: 0;
+			transition: opacity 0.2s, transform 0.2s;
+			transform: translateY(-10px);
+		}
+
+		.country-icons.show {
+			display: inline;
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.country-icons img {
+			width: 30px;
+			margin: 5px 0;
+			cursor: pointer;
+			display: inline;
+		}
+
+		/* Drapeau sélectionné */
+		.selected {
+			outline: 2px solid #007bff;
+			border-radius: 5px;
+		}
+
+		@keyframes blink {
+
+			0%,
+			100% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0;
+			}
+		}
+	</style>
+	<!-- Bouton qui affiche les icônes -->
+	<button class="floating-button" id="toggleButton"><img src="https://flagcdn.com/w20/fr.png" alt="Français"></button>
+
+	<!-- Liste des icônes de pays -->
+	<div class="country-icons" id="countryIcons">
+		<img src="https://flagcdn.com/w20/fr.png" alt="Français" class="selected">
+		<img src="https://flagcdn.com/w20/tn.png" alt="Tunisien" id="tn">
+		<img src="https://flagcdn.com/w20/it.png" alt="Italien" id="it">
+		<img src="https://flagcdn.com/w20/gb.png" alt="Anglais">
+		<img src="https://flagcdn.com/w20/es.png" alt="Espagnol">
+	</div>
+
+	<script>
+		const toggleButton = document.getElementById('toggleButton');
+		const countryIcons = document.getElementById('countryIcons');
+
+		let initialDisplayDone = false;
+
+		// Fonction pour afficher la liste des pays
+		function showCountryIcons() {
+			countryIcons.classList.add('show');
+			document.addEventListener('click', handleClickOutside);
+
+		}
+
+		// Fonction pour cacher la liste des pays
+		function hideCountryIcons() {
+			countryIcons.classList.remove('show');
+			document.removeEventListener('click', handleClickOutside);
+		}
+		// Fonction pour vérifier le clic à l'extérieur
+		function handleClickOutside(event) {
+			if (!countryIcons.contains(event.target) && event.target !== toggleButton) {
+				hideCountryIcons();
+			}
+		}
+		// Clignotement du bouton au chargement
+		window.addEventListener('DOMContentLoaded', () => {
+			setTimeout(() => {
+				toggleButton.style.animation = 'none'; // Arrête l'animation après 5 secondes
+			}, 2000);
+
+			// Affiche la liste des pays automatiquement au départ
+			showCountryIcons();
+
+			// Cache la liste après 5 secondes si l'utilisateur n'interagit pas
+			setTimeout(() => {
+				hideCountryIcons();
+				initialDisplayDone = true; // Marque l'affichage initial comme terminé
+			}, 2000);
+		});
+
+		// Gestion de l'événement de clic sur le bouton
+		toggleButton.addEventListener('click', () => {
+			if (countryIcons.classList.contains('show')) {
+				hideCountryIcons();
+			} else {
+				showCountryIcons();
+			}
+		});
+	</script>
 	<!-- main header -->
 	<header class="main-header">
 		<div class="auto-container">
@@ -107,7 +236,7 @@
 										<li class="current"><a href="index.html">Accueil</a>
 
 										</li>
-										<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
+										<li><a href="https://fr.wiccrm.com/qui-sommes-nous.html">WIC Dr.</a></li>
 										<li class="dropdown">
 											<a href="#">Nos Solutions</a>
 											<ul class="megamenu">
@@ -115,55 +244,55 @@
 													<img src="./assets/images/media/photos/medecin-solution.png"
 														alt="Logo Praticiens" />
 													<a
-														href="https://wic-doctor.com/nos-solutions-praticien.html">Praticiens</a>
+														href="https://fr.wiccrm.com/nos-solutions-praticien.html">Praticiens</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/patient-solution.png"
 														alt="Logo Patients" />
 													<a
-														href="https://wic-doctor.com/nos-solutions-patient.html">Patients</a>
+														href="https://fr.wiccrm.com/nos-solutions-patient.html">Patients</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/Télémédecine-soltion.png"
 														alt="Logo Télémédecine" />
-													<a href="https://wic-doctor.com/Telemedecine.html">Télémédecine</a>
+													<a href="https://fr.wiccrm.com/Telemedecine.html">Télémédecine</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/technologie-solution.png"
 														alt="Logo Technologie" />
-													<a href="https://wic-doctor.com/technologies-de-pointe.html">Technologie
+													<a href="https://fr.wiccrm.com/technologies-de-pointe.html">Technologie
 														de pointe</a>
 												</li>
 											</ul>
 										</li>
 										<li class="dropdown">
-											<a href="https://wic-doctor.com/partenaire.html">Partenaire WIC Dr</a>
+											<a href="https://fr.wiccrm.com/partenaire.html">Partenaire WIC Dr</a>
 											<ul>
-												<li><a href="https://wic-doctor.com/partenaire.html">Partenaire</a>
+												<li><a href="https://fr.wiccrm.com/partenaire.html">Partenaire</a>
 												</li>
 												<li><a
-														href="https://wic-doctor.com/collaborateur.html">Collaborateur</a>
+														href="https://fr.wiccrm.com/collaborateur.html">Collaborateur</a>
 												</li>
 												<li><a href="https://green-telecom.fr/">Télésecrétariat</a>
 												</li>
 											</ul>
 										</li>
-										<li><a href="https://wic-doctor.com/inscription-professionnel/offres.html">Nos
+										<li><a href="https://fr.wiccrm.com/inscription-professionnel/offres.html">Nos
 												Tarifs</a></li>
 										<li class="dropdown">
-											<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
+											<a href="https://fr.wiccrm.com/pathologies.html">Soins des patients</a>
 											<ul>
-												<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a>
+												<li><a href="https://fr.wiccrm.com/pathologies.html">Pathologies</a>
 												</li>
-												<li><a href="https://wic-doctor.com/intervention.html">Interventions</a>
+												<li><a href="https://fr.wiccrm.com/intervention.html">Interventions</a>
 												</li>
-												<li><a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a>
+												<li><a href="https://fr.wiccrm.com/diagnostiques.html">Diagnostics</a>
 												</li>
 											</ul>
 										</li>
 
 										</li>
-										<li><a href="https://wic-doctor.com/contact.html">Contact</a></li>
+										<li><a href="https://fr.wiccrm.com/contact.html">Contact</a></li>
 										<li>
 											<div class="menu-right-content pull-left" id="Login">
 												<div class="avatar-initial rounded-circle me-2" id="userAvatar"
@@ -171,7 +300,7 @@
 												<ul class="dropdown-menu dropdown-menu-end"
 													aria-labelledby="userAvatar">
 													<li><a class="dropdown-item profile"
-															href="https://wic-doctor.com/profil.html">Mon Profil</a>
+															href="https://fr.wiccrm.com/profil.html">Mon Profil</a>
 													</li>
 													<li>
 														<hr class="dropdown-divider">
@@ -248,7 +377,7 @@
 			<div class="vector vector-5 wow slideInRight" data-wow-delay="0ms" data-wow-duration="1500ms"
 				style="background-image: url(assets/images/icons/women-1.png);"></div>
 		</div>
-		<div class="auto-container">
+		<div class="auto-container-1">
 			<div class="row clearfix">
 				<div class="col-lg-12 col-md-12 col-sm-12 content-column">
 					<div class="content-box">
@@ -263,17 +392,17 @@
 										<ul class="nav nav-tabs">
 											<li class="">
 												<a class="active" data-bs-toggle="tab"
-													href="https://wic-doctor.com/medecin/">
+													href="https://fr.wiccrm.com/medecin/">
 													<i class="fa fa-user-md"></i> Médecins
 												</a>
 											</li>
 											<li class="">
-												<a href="https://wic-doctor.com/medecine-douce.html">
+												<a href="https://fr.wiccrm.com/medecine-douce.html">
 													<i class="fas fa-cannabis"></i></i> Médecine Douce
 												</a>
 											</li>
 											<li>
-												<a href="https://wic-doctor.com/Cliniques/tous.html"><i
+												<a href="https://fr.wiccrm.com/Cliniques/tous.html"><i
 														class="fa fa-hospital-o"></i>
 													Cliniques</a>
 											</li>
@@ -291,19 +420,14 @@
 															placeholder="Nom du professionnel de santé" type="text">
 														<ul id="suggestions" class="dropdown-menu"></ul>
 													</div>
-													 <div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0 location">
-														<select
-															class="form-control select2-show-search border-bottom-0 w-100"
-															data-placeholder="Select" id="dynamicSelectdep">
-														</select>
-													</div> 
-													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0 location">
-														<select
-															class="form-control select2-show-search border-bottom-0 w-100"
-															data-placeholder="Select" id="dynamicSelectReg">
-														</select>
+													<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0"
+														>
+														<select id="filterSelect" class="form-control select2-show-search border-bottom-0 w-100"
+														data-placeholder="Sélectionner un département ou une région">
+													
+												</select>
 													</div>
-													<div class="form-group col-xl-2 col-lg-2 col-md-12 mb-0">
+													<div class="form-group col-xl-3 col-lg-3 col-md-12 mb-0">
 														<select
 															class="form-control select2-show-search border-bottom-0 w-100"
 															data-placeholder="Select" id="dynamicSelect">
@@ -343,6 +467,7 @@
 											#suggestions li:hover {
 												background-color: #f5f5f5;
 											}
+											
 										</style>
 
 										<script>
@@ -406,7 +531,7 @@
 
 													//console.log("apiUrl: ", apiUrl)
 													try {
-														fetch(`https://wic-doctor.com:3004/search-doctors-france?query=${query.toLowerCase()}`)
+														fetch(`https://fr.wiccrm.com:3004/search-doctors-france?query=${query.toLowerCase()}`)
 															.then(response => {
 																if (!response.ok) {
 																	throw new Error('Erreur lors de la récupération des catégories');
@@ -440,8 +565,8 @@
 																			console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase())
 																			console.log("doctor.specialities.replace(/\s+/g, '-').toLowerCase(): ", getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase())
 																			console.log("doctor.name.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase())
-																			console.log("", `https://wic-doctor.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
-																			window.location.href = `https://wic-doctor.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
+																			console.log("", `https://fr.wiccrm.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
+																			window.location.href = `https://fr.wiccrm.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
 																			document.getElementById('searchInput').value = getDoctorName(doctor.name);
 																			suggestionsContainer.style.display = 'none';
 																		};
@@ -514,10 +639,10 @@
 						<div class="text wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
 						</div>
 						<div class="btn-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-							<a id="B2B" href="https://wic-doctor.com/inscription-professionnel/"
+							<a id="B2B" href="https://fr.wiccrm.com/inscription-professionnel/"
 								class="theme-btn style-one">Vous êtes un
 								praticien?</a>
-							<a id="SeConnecter" href="https://wic-doctor.com/login.html"
+							<a id="SeConnecter" href="https://fr.wiccrm.com/login.html"
 								class="theme-btn style-two"></i>Connexion</a>
 						</div>
 					</div>
@@ -708,7 +833,7 @@
 							<div class="col-lg-3 col-md-6 col-sm-12 feature-block">
 								<div class="service-block-one wow flipInY" data-wow-delay="0ms"
 									data-wow-duration="1500ms" style="background: #ffffffd6;">
-									<a href="https://wic-doctor.com/pharmacies/Pharmacie.html">
+									<a href="https://fr.wiccrm.com/pharmacies/Pharmacie.html">
 										<div class="inner-box">
 											<figure class="icon-box" style="height: 100px !important">
 												<div class="anim-icon wow zoomIn animated" data-wow-delay="0ms"
@@ -722,11 +847,11 @@
 											</figure>
 
 											<h4 style="padding: 10%;"><a
-													href="https://wic-doctor.com/pharmacies/Pharmacie.html">Pharmacies</a>
+													href="https://fr.wiccrm.com/pharmacies/Pharmacie.html">Pharmacies</a>
 											</h4>
 
 											<div class="link"><a
-													href="https://wic-doctor.com/pharmacies/Pharmacie.html">+</a></div>
+													href="https://fr.wiccrm.com/pharmacies/Pharmacie.html">+</a></div>
 										</div>
 									</a>
 								</div>
@@ -734,7 +859,7 @@
 							<div class="col-lg-3 col-md-6 col-sm-12 feature-block">
 								<div class="service-block-one wow flipInY" data-wow-delay="0ms"
 									data-wow-duration="1500ms" style="background: #ffffffd6;">
-									<a href="https://wic-doctor.com/Laboratoires/tous.html">
+									<a href="https://fr.wiccrm.com/Laboratoires/tous.html">
 										<div class="inner-box">
 											<figure class="icon-box" style="height: 100px !important">
 												<div class="anim-icon wow zoomIn animated" data-wow-delay="0ms"
@@ -748,11 +873,11 @@
 											</figure>
 
 											<h4 style="padding: 10%;"><a
-													href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a>
+													href="https://fr.wiccrm.com/Laboratoires/tous.html">Laboratoires</a>
 											</h4>
 
 											<div class="link"><a
-													href="https://wic-doctor.com/Laboratoires/tous.html">+</a></div>
+													href="https://fr.wiccrm.com/Laboratoires/tous.html">+</a></div>
 										</div>
 									</a>
 								</div>
@@ -761,7 +886,7 @@
 							<div class="col-lg-3 col-md-6 col-sm-12 feature-block">
 								<div class="service-block-one wow flipInY" data-wow-delay="0ms"
 									data-wow-duration="1500ms" style="background: #ffffffd6;">
-									<a href="https://wic-doctor.com/Ambulances-Privées/tous.html">
+									<a href="https://fr.wiccrm.com/Ambulances-Privées/tous.html">
 										<div class="inner-box">
 											<figure class="icon-box" style="height: 100px !important">
 												<div class="anim-icon wow zoomIn animated" data-wow-delay="0ms"
@@ -775,11 +900,11 @@
 											</figure>
 
 											<h4 style="padding: 10%;"><a
-													href="https://wic-doctor.com/Ambulances-Privées/tous.html">Ambulances
+													href="https://fr.wiccrm.com/Ambulances-Privées/tous.html">Ambulances
 													Privées</a></h4>
 
 											<div class="link"><a
-													href="https://wic-doctor.com/Ambulances-Privées/tous.html">+</a>
+													href="https://fr.wiccrm.com/Ambulances-Privées/tous.html">+</a>
 											</div>
 										</div>
 									</a>
@@ -788,7 +913,7 @@
 							<div class="col-lg-3 col-md-6 col-sm-12 feature-block">
 								<div class="service-block-one wow flipInY" data-wow-delay="0ms"
 									data-wow-duration="1500ms" style="background: #ffffffd6;">
-									<a href="https://wic-doctor.com/Cliniques/tous.html">
+									<a href="https://fr.wiccrm.com/Cliniques/tous.html">
 										<div class="inner-box">
 											<figure class="icon-box" style="height: 100px !important">
 												<div class="anim-icon wow zoomIn animated" data-wow-delay="0ms"
@@ -802,9 +927,9 @@
 											</figure>
 
 											<h4 style="padding: 10%;"><a
-													href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a></h4>
+													href="https://fr.wiccrm.com/Cliniques/tous.html">Cliniques</a></h4>
 
-											<div class="link"><a href="https://wic-doctor.com/Cliniques/tous.html">+</a>
+											<div class="link"><a href="https://fr.wiccrm.com/Cliniques/tous.html">+</a>
 											</div>
 										</div>
 									</a>
@@ -817,7 +942,7 @@
 							<div class="col-lg-3 col-md-6 col-sm-12 feature-block">
 								<div class="service-block-one wow flipInY" data-wow-delay="0ms"
 									data-wow-duration="1500ms" style="background: #ffffffd6;">
-									<a href="https://wic-doctor.com/Banque-de-sang/tous.html">
+									<a href="https://fr.wiccrm.com/Banque-de-sang/tous.html">
 										<div class="inner-box">
 											<figure class="icon-box" style="height: 100px !important">
 												<div class="anim-icon wow zoomIn animated" data-wow-delay="0ms"
@@ -831,11 +956,11 @@
 											</figure>
 
 											<h4 style="padding: 10%;"><a
-													href="https://wic-doctor.com/Banque-de-sang/tous.html">Banque de
+													href="https://fr.wiccrm.com/Banque-de-sang/tous.html">Banque de
 													sang</a></h4>
 
 											<div class="link"><a
-													href="https://wic-doctor.com/Banque-de-sang/tous.html">+</a></div>
+													href="https://fr.wiccrm.com/Banque-de-sang/tous.html">+</a></div>
 										</div>
 									</a>
 								</div>
@@ -843,7 +968,7 @@
 							<div class="col-lg-3 col-md-6 col-sm-12 feature-block">
 								<div class="service-block-one wow flipInY" data-wow-delay="0ms"
 									data-wow-duration="1500ms" style="background: #ffffffd6;">
-									<a href="https://wic-doctor.com/Infirmerie/tous.html">
+									<a href="https://fr.wiccrm.com/Infirmerie/tous.html">
 										<div class="inner-box">
 											<figure class="icon-box" style="height: 100px !important">
 												<div class="anim-icon wow zoomIn animated" data-wow-delay="0ms"
@@ -857,11 +982,11 @@
 											</figure>
 
 											<h4 style="padding: 10%;"><a
-													href="https://wic-doctor.com/Infirmerie/tous.html">Infirmerie
+													href="https://fr.wiccrm.com/Infirmerie/tous.html">Infirmerie
 													privée</a></h4>
 
 											<div class="link"><a
-													href="https://wic-doctor.com/Infirmerie/tous.html">+</a></div>
+													href="https://fr.wiccrm.com/Infirmerie/tous.html">+</a></div>
 										</div>
 									</a>
 								</div>
@@ -869,7 +994,7 @@
 							<div class="col-lg-3 col-md-6 col-sm-12 feature-block">
 								<div class="service-block-one wow flipInY" data-wow-delay="0ms"
 									data-wow-duration="1500ms" style="background: #ffffffd6;">
-									<a href="https://wic-doctor.com/Vétérinaire/tous.html">
+									<a href="https://fr.wiccrm.com/Vétérinaire/tous.html">
 										<div class="inner-box">
 											<figure class="icon-box" style="height: 100px !important">
 												<div class="anim-icon wow zoomIn animated" data-wow-delay="0ms"
@@ -883,11 +1008,11 @@
 											</figure>
 
 											<h4 style="padding: 10%;"><a
-													href="https://wic-doctor.com/Vétérinaire/tous.html">Vétérinaires</a>
+													href="https://fr.wiccrm.com/Vétérinaire/tous.html">Vétérinaires</a>
 											</h4>
 
 											<div class="link"><a
-													href="https://wic-doctor.com/Vétérinaire/tous.html">+</a></div>
+													href="https://fr.wiccrm.com/Vétérinaire/tous.html">+</a></div>
 										</div>
 									</a>
 								</div>
@@ -895,7 +1020,7 @@
 							<div class="col-lg-3 col-md-6 col-sm-12 feature-block">
 								<div class="service-block-one wow flipInY" data-wow-delay="0ms"
 									data-wow-duration="1500ms" style="background: #ffffffd6;">
-									<a href="https://wic-doctor.com/Para-Pharmacie/tous.html">
+									<a href="https://fr.wiccrm.com/Para-Pharmacie/tous.html">
 										<div class="inner-box">
 											<figure class="icon-box" style="height: 100px !important">
 												<div class="anim-icon wow zoomIn animated" data-wow-delay="0ms"
@@ -909,11 +1034,11 @@
 											</figure>
 
 											<h4 style="padding: 10%;"><a
-													href="https://wic-doctor.com/Para-Pharmacie/tous.html">Para
+													href="https://fr.wiccrm.com/Para-Pharmacie/tous.html">Para
 													pharmacies</a></h4>
 
 											<div class="link"><a
-													href="https://wic-doctor.com/Para-Pharmacie/tous.html">+</a></div>
+													href="https://fr.wiccrm.com/Para-Pharmacie/tous.html">+</a></div>
 										</div>
 									</a>
 								</div>
@@ -1102,7 +1227,7 @@
 													const emailInput = document.getElementById('email-new'); // Référence au champ input
 													const emailError = document.getElementById('email-error'); // Message d'erreur
 													const emailValue = emailInput.value.trim(); // Récupérer la valeur et supprimer les espaces
-													const apiUrl = 'https://wic-doctor.com:3004/send-News'; // Remplacez par l'URL de votre API
+													const apiUrl = 'https://fr.wiccrm.com:3004/send-News'; // Remplacez par l'URL de votre API
 
 													if (emailValue) {
 														// Création de l'objet JSON
@@ -1188,7 +1313,7 @@
 					const emailInput = document.getElementById('email-new'); // Référence au champ input
 					const emailError = document.getElementById('email-error'); // Message d'erreur
 					const emailValue = emailInput.value.trim(); // Récupérer la valeur et supprimer les espaces
-					const apiUrl = 'https://wic-doctor.com:3004/send-News'; // Remplacez par l'URL de votre API
+					const apiUrl = 'https://fr.wiccrm.com:3004/send-News'; // Remplacez par l'URL de votre API
 
 					if (emailValue) {
 						// Création de l'objet JSON
@@ -1274,17 +1399,17 @@
 							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/qui-sommes-nous.html">Qui sommes-nous ?</a>
+									<a href="https://fr.wiccrm.com/qui-sommes-nous.html">Qui sommes-nous ?</a>
 								</li>
 								<li>
 									<a href="javascript:;">Témoignages</a>
 								</li>
 
 								<li>
-									<a href="https://wic-doctor.com/FAQ.html">FAQ</a>
+									<a href="https://fr.wiccrm.com/FAQ.html">FAQ</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/contact.html">Contactez-nous</a>
+									<a href="https://fr.wiccrm.com/contact.html">Contactez-nous</a>
 								</li>
 
 							</ul>
@@ -1295,17 +1420,17 @@
 							<div class="clearfix"></div>
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a>
+									<a href="https://fr.wiccrm.com/medecin/tous.html">Professionnels de santé</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies &
+									<a href="https://fr.wiccrm.com/pharmacies/pharmacie.html">Pharmacies &
 										Parapharmacies</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a>
+									<a href="https://fr.wiccrm.com/Cliniques/tous.html">Cliniques</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a>
+									<a href="https://fr.wiccrm.com/Laboratoires/tous.html">Laboratoires</a>
 								</li>
 
 							</ul>
@@ -1315,16 +1440,16 @@
 							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/pathologies.html">Pathologies</a>
+									<a href="https://fr.wiccrm.com/pathologies.html">Pathologies</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a>
+									<a href="https://fr.wiccrm.com/diagnostiques.html">Diagnostics</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/intervention.html">Interventions</a>
+									<a href="https://fr.wiccrm.com/intervention.html">Interventions</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/journal-medical.html">Journal Médical</a>
+									<a href="https://fr.wiccrm.com/journal-medical.html">Journal Médical</a>
 								</li>
 								<!-- <li>
 									<a href="javascript:;">Forum Médical</a>
@@ -1343,11 +1468,11 @@
 							<div class="clearfix"></div>
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/Conditions-Générales-de-Vente.html">Conditions
+									<a href="https://fr.wiccrm.com/Conditions-Générales-de-Vente.html">Conditions
 										générales de vente en ligne</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/Conditions-utilisation.html">Conditions
+									<a href="https://fr.wiccrm.com/Conditions-utilisation.html">Conditions
 										d'utilisation</a>
 									</a>
 								</li>
@@ -1362,7 +1487,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/Mentions-légales.html">Mentions légales</a>
+									<a href="https://fr.wiccrm.com/Mentions-légales.html">Mentions légales</a>
 								</li>
 								<!-- <li>
 									<a href="javascript:;">Support technique</a>
@@ -1533,27 +1658,30 @@
 	</div>
 	<style>
 		.social-icons {
-    position: fixed;
-    top: 50%;
-    right: 10px; /* Positionné à droite */
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+			position: fixed;
+			top: 50%;
+			right: 10px;
+			/* Positionné à droite */
+			transform: translateY(-50%);
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
 
-.social-icons img {
-    width: 40px; /* Taille des icônes */
-    height: 40px;
-    border-radius: 50%; /* Pour un effet arrondi */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet plus pro */
-    transition: transform 0.3s ease-in-out;
-}
+		.social-icons img {
+			width: 40px;
+			/* Taille des icônes */
+			height: 40px;
+			border-radius: 50%;
+			/* Pour un effet arrondi */
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+			/* Ombre pour un effet plus pro */
+			transition: transform 0.3s ease-in-out;
+		}
 
-.social-icons img:hover {
-    transform: scale(1.2);
-}
-
+		.social-icons img:hover {
+			transform: scale(1.2);
+		}
 	</style>
 	<!-- End Popup Login-->
 	<div class="social-icons" style="z-index: 9999;">
@@ -1572,11 +1700,12 @@
 		<a href="https://x.com/WicDoctor" target="_blank">
 			<img src="./assets/images/icons/twitter.png" alt="Instagram">
 		</a>
-		<a href="https://api.whatsapp.com/send?phone=21626311722&text&context=ARCA4kG0-ji3IZZVIl0SGy-pasvzA9NGu6rAMyFGkteYpSXEy5aiifugPiOP2mfw5L4BpCxqvb9uRbiVxMSkhC0EsNP8_hOi8YUDxIOg66_ulRmNB6d7nsPxbmi2nm1aGpD7yzr4G7e7XetamHR9ineByQ&source&app=facebook" target="_blank">
+		<a href="https://api.whatsapp.com/send?phone=21626311722&text&context=ARCA4kG0-ji3IZZVIl0SGy-pasvzA9NGu6rAMyFGkteYpSXEy5aiifugPiOP2mfw5L4BpCxqvb9uRbiVxMSkhC0EsNP8_hOi8YUDxIOg66_ulRmNB6d7nsPxbmi2nm1aGpD7yzr4G7e7XetamHR9ineByQ&source&app=facebook"
+			target="_blank">
 			<img src="./assets/images/icons/whats.png" alt="Instagram">
 		</a>
 	</div>
-	
+
 	<!-- Back to top -->
 	<a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
 

@@ -34,7 +34,7 @@ if (authData) {
 
     };
     // Fetch appointment history using the patient ID
-    fetch(`https://wic-doctor.com:3004/appointments/${login.result[0].user_id}`, requestOptions)
+    fetch(`https://fr.wiccrm.com:3004/appointments/${login.result[0].user_id}`, requestOptions)
         .then(response => response.json())
         .then(data => {
             const appointmentHistoryElement = document.getElementById("appointment-history-med");
@@ -113,11 +113,11 @@ if (authData) {
 
 } else {
     alert("Authentification requise. Veuillez vous connecter.");
-    window.location.href="https://wic-doctor.com/login.html"
+    window.location.href="https://fr.wiccrm.com/login.html"
 }
 function EditAppointment(id , appointmentid) {
     console.log("id doctor: ", id)
-    fetch(`https://wic-doctor.com:3004/getdocbyid/${id}`)
+    fetch(`https://fr.wiccrm.com:3004/getdocbyid/${id}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erreur lors de la récupération des données');

@@ -24,7 +24,7 @@ document.getElementById('Register').addEventListener('submit', async function (e
         // Disable the button
         button.disabled = true;
         // Send POST request to the API
-        const response = await fetch('https://wic-doctor.com:3004/api/logup', {
+        const response = await fetch('https://fr.wiccrm.com:3004/api/logup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

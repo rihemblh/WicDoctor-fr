@@ -33,9 +33,9 @@ if (authData) {
         },
 
     };
-    console.log("`https://wicdoctor.com:3004/consultations/${login.result[0].id}`: ", `https://wic-doctor.com:3004/consultations/${login.result[0].id}`)
+    console.log("`https://wicdoctor.com:3004/consultations/${login.result[0].id}`: ", `https://fr.wiccrm.com:3004/consultations/${login.result[0].id}`)
     // Fetch consultation history using the patient ID
-    fetch(`https://wic-doctor.com:3004/consultations/${login.result[0].id}`, requestOptions)
+    fetch(`https://fr.wiccrm.com:3004/consultations/${login.result[0].id}`, requestOptions)
         .then(response => response.json())
         .then(data => {
             const consultationHistoryElement = document.getElementById("consultation-history-med");
@@ -104,7 +104,7 @@ if (authData) {
 
 } else {
     alert("Authentification requise. Veuillez vous connecter.");
-    window.location.href = "https://wic-doctor.com/login.html"
+    window.location.href = "https://fr.wiccrm.com/login.html"
 }
 
 function prescriptionPDf(id) {
@@ -117,7 +117,7 @@ function prescriptionPDf(id) {
         body: JSON.stringify({ record_id: id }) // Convertir l'objet en chaîne JSON
     };
     console.log("requestOptions: ", requestOptions)
-    fetch("https://wic-doctor.com:3004/generate-pdf", requestOptions)
+    fetch("https://fr.wiccrm.com:3004/generate-pdf", requestOptions)
         .then(response => {
             console.log("response: ", response)
             return response.json(); // Analyser la réponse JSON

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = document.getElementById("email").value;
 console.log("email: ",email)
         try {
-            const response = await fetch('https://wic-doctor.com:3004/forgot-password', {
+            const response = await fetch('https://fr.wiccrm.com:3004/forgot-password', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ console.log("email: ",email)
             // Assuming data.link contains the reset link
             alert('Un lien de réinitialisation de votre mot de passe a été envoyé à votre adresse e-mail: ' + email);
             console.log(data); // Log the response for debugging
-            window.location.href="https://wic-doctor.com/login.html"
+            window.location.href="https://fr.wiccrm.com/login.html"
 
         } catch (error) {
             console.error('Error:', error);
