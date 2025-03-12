@@ -387,8 +387,8 @@
 																	console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.département).replace(/\s+/g, '-').toLowerCase())
 																	console.log("doctor.specialities.replace(/\s+/g, '-').toLowerCase(): ", getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase())
 																	console.log("doctor.name.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.name).replace(/\s+/g, '-').toLowerCase())
-																	console.log("", `https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
-																	window.location.href = `https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
+																	console.log("", `https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
+																	window.location.href = `https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
 																	document.getElementById('searchInput2').value = getDoctorName2(doctor.name);
 																	suggestionsContainer.style.display = 'none';
 																};
@@ -434,25 +434,7 @@
 
 
 
-								<div class="form-group mb-3">
-									<label for="city" class="form-label">Gouvernorat</label>
-									<div class="input-group">
-										<select class="form-control select2-show-search border-bottom-0 w-100"
-											data-placeholder="Select" id="dynamicSelectdep">
-										</select>
-
-									</div>
-								</div>
-
-								<div class="form-group mb-3">
-									<label for="city" class="form-label">Gouvernorat</label>
-									<div class="input-group">
-										<select class="form-control select2-show-search border-bottom-0 w-100"
-											data-placeholder="Select" id="dynamicSelectReg">
-										</select>
-
-									</div>
-								</div>
+								
 
 
 
@@ -462,13 +444,7 @@
 									RECHERCHER
 								</button>
 							</div>
-							<div class="form-group mb-3">
-								<label class="form-label">Options supplémentaires</label>
-								<div class="filter-product-checkboxs" id="villes">
-
-
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -992,35 +968,7 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
 	<script src="./../../assets/js/recherche.js"></script>
 
 	<script>
-		function getCities() {
-			//console.log("https://wic-doctor.com:3004/cities/")
-			fetch('https://wic-doctor.com:3004/cities/')
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Erreur lors de la récupération des catégories');
-					}
-					return response.json();
-				})
-				.then(data => {
-					console.log("*********************************************************************************************data: ", data)
-					data.forEach(item => {
-						document.getElementById("villes").innerHTML = document.getElementById("villes").innerHTML +
-							`<label class="custom-control form-radio mb-3">
-										<input class="custom-control-input" name="radioGroup" type="radio"
-											value="${JSON.parse(item).fr}" onchange="handleCheckboxChange(this)">
-										<span class="custom-control-label">
-											<span class="text-dark">${JSON.parse(item).fr}<!--<span
-													class="label label-light float-end">14</span>--></span>
-										</span>
-									</label>`
-
-
-
-					});
-				});
-
-
-		}
+	
 		let obj = {}
 		function handleCheckboxChange(checkbox) {
 			if (checkbox.checked) {
@@ -1043,7 +991,6 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
 				loadDoctors(initialParams);
 			}
 		}
-		getCities()
 		function changePage(page) {
 			if (page < 1 || page > totalPages) return; // Vérifie que la page est valide
 			currentPage = page;
@@ -1258,14 +1205,14 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
     <div class="d-md-flex" style="padding: 2%">
         <div class="item-card9-img">
             <div class="item-card9-imgs">
-                <a href="https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}', 0)" id="doctorDetails"></a>
+                <a href="https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}', 0)" id="doctorDetails"></a>
                 <img alt="photot-${name}" class="cover-image" src="${photo}" style="border-radius: 10px;">
             </div>
         </div>
         <div class="card border-0 mb-0">
             <div class="card-body">
                 <div class="item-card9">
-                    <a href="https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}', 0)" class="text-dark">
+                    <a href="https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}', 0)" class="text-dark">
                         <h4 class="font-weight-bold mt-1 mb-1">Dr ${name}</h4>
                     </a>
                     <span class="text-muted fs-13 mt-0 d-block">
@@ -1344,14 +1291,14 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
                 <div class="d-md-flex" style="padding: 2%;">
                     <div class="item-card9-img">
                         <div class="item-card9-imgs">
-                            <a href="https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}',0)"  id="doctorDetails"></a>
+                            <a href="https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}',0)"  id="doctorDetails"></a>
                             <img alt="photot-${name}" class="cover-image" src="./../../assets/images/media/doctors/doctor.png">
 							 </div>
                     </div>
                     <div class="card border-0 mb-0">
                         <div class="card-body">
                             <div class="item-card9">
-                                <a href="https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}',0)"  class="text-dark">
+                                <a href="https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}',0)"  class="text-dark">
                                     <h4 class="font-weight-bold mt-1 mb-1">Dr ${name}</h4>
                                 </a>
                                 <span class="text-muted fs-13 mt-0">
@@ -1442,8 +1389,8 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
 			doc = decryptData(doctorEncrypted)
 
 			sessionStorage.setItem("rdv", typeRDV)
-			console.log("url: ", `https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}//${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
-			window.location.href = `https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
+			console.log("url: ", `https://fr.wiccrm.com/medecin/france/${doc.département.replace(/\s+/g, '-').toLowerCase()}//${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
+			window.location.href = `https://fr.wiccrm.com/medecin/france/${doc.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
 		}
 
 		// Chargement initial des médecins
