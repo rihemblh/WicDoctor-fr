@@ -401,11 +401,11 @@
 													<i class="fas fa-cannabis"></i></i> Médecine Douce
 												</a>
 											</li>
-											<li>
+											<!-- <li>
 												<a href="https://fr.wiccrm.com/Cliniques/tous.html"><i
 														class="fa fa-hospital-o"></i>
 													Cliniques</a>
-											</li>
+											</li> -->
 										</ul>
 									</div>
 									<div class="tab-content index-search-select">
@@ -672,7 +672,7 @@
 
 
 	<!--Section-->
-	<section class="sptb section-bg">
+	<!-- <section class="sptb section-bg">
 		<div class="container">
 			<div class="section-title center-block text-center">
 				<h2>Médecins Disponibles</h2>
@@ -682,9 +682,192 @@
 
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--Section-->
+<!--Section-->
+<section class="sptb section-bg">
+	<div class="container">
+		<div class="section-title center-block text-center">
+			<h2>Spécialités</h2>
 
+		</div>
+
+		<style>
+			.card {
+				border-radius: 20px;
+				overflow: hidden;
+				box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+				transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+				border: none;
+			}
+
+			.card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
+			}
+
+			.card-body {
+				padding: 25px;
+				text-align: center;
+				color: #555;
+				font-family: "Poppins", sans-serif;
+			}
+
+			.cat-imgs img {
+				width: 70px;
+				height: 70px;
+				margin-bottom: 15px;
+				filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+				transition: transform 0.3s ease-in-out;
+			}
+
+			.cat-imgs img:hover {
+				transform: scale(1.1);
+			}
+		</style>
+		<div class="row">
+			<div class="col-md-12">
+				<!-- <div id="carouselSpecialities" class="owl-carousel owl-carousel-icons2">
+
+				</div> -->
+			<div class="owl-carousel owl-carousel-icons2">
+				<div class="item">
+					<div class="card">
+					 <a href="javascript:void(0);">
+						<div class="card-body">
+							<div class="cat-item text-center">
+							   
+								<div class="cat-imgs">
+									<img alt="img" src="assets/images/icons/Médecine générale.png"
+										class="svg-img">
+								</div>
+								<div class="cat-desc">
+									<h5 style="color: #18167A;font-weight: 600;" class="mb-1">Médecine générale</h5>
+									<br>
+								   <!-- <small class="badge bg-pill bg-primary me-2">${item.doctor_count}</small><span
+										class="text-muted">${JSON.parse(item.name).fr}</span>-->
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="card">
+					 <a href="javascript:void(0);">
+						<div class="card-body">
+							<div class="cat-item text-center">
+							   
+								<div class="cat-imgs">
+									<img alt="img" src="assets/images/icons/Spécialités médicales.png"
+										class="svg-img">
+								</div>
+								<div class="cat-desc">
+									<h5 style="color: #18167A;font-weight: 600;" class="mb-1">Spécialités médicales</h5>
+									<br>
+
+								   <!-- <small class="badge bg-pill bg-primary me-2">${item.doctor_count}</small><span
+										class="text-muted">${JSON.parse(item.name).fr}</span>-->
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="card">
+					 <a href="javascript:void(0);">
+						<div class="card-body">
+							<div class="cat-item text-center">
+							   
+								<div class="cat-imgs">
+									<img alt="img" src="assets/images/icons/Chirurgie.png"
+										class="svg-img">
+								</div>
+								<div class="cat-desc">
+									<h5 style="color: #18167A;font-weight: 600;" class="mb-1">Chirurgie</h5>
+									<br>
+
+								   <!-- <small class="badge bg-pill bg-primary me-2">${item.doctor_count}</small><span
+										class="text-muted">${JSON.parse(item.name).fr}</span>-->
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="card">
+					 <a href="javascript:void(0);">
+						<div class="card-body">
+							<div class="cat-item text-center">
+							   
+								<div class="cat-imgs">
+									<img alt="img" src="assets/images/icons/Médecine pédiatrique et de la femme.png"
+										class="svg-img">
+								</div>
+								<div class="cat-desc">
+									<h5 style="color: #18167A;font-weight: 600;" class="mb-1">Médecine pédiatrique et de la femme</h5>
+								   <!-- <small class="badge bg-pill bg-primary me-2">${item.doctor_count}</small><span
+										class="text-muted">${JSON.parse(item.name).fr}</span>-->
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="card">
+					 <a href="javascript:void(0);">
+						<div class="card-body">
+							<div class="cat-item text-center">
+							   
+								<div class="cat-imgs">
+									<img alt="img" src="assets/images/icons/santé mentale.png"
+										class="svg-img">
+								</div>
+								<div class="cat-desc">
+									<h5 style="color: #18167A;font-weight: 600;" class="mb-1">Santé mentale </h5>
+									<br>
+
+								   <!-- <small class="badge bg-pill bg-primary me-2">${item.doctor_count}</small><span
+										class="text-muted">${JSON.parse(item.name).fr}</span>-->
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="item">
+					<div class="card">
+					 <a href="javascript:void(0);">
+						<div class="card-body">
+							<div class="cat-item text-center">
+							   
+								<div class="cat-imgs">
+									<img alt="img" src="assets/images/icons/Autres (médecines alternatives et spécialisées).png"
+										class="svg-img">
+								</div>
+								<div class="cat-desc">
+									<h5 style="color: #18167A;font-weight: 600;" class="mb-1">Autres (médecines alternatives et spécialisées)</h5>
+								   <!-- <small class="badge bg-pill bg-primary me-2">${item.doctor_count}</small><span
+										class="text-muted">${JSON.parse(item.name).fr}</span>-->
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+</section>
+<!--/Section-->
 	<section class="sptb">
 		<div class="container">
 			<!-- <div class="section-title center-block text-center">
@@ -749,65 +932,11 @@
 		</div>
 	</section>
 
-	<!--Section-->
-	<section class="sptb section-bg">
-		<div class="container">
-			<div class="section-title center-block text-center">
-				<h2>Spécialités</h2>
-
-			</div>
-
-			<style>
-				.card {
-					border-radius: 20px;
-					overflow: hidden;
-					box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-					transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-					border: none;
-				}
-
-				.card:hover {
-					transform: translateY(-5px);
-					box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
-				}
-
-				.card-body {
-					padding: 25px;
-					text-align: center;
-					color: #555;
-					font-family: "Poppins", sans-serif;
-				}
-
-				.cat-imgs img {
-					width: 70px;
-					height: 70px;
-					margin-bottom: 15px;
-					filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
-					transition: transform 0.3s ease-in-out;
-				}
-
-				.cat-imgs img:hover {
-					transform: scale(1.1);
-				}
-			</style>
-			<div class="row">
-				<div class="col-md-12">
-					<div id="carouselSpecialities" class="owl-carousel owl-carousel-icons2">
-
-					</div>
-
-				</div>
-
-
-			</div>
-
-		</div>
-	</section>
-	<!--/Section-->
+	
 
 
 	<!-- featured-section -->
-	<section class="featured-section style-two bg-color-1">
+<!-- 	<section class="featured-section style-two bg-color-1">
 		<div class="bubble-dotted">
 			<span class="dotted dotted-1"></span>
 			<span class="dotted dotted-2"></span>
@@ -1054,7 +1183,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- featured-section end -->
 
 	<!-- news-style-two -->
