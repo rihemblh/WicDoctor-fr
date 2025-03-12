@@ -151,11 +151,11 @@
 		}
 	</style>
 	<!-- Bouton qui affiche les icônes -->
-	<button class="floating-button" id="toggleButton"><img src="https://flagcdn.com/w20/fr.png" alt="Français"></button>
+	<button class="floating-button" id="toggleButton"><img id="flagImage" src="https://flagcdn.com/w20/fr.png" alt="Français"></button>
 
 	<!-- Liste des icônes de pays -->
 	<div class="country-icons" id="countryIcons">
-		<img src="https://flagcdn.com/w20/fr.png" alt="Français" class="selected">
+		<img  src="https://flagcdn.com/w20/fr.png" alt="Français" class="selected">
 		<img src="https://flagcdn.com/w20/tn.png" alt="francen" id="tn">
 		<img src="https://flagcdn.com/w20/it.png" alt="Italien" id="it">
 		<img src="https://flagcdn.com/w20/gb.png" alt="Anglais">
@@ -210,6 +210,14 @@
 				showCountryIcons();
 			}
 		});
+		  // Écouteur de clic sur l'image
+		  flagImage.addEventListener('click', (event) => {
+        event.stopPropagation(); // Empêche l'événement de clic de se propager au bouton
+		if (countryIcons.classList.contains('show')) {
+				hideCountryIcons();
+			} else {
+				showCountryIcons();
+			}    });
 	</script>
 	<!-- main header -->
 	<header class="main-header">
