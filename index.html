@@ -179,6 +179,21 @@
       opacity: 0.5;
     }
   }
+/* Version mobile : afficher seulement l'icône */
+@media (max-width: 768px) {
+    /* Cacher le texte uniquement dans la version mobile */
+    .floating-button span.text {
+      display: none;
+    }
+	#france{
+		display: none;
+	}
+
+    /* Afficher l'icône seulement sur mobile */
+    .floating-button span.icon {
+      display: inline-block;
+    }
+  }
 
 </style>
 
@@ -186,11 +201,11 @@
 <button class="floating-button" id="toggleButton" style="font-weight: 600;color: #053178
 ;">
   <span class="material-icons">location_on</span>
-  <span>France</span>
+  <span id="france">France</span>
 </button>
 
 <!-- Liste des pays avec drapeaux -->
-<div class="country-icons" id="countryIcons">
+<div class="country-icons" id="countryIcons" style="z-index: 9999;">
   <!-- France par défaut -->
   <div class="icon selected" id="fr">
     <img src="https://flagcdn.com/w20/fr.png" alt="France"><span>France</span>

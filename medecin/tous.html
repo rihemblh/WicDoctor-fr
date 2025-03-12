@@ -370,11 +370,11 @@
 																li.style.padding = "10px";
 																li.style.cursor = "pointer";
 																li.onclick = () => {
-																	console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase())
+																	console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.département).replace(/\s+/g, '-').toLowerCase())
 																	console.log("doctor.specialities.replace(/\s+/g, '-').toLowerCase(): ", getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase())
 																	console.log("doctor.name.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.name).replace(/\s+/g, '-').toLowerCase())
-																	console.log("", `https://fr.wiccrm.com/medecin/france/${getDoctorName2(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
-																	window.location.href = `https://fr.wiccrm.com/medecin/france/${getDoctorName2(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
+																	console.log("", `https://fr.wiccrm.com/medecin/france/${getDoctorName2(doctor.département).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
+																	window.location.href = `https://fr.wiccrm.com/medecin/france/${getDoctorName2(doctor.département).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
 																	document.getElementById('searchInput2').value = getDoctorName2(doctor.name);
 																	suggestionsContainer.style.display = 'none';
 																};
@@ -421,7 +421,7 @@
 
 
 								<div class="form-group mb-3">
-									<label for="city" class="form-label">Gouvernorat</label>
+									<label for="city" class="form-label">département</label>
 									<div class="input-group">
 										<select class="form-control select2-show-search border-bottom-0 w-100"
 											data-placeholder="Select" id="dynamicSelectVille">
@@ -1191,7 +1191,7 @@
 				const name = getDoctorName(doctor.name);
 				const speciality = getDoctorSpec(doctor.specialities, doctor.specialites);
 				const addr = getDoctorName(doctor.adresse_exacte);
-				const gouv = getDoctorName(doctor.gouvernorat);
+				const gouv = getDoctorName(doctor.département);
 				const city = getDoctorName(doctor.ville);
 				let description = ""
 				if (doctor.description != null)
@@ -1402,8 +1402,8 @@
 			doc = decryptData(doctorEncrypted)
 
 			sessionStorage.setItem("rdv", typeRDV)
-			console.log("url: ", `https://fr.wiccrm.com/medecin/france/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
-			window.location.href = `https://fr.wiccrm.com/medecin/france/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
+			console.log("url: ", `https://fr.wiccrm.com/medecin/france/${doc.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
+			window.location.href = `https://fr.wiccrm.com/medecin/france/${doc.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
 		}
 
 		// Chargement initial des médecins
