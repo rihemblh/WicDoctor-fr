@@ -81,144 +81,211 @@
 </head>
 
 <body>
-	<style>
-		/* Bouton flottant */
-		.floating-button {
-			position: fixed;
-			top: 20px;
-			right: 20px;
-			background-color: #eeefee;
-			color: white;
-			border: none;
-			padding: 5px 10px;
-			border-radius: 50px;
-			cursor: pointer;
-			z-index: 1000;
-			transition: background-color 0.2s;
-			animation: blink 1s infinite;
-		}
+<!-- Inclure la bibliothèque d'icônes Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-		.floating-button:hover {
-			background-color: #eeefee;
-		}
+<style>
+  /* Style pour le bouton flottant (plus fin et raffiné) */
+  .floating-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #007bff;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+  }
 
-		/* Liste des icônes */
-		.country-icons {
-			position: fixed;
-			top: 60px;
-			right: 20px;
-			background-color: white;
-			border: 1px solid #ddd;
-			border-radius: 8px;
-			padding: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			display: none;
-			z-index: 999;
-			opacity: 0;
-			transition: opacity 0.2s, transform 0.2s;
-			transform: translateY(-10px);
-		}
+  .floating-button:hover {
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
 
-		.country-icons.show {
-			display: inline;
-			opacity: 1;
-			transform: translateY(0);
-		}
+  .floating-button span {
+    font-size: 16px;
+    margin-left: 8px;
+  }
 
-		.country-icons img {
-			width: 30px;
-			margin: 5px 0;
-			cursor: pointer;
-			display: inline;
-		}
+  /* Liste des pays avec drapeaux */
+  .country-icons {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(-10px);
+    max-height: 200px;
+    width: 160px;
+    overflow-y: auto;
+  }
 
-		/* Drapeau sélectionné */
-		.selected {
-			outline: 2px solid #007bff;
-			border-radius: 5px;
-		}
+  .country-icons.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-		@keyframes blink {
+  /* Style pour chaque icône de pays */
+  .country-icons .icon {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, padding 0.2s ease;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333;
+  }
 
-			0%,
-			100% {
-				opacity: 1;
-			}
+  .country-icons .icon:hover {
+    background-color: #f2f2f2;
+    padding-left: 16px;
+  }
 
-			50% {
-				opacity: 0;
-			}
-		}
-	</style>
-	<!-- Bouton qui affiche les icônes -->
-	<button class="floating-button" id="toggleButton"><img id="flagImage" src="https://flagcdn.com/w20/fr.png" alt="Français"></button>
+  .country-icons .icon.selected {
+    background-color: #007bff;
+    color: white;
+  }
 
-	<!-- Liste des icônes de pays -->
-	<div class="country-icons" id="countryIcons">
-		<a href="https://fr.wiccrm.com" target="_blank"><img src="https://flagcdn.com/w20/fr.png" alt="Français" id="fr" class="selected"></a>
-		<a href="https://wic-doctor.com" target="_blank"><img src="https://flagcdn.com/w20/tn.png" alt="francen" id="tn"></a>
-		<img src="https://flagcdn.com/w20/it.png" alt="Italien" id="it">
-		<img src="https://flagcdn.com/w20/gb.png" alt="Anglais">
-		<img src="https://flagcdn.com/w20/es.png" alt="Espagnol">
-	</div>
+  .country-icons .icon img {
+    width: 16px;
+    height: 12px;
+    margin-right: 8px;
+  }
 
-	<script>
-		const toggleButton = document.getElementById('toggleButton');
-		const countryIcons = document.getElementById('countryIcons');
+  /* Animation du bouton flottant */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
 
-		let initialDisplayDone = false;
+</style>
 
-		// Fonction pour afficher la liste des pays
-		function showCountryIcons() {
-			countryIcons.classList.add('show');
-			document.addEventListener('click', handleClickOutside);
+<!-- Bouton flottant avec icône de localisation et "France" par défaut -->
+<button class="floating-button" id="toggleButton">
+  <span class="material-icons">location_on</span>
+  <span>France</span>
+</button>
 
-		}
+<!-- Liste des pays avec drapeaux -->
+<div class="country-icons" id="countryIcons">
+  <!-- France par défaut -->
+  <div class="icon selected" id="fr" onclick="window.location.href='https://fr.wiccrm.com'">
+    <img src="https://flagcdn.com/w20/fr.png" alt="France"><span>France</span>
+  </div>
+  <div class="icon" id="tn" onclick="window.location.href='https://wic-doctor.com'">
+    <img src="https://flagcdn.com/w20/tn.png" alt="Tunisie"><span>Tunisie</span>
+  </div>
+  <div class="icon" id="it" onclick="window.location.href='https://it.example.com'">
+    <img src="https://flagcdn.com/w20/it.png" alt="Italie"><span>Italie</span>
+  </div>
+  <div class="icon" id="gb" onclick="window.location.href='https://gb.example.com'">
+    <img src="https://flagcdn.com/w20/gb.png" alt="Royaume-Uni"><span>Royaume-Uni</span>
+  </div>
+  <div class="icon" id="es" onclick="window.location.href='https://es.example.com'">
+    <img src="https://flagcdn.com/w20/es.png" alt="Espagne"><span>Espagne</span>
+  </div>
+</div>
 
-		// Fonction pour cacher la liste des pays
-		function hideCountryIcons() {
-			countryIcons.classList.remove('show');
-			document.removeEventListener('click', handleClickOutside);
-		}
-		// Fonction pour vérifier le clic à l'extérieur
-		function handleClickOutside(event) {
-			if (!countryIcons.contains(event.target) && event.target !== toggleButton) {
-				hideCountryIcons();
-			}
-		}
-		// Clignotement du bouton au chargement
-		window.addEventListener('DOMContentLoaded', () => {
-			setTimeout(() => {
-				toggleButton.style.animation = 'none'; // Arrête l'animation après 5 secondes
-			}, 2000);
+<script>
+  const toggleButton = document.getElementById('toggleButton');
+  const countryIcons = document.getElementById('countryIcons');
 
-			// Affiche la liste des pays automatiquement au départ
-			showCountryIcons();
+  // Fonction pour afficher la liste des pays
+  function showCountryIcons() {
+    countryIcons.classList.add('show');
+    document.addEventListener('click', handleClickOutside);
+  }
 
-			// Cache la liste après 5 secondes si l'utilisateur n'interagit pas
-			setTimeout(() => {
-				hideCountryIcons();
-				initialDisplayDone = true; // Marque l'affichage initial comme terminé
-			}, 2000);
-		});
+  // Fonction pour cacher la liste des pays
+  function hideCountryIcons() {
+    countryIcons.classList.remove('show');
+    document.removeEventListener('click', handleClickOutside);
+  }
 
-		// Gestion de l'événement de clic sur le bouton
-		toggleButton.addEventListener('click', () => {
-			if (countryIcons.classList.contains('show')) {
-				hideCountryIcons();
-			} else {
-				showCountryIcons();
-			}
-		});
-		  // Écouteur de clic sur l'image
-		  flagImage.addEventListener('click', (event) => {
-        event.stopPropagation(); // Empêche l'événement de clic de se propager au bouton
-		if (countryIcons.classList.contains('show')) {
-				hideCountryIcons();
-			} else {
-				showCountryIcons();
-			}    });
-	</script>
+  // Fonction pour vérifier le clic à l'extérieur
+  function handleClickOutside(event) {
+    if (!countryIcons.contains(event.target) && event.target !== toggleButton) {
+      hideCountryIcons();
+    }
+  }
+
+  // Clignotement du bouton flottant au chargement
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      toggleButton.style.animation = 'none'; // Arrêter l'animation après 2 secondes
+    }, 2000);
+
+    // Affiche la liste des pays automatiquement au départ
+    showCountryIcons();
+
+    // Cache la liste après 5 secondes si l'utilisateur n'interagit pas
+    setTimeout(() => {
+      hideCountryIcons();
+    }, 5000);
+  });
+
+  // Gestion du clic sur le bouton flottant, texte ou icône
+  toggleButton.addEventListener('click', () => {
+    if (countryIcons.classList.contains('show')) {
+      hideCountryIcons();
+    } else {
+      showCountryIcons();
+    }
+  });
+
+  // Gestion du clic sur le texte ou l'icône à l'intérieur du bouton
+  toggleButton.querySelectorAll('span').forEach(span => {
+    span.addEventListener('click', (e) => {
+      e.stopPropagation();  // Empêche la propagation de l'événement pour que le clic sur le texte ou l'icône n'arrête pas l'affichage de la liste.
+      if (countryIcons.classList.contains('show')) {
+        hideCountryIcons();
+      } else {
+        showCountryIcons();
+      }
+    });
+  });
+
+  // Gestion de la sélection d'un pays
+  document.querySelectorAll('.country-icons .icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+      document.querySelectorAll('.country-icons .icon').forEach(item => {
+        item.classList.remove('selected');
+      });
+      this.classList.add('selected');
+
+      // Mettre à jour le bouton flottant avec le pays sélectionné
+      const selectedCountry = this.querySelector('span').textContent;
+      toggleButton.querySelector('span:last-child').textContent = selectedCountry;
+      
+      // Mettre à jour l'URL de la page en fonction du pays sélectionné
+      const selectedLink = this.getAttribute('onclick');
+      window.location.href = selectedLink;
+    });
+  });
+</script>
+
 	<!-- main header -->
 	<header class="main-header">
 		<div class="auto-container">
@@ -876,69 +943,7 @@
 	</div>
 </section>
 <!--/Section-->
-	<section class="sptb">
-		<div class="container">
-			<!-- <div class="section-title center-block text-center">
-				<h2 class=" position-relative">Offres</h2>
-			</div> -->
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="">
-						<div id="myCarousel" class="owl-carousel testimonial-owl-carousel">
-							<div class="item text-center">
-								<div class="card-body p-0">
-									<div class="row">
-										<div class="col-xl-12 col-md-12 d-block mx-auto">
-											<div class="">
-												<div class="testimonia-img mx-auto mb-3">
-													<img src="assets/images/banners/WIC.DOC-Banner.jpeg"
-														class="img-thumbnail img-pub" alt="WIC.DOC-Banner">
-												</div>
 
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- 	<div class="item text-center">
-								<div class="card-body p-0">
-									<div class="row">
-										<div class="col-xl-12 col-md-12 d-block mx-auto">
-											<div class="">
-												<div class="testimonia-img mx-auto mb-3">
-													<img src="assets/images/banners/WIC.DOC-Banner.jpeg"
-														class="img-thumbnail " alt="image">
-												</div>
-
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="item text-center">
-								<div class="card-body p-0">
-									<div class="row">
-										<div class="col-xl-12 col-md-12 d-block mx-auto">
-											<div class="">
-												<div class="testimonia-img mx-auto mb-3">
-													<img src="assets/images/banners/WIC.DOC-Banner.jpeg"
-														class="img-thumbnail " alt="image">
-												</div>
-
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 	
 
