@@ -373,8 +373,8 @@
 																	console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase())
 																	console.log("doctor.specialities.replace(/\s+/g, '-').toLowerCase(): ", getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase())
 																	console.log("doctor.name.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.name).replace(/\s+/g, '-').toLowerCase())
-																	console.log("", `https://fr.wiccrm.com/medecin/tunisie/${getDoctorName2(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
-																	window.location.href = `https://fr.wiccrm.com/medecin/tunisie/${getDoctorName2(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
+																	console.log("", `https://fr.wiccrm.com/medecin/france/${getDoctorName2(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
+																	window.location.href = `https://fr.wiccrm.com/medecin/france/${getDoctorName2(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
 																	document.getElementById('searchInput2').value = getDoctorName2(doctor.name);
 																	suggestionsContainer.style.display = 'none';
 																};
@@ -1219,14 +1219,14 @@
     <div class="d-md-flex" style="padding: 2%">
         <div class="item-card9-img">
             <div class="item-card9-imgs">
-                <a href="https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}', 0)" id="doctorDetails"></a>
+                <a href="https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}', 0)" id="doctorDetails"></a>
                 <img alt="img" class="cover-image" src="${photo}" style="border-radius: 10px;">
             </div>
         </div>
         <div class="card border-0 mb-0">
             <div class="card-body">
                 <div class="item-card9">
-                    <a href="https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}', 0)" class="text-dark">
+                    <a href="https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}', 0)" class="text-dark">
                         <h4 class="font-weight-bold mt-1 mb-1">Dr ${name}</h4>
                     </a>
                     <span class="text-muted fs-13 mt-0 d-block">
@@ -1305,14 +1305,14 @@
                 <div class="d-md-flex" style="padding: 2%;">
                     <div class="item-card9-img">
                         <div class="item-card9-imgs">
-                            <a href="https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}',0)"  id="doctorDetails"></a>
+                            <a href="https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}',0)"  id="doctorDetails"></a>
                             <img alt="img" class="cover-image" src="./../assets/images/media/doctors/doctor.png">
 							 </div>
                     </div>
                     <div class="card border-0 mb-0">
                         <div class="card-body">
                             <div class="item-card9">
-                                <a href="https://fr.wiccrm.com/medecin/tunisie/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}',0)"  class="text-dark">
+                                <a href="https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities, doctor.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.aleatoire}.html" onclick="GetDetailsDoctor('${encryptedData}',0)"  class="text-dark">
                                     <h4 class="font-weight-bold mt-1 mb-1">Dr ${name}</h4>
                                 </a>
                                 <span class="text-muted fs-13 mt-0">
@@ -1402,8 +1402,8 @@
 			doc = decryptData(doctorEncrypted)
 
 			sessionStorage.setItem("rdv", typeRDV)
-			console.log("url: ", `https://fr.wiccrm.com/medecin/tunisie/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
-			window.location.href = `https://fr.wiccrm.com/medecin/tunisie/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
+			console.log("url: ", `https://fr.wiccrm.com/medecin/france/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
+			window.location.href = `https://fr.wiccrm.com/medecin/france/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doc.specialities, doc.specialites).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doc.name).replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
 		}
 
 		// Chargement initial des médecins

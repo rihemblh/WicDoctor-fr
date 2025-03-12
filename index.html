@@ -156,7 +156,7 @@
 	<!-- Liste des icônes de pays -->
 	<div class="country-icons" id="countryIcons">
 		<img src="https://flagcdn.com/w20/fr.png" alt="Français" class="selected">
-		<img src="https://flagcdn.com/w20/tn.png" alt="Tunisien" id="tn">
+		<img src="https://flagcdn.com/w20/tn.png" alt="francen" id="tn">
 		<img src="https://flagcdn.com/w20/it.png" alt="Italien" id="it">
 		<img src="https://flagcdn.com/w20/gb.png" alt="Anglais">
 		<img src="https://flagcdn.com/w20/es.png" alt="Espagnol">
@@ -351,7 +351,7 @@
 			<div class="contact-info">
 				<ul>
 					<li><i class="fas fa-map-marker-alt icon"></i> Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul,
-						Tunisie</li>
+						france</li>
 					<li><i class="fas fa-phone icon"></i> +216 26 311 777</li>
 					<li><i class="fas fa-phone icon"></i> +216 26 311 722</li>
 					<li><i class="fas fa-map-marker-alt icon"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE
@@ -562,11 +562,11 @@
 																		li.style.padding = "10px";
 																		li.style.cursor = "pointer";
 																		li.onclick = () => {
-																			console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase())
+																			console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.Département).replace(/\s+/g, '-').toLowerCase())
 																			console.log("doctor.specialities.replace(/\s+/g, '-').toLowerCase(): ", getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase())
 																			console.log("doctor.name.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase())
-																			console.log("", `https://fr.wiccrm.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
-																			window.location.href = `https://fr.wiccrm.com/medecin/tunisie/${getDoctorName(doctor.gouvernorat).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
+																			console.log("", `https://fr.wiccrm.com/medecin/france/${getDoctorName(doctor.Département).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
+																			window.location.href = `https://fr.wiccrm.com/medecin/france/${getDoctorName(doctor.Département).replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
 																			document.getElementById('searchInput').value = getDoctorName(doctor.name);
 																			suggestionsContainer.style.display = 'none';
 																		};
