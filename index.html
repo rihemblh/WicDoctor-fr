@@ -183,7 +183,8 @@
 </style>
 
 <!-- Bouton flottant avec icône de localisation et "France" par défaut -->
-<button class="floating-button" id="toggleButton" style="color: #053178;font-weight: 600;">
+<button class="floating-button" id="toggleButton" style="font-weight: 600;color: #053178
+;">
   <span class="material-icons">location_on</span>
   <span>France</span>
 </button>
@@ -191,21 +192,13 @@
 <!-- Liste des pays avec drapeaux -->
 <div class="country-icons" id="countryIcons">
   <!-- France par défaut -->
-  <div class="icon selected" id="fr" onclick="window.location.href='https://fr.wiccrm.com'">
+  <div class="icon selected" id="fr">
     <img src="https://flagcdn.com/w20/fr.png" alt="France"><span>France</span>
   </div>
-  <div class="icon" id="tn" onclick="window.location.href='https://wic-doctor.com'">
+  <div class="icon" id="tn">
     <img src="https://flagcdn.com/w20/tn.png" alt="Tunisie"><span>Tunisie</span>
   </div>
-  <div class="icon" id="it" onclick="window.location.href='https://it.example.com'">
-    <img src="https://flagcdn.com/w20/it.png" alt="Italie"><span>Italie</span>
-  </div>
-  <div class="icon" id="gb" onclick="window.location.href='https://gb.example.com'">
-    <img src="https://flagcdn.com/w20/gb.png" alt="Royaume-Uni"><span>Royaume-Uni</span>
-  </div>
-  <div class="icon" id="es" onclick="window.location.href='https://es.example.com'">
-    <img src="https://flagcdn.com/w20/es.png" alt="Espagne"><span>Espagne</span>
-  </div>
+
 </div>
 
 <script>
@@ -267,9 +260,10 @@
     });
   });
 
-  // Gestion de la sélection d'un pays
+  // Gestion de la sélection d'un pays (redirection avec JavaScript)
   document.querySelectorAll('.country-icons .icon').forEach(icon => {
     icon.addEventListener('click', function() {
+      // Retirer la sélection de tous les pays
       document.querySelectorAll('.country-icons .icon').forEach(item => {
         item.classList.remove('selected');
       });
@@ -279,9 +273,15 @@
       const selectedCountry = this.querySelector('span').textContent;
       toggleButton.querySelector('span:last-child').textContent = selectedCountry;
       
-      // Mettre à jour l'URL de la page en fonction du pays sélectionné
-      const selectedLink = this.getAttribute('onclick');
-      window.location.href = selectedLink;
+      // Définir les liens pour chaque pays
+      const countryLinks = {
+        "France": "https://fr.wiccrm.com",
+        "Tunisie": "https://wic-doctor.com",
+       
+      };
+
+      // Rediriger vers le lien associé au pays sélectionné
+      window.location.href = countryLinks[selectedCountry];
     });
   });
 </script>
