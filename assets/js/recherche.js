@@ -539,7 +539,7 @@ function RechercheDoctor() {
   // Dynamically adjust all paths that start with ./../../
   {
     //console.log("**************************************************************if4")
-    window.location.href = `${currentPath}medecin//${reg.replace(/\s+/g, '-').toLowerCase()}/${document.getElementById('dynamicSelect').options[document.getElementById('dynamicSelect').selectedIndex].text.replace(/\s+/g, '-').toLowerCase()}.html`;
+    window.location.href = `${currentPath}medecin/${reg.replace(/\s+/g, '-').toLowerCase()}/${document.getElementById('dynamicSelect').options[document.getElementById('dynamicSelect').selectedIndex].text.replace(/\s+/g, '-').toLowerCase()}.html`;
 
   }
   else if (dep && specialtyId)
