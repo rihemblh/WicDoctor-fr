@@ -68,6 +68,225 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 </head>
 
 <body>
+<!-- Inclure la bibliothèque d'icônes Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+  /* Style pour le bouton flottant (plus fin et raffiné) */
+  .floating-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #007bff;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .floating-button:hover {
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .floating-button span {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+
+  /* Liste des pays avec drapeaux */
+  .country-icons {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(-10px);
+    max-height: 200px;
+    width: 160px;
+    overflow-y: auto;
+  }
+
+  .country-icons.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Style pour chaque icône de pays */
+  .country-icons .icon {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, padding 0.2s ease;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .country-icons .icon:hover {
+    background-color: #f2f2f2;
+    padding-left: 16px;
+  }
+
+  .country-icons .icon.selected {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .country-icons .icon img {
+    width: 16px;
+    height: 12px;
+    margin-right: 8px;
+  }
+
+  /* Animation du bouton flottant */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+/* Version mobile : afficher seulement l'icône */
+@media (max-width: 768px) {
+    /* Cacher le texte uniquement dans la version mobile */
+    .floating-button span.text {
+      display: none;
+    }
+	#france{
+		display: none;
+	}
+
+    /* Afficher l'icône seulement sur mobile */
+    .floating-button span.icon {
+      display: inline-block;
+    }
+  }
+
+</style>
+
+<!-- Bouton flottant avec icône de localisation et "France" par défaut -->
+<button class="floating-button" id="toggleButton" style="font-weight: 600;color: #053178
+;">
+  <span class="material-icons">location_on</span>
+  <span id="france">France</span>
+</button>
+
+<!-- Liste des pays avec drapeaux -->
+<div class="country-icons" id="countryIcons" style="z-index: 9999;">
+  <!-- France par défaut -->
+  <div class="icon selected" id="fr">
+    <img src="https://flagcdn.com/w20/fr.png" alt="France"><span>France</span>
+  </div>
+  <div class="icon" id="tn">
+    <img src="https://flagcdn.com/w20/tn.png" alt="Tunisie"><span>Tunisie</span>
+  </div>
+
+</div>
+
+<script>
+  const toggleButton = document.getElementById('toggleButton');
+  const countryIcons = document.getElementById('countryIcons');
+
+  // Fonction pour afficher la liste des pays
+  function showCountryIcons() {
+    countryIcons.classList.add('show');
+    document.addEventListener('click', handleClickOutside);
+  }
+
+  // Fonction pour cacher la liste des pays
+  function hideCountryIcons() {
+    countryIcons.classList.remove('show');
+    document.removeEventListener('click', handleClickOutside);
+  }
+
+  // Fonction pour vérifier le clic à l'extérieur
+  function handleClickOutside(event) {
+    if (!countryIcons.contains(event.target) && event.target !== toggleButton) {
+      hideCountryIcons();
+    }
+  }
+
+  // Clignotement du bouton flottant au chargement
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      toggleButton.style.animation = 'none'; // Arrêter l'animation après 2 secondes
+    }, 2000);
+
+    // Affiche la liste des pays automatiquement au départ
+    showCountryIcons();
+
+    // Cache la liste après 5 secondes si l'utilisateur n'interagit pas
+    setTimeout(() => {
+      hideCountryIcons();
+    }, 5000);
+  });
+
+  // Gestion du clic sur le bouton flottant, texte ou icône
+  toggleButton.addEventListener('click', () => {
+    if (countryIcons.classList.contains('show')) {
+      hideCountryIcons();
+    } else {
+      showCountryIcons();
+    }
+  });
+
+  // Gestion du clic sur le texte ou l'icône à l'intérieur du bouton
+  toggleButton.querySelectorAll('span').forEach(span => {
+    span.addEventListener('click', (e) => {
+      e.stopPropagation();  // Empêche la propagation de l'événement pour que le clic sur le texte ou l'icône n'arrête pas l'affichage de la liste.
+      if (countryIcons.classList.contains('show')) {
+        hideCountryIcons();
+      } else {
+        showCountryIcons();
+      }
+    });
+  });
+
+  // Gestion de la sélection d'un pays (redirection avec JavaScript)
+  document.querySelectorAll('.country-icons .icon').forEach(icon => {
+    icon.addEventListener('click', function() {
+      // Retirer la sélection de tous les pays
+      document.querySelectorAll('.country-icons .icon').forEach(item => {
+        item.classList.remove('selected');
+      });
+      this.classList.add('selected');
+
+      // Mettre à jour le bouton flottant avec le pays sélectionné
+      const selectedCountry = this.querySelector('span').textContent;
+      toggleButton.querySelector('span:last-child').textContent = selectedCountry;
+      
+      // Définir les liens pour chaque pays
+      const countryLinks = {
+        "France": "https://fr.wiccrm.com",
+        "Tunisie": "https://wic-doctor.com",
+       
+      };
+
+      // Rediriger vers le lien associé au pays sélectionné
+      window.location.href = countryLinks[selectedCountry];
+    });
+  });
+</script>
 
 	<!--Loader-->
 	<div id="global-loader">
@@ -405,7 +624,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 								<li>
 									<a href="https://fr.wiccrm.com/medecin/tous.html">Professionnels de santé</a>
 								</li>
-								<li>
+								<!--<li>
 									<a href="https://fr.wiccrm.com/pharmacies/pharmacie.html">Pharmacies & Parapharmacies</a>
 								</li>
 								<li>
@@ -413,7 +632,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 								</li>
 								<li>
 									<a href="https://fr.wiccrm.com/Laboratoires/tous.html">Laboratoires</a>
-								</li>
+								</li-->>
 
 							</ul>
 						</div>
