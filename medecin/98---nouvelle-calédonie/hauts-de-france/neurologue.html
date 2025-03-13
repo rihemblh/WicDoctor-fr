@@ -520,7 +520,7 @@
 									<div class="input-group">
 										<input class="form-control border" id="searchInput2"
 											placeholder="Nom du professionnel de santé" type="text">
-										<ul id="suggestions2" class="dropdown-menu"></ul>
+										<ul id="suggestions2" class="dropdown-menu" style="max-height: 300px; overflow-y: auto;"></ul>
 
 									</div>
 								</div>
@@ -572,7 +572,7 @@
 
 											//console.log("apiUrl: ", apiUrl)
 											try {
-												fetch(`https://wic-doctor.com:3004/search-doctors?query=${query.toLowerCase()}`)
+												fetch(`https://wic-doctor.com:3004/search-doctors-france?query=${query.toLowerCase()}`)
 													.then(response => {
 														if (!response.ok) {
 															throw new Error('Erreur lors de la récupération des catégories');
@@ -603,11 +603,11 @@
 																li.style.padding = "10px";
 																li.style.cursor = "pointer";
 																li.onclick = () => {
-																	console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.département).replace(/\s+/g, '-').toLowerCase())
+																	console.log("JSON.parse(doctor.ville).fr.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.Département).replace(/\s+/g, '-').toLowerCase())
 																	console.log("doctor.specialities.replace(/\s+/g, '-').toLowerCase(): ", getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase())
 																	console.log("doctor.name.replace(/\s+/g, '-').toLowerCase(): ", getDoctorName2(doctor.name).replace(/\s+/g, '-').toLowerCase())
-																	console.log("", `https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
-																	window.location.href = `https://fr.wiccrm.com/medecin/france/${doctor.département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
+																	console.log("", `https://fr.wiccrm.com/medecin/france/${doctor.Département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`)
+																	window.location.href = `https://fr.wiccrm.com/medecin/france/${doctor.Département.replace(/\s+/g, '-').toLowerCase()}/${getDoctorSpec2(doctor.specialities).replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(doctor.name).replace(/\s+/g, '-').toLowerCase()}-${doctor.id_aleatoire}.html`;
 																	document.getElementById('searchInput2').value = getDoctorName2(doctor.name);
 																	suggestionsContainer.style.display = 'none';
 																};
