@@ -1391,7 +1391,7 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
 				console.log("photo: ", photo)
 				const name = getDoctorName(doctor.name);
 				const speciality = getDoctorSpec(doctor.specialities, doctor.specialites);
-				const addr = getDoctorName(doctor.adresse);
+				const addr = getDoctorName(doctor.adresse_exacte);
 				const gouv = getDoctorName(doctor.département);
 				const city = getDoctorName(doctor.region);
 				let description = ""
