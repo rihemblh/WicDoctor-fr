@@ -84,7 +84,7 @@
 <!-- Inclure la bibliothèque d'icônes Material Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<style>
+<!-- <style>
   /* Style pour le bouton flottant (plus fin et raffiné) */
   .floating-button {
     position: fixed;
@@ -197,16 +197,13 @@
 
 </style>
 
-<!-- Bouton flottant avec icône de localisation et "France" par défaut -->
 <button class="floating-button" id="toggleButton" style="font-weight: 600;color: #053178
 ;">
   <span class="material-icons">location_on</span>
   <span id="france">France</span>
 </button>
 
-<!-- Liste des pays avec drapeaux -->
 <div class="country-icons" id="countryIcons" style="z-index: 9999;">
-  <!-- France par défaut -->
   <div class="icon selected" id="fr">
     <img src="https://flagcdn.com/w20/fr.png" alt="France"><span>France</span>
   </div>
@@ -300,7 +297,128 @@
     });
   });
 </script>
-
+ -->
+ <style>
+	
+  
+	.button-float {
+		
+    position: fixed;
+    right: 20px;
+   
+    
+   
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+	}
+  
+	.button-float a {
+	  text-decoration: none;
+	  color: inherit;
+	}
+  
+	.button-float .menu-item {
+	  display: flex;
+	  align-items: center;
+	  margin-left: 12px;
+	  position: relative;
+	}
+  
+	.button-float .menu-item select {
+	  border: none;
+	  background: none;
+	  font-size: 14px;
+	  color: #333;
+	  cursor: pointer;
+	}
+  
+	.button-float .menu-item select:focus {
+	  outline: none;
+	}
+  
+	.button-float .divider {
+	  margin: 0 8px;
+	  color: #888;
+	}
+  
+	/* Animation clignotante au chargement */
+	@keyframes blink {
+	  0%, 100% { opacity: 1; }
+	  50% { opacity: 0.5; }
+	}
+  
+	#countrySelect, #languageSelect {
+	  animation: blink 2s infinite;
+	}
+  </style>
+  
+  <div class="button-float">
+	<!-- Sélection du pays -->
+	<div class="menu-item">
+	  <select id="countrySelect">
+		<option value="france">France</option>
+		<option value="tunisia">Tunisie</option>
+		<option value="italy">Italie</option>
+	  </select>
+	</div>
+  
+	<!-- Séparateur -->
+	<div class="divider">|</div>
+  
+	<!-- Sélection de la langue -->
+	<div class="menu-item">
+	  <select id="languageSelect">
+		<option value="fr">FR</option>
+	  </select>
+	</div>
+  
+	<!-- Séparateur -->
+	<div class="divider">|</div>
+  
+	<!-- Lien Aide -->
+	<div class="menu-item"><a href="#">Aide</a></div>
+  
+	<!-- Séparateur -->
+	<div class="divider">|</div>
+  
+	<!-- Lien Connexion -->
+	<div class="menu-item"><a href="https://fr.wiccrm.com/login.html">Connexion</a></div>
+  </div>
+  
+  <script>
+	const countrySelect = document.getElementById('countrySelect');
+	const languageSelect = document.getElementById('languageSelect');
+  
+	// Liens de redirection en fonction du pays sélectionné
+	const countryLinks = {
+	  "france": "https://fr.wiccrm.com",
+	  "tunisia": "https://wic-doctor.com",
+	  "italy": "#"
+	};
+  
+	// Rediriger l'utilisateur lorsqu'il sélectionne un pays
+	countrySelect.addEventListener('change', function() {
+		console.log("changeeeeeeeeeeeeeeeee")
+	  const selectedCountry = countrySelect.value;
+	  if (countryLinks[selectedCountry]) {
+		window.location.href = countryLinks[selectedCountry];
+	  }
+	});
+  
+	// Simulation de l'ouverture automatique du menu
+	window.addEventListener('DOMContentLoaded', () => {
+	  setTimeout(() => {
+		countrySelect.style.animation = 'none';
+		languageSelect.style.animation = 'none';
+	  }, 2000);
+	});
+  </script>
+  
 	<!-- main header -->
 	<header class="main-header">
 		<div class="auto-container">
