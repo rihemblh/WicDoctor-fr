@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+ <meta charset="utf-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '623852967108851');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Prescription en Ligne avec IA pour Médecins </title>
+<meta name="description" content="Optimisez la prescription avec l'IA pour une précision accrue et une meilleure sécurité.">
+
+<!-- Fav Icon -->
+<link rel="icon" href="assets/images/wic-dr-logo.png" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/imagebg.css" rel="stylesheet">
+<link href="assets/css/color.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRK4SDDB4H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TRK4SDDB4H');
+</script>
+</head>
+
+
+<!-- page wrapper -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+       
+     
+       .button-float {
+           
+       position: fixed;
+       right: 20px;
+      
+       
+      
+       font-size: 16px;
+       cursor: pointer;
+       z-index: 1000;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: all 0.3s ease;
+       }
+     
+       .button-float a {
+         text-decoration: none;
+         color: inherit;
+       }
+     
+       .button-float .menu-item {
+         display: flex;
+         align-items: center;
+         margin-left: 12px;
+         position: relative;
+       }
+     
+       .button-float .menu-item select {
+         border: none;
+         background: none;
+         font-size: 14px;
+         color: #333;
+         cursor: pointer;
+       }
+     
+       .button-float .menu-item select:focus {
+         outline: none;
+       }
+     
+       .button-float .divider {
+         margin: 0 8px;
+         color: #888;
+       }
+     
+       /* Animation clignotante au chargement */
+       @keyframes blink {
+         0%, 100% { opacity: 1; }
+         50% { opacity: 0.5; }
+       }
+     
+       #countrySelect, #languageSelect {
+         animation: blink 2s infinite;
+       }
+     </style>
+     
+     <div class="button-float">
+       <!-- Sélection du pays -->
+       <div class="menu-item">
+         <select id="countrySelect">
+           <option value="france">France</option>
+           <option value="tunisia">Tunisie</option>
+           <option value="italy">Italie</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Sélection de la langue -->
+       <div class="menu-item">
+         <select id="languageSelect">
+           <option value="fr">FR</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Aide -->
+       <div class="menu-item"><a href="#">Aide</a></div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Connexion -->
+       <div class="menu-item"><a href="https://dashboard.wic-doctor.com/login">Connexion</a></div>
+     </div>
+     
+     <script>
+       const countrySelect = document.getElementById('countrySelect');
+       const languageSelect = document.getElementById('languageSelect');
+     
+       // Liens de redirection en fonction du pays sélectionné
+       const countryLinks = {
+         "france": "https://fr.wiccrm.com/inscription-professionnel/",
+         "tunisia": "https://wic-doctor.com/inscription-professionnel/",
+         "italy": "#"
+       };
+     
+       // Rediriger l'utilisateur lorsqu'il sélectionne un pays
+       countrySelect.addEventListener('change', function() {
+           console.log("changeeeeeeeeeeeeeeeee")
+         const selectedCountry = countrySelect.value;
+         if (countryLinks[selectedCountry]) {
+           window.location.href = countryLinks[selectedCountry];
+         }
+       });
+     
+       // Simulation de l'ouverture automatique du menu
+       window.addEventListener('DOMContentLoaded', () => {
+         setTimeout(() => {
+           countrySelect.style.animation = 'none';
+           languageSelect.style.animation = 'none';
+         }, 2000);
+       });
+     </script>
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- preloader -->
+
+
+
+
+    <!-- main header -->
+    <header class="main-header style-two">
+        <div class="auto-container">
+            <div class="header-upper">
+                <div class="outer-box clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                    </div>
+                    <div class="nav-box pull-right clearfix">
+                        <div class="menu-area pull-left">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                            </div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix" >
+                                        <li><a href="index.html">Accueil</a>
+                                           
+                                        </li> 
+                                        <li class="current dropdown"><a href="nos-services.html"> Nos Services</a>
+                                            <ul>
+                                                <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                                <li><a href="teleconsultation.html">Téléconsultation</a></li>
+                                                <li><a href="Télésecretariat.html">Télésecrétariat Médical</a></li>
+                                                <li><a href="télésurveillance-médicale.html">Télésurveillance Médicale</a></li>
+                                                <li><a href="optimisation-communication.html">Communication internationale</a></li>
+                                                <li><a href="fibre-optique.html">Fibre Optique pour les Professionnels de Santé</a></li>
+                                                <li><a href="gestion-rdv.html">Gestion de Vos Rendez-vous en Ligne</a></li>
+                                                <li><a href="prescription-ia.html">Prescription en Ligne avec Aide à la Prescription IA</a></li>
+                                                <li><a href="téléexpertise-téléassistance.html">Télé-expertise et Télé-assistance Médicale</a></li>
+                                                <li><a href="SMS-rappel.html">SMS de Rappel pour Professionnels de Santé</a></li>
+                                                <li><a href="Sécurité-données.html">Sécurité des Données pour les Professionnels de Santé</a></li>
+                                                <li><a href="gestion-dossiers-medicaux.html">Gestion des Dossiers Médicaux en Ligne</a></li>
+                                                <li><a href="visibilite-seo.html">Visibilité SEO</a></li>
+                                               </ul>
+                                        </li>
+                                        <li><a href="offres.html">Nos Offres</a>
+                                         
+                                        </li>
+                                       
+                                        <li><a href="Télésecretariat.html">Télésecrétariat </a>
+                                        </li>          
+                                       
+                                        <li>                    
+                         
+                                            <a href="https://fr.wiccrm.com/" class="style-two"> </i>Espace Patient</a>
+                                
+                                        </li> 
+                                        <li>                    
+                         
+                                            <a href="inscription.html" class="style-two"><i class="fas fa-user"> </i> Inscription</a>
+                                
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box"><a href="index.html"><img src="assets/images/small-logo.png" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main-header end -->
+
+    <!-- Mobile Menu  -->
+    <!-- Mobile Menu  -->
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+        
+        <nav class="menu-box">
+            <div class="nav-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt="" title=""></a></div>
+            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            <div class="contact-info">
+                <h4>Contactez Nous</h4>
+                <ul>
+                
+
+                    
+                    <li><i class="fas fa-map-marker-alt"></i> Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 722"> +216 26 311 722</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13"> +33 743 13 00 13</a></li>
+                   
+                    <li><i class="fas fa-envelope"></i><a href="mailto:contact@way-interactive-convergence.com"> contact@way-interactive-convergence.com</a></li>
+                    <li><i class="fas fa-arrow-circle-right"></i>   <a href="way-interactive-convergence.com">    way-interactive-convergence.com</a></li>
+                    <li></li>
+                </ul>
+                 
+            </div>
+          
+        </nav>
+    </div><!-- End Mobile Menu -->
+
+    <!--Page Title-->
+    <section class="page-title centred">
+        <div class="pattern-layer">
+            <div class="pattern-1" style="background-image: url(assets/images/icons/pattern-21.png);"></div>
+            <div class="pattern-2" style="background-image: url(assets/images/icons/pattern-22.png);"></div>
+            <div class="pattern-3 float-bob-x" style="background-image: url(assets/images/icons/pattern-23.png);"></div>
+        </div>
+        <div class="bubble-box">
+            <div class="bubble bubble-1" style="background-image: url(assets/images/icons/bubble.png);"></div>
+            <div class="bubble bubble-2 rotate-me" style="background-image: url(assets/images/icons/bubble.png);"></div>
+            <div class="bubble bubble-3" style="background-image: url(assets/images/icons/bubble.png);"></div>
+            <div class="bubble bubble-4"></div>
+        </div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h1>Prescription en Ligne avec Aide à la Prescription IA </h1>
+
+
+                <ul class="bread-crumb clearfix">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="nos-services.html">Nos Services</a></li>
+                    <li>Prescription en Ligne avec Aide à la Prescription IA </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+
+    <!-- service-details -->
+    <section class="service-details"> 
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 content-side">
+                    <div class="service-details-content">
+                        <div class="inner-box">
+                            <div class="upper-inner">
+                                <h2>
+                                    Prescription en Ligne avec  Aide à la <br> Prescription IA</h2>
+                                <div class="text">
+                                    <br> 
+                                    <p style="font-size: larger;">
+                                        Améliorez l'efficacité de votre pratique médicale avec notre solution avancée de prescription en ligne,
+                                        intégrant l'aide à la prescription par intelligence artificielle. Cette technologie moderne facilite non
+                                        seulement la rédaction et la gestion des ordonnances mais assure également une précision accrue, 
+                                        réduisant les risques d'erreurs médicamenteuses.
+
+                                        </p>
+                                
+                            </div><br>
+                            <h3>Pourquoi Opter pour Notre Solution de Prescription en Ligne ?
+                            </h3>
+                            <div class="text">
+                                 
+                                    <p style="font-size: larger;">
+                                        <ul type="disc">
+
+                                          <li> <b>Efficacité Accrue : </b>Simplifiez et accélérez le processus de prescription grâce à une interface intuitive et des fonctionnalités automatisées.
+                                          </li>
+                                            <li> <b>Sécurité et Conformité : </b> Assurez la sécurité des informations patient et respectez les normes réglementaires grâce à un système sécurisé et conforme aux normes de confidentialité.                                            </li>
+                                            <li><b>Accessibilité Améliorée :</b>Permettez aux patients d'accéder à leurs prescriptions de manière sécurisée en ligne, facilitant le renouvellement et la gestion des médicaments.                                            </li>
+                                        
+                                        </ul>
+                                        
+                                    </p>
+                                    </div>
+
+                            <div class="carousel-box-one">
+                                <div class="two-column-carousel owl-carousel owl-theme owl-nav-none">
+                                   
+                                    <figure class="image-box"><a href="assets/images/gallery/pres1.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/gallery/pres1.png" alt=""></a></figure>
+                                    <figure class="image-box"><a href="assets/images/gallery/pres2.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/gallery/pres2.png" alt=""></a></figure>
+                                    <figure class="image-box"><a href="assets/images/gallery/pres3.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/gallery/pres3.png" alt=""></a></figure>
+                                    <figure class="image-box"><a href="assets/images/gallery/pres1.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/gallery/pres1.png" alt=""></a></figure>
+                                    <figure class="image-box"><a href="assets/images/gallery/pres2.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/gallery/pres2.png" alt=""></a></figure>
+                                    <figure class="image-box"><a href="assets/images/gallery/pres3.png" class="lightbox-image" data-fancybox="gallery"><img src="assets/images/gallery/pres3.png" alt=""></a></figure>
+                               
+                                </div>
+                            </div>
+                            <div class="service-tab-box">
+                                <h2> Innovation en IA pour l'Aide à la <br> Prescription </h2>
+                                <b>Assistance IA : </b>Notre système utilise l'intelligence artificielle pour suggérer des dosages, surveiller les interactions médicamenteuses et proposer des alternatives génériques, augmentant la précision et la sécurité des prescriptions.
+                                <br>
+                                <b>Analyse de Données Avancée : </b>L'IA analyse les historiques de traitement et les données de santé pour recommander les meilleures options de médicaments basées sur des preuves cliniques.
+                                <br>
+                                <b>Support Decisionnel : </b>  L'IA fournit un support décisionnel en temps réel, aidant les médecins à choisir les traitements les plus appropriés pour leurs patients.
+
+                            </div>
+
+     
+                            <div class="carousel-box-two">
+                                <div class="two-column-carousel-2 owl-carousel owl-theme owl-dots-none">
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="fibre-optique.html"><h3 >Connectivité en Fibre Optique pour les Professionnels de Santé</h3></a>
+                                        <p></p>
+                                    </div>
+                                   <!--  <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/calendar.png" alt=""></figure>
+                                        <h3>Gestion des Rendez-vous <br> en Ligne</h3>
+                                        <p>Une solution intuitive pour permettre à vos patients de réserver leurs consultations...</p>
+                                    </div> -->
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="SMS-rappel.html"><h3>Service de SMS de Rappel pour Professionnels de Santé</h3></a>
+                                        <p></p>
+                                    </div> 
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="Sécurité-données.html"><h3>Sécurité des Données pour les Professionnels de Santé</h3></a>
+                                        <p></p>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="gestion-rdv.html"><h3>Simplifiez la Gestion de Vos Rendez-vous avec Notre Solution en Ligne                   </h3></a>
+                                        <p></p>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="gestion-dossiers-medicaux.html"><h3>Gestion des Dossiers Médicaux en Ligne</h3></a>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="visibilite-seo.html"><h3>Augmentez Votre Visibilité SEO et Démontrez Votre Expertise     </h3></a>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="optimisation-communication.html"><h3>Optimisez Votre Communication avec Nos Outils Internationaux</h3></a>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="téléexpertise-téléassistance.html"><h3>Services de Téléexpertise et Téléassistance Médicale</h3></a>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="télésurveillance-médicale.html"><h3>Télésurveillance Médicale Surveillance Continue à Distance</h3> </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="teleconsultation.html">  <h3>Téléconsultation <br> sécurisée</h3> </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-25.png);"></div>
+                                        <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                        <a href="Télésecretariat.html"> <h3>Télésecrétariat <br> Médical</h3></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+            </div>
+        </div>
+    </section>
+    <!-- service-details end -->
+
+    
+    <!-- about-section -->
+    <section class="about-section about-page">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div id="image_block_01">
+                        <div class="image-box js-tilt">
+                            <div class="pattern-layer-1 wow slideInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image: url(assets/images/icons/pattern-1.png);"></div>
+                            <div class="pattern-layer-2" data-wow-duration="1500ms" style="background-image: url(assets/images/icons/pattern-2.png);"></div>
+                            <figure class="image wow slideInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="assets/images/icons/dr-7.png" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div id="content_block_01">
+                        <div class="content-box">
+                            <div class="sec-title wow fadeInDown animated" data-wow-delay="0ms">
+                                <div class="title-two"><p><span>{</span>&nbsp;Pourquoi nous ?&nbsp;<span>}</span></p></div>
+                                <h2>Découvrez comment nos solutions peuvent transformer votre quotidien professionnel</h2>
+                            </div>
+                            <p>Modernisez votre pratique médicale avec notre solution de prescription en ligne. 
+                            Contactez-nous aujourd'hui pour découvrir comment notre technologie avancée peut vous aider à améliorer la qualité
+                            des soins et la satisfaction des patients.
+
+                                
+                            </p>
+
+
+                           
+                            <div class="btn-box wow fadeInUp animated" data-wow-delay="300ms"><a href="contact.html" class="theme-btn style-four"><i class="fas fa-feather"></i>Essayez gratuitement</a></div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- about-section end -->
+
+
+    <!-- testimonial-section -->
+    <section class="testimonial-section alternate-2 style-two">
+        <div class="anim-icon wow zoomIn animated" data-wow-delay="00ms">
+            <div class="icon icon-1 rotate-me" style="background-image: url(assets/images/icons/anim-icon-1.png);"></div>
+            <div class="icon icon-2 float-bob-x" style="background-image: url(assets/images/icons/anim-icon-2.png);"></div>
+            <div class="icon icon-3 float-bob-y"></div>
+            <div class="icon icon-4 rotate-me" style="background-image: url(assets/images/icons/anim-icon-3.png);"></div>
+            <div class="icon icon-5 float-bob-x" style="background-image: url(assets/images/icons/anim-icon-4.png);"></div>
+            <div class="icon icon-6 rotate-me" style="background-image: url(assets/images/icons/anim-icon-5.png);"></div>
+            <div class="icon icon-7 rotate-me" style="background-image: url(assets/images/icons/anim-icon-5.png);"></div>
+            <div class="icon icon-8 float-bob-y" style="background-image: url(assets/images/icons/anim-icon-4.png);"></div>
+            <div class="icon icon-9 rotate-me" style="background-image: url(assets/images/icons/anim-icon-3.png);"></div>
+            <div class="icon icon-10 float-bob-x"></div>
+            <div class="icon icon-11 rotate-me" style="background-image: url(assets/images/icons/anim-icon-1.png);"></div>
+        </div>
+        <div class="auto-container">
+            <div class="sec-title centred">
+                <div class="title-two"><p><span>{</span>&nbsp;Témoignages&nbsp;<span>}</span></p></div>
+                <h2>Des solutions modernes pour simplifier votre quotidien</h2>
+            </div>
+            <div class="testimonial-carousel owl-carousel owl-theme owl-dots-none">
+                <div class="inner-column">
+                    <div class="testimonial-content">
+                        <div class="inner-box">
+                            <div class="top-inner">
+                                <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-20.png);"></div>
+                                <div class="text">
+                                    <p>"L'intégration de l'IA dans notre système de prescription en ligne a considérablement réduit les erreurs de médication et amélioré l'efficacité de notre pratique."</p>
+                                </div>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="author-info">
+                                <figure class="image-box"><img src="assets/images/resource/dr2.png" alt=""></figure>
+                                <h3>Dr. Anita</h3>
+                                <span class="designation">Endocrinologue </span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="inner-column">
+                    <div class="testimonial-content">
+                        <div class="inner-box">
+                            <div class="top-inner">
+                                <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-20.png);"></div>
+                                <div class="text">
+                                    <p>"Grâce à l'IA, mes prescriptions sont plus rapides et précises. Cela me permet de gagner du temps et d'améliorer la prise en charge de mes patients."</p>
+                                </div>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="author-info">
+                                <figure class="image-box"><img src="assets/images/resource/dr1.png" alt=""></figure>
+                                <h3>Dr. Claire</h3>
+                                <span class="designation">Pédiatre</span>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="inner-column">
+                    <div class="testimonial-content">
+                        <div class="inner-box">
+                            <div class="top-inner">
+                                <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-20.png);"></div>
+                                <div class="text">
+                                    <p>"L'IA intégrée à notre outil de prescription en ligne m'aide à prescrire les traitements les plus adaptés. Cela a amélioré la qualité de mes soins."</p>
+                                </div>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="author-info">
+                                <figure class="image-box"><img src="assets/images/resource/dr6.png" alt=""></figure>
+                                <h3>Dr. Martin</h3> 
+                                <span class="designation">Cardiologue</span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial-section end -->
+
+        <!-- faq-style-two -->
+        <section class="faq-style-two">
+            <div class="auto-container">
+                <div class="sec-title centred">
+                    <div class="title-two"><p><span>{</span>&nbsp;FAQ&nbsp;<span>}</span></p></div>
+                    <h2>En savoir plus grâce à notre foire aux questions!</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 inner-column">
+                        <div class="inner-box">
+                            <ul class="accordion-box">
+                                <li class="accordion block active-block">
+                                    <div class="acc-btn active">
+                                        <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                        <h5>1. Comment la prescription en ligne garantit-elle la confidentialité des données du patient ?
+                                        </h5>
+                                    </div>
+                                    <div class="acc-content current">
+                                        <div class="content">
+                                            <p>Toutes les données sont chiffrées et traitées dans le respect total des normes de confidentialité.
+                                                Seuls les professionnels de santé autorisés ont accès aux informations.
+
+                                                </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                    <div class="acc-btn">
+                                        <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                        <h5>2. L'IA peut-elle remplacer le jugement clinique du médecin ?
+                                        </h5>
+                                    </div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <p>Non, l'IA est conçue pour soutenir et augmenter le jugement clinique des médecins, pas pour le remplacer. Elle fournit des informations et des suggestions qui peuvent aider à la prise de décision.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                     <div class="acc-btn">
+                                        <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                        <h5>3. Est-ce que les patients peuvent accéder directement à leurs prescriptions ?</h5>
+                                    </div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <p>Oui, les patients peuvent accéder à leurs prescriptions en ligne via un portail sécurisé, ce qui facilite le suivi et le renouvellement des médicaments.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+        <!--faq-style-two end -->
+    	<style>
+        .social-icons {
+    position: fixed;
+    top: 50%;
+    right: 10px; /* Positionné à droite */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 40px; /* Taille des icônes */
+    height: 40px;
+    border-radius: 50%; /* Pour un effet arrondi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet plus pro */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+    </style>
+    <!-- End Popup Login-->
+    <div class="social-icons" style="z-index: 9999;">
+        <a href="https://www.facebook.com/people/WIC-Doctor/61567242383619/?locale=fr_FR" target="_blank">
+            <img src="./assets/images/icons/fb.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/@WICDoctor" target="_blank">
+            <img src="./assets/images/icons/youtube.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/wic_doctor_tunisia/" target="_blank">
+            <img src="./assets/images/icons/insta.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/company/wic-doctor/posts/" target="_blank">
+            <img src="./assets/images/icons/linkidin.png" alt="Instagram">
+        </a>
+        <a href="https://x.com/WicDoctor" target="_blank">
+            <img src="./assets/images/icons/twitter.png" alt="Instagram">
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=21626311722&text&context=ARCA4kG0-ji3IZZVIl0SGy-pasvzA9NGu6rAMyFGkteYpSXEy5aiifugPiOP2mfw5L4BpCxqvb9uRbiVxMSkhC0EsNP8_hOi8YUDxIOg66_ulRmNB6d7nsPxbmi2nm1aGpD7yzr4G7e7XetamHR9ineByQ&source&app=facebook" target="_blank">
+            <img src="./assets/images/icons/whats.png" alt="Instagram">
+        </a>
+    </div>
+<!-- main-footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div id="starshine">
+                <div class="shine shine shine-1"></div>
+                <div class="shine shine shine-2"></div>
+            </div>
+            <div class="bg-layer" style="background-image: url(assets/images/icons/pattern-6.png);"></div>
+            <div class="auto-container">
+                <div class="widget-section">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <figure class="footer-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                                <div class="widget-content">
+                                    <ul class="clearfix">
+
+                                        
+                                       
+                                       
+                                       
+                                        
+                                        
+                                        
+                                        <li><i class="fas fa-map-marker-alt"></i>Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</li>
+                                        <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 53 926 192">+216 53 926 192</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13">+33 743 13 00 13</a></li>
+                                        <li><strong>Horaires d'ouverture :</strong><br />Lundi - Vendredi : 8H - 17H</li>
+                                        <li><i class="fas fa-envelope"></i>contact@wic-doctor.com</li>
+                                        <li><i class="fas fa-arrow-circle-right"></i>   <a href="https://fr.wiccrm.com/">  www.wic-doctor.com</a></li>
+                                        <li></li>
+                                    </ul>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <h3 class="widget-title">
+                                    <span>Liens</span>
+                                    <i></i>
+                                </h3>
+                                <div class="widget-content">
+                                    <ul class="links-list clearfix">
+                                        <li><a href="index.html">Accueil</a></li>
+                                        <li><a href="nos-services.html">Nos Services</a></li>
+                                        <li><a href="offres.html">Nos Offres</a></li>
+                                        <li><a href="inscription.html">Inscription</a></li>
+                                        <li><a href="https://fr.wiccrm.com/">Espace Patient</a></li>
+                                        <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                        <li><a href="blogs.html">Blogs</a></li>
+                                        <li><a href="parrainage.html">Parrainage</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="https://wic-doctor.com/contact.html">Contactez-nous</a></li>
+                                        <li><a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a></li>
+                                        <li><a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies & Parapharmacies</a></li>
+                                        <li><a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a></li>
+                                        <li><a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a></li>
+                                        <li><a href="Mention-légales.html">Mentions légales</a></li>
+                                        
+                                        <li><a href="Conditions-utilisation.html">Conditions d'utilisation</a></li>
+                                        <li><a href="Vente-en-ligne.html">Conditions générales de vente en ligne</a></li>
+                                       
+                                        <li><a href="Confidentialité-donées-personnelles.html">Politique de confidentialité des données personnelles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="auto-container">
+                <div class="copyright"><p> &copy; <span id="currentYear"></span>  Tous droits réservés par <a href="https://fr.wiccrm.com/">WIC Dr.</a></p></div>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+    
+    
+    <!--Scroll to top-->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="fa fa-arrow-up"></span>
+    </button>
+
+
+<!-- jequery plugins -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/scrollbar.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/tilt.jquery.js"></script>
+<script src="assets/js/circle-progress.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
+
+<!-- main-js -->
+<script src="assets/js/script.js"></script>
+
+</body><!-- End of .page_wrapper -->
+</html>

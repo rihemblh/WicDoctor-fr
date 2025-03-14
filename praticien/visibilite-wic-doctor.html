@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+     <meta charset="utf-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '623852967108851');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=" Prise de rendez-vous simplifiée " content="Prise de rendez-vous simplifiée ">
+
+    <title>Boostez votre visibilité sur WIC Dr </title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" href="assets/images/wic-dr-logo.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link href="assets/css/font-awesome-all.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/owl.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/imagebg.css" rel="stylesheet">
+    <link href="assets/css/color.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRK4SDDB4H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TRK4SDDB4H');
+    </script>
+</head>
+
+
+<!-- page wrapper -->
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+       
+     
+       .button-float {
+           
+       position: fixed;
+       right: 20px;
+      
+       
+      
+       font-size: 16px;
+       cursor: pointer;
+       z-index: 1000;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: all 0.3s ease;
+       }
+     
+       .button-float a {
+         text-decoration: none;
+         color: inherit;
+       }
+     
+       .button-float .menu-item {
+         display: flex;
+         align-items: center;
+         margin-left: 12px;
+         position: relative;
+       }
+     
+       .button-float .menu-item select {
+         border: none;
+         background: none;
+         font-size: 14px;
+         color: #333;
+         cursor: pointer;
+       }
+     
+       .button-float .menu-item select:focus {
+         outline: none;
+       }
+     
+       .button-float .divider {
+         margin: 0 8px;
+         color: #888;
+       }
+     
+       /* Animation clignotante au chargement */
+       @keyframes blink {
+         0%, 100% { opacity: 1; }
+         50% { opacity: 0.5; }
+       }
+     
+       #countrySelect, #languageSelect {
+         animation: blink 2s infinite;
+       }
+     </style>
+     
+     <div class="button-float">
+       <!-- Sélection du pays -->
+       <div class="menu-item">
+         <select id="countrySelect">
+           <option value="france">France</option>
+           <option value="tunisia">Tunisie</option>
+           <option value="italy">Italie</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Sélection de la langue -->
+       <div class="menu-item">
+         <select id="languageSelect">
+           <option value="fr">FR</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Aide -->
+       <div class="menu-item"><a href="#">Aide</a></div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Connexion -->
+       <div class="menu-item"><a href="https://dashboard.wic-doctor.com/login">Connexion</a></div>
+     </div>
+     
+     <script>
+       const countrySelect = document.getElementById('countrySelect');
+       const languageSelect = document.getElementById('languageSelect');
+     
+       // Liens de redirection en fonction du pays sélectionné
+       const countryLinks = {
+         "france": "https://fr.wiccrm.com/inscription-professionnel/",
+         "tunisia": "https://wic-doctor.com/inscription-professionnel/",
+         "italy": "#"
+       };
+     
+       // Rediriger l'utilisateur lorsqu'il sélectionne un pays
+       countrySelect.addEventListener('change', function() {
+           console.log("changeeeeeeeeeeeeeeeee")
+         const selectedCountry = countrySelect.value;
+         if (countryLinks[selectedCountry]) {
+           window.location.href = countryLinks[selectedCountry];
+         }
+       });
+     
+       // Simulation de l'ouverture automatique du menu
+       window.addEventListener('DOMContentLoaded', () => {
+         setTimeout(() => {
+           countrySelect.style.animation = 'none';
+           languageSelect.style.animation = 'none';
+         }, 2000);
+       });
+     </script>
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- preloader -->
+
+
+    <!-- search-popup -->
+    <div id="search-popup" class="search-popup">
+        <div class="close-search"><span>Fermer</span></div>
+        <div class="popup-inner">
+            <div class="overlay-layer"></div>
+            <div class="search-form">
+                <form method="post" action="index.html">
+                    <div class="form-group">
+                        <fieldset>
+                            <input type="search" class="form-control" name="search-input" value=""
+                                placeholder="Rechercher ici" required>
+                            <input type="submit" value="Rechercher" class="theme-btn style-four">
+                        </fieldset>
+                    </div>
+                </form>
+                <h3>Mots-clés de recherche récents</h3>
+                <ul class="recent-searches">
+                    <li><a href="index.html">Offres</a></li>
+                    <li><a href="index.html">Santé</a></li>
+                    <li><a href="index.html">Service</a></li>
+                    <li><a href="index.html">Praticien</a></li>
+                    <li><a href="index.html">Agenda</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- search-popup end -->
+
+
+    <!-- main header -->
+    <header class="main-header style-two">
+        <div class="auto-container">
+            <div class="header-upper">
+                <div class="outer-box clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a>
+                        </figure>
+                    </div>
+                    <div class="nav-box pull-right clearfix">
+                        <div class="menu-area pull-left">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                            </div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li><a href="index.html">Accueil</a>
+
+                                        </li>
+                                        <li class="dropdown"><a href="nos-services.html"> Nos Services</a>
+                                            <ul>
+                                                <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                                <li><a href="teleconsultation.html">Téléconsultation</a></li>
+                                                <li><a href="Télésecretariat.html">Télésecrétariat Médical</a></li>
+                                                <li><a href="télésurveillance-médicale.html">Télésurveillance
+                                                        Médicale</a></li>
+                                                <li><a href="optimisation-communication.html">Communication
+                                                        internationale</a></li>
+                                                <li><a href="fibre-optique.html">Fibre Optique pour les Professionnels
+                                                        de Santé</a></li>
+                                                <li><a href="gestion-rdv.html">Gestion de Vos Rendez-vous en Ligne</a>
+                                                </li>
+                                                <li><a href="prescription-ia.html">Prescription en Ligne avec Aide à la
+                                                        Prescription IA</a></li>
+                                                <li><a href="téléexpertise-téléassistance.html">Télé-expertise et
+                                                        Télé-assistance Médicale</a></li>
+                                                <li><a href="SMS-rappel.html">SMS de Rappel pour Professionnels de
+                                                        Santé</a></li>
+                                                <li><a href="Sécurité-données.html">Sécurité des Données pour les
+                                                        Professionnels de Santé</a></li>
+                                                <li><a href="gestion-dossiers-medicaux.html">Gestion des Dossiers
+                                                        Médicaux en Ligne</a></li>
+                                                <li><a href="visibilite-seo.html">Visibilité SEO</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="offres.html">Nos Offres</a>
+
+                                        </li>
+
+                                        <li><a href="Télésecretariat.html">Télésecrétariat </a>
+                                        </li>     
+                                        
+                                        <li>
+
+                                            <a href="https://fr.wiccrm.com/" class="style-two"> </i>Espace Patient</a>
+
+                                        </li>
+                                        <li>
+
+                                            <a href="inscription.html" class="style-two"><i class="fas fa-user"> </i>
+                                                Inscription</a>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box"><a href="index.html"><img src="assets/images/small-logo.png" alt=""></a>
+                </figure>
+                <div class="menu-area">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main-header end -->
+
+    <!-- Mobile Menu  -->
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+
+        <nav class="menu-box">
+            <div class="nav-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt="" title=""></a>
+            </div>
+            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
+            <div class="contact-info">
+                <h4>Contactez Nous</h4>
+                <ul>
+
+
+
+                    <li><i class="fas fa-map-marker-alt"></i> Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie
+                    </li>
+                    <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 722"> +216 26 311 722</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13"> +33 743 13 00 13</a></li>
+
+                    <li><i class="fas fa-envelope"></i><a href="mailto:contact@way-interactive-convergence.com">
+                            contact@way-interactive-convergence.com</a></li>
+                    <li><i class="fas fa-arrow-circle-right"></i> <a href="way-interactive-convergence.com">
+                            way-interactive-convergence.com</a></li>
+                    <li></li>
+                </ul>
+
+            </div>
+
+        </nav>
+    </div><!-- End Mobile Menu -->
+
+    <!--Page Title-->
+    <section class="page-title centred">
+        <div class="pattern-layer">
+            <div class="pattern-1" style="background-image: url(assets/images/icons/pattern-21.png);"></div>
+            <div class="pattern-2" style="background-image: url(assets/images/icons/pattern-22.png);"></div>
+            <div class="pattern-3 float-bob-x" style="background-image: url(assets/images/icons/pattern-23.png);"></div>
+        </div>
+        <div class="bubble-box">
+            <div class="bubble bubble-1" style="background-image: url(assets/images/icons/bubble.png);"></div>
+            <div class="bubble bubble-2 rotate-me" style="background-image: url(assets/images/icons/bubble.png);"></div>
+            <div class="bubble bubble-3" style="background-image: url(assets/images/icons/bubble.png);"></div>
+            <div class="bubble bubble-4"></div>
+        </div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h1> Boostez votre visibilité sur WIC Dr </h1>
+                <ul class="bread-crumb clearfix">
+                    <li><a href="index.html">Acceuil</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li> Visibilité sur WIC Dr </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+
+    <!-- sidebar-page-container -->
+    <section class="blog-details sidebar-page-container sec-pad">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 content-side">
+                    <div class="blog-details-content">
+                        <h2 style="text-align: center;">Boostez votre visibilité et attirez plus de patients grâce à
+                            un profil complet sur WIC Doctor
+                        </h2>
+                        <figure class="image-box">
+                            <img src="assets/images/resource/blog-visibilite.png" alt="">
+                            <a>Visibilité sur WIC Dr</a>
+                        </figure>
+                        <div class="inner-box">
+                            <ul class="post-info clearfix">
+                                <li>Février 18, 2025</li>
+                                <li>Par Equipe WIC Dr </li>
+                            </ul>
+                            <div class="text">
+                                <p>À l'ère du numérique, les patients se tournent de plus en plus vers des plateformes
+                                    comme WIC Doctor pour prendre leurs rendez-vous médicaux en ligne. Dans un
+                                    environnement où la concurrence entre les professionnels de santé est forte, il est
+                                    primordial d'optimiser votre profil pour vous distinguer et attirer plus de
+                                    patients. Un profil bien complet et minutieusement travaillé peut être le facteur
+                                    clé de votre succès. Voici pourquoi il est essentiel d'avoir un profil soigneusement
+                                    optimisé sur WIC Doctor et comment il peut changer la manière dont vous attirez de
+                                    nouveaux patients. </p>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <p style="font-size: 22px;"><strong>1. L'impact d'une photo professionnelle
+                                                    : Créez un premier lien de confiance</strong>
+                                            </p>
+                                            <p style="margin-top: -20px;">Saviez-vous qu’une photo de profil peut jouer
+                                                un rôle décisif dans la décision d’un patient de prendre rendez-vous
+                                                avec vous ? La première impression compte énormément dans le secteur
+                                                médical, et une photo claire et professionnelle est souvent la première
+                                                chose qu’un patient remarque. Un visage humain rassure, rend votre
+                                                profil plus accessible et montre que vous êtes un professionnel
+                                                authentique. Dans un monde où les escroqueries et l'anonymat en ligne
+                                                sont courants, <b><a
+                                                        href="https://dashboard.wic-doctor.com/users/profile">l’ajout
+                                                        d’une photo</a></b> permet non seulement de gagner la
+                                                confiance des patients mais aussi de humaniser votre approche. Une image
+                                                de qualité donne également une impression de sérieux et de
+                                                professionnalisme, éléments cruciaux pour rassurer les patients avant
+                                                même leur consultation.</p>
+                                        </li><br>
+                                        <li>
+                                            <p style="font-size: 22px;"><strong>2. Mettez en lumière votre expertise :
+                                                    Devenez le professionnel que recherchent vos patients</strong> </p>
+                                            <p style="margin-top: -20px; margin-bottom: 30px;">Un profil détaillé est
+                                                l’endroit idéal pour mettre en avant vos qualifications, <b><a
+                                                        href="https://dashboard.wic-doctor.com/editProfil">vos
+                                                        spécialités</a></b>
+                                                et votre parcours professionnel. Plus vous êtes spécifique et précis
+                                                dans la présentation de vos compétences, plus vous avez de chances
+                                                d'attirer des patients recherchant un expert dans un domaine
+                                                particulier. Les patients, souvent en quête de soins spécialisés,
+                                                voudront savoir si vous êtes qualifié pour répondre à leurs besoins. Si
+                                                vous êtes expert dans un domaine précis, n'hésitez pas à le mentionner
+                                                et à détailler votre expérience et vos formations. En présentant vos
+                                                spécialités de manière claire, vous devenez un choix privilégié pour
+                                                ceux qui cherchent un médecin ayant des compétences adaptées à leurs
+                                                besoins.</p>
+                                        </li>
+                                        <li>
+                                            <p style="font-size: 22px;"><strong>3. Simplifiez le parcours patient : Des
+                                                    informations pratiques à portée de main</strong> </p>
+                                            <p style="margin-top: -20px;">Un profil complet ne se limite pas à votre
+                                                expertise, il inclut également des informations pratiques essentielles
+                                                qui facilitent la prise de rendez-vous. Les patients veulent un
+                                                processus rapide et sans friction : <b><a
+                                                        href="https://dashboard.wic-doctor.com/availability">horaires de
+                                                        disponibilité</a></b>, types de
+                                                consultations proposées (en cabinet, en ligne, etc.), lieu de
+                                                consultation et autres informations utiles. En fournissant toutes ces
+                                                données de manière claire et accessible, vous contribuez à simplifier
+                                                leur expérience. Un profil optimisé permet aux patients de planifier
+                                                leur consultation en toute simplicité, réduisant ainsi le risque de
+                                                confusion ou d’hésitation, et augmente vos chances de recevoir des
+                                                demandes de rendez-vous. </p>
+                                        </li><br>
+                                        <li>
+                                            <p style="font-size: 22px;"><strong>4. Transparence et accessibilité : La
+                                                    clé pour instaurer une relation de confiance durable
+                                                </strong> </p>
+                                            <p style="margin-top: -20px;">Aujourd’hui, les patients cherchent à avoir
+                                                une idée précise de ce à quoi s’attendre avant même de prendre un
+                                                rendez-vous. Plus vous êtes transparent sur vos méthodes de travail, vos
+                                                tarifs, vos horaires et vos services, plus vous gagnez en crédibilité.
+                                                Une transparence totale crée un climat de confiance, ce qui est
+                                                primordial dans le domaine de la santé. En fournissant des informations
+                                                sur la manière dont vous gérez vos consultations, vos spécialités et
+                                                même vos pratiques de prise en charge, vous envoyez un message clair :
+                                                vous êtes un professionnel ouvert et à l’écoute. Cette transparence
+                                                incite non seulement les patients à prendre rendez-vous, mais aussi à
+                                                revenir pour des consultations futures.
+
+                                        </li><br>
+
+                                        
+                                        <li>
+                                            <p style="font-size: 22px;"><strong>5. Faites la différence avec un profil
+                                                    constamment mis à jour</strong> </p>
+                                            <p style="margin-top: -20px;">Dans le contexte actuel, la téléconsultation
+                                                Le monde médical évolue constamment, et il en va de même pour les
+                                                attentes des patients. Un profil sur WIC Doctor doit donc être
+                                                régulièrement mis à jour pour refléter les dernières informations
+                                                pertinentes. Que ce soit une nouvelle spécialité, des horaires de
+                                                consultation modifiés ou l'ajout de nouveaux services, il est crucial de
+                                                maintenir votre profil à jour. Cela montre aux patients que vous êtes
+                                                réactif, à jour avec les nouvelles pratiques médicales et que vous
+                                                prenez soin de leur offrir le meilleur service possible. Un profil qui
+                                                évolue avec le temps renforce votre crédibilité et votre réputation.
+
+                                        </li><br>
+                                        
+                                        <li>
+                                            <p style="font-size: 22px;"><strong>6. Accumulation et gestion des données
+                                                    des patients</strong></p>
+                                            <p style="margin-top: -20px;">La digitalisation de la prise de rendez-vous
+                                                permet d'accéder facilement à l'historique des rendez-vous des patients.
+                                                Vous pouvez ainsi suivre leur fréquence de visites, les spécialités
+                                                sollicitées, et gérer plus efficacement leur dossier médical.</p>
+                                        </li>
+                                       
+                                        <li>
+                                            <p style="font-size: 22px;"><strong>Conclusion : Votre présence en ligne, un
+                                                    levier essentiel pour instaurer la confiance numérique</strong></p>
+                                            <p style="margin-top: -20px;">Dans le contexte numérique actuel, votre
+                                                profil sur WIC Doctor est bien plus qu'une simple carte de visite en
+                                                ligne. C’est une véritable vitrine de votre expertise, de votre
+                                                professionnalisme et de votre capacité à offrir des soins de qualité.
+                                                Votre e-réputation, bâtie sur un profil soigné, une photo
+                                                professionnelle, des informations transparentes et des qualifications
+                                                mises en avant, devient un levier majeur pour attirer et fidéliser des
+                                                patients. Ne sous-estimez pas l’importance de ce profil optimisé, car il
+                                                est votre principal atout dans la compétition pour attirer des patients
+                                                dans un environnement numérique de plus en plus saturé.</p>
+                                        </li><br>
+                                       
+                                        <style>
+                                            .message {
+                                                color: #18167a;
+                                                text-align: center;
+                                                font-size: 18px;
+                                                font-family: Arial, sans-serif;
+                                                margin-top: 20px;
+                                            }
+                                        </style>
+                                        <li>
+                                            <p class="message">
+                                                Prenez donc quelques instants pour <strong><a href="https://dashboard.wic-doctor.com/users/profile">mettre à jour votre profil</a></strong>  sur
+                                                <strong>WIC Doctor</strong> et assurez-vous qu’il reflète fidèlement
+                                                votre professionnalisme et vos compétences. Maximisez vos opportunités
+                                                en ligne en vous assurant d’offrir aux patients une expérience fluide et
+                                                transparente dès leur premier contact avec vous.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="nav-btn clearfix">
+                            <div class="prev-btn link pull-left"><a href="avantages-digitalisation-médicale.html"><i
+                                        class="fas fa-angle-double-left"></i>&nbsp;Poste précédent</a></div>
+                            <div class="next-btn link pull-right"><a
+                                    href="prise-rendez-vous-simplifiée.html">&nbsp;Poste suivant <i
+                                        class="fas fa-angle-double-right"></i></a></div>
+                        </div>
+                        <!--<div class="col-lg-3 col-md-12 col-sm-12 sidebar-side">
+                            <div class="sidebar blog-sidebar">
+                                <div class="sidebar-widget sidebar-categories">     
+                                    <div class="sidebar-title">
+                                        <h3>Catégories</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <ul>
+                                            <li><a href="blog-details.html"><i class="fas fa-angle-right"></i>November 2019</a></li>
+                                            <li><a href="blog-details.html"><i class="fas fa-angle-right"></i>December 2019</a></li>
+                                            <li><a href="blog-details.html"><i class="fas fa-angle-right"></i>January 2020</a></li>
+                                        </ul>
+                                    </div>  
+                                </div>
+                                                   
+                            </div>
+                        </div>  -->
+                    </div>
+                </div>
+                <div class="auto-container">
+                    <div class="row clearfix">
+                        <div class="col-lg-8 col-md-12 col-sm-12 content-column">
+                            <div id="content_block_02">
+                                <div class="content-box">
+                                    <div class="sec-title wow fadeInDown" data-wow-delay="300ms"
+                                        data-wow-duration="1500ms">
+                                        <div class="title"><i class="fas fa-star"></i><span>Pourquoi choisir WIC Doctor
+                                                ?</span></div>
+                                        <h2><span>Avec WIC Dr, vous bénéficiez d'une solution de prise de rendez-vous en
+                                                ligne <br> <small>qui facilite toutes ces fonctionnalités :</small>
+                                            </span></h2>
+                                    </div>
+                                    <div class="inner-box wow fadeInUp" data-wow-delay="300ms"
+                                        data-wow-duration="1500ms">
+                                        <div>
+                                            <p style="font-size: 18px;">• Plateforme intuitive pour les patients et les
+                                                professionnels de santé.</p>
+                                            <p style="font-size: 18px;">• Rappels automatisés par SMS et e-mail.</p>
+                                            <p style="font-size: 18px;">• Synchronisation en temps réel avec votre
+                                                agenda médical.</p>
+                                            <p style="font-size: 18px;">• Option de téléconsultation facilement
+                                                intégrée.</p>
+                                            <p style="font-size: 18px;">• Sécurité des données assurée par le cloud
+                                                Azure (certifié HDS).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                            <div id="image_block_02">
+                                <div class="image-box js-tilt">
+                                    <div class="bg-layer wow zoomIn animated" data-wow-delay="00ms"
+                                        data-wow-duration="1500ms"></div>
+                                    <figure class="image wow slideInRight" data-wow-delay="00ms"
+                                        data-wow-duration="1500ms"><img src="assets/images/icons/dr-bien-3.png" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- sidebar-page-container end -->
+
+
+    	<style>
+        .social-icons {
+    position: fixed;
+    top: 50%;
+    right: 10px; /* Positionné à droite */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 40px; /* Taille des icônes */
+    height: 40px;
+    border-radius: 50%; /* Pour un effet arrondi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet plus pro */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+    </style>
+    <!-- End Popup Login-->
+    <div class="social-icons" style="z-index: 9999;">
+        <a href="https://www.facebook.com/people/WIC-Doctor/61567242383619/?locale=fr_FR" target="_blank">
+            <img src="./assets/images/icons/fb.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/@WICDoctor" target="_blank">
+            <img src="./assets/images/icons/youtube.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/wic_doctor_tunisia/" target="_blank">
+            <img src="./assets/images/icons/insta.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/company/wic-doctor/posts/" target="_blank">
+            <img src="./assets/images/icons/linkidin.png" alt="Instagram">
+        </a>
+        <a href="https://x.com/WicDoctor" target="_blank">
+            <img src="./assets/images/icons/twitter.png" alt="Instagram">
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=21626311722&text&context=ARCA4kG0-ji3IZZVIl0SGy-pasvzA9NGu6rAMyFGkteYpSXEy5aiifugPiOP2mfw5L4BpCxqvb9uRbiVxMSkhC0EsNP8_hOi8YUDxIOg66_ulRmNB6d7nsPxbmi2nm1aGpD7yzr4G7e7XetamHR9ineByQ&source&app=facebook" target="_blank">
+            <img src="./assets/images/icons/whats.png" alt="Instagram">
+        </a>
+    </div>
+<!-- main-footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div id="starshine">
+                <div class="shine shine shine-1"></div>
+                <div class="shine shine shine-2"></div>
+            </div>
+            <div class="bg-layer" style="background-image: url(assets/images/icons/pattern-6.png);"></div>
+            <div class="auto-container">
+                <div class="widget-section">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget wow fadeInUp animated" data-wow-delay="00ms"
+                                data-wow-duration="1500ms">
+                                <figure class="footer-logo"><a href="index.html"><img
+                                            src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                                <div class="widget-content">
+                                    <ul class="clearfix">
+
+
+
+
+
+
+
+
+                                        <li><i class="fas fa-map-marker-alt"></i>Immeuble Aicha - Avenue Hédi Nouira,
+                                            8000 Nabeul, Tunisie</li>
+                                        <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ
+                                            Technopoles, FRANCE</li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311
+                                                777</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 53 926 192">+216 53 926
+                                                192</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13">+33 743 13 00
+                                                13</a></li>
+                                        <li><strong>Horaires d'ouverture :</strong><br />Lundi - Vendredi : 8H - 17H
+                                        </li>
+                                        <li><i class="fas fa-envelope"></i>contact@wic-doctor.com</li>
+                                        <li><i class="fas fa-arrow-circle-right"></i> <a href="https://fr.wiccrm.com/">
+                                                www.wic-doctor.com</a></li>
+                                        <li></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget wow fadeInUp animated" data-wow-delay="300ms"
+                                data-wow-duration="1500ms">
+                                <h3 class="widget-title">
+                                    <span>Liens</span>
+                                    <i></i>
+                                </h3>
+                                <div class="widget-content">
+                                    <ul class="links-list clearfix">
+                                        <li><a href="index.html">Accueil</a></li>
+                                        <li><a href="nos-services.html">Nos Services</a></li>
+                                        <li><a href="offres.html">Nos Offres</a></li>
+                                        <li><a href="inscription.html">Inscription</a></li>
+                                        <li><a href="https://fr.wiccrm.com/">Espace Patient</a></li>
+                                        <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                        <li><a href="blogs.html">Blogs</a></li>
+                                        <li><a href="parrainage.html">Parrainage</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="https://wic-doctor.com/contact.html">Contactez-nous</a></li>
+                                        <li><a href="https://wic-doctor.com/medecin/tous.html">Professionnels de
+                                                santé</a></li>
+                                        <li><a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies &
+                                                Parapharmacies</a></li>
+                                        <li><a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a></li>
+                                        <li><a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a>
+                                        </li>
+                                        <li><a href="Mention-légales.html">Mentions légales</a></li>
+
+                                        <li><a href="Conditions-utilisation.html">Conditions d'utilisation</a></li>
+                                        <li><a href="Vente-en-ligne.html">Conditions générales de vente en ligne</a>
+                                        </li>
+
+                                        <li><a href="Confidentialité-donées-personnelles.html">Politique de
+                                                confidentialité des données personnelles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="auto-container">
+                <div class="copyright">
+                    <p> &copy; <span id="currentYear"></span> Tous droits réservés par <a
+                            href="https://fr.wiccrm.com/">WIC Dr.</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+
+    <!--Scroll to top-->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <span class="fa fa-arrow-up"></span>
+    </button>
+
+
+    <!-- jequery plugins -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/jquery.fancybox.js"></script>
+    <script src="assets/js/appear.js"></script>
+    <script src="assets/js/scrollbar.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+    <script src="assets/js/tilt.jquery.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/jquery.countTo.js"></script>
+
+    <!-- main-js -->
+    <script src="assets/js/script.js"></script>
+
+</body><!-- End of .page_wrapper -->
+
+</html>

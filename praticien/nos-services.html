@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <meta charset="utf-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '623852967108851');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Nos Services - WIC Dr.</title>
+
+<!-- Fav Icon -->
+<link rel="icon" href="assets/images/wic-dr-logo.png" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/imagebg.css" rel="stylesheet">
+<link href="assets/css/color.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRK4SDDB4H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TRK4SDDB4H');
+</script>
+</head>
+
+
+<!-- page wrapper -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+       
+     
+       .button-float {
+           
+       position: fixed;
+       right: 20px;
+      
+       
+      
+       font-size: 16px;
+       cursor: pointer;
+       z-index: 1000;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: all 0.3s ease;
+       }
+     
+       .button-float a {
+         text-decoration: none;
+         color: inherit;
+       }
+     
+       .button-float .menu-item {
+         display: flex;
+         align-items: center;
+         margin-left: 12px;
+         position: relative;
+       }
+     
+       .button-float .menu-item select {
+         border: none;
+         background: none;
+         font-size: 14px;
+         color: #333;
+         cursor: pointer;
+       }
+     
+       .button-float .menu-item select:focus {
+         outline: none;
+       }
+     
+       .button-float .divider {
+         margin: 0 8px;
+         color: #888;
+       }
+     
+       /* Animation clignotante au chargement */
+       @keyframes blink {
+         0%, 100% { opacity: 1; }
+         50% { opacity: 0.5; }
+       }
+     
+       #countrySelect, #languageSelect {
+         animation: blink 2s infinite;
+       }
+     </style>
+     
+     <div class="button-float">
+       <!-- Sélection du pays -->
+       <div class="menu-item">
+         <select id="countrySelect">
+           <option value="france">France</option>
+           <option value="tunisia">Tunisie</option>
+           <option value="italy">Italie</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Sélection de la langue -->
+       <div class="menu-item">
+         <select id="languageSelect">
+           <option value="fr">FR</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Aide -->
+       <div class="menu-item"><a href="#">Aide</a></div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Connexion -->
+       <div class="menu-item"><a href="https://dashboard.wic-doctor.com/login">Connexion</a></div>
+     </div>
+     
+     <script>
+       const countrySelect = document.getElementById('countrySelect');
+       const languageSelect = document.getElementById('languageSelect');
+     
+       // Liens de redirection en fonction du pays sélectionné
+       const countryLinks = {
+         "france": "https://fr.wiccrm.com/inscription-professionnel/",
+         "tunisia": "https://wic-doctor.com/inscription-professionnel/",
+         "italy": "#"
+       };
+     
+       // Rediriger l'utilisateur lorsqu'il sélectionne un pays
+       countrySelect.addEventListener('change', function() {
+           console.log("changeeeeeeeeeeeeeeeee")
+         const selectedCountry = countrySelect.value;
+         if (countryLinks[selectedCountry]) {
+           window.location.href = countryLinks[selectedCountry];
+         }
+       });
+     
+       // Simulation de l'ouverture automatique du menu
+       window.addEventListener('DOMContentLoaded', () => {
+         setTimeout(() => {
+           countrySelect.style.animation = 'none';
+           languageSelect.style.animation = 'none';
+         }, 2000);
+       });
+     </script>
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- preloader -->
+
+
+
+
+
+    <!-- main header -->
+
+        <header class="main-header style-two">
+        <div class="auto-container">
+            <div class="header-upper">
+                <div class="outer-box clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                    </div>
+                    <div class="nav-box pull-right clearfix">
+                        <div class="menu-area pull-left">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                            </div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix" >
+                                        <li><a href="index.html">Accueil</a>
+                                           
+                                        </li> 
+                                        <li class="current dropdown"><a href="nos-services.html"> Nos Services</a>
+                                            <ul>
+                                                <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                                <li><a href="teleconsultation.html">Téléconsultation</a></li>
+                                                <li><a href="Télésecretariat.html">Télésecrétariat Médical</a></li>
+                                                <li><a href="télésurveillance-médicale.html">Télésurveillance Médicale</a></li>
+                                                <li><a href="optimisation-communication.html">Communication internationale</a></li>
+                                                <li><a href="fibre-optique.html">Fibre Optique pour les Professionnels de Santé</a></li>
+                                                <li><a href="gestion-rdv.html">Gestion de Vos Rendez-vous en Ligne</a></li>
+                                                <li><a href="prescription-ia.html">Prescription en Ligne avec Aide à la Prescription IA</a></li>
+                                                <li><a href="téléexpertise-téléassistance.html">Télé-expertise et Télé-assistance Médicale</a></li>
+                                                <li><a href="SMS-rappel.html">SMS de Rappel pour Professionnels de Santé</a></li>
+                                                <li><a href="Sécurité-données.html">Sécurité des Données pour les Professionnels de Santé</a></li>
+                                                <li><a href="gestion-dossiers-medicaux.html">Gestion des Dossiers Médicaux en Ligne</a></li>
+                                                <li><a href="visibilite-seo.html">Visibilité SEO</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="offres.html">Nos Offres</a>
+                                         
+                                        </li>
+                                       
+                                        <li><a href="Télésecretariat.html">Télésecrétariat </a>
+                                        </li>         
+                                       
+                                        <li>                    
+                         
+                                            <a href="https://fr.wiccrm.com/" class="style-two"> </i>Espace Patient</a>
+                                
+                                        </li> 
+                                        <li>                    
+                         
+                                            <a href="inscription.html" class="style-two"><i class="fas fa-user"> </i> Inscription</a>
+                                
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <figure class="logo-box"><a href="index.html"><img src="assets/images/small-logo.png" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main-header end -->
+
+    <!-- Mobile Menu  -->
+    <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+        
+        <nav class="menu-box">
+            <div class="nav-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt="" title=""></a></div>
+            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            <div class="contact-info">
+                <h4>Contactez Nous</h4>
+                <ul>
+                
+
+                    
+                    <li><i class="fas fa-map-marker-alt"></i> Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 53 926 192"> +216 53 926 192</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13"> +33 743 13 00 13</a></li>
+                   
+                    <li><i class="fas fa-envelope"></i><a href="mailto:contact@way-interactive-convergence.com"> contact@way-interactive-convergence.com</a></li>
+                    <li><i class="fas fa-arrow-circle-right"></i>   <a href="way-interactive-convergence.com">    way-interactive-convergence.com</a></li>
+                    <li></li>
+                </ul>
+                 
+            </div>
+          
+        </nav>
+    </div><!-- End Mobile Menu -->
+
+    <!--Page Title-->
+    <section class="page-title centred">
+        <div class="pattern-layer">
+            <div class="pattern-1" style="background-image: url(assets/images/icons/pattern-21.png);"></div>
+            <div class="pattern-2" style="background-image: url(assets/images/icons/pattern-22.png);"></div>
+            <div class="pattern-3 float-bob-x" style="background-image: url(assets/images/icons/pattern-23.png);"></div>
+        </div>
+        <div class="bubble-box">
+            <div class="bubble bubble-1" style="background-image: url(assets/images/icons/bubble-14.png);"></div>
+            <div class="bubble bubble-2 rotate-me" style="background-image: url(assets/images/icons/bubble-15.png);"></div>
+            <div class="bubble bubble-3" style="background-image: url(assets/images/icons/bubble-16.png);"></div>
+            <div class="bubble bubble-4"></div>
+        </div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h1>Nos solutions pour les médecins</h1>
+                <ul class="bread-crumb clearfix">
+                    <li><a href="index.html">Accueil</a></li>
+                   
+                    <li>Nos Services</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+
+    <!-- service-section -->
+    <section class="service-style-two about-page">
+        <div class="auto-container">
+            <div class="sec-title centred wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="title-two"><p><span>{</span>&nbsp;Nos Services&nbsp;<span>}</span></p></div>
+                <h2>Découvrez chaque service pour améliorer l’efficacité de votre pratique médicale.</h2>
+                <p> Nous offrons une gamme complète de services conçus pour améliorer l'efficacité et la qualité des soins médicaux. 
+                    Explorez nos solutions 
+                    adaptées aux besoins spécifiques des professionnels de santé.</p>
+            </div>
+
+            
+            <div class="inner-content">
+
+                
+        
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="service-block-two wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/fichier-et-dossier.png" alt=""></figure>
+                                    <h3><a href="teleconsultation.html">Téléconsultation </a></h3>
+                                    <div class="text">
+                                       
+                                    </div>
+                                    <div class="link"><a href="teleconsultation.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                            <div class="service-block-two wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/calendar.png" alt=""></figure>
+                                    <h3><a href="Télésecretariat.html">Télésecrétariat Médical</a></h3>
+                                    <div class="text">
+                                        </div>
+                                    <div class="link"><a href="Télésecretariat.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                           
+                         
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                        <div class="image-box">
+                            
+                          
+                            <figure class="image"><img src="assets/images/icons/dr-bien.png" alt=""></figure>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="service-block-two wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/discussion.png" alt=""></figure>
+                                    <h3><a href="télésurveillance-médicale.html">Télésurveillance Médicale</a></h3>
+                                    <div class="text">
+                                              </div>
+                                    <div class="link"><a href="télésurveillance-médicale.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                            <div class="service-block-two wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                    <h3><a href="téléexpertise-téléassistance.html">Télé-expertise et Télé-assistance Médicale
+                                    </a></h3>
+                                    <div class="text">
+                                    
+                                    </div>
+                                    <div class="link"><a href="téléexpertise-téléassistance.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    
+                </div>
+
+          
+                <div class="row clearfix">
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="service-block-two wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/fichier-et-dossier.png" alt=""></figure>
+                                    <h3><a href="optimisation-communication.html">Communication internationale
+                                    </a></h3>
+                                    <div class="text">
+                                       
+                                    </div>
+                                    <div class="link"><a href="optimisation-communication.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                            <div class="service-block-two wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <!--ICI-->
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/calendar.png" alt=""></figure>
+                                    <h3><a href="SMS-rappel.html">SMS de Rappel pour Professionnels de Santé </a></h3>
+                                    <div class="text">
+                                        </div>
+                                    <div class="link"><a href="SMS-rappel.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                           
+                         
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                        <div class="image-box">
+                            
+                            
+                            <figure class="image"><img src="assets/images/icons/dr-bien-4.png" style="padding-right: 80px;" alt=""></figure>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="service-block-two wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/discussion.png" alt=""></figure>
+                                    <!--ICI-->
+                                    <h3><a href="fibre-optique.html">Fibre Optique pour les Professionnels de Santé
+                                    </a></h3>
+                                    <div class="text">
+                                              </div>
+                                    <div class="link"><a href="fibre-optique.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                            <div class="service-block-two wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                    <!--ICI-->
+                                    <h3><a href="Sécurité-données.html">Sécurité des Données pour les Professionnels de Santé</a></h3>
+                                    <div class="text">
+                                    
+                                    </div>
+                                    <div class="link"><a href="Sécurité-données.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row clearfix">
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="service-block-two wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/fichier-et-dossier.png" alt=""></figure>
+                                    <h3><a href="gestion-rdv.html"> Gestion de Vos Rendez-vous en Ligne
+
+                                    </a></h3>
+                                    <div class="text">
+                                       
+                                    </div>
+                                    <div class="link"><a href="gestion-rdv.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                            <div class="service-block-two wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/calendar.png" alt=""></figure>
+                                    <h3><a href="gestion-dossiers-medicaux.html">Gestion des Dossiers Médicaux en Ligne
+                                    </a></h3>
+                                    <div class="text">
+                                        </div>
+                                    <div class="link"><a href="gestion-dossiers-medicaux.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                           
+                         
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 image-column">
+                        <div class="image-box">
+                            
+                            
+                            <figure class="image"><img src="assets/images/icons/dr-bien-5.png" alt="" style="padding-right: 80px;" ></figure>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="service-block-two wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/discussion.png" alt=""></figure>
+                                    <!--ICI-->
+                                    <h3><a href="prescription-ia.html">Prescription en Ligne avec Aide à la Prescription IA
+                                    </a></h3>
+                                    <div class="text">
+                                              </div>
+                                    <div class="link"><a href="prescription-ia.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                            <div class="service-block-two wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
+                                    <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt=""></figure>
+                                    <h3><a href="visibilite-seo.html">Visibilité SEO </a></h3>
+                                    <div class="text">
+                                    
+                                    </div>
+                                    <div class="link"><a href="visibilite-seo.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+
+        
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- service-section end -->
+
+
+    <!-- about-section -->
+    <section class="about-section about-page">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div id="image_block_01">
+                        <div class="image-box js-tilt">
+                            <div class="pattern-layer-1 wow slideInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image: url(assets/images/icons/pattern-1.png);"></div>
+                            <div class="pattern-layer-2" data-wow-duration="1500ms" style="background-image: url(assets/images/icons/pattern-2.png);"></div>
+                            <figure class="image wow slideInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="assets/images/icons/dr-bien-2.png" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div id="content_block_01">
+                        <div class="content-box">
+                            <div class="sec-title wow fadeInDown animated" data-wow-delay="0ms">
+                                <div class="title-two"><p><span>{</span>&nbsp;Pourquoi nous ?&nbsp;<span>}</span></p></div>
+                                <h2>Découvrez comment nos solutions peuvent transformer votre quotidien professionnel</h2>
+                            </div>
+                           
+                            <div class="btn-box wow fadeInUp animated" data-wow-delay="300ms"><a href="inscription.html" class="theme-btn style-four"><i class="fas fa-feather"></i>Nous Contacter</a></div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <!-- about-section end -->
+
+
+    <!-- testimonial-section -->
+    <section class="testimonial-section alternate-2 style-two">
+        <div class="anim-icon wow zoomIn animated" data-wow-delay="00ms">
+            <div class="icon icon-1 rotate-me" style="background-image: url(assets/images/icons/anim-icon-1.png);"></div>
+            <div class="icon icon-2 float-bob-x" style="background-image: url(assets/images/icons/anim-icon-2.png);"></div>
+            <div class="icon icon-3 float-bob-y"></div>
+            <div class="icon icon-4 rotate-me" style="background-image: url(assets/images/icons/anim-icon-3.png);"></div>
+            <div class="icon icon-5 float-bob-x" style="background-image: url(assets/images/icons/anim-icon-4.png);"></div>
+            <div class="icon icon-6 rotate-me" style="background-image: url(assets/images/icons/anim-icon-5.png);"></div>
+            <div class="icon icon-7 rotate-me" style="background-image: url(assets/images/icons/anim-icon-5.png);"></div>
+            <div class="icon icon-8 float-bob-y" style="background-image: url(assets/images/icons/anim-icon-4.png);"></div>
+            <div class="icon icon-9 rotate-me" style="background-image: url(assets/images/icons/anim-icon-3.png);"></div>
+            <div class="icon icon-10 float-bob-x"></div>
+            <div class="icon icon-11 rotate-me" style="background-image: url(assets/images/icons/anim-icon-1.png);"></div>
+        </div>
+        <div class="auto-container">
+            <div class="sec-title centred">
+                <div class="title-two"><p><span>{</span>&nbsp;Témoignages&nbsp;<span>}</span></p></div>
+                <h3>Des solutions modernes pour simplifier votre quotidien</h3>
+            </div>
+            <div class="testimonial-carousel owl-carousel owl-theme owl-dots-none">
+                <div class="inner-column">
+                    <div class="testimonial-content">
+                        <div class="inner-box">
+                            <div class="top-inner">
+                                <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-20.png);"></div>
+                                <div class="text">
+                                    <p>"La gestion des dossiers médicaux en ligne nous a permis de gagner un temps précieux et d'améliorer 
+                                        la communication entre les différents acteurs de la santé. 
+                                        
+                                        C'est un véritable atout pour une prise en charge optimale de nos patients"</p>
+                                </div>
+                                <br>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="author-info">
+                                <figure class="image-box"><img src="assets/images/resource/dr3.png" alt=""></figure>
+                                <h3>Dr. Karim </h3>
+                                <span class="designation">Médecin Spécialiste</span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="inner-column">
+                    <div class="testimonial-content">
+                        <div class="inner-box">
+                            <div class="top-inner">
+                                <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-20.png);"></div>
+                                <div class="text">
+                                    <p>"Les services de téléexpertise et téléassistance ont considérablement facilité la prise en charge de mes patients. Ils nous permettent d'accéder à des avis spécialisés en temps réel, ce qui est crucial pour offrir les meilleurs soins, surtout dans les situations urgentes."</p>
+                                </div>
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="author-info">
+                                <figure class="image-box"><img src="assets/images/resource/dr6.png" alt=""></figure>
+                                <h3>Dr. Nour</h3>
+                                <span class="designation">Oncologue</span>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="inner-column">
+                    <div class="testimonial-content">
+                        <div class="inner-box">
+                            <div class="top-inner">
+                                <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-20.png);"></div>
+                                <div class="text">
+                                    <p>"La télésurveillance a grandement amélioré le suivi de mes patients diabétiques. En surveillant leurs paramètres en temps réel, 
+                                        nous pouvons intervenir rapidement et prévenir les complications avant qu'elles ne surviennent."</p>
+                                </div>
+                          
+                                <ul class="rating clearfix">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <div class="author-info">
+                                <figure class="image-box"><img src="assets/images/resource/dr1.png" alt=""></figure>
+                                <h3>Dr. Ahmed</h3>
+                                <span class="designation">Endocrinologue</span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial-section end -->
+
+        <!-- faq-style-two -->
+        <section class="faq-style-two">
+            <div class="auto-container">
+                <div class="sec-title centred">
+                    <div class="title-two"><p><span>{</span>&nbsp;FAQ&nbsp;<span>}</span></p></div>
+                    <h2>En savoir plus grâce à notre foire aux questions!</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-6 col-sm-12 inner-column">
+                        <div class="inner-box">
+                            <ul class="accordion-box">
+                                <li class="accordion block active-block">
+                                    <div class="acc-btn active">
+                                        <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                        <h5>Quels services proposez-vous ?</h5>
+                                    </div>
+                                    <div class="acc-content current">
+                                        <div class="content">
+                                            <p>Nous offrons des solutions adaptées : télésecrétariat, gestion des rendez-vous, téléconsultation, etc.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                    <div class="acc-btn">
+                                        <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                        <h5>Vos services sont-ils sécurisés ?</h5>
+                                    </div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <p>Oui, tous nos outils respectent les normes RGPD et garantissent une sécurité optimale.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="accordion block">
+                                     <div class="acc-btn">
+                                        <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                        <h5>Comment puis-je démarrer ?</h5>
+                                    </div>
+                                    <div class="acc-content">
+                                        <div class="content">
+                                            <p>Réservez une démonstration gratuite dès aujourd'hui !</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </section>
+        <!--faq-style-two end -->
+
+<!--      our-history 
+
+    <section class="our-history bg-color-2">
+        <div class="auto-container">
+            <div class="sec-title light centred">
+                <div class="title-two"><p><span>{</span>&nbsp;Our History&nbsp;<span>}</span></p></div>
+                <h2>We have an awesome story<br />of our company</h2>
+            </div>
+            <div class="history-box">
+                <div class="box-title"><h3>Start</h3></div>
+                <div class="row clearfix">
+                    <div class="col-lg-5 col-md-6 col-sm-12 inner-column">
+                        <div class="inner-box text-right">
+                            <div class="single-item">
+                                <h3>2nd Feb, 2018</h3>
+                                <p>Exhibition Planning &<br />Exhibition Management</p>
+                            </div>
+                            <div class="single-item">
+                                <h3>21st Jul, 2018</h3>
+                                <p>Growth internationallyfirst<br />half of the 2018s</p>
+                            </div>
+                            <div class="single-item">
+                                <h3>19th Aug, 2018</h3>
+                                <p>The purpose of the business plan</p>
+                            </div>
+                            <div class="single-item">
+                                <h3>2nd Jan, 2019</h3>
+                                <p>Focus business history on what<br />matters to planning</p>
+                            </div>
+                            <div class="single-item">
+                                <h3>22nd Sep, 2019</h3>
+                                <p>History to Unite and Inspire People</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12 offset-lg-2 inner-column">
+                        <div class="inner-box">
+                            <div class="single-item">
+                                <h3>12th Jan, 2018</h3>
+                                <p>Establishment of Constrio</p>
+                            </div>
+                            <div class="single-item">
+                                <h3>8th Jul, 2018</h3>
+                                <p>Registered as a construction company</p>
+                            </div>
+                            <div class="single-item">
+                                <h3>18th Aug, 2018</h3>
+                                <p>Construction bought the Greek<br />company Delta</p>
+                            </div>
+                            <div class="single-item">
+                                <h3>27th Sep, 2018</h3>
+                                <p>For lean business plans, operational<br />plans, and strategic plans</p>
+                            </div>
+                            <div class="single-item">
+                                <h3>8th Jul, 2019</h3>
+                                <p>Award winner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <figure class="image-box"><img src="assets/images/resource/history-1.png" alt=""></figure>
+            </div>
+        </div>
+    </section>
+   our-history end 
+
+ -->
+
+
+    	<style>
+        .social-icons {
+    position: fixed;
+    top: 50%;
+    right: 10px; /* Positionné à droite */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 40px; /* Taille des icônes */
+    height: 40px;
+    border-radius: 50%; /* Pour un effet arrondi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet plus pro */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+    </style>
+    <!-- End Popup Login-->
+    <div class="social-icons" style="z-index: 9999;">
+        <a href="https://www.facebook.com/people/WIC-Doctor/61567242383619/?locale=fr_FR" target="_blank">
+            <img src="./assets/images/icons/fb.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/@WICDoctor" target="_blank">
+            <img src="./assets/images/icons/youtube.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/wic_doctor_tunisia/" target="_blank">
+            <img src="./assets/images/icons/insta.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/company/wic-doctor/posts/" target="_blank">
+            <img src="./assets/images/icons/linkidin.png" alt="Instagram">
+        </a>
+        <a href="https://x.com/WicDoctor" target="_blank">
+            <img src="./assets/images/icons/twitter.png" alt="Instagram">
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=21626311722&text&context=ARCA4kG0-ji3IZZVIl0SGy-pasvzA9NGu6rAMyFGkteYpSXEy5aiifugPiOP2mfw5L4BpCxqvb9uRbiVxMSkhC0EsNP8_hOi8YUDxIOg66_ulRmNB6d7nsPxbmi2nm1aGpD7yzr4G7e7XetamHR9ineByQ&source&app=facebook" target="_blank">
+            <img src="./assets/images/icons/whats.png" alt="Instagram">
+        </a>
+    </div>
+<!-- main-footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div id="starshine">
+                <div class="shine shine shine-1"></div>
+                <div class="shine shine shine-2"></div>
+            </div>
+            <div class="bg-layer" style="background-image: url(assets/images/icons/pattern-6.png);"></div>
+            <div class="auto-container">
+                <div class="widget-section">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <figure class="footer-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                                <div class="widget-content">
+                                    <ul class="clearfix">
+
+                                        
+                                       
+                                       
+                                       
+                                        
+                                        
+                                        
+                                        <li><i class="fas fa-map-marker-alt"></i>Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</li>
+                                        <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 53 926 192">+216 53 926 192</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13">+33 743 13 00 13</a></li>
+                                        <li><strong>Horaires d'ouverture :</strong><br />Lundi - Vendredi : 8H - 17H</li>
+                                        <li><i class="fas fa-envelope"></i>contact@wic-doctor.com</li>
+                                        <li><i class="fas fa-arrow-circle-right"></i>   <a href="https://fr.wiccrm.com/">  www.wic-doctor.com</a></li>
+                                        <li></li>
+                                    </ul>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <h3 class="widget-title">
+                                    <span>Liens</span>
+                                    <i></i>
+                                </h3>
+                                <div class="widget-content">
+                                    <ul class="links-list clearfix">
+                                        <li><a href="index.html">Accueil</a></li>
+                                        <li><a href="nos-services.html">Nos Services</a></li>
+                                        <li><a href="offres.html">Nos Offres</a></li>
+                                        <li><a href="inscription.html">Inscription</a></li>
+                                        <li><a href="https://fr.wiccrm.com/">Espace Patient</a></li>
+                                        <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                        <li><a href="blogs.html">Blogs</a></li>
+                                        <li><a href="parrainage.html">Parrainage</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="https://wic-doctor.com/contact.html">Contactez-nous</a></li>
+                                        <li><a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a></li>
+                                        <li><a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies & Parapharmacies</a></li>
+                                        <li><a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a></li>
+                                        <li><a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a></li>
+                                        <li><a href="Mention-légales.html">Mentions légales</a></li>
+                                        
+                                        <li><a href="Conditions-utilisation.html">Conditions d'utilisation</a></li>
+                                        <li><a href="Vente-en-ligne.html">Conditions générales de vente en ligne</a></li>
+                                       
+                                        <li><a href="Confidentialité-donées-personnelles.html">Politique de confidentialité des données personnelles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="auto-container">
+                <div class="copyright"><p> &copy; <span id="currentYear"></span>  Tous droits réservés par <a href="https://fr.wiccrm.com/">WIC Dr.</a></p></div>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+<span class="fa fa-arrow-up"></span>
+</button>
+
+
+<!-- jequery plugins -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/scrollbar.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/tilt.jquery.js"></script>
+<script src="assets/js/circle-progress.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
+
+<!-- main-js -->
+<script src="assets/js/script.js"></script>
+
+</body><!-- End of .page_wrapper -->
+</html>

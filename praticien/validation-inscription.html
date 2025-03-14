@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <meta charset="utf-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '623852967108851');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Demande d'inscription | WIC Dr.</title>
+
+<!-- Fav Icon -->
+<link rel="icon" href="assets/images/wic-dr-logo.png" type="image/x-icon">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.min.css">
+   
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/imagebg.css" rel="stylesheet">
+<link href="assets/css/color.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+<script src="assets/js/docderoulante.js"></script>
+<script src="assets/js/listspeciality.js"></script>
+
+<link rel="stylesheet" href="build/css/intlTelInput.css" />
+<link rel="stylesheet" href="build/css/demo.css" />
+
+<style>
+
+
+.notification {
+            background-color: #87cebe;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+#error-msg {
+  color: red;
+}
+#valid-msg {
+  color: #00c900;
+}
+input.error {
+  border: 1px solid #ff7c7c;
+}
+.hide {
+  display: none;
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRK4SDDB4H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TRK4SDDB4H');
+</script>
+
+<!-- Google tag (gtag.js) event -->
+<script>
+    gtag('event', 'ads_conversion_Nouvelle_inscription_1', {
+      // <event_parameters>
+    });
+  </script>
+</head>
+    <!-- Your code -->
+
+<!-- page wrapper -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+       
+     
+       .button-float {
+           
+       position: fixed;
+       right: 20px;
+      
+       
+      
+       font-size: 16px;
+       cursor: pointer;
+       z-index: 1000;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: all 0.3s ease;
+       }
+     
+       .button-float a {
+         text-decoration: none;
+         color: inherit;
+       }
+     
+       .button-float .menu-item {
+         display: flex;
+         align-items: center;
+         margin-left: 12px;
+         position: relative;
+       }
+     
+       .button-float .menu-item select {
+         border: none;
+         background: none;
+         font-size: 14px;
+         color: #333;
+         cursor: pointer;
+       }
+     
+       .button-float .menu-item select:focus {
+         outline: none;
+       }
+     
+       .button-float .divider {
+         margin: 0 8px;
+         color: #888;
+       }
+     
+       /* Animation clignotante au chargement */
+       @keyframes blink {
+         0%, 100% { opacity: 1; }
+         50% { opacity: 0.5; }
+       }
+     
+       #countrySelect, #languageSelect {
+         animation: blink 2s infinite;
+       }
+     </style>
+     
+     <div class="button-float">
+       <!-- Sélection du pays -->
+       <div class="menu-item">
+         <select id="countrySelect">
+           <option value="france">France</option>
+           <option value="tunisia">Tunisie</option>
+           <option value="italy">Italie</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Sélection de la langue -->
+       <div class="menu-item">
+         <select id="languageSelect">
+           <option value="fr">FR</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Aide -->
+       <div class="menu-item"><a href="#">Aide</a></div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Connexion -->
+       <div class="menu-item"><a href="https://dashboard.wic-doctor.com/login">Connexion</a></div>
+     </div>
+     
+     <script>
+       const countrySelect = document.getElementById('countrySelect');
+       const languageSelect = document.getElementById('languageSelect');
+     
+       // Liens de redirection en fonction du pays sélectionné
+       const countryLinks = {
+         "france": "https://fr.wiccrm.com/inscription-professionnel/",
+         "tunisia": "https://wic-doctor.com/inscription-professionnel/",
+         "italy": "#"
+       };
+     
+       // Rediriger l'utilisateur lorsqu'il sélectionne un pays
+       countrySelect.addEventListener('change', function() {
+           console.log("changeeeeeeeeeeeeeeeee")
+         const selectedCountry = countrySelect.value;
+         if (countryLinks[selectedCountry]) {
+           window.location.href = countryLinks[selectedCountry];
+         }
+       });
+     
+       // Simulation de l'ouverture automatique du menu
+       window.addEventListener('DOMContentLoaded', () => {
+         setTimeout(() => {
+           countrySelect.style.animation = 'none';
+           languageSelect.style.animation = 'none';
+         }, 2000);
+       });
+     </script>
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- preloader -->
+
+
+
+    <!-- main header -->
+
+    <header class="main-header style-two">
+        <div class="auto-container">
+            <div class="header-upper">
+                <div class="outer-box clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                    </div>
+                    <div class="nav-box pull-right clearfix">
+                        <div class="menu-area pull-left">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                            </div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix" >
+                                        <li><a href="index.html">Accueil</a>
+                                           
+                                        </li> 
+                                        <li class="dropdown"><a href="nos-services.html"> Nos Services</a>
+                                            <ul>
+                                                <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                                <li><a href="teleconsultation.html">Téléconsultation</a></li>
+                                                <li><a href="Télésecretariat.html">Télésecrétariat Médical</a></li>
+                                                <li><a href="télésurveillance-médicale.html">Télésurveillance Médicale</a></li>
+                                                <li><a href="optimisation-communication.html">Communication internationale</a></li>
+                                                <li><a href="fibre-optique.html">Fibre Optique pour les Professionnels de Santé</a></li>
+                                                <li><a href="gestion-rdv.html">Gestion de Vos Rendez-vous en Ligne</a></li>
+                                                <li><a href="prescription-ia.html">Prescription en Ligne avec Aide à la Prescription IA</a></li>
+                                                <li><a href="téléexpertise-téléassistance.html">Télé-expertise et Télé-assistance Médicale</a></li>
+                                                <li><a href="SMS-rappel.html">SMS de Rappel pour Professionnels de Santé</a></li>
+                                                <li><a href="Sécurité-données.html">Sécurité des Données pour les Professionnels de Santé</a></li>
+                                                <li><a href="gestion-dossiers-medicaux.html">Gestion des Dossiers Médicaux en Ligne</a></li>
+                                                <li><a href="visibilite-seo.html">Visibilité SEO</a></li>
+                                               </ul>
+                                        </li>
+                                        <li><a href="offres.html">Nos Offres</a>
+                                         
+                                        </li>
+                                       
+                                        <li><a href="Télésecretariat.html">Télésecrétariat </a>
+                                        </li>         
+                                      
+                                        <li>                    
+                         
+                                            <a href="https://fr.wiccrm.com/" class="style-two"> </i>Espace Patient</a>
+                                
+                                        </li> 
+                                        <li class="current">                    
+                         
+                                            <a href="inscription.html" class="style-two"><i class="fas fa-user"> </i> Inscription</a>
+                                
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <figure class="logo-box"><a href="index.html"><img src="assets/images/small-logo.png" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main-header end -->
+
+     <!-- Mobile Menu  -->
+     <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+        
+        <nav class="menu-box">
+            <div class="nav-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt="" title=""></a></div>
+            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            <div class="contact-info">
+                <h4>Contactez Nous</h4>
+                <ul>
+                
+
+                    
+                    <li><i class="fas fa-map-marker-alt"></i> Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 53 926 192"> +216 53 926 192</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13"> +33 743 13 00 13</a></li>
+                   
+                    <li><i class="fas fa-envelope"></i><a href="mailto:contact@way-interactive-convergence.com"> contact@way-interactive-convergence.com</a></li>
+                    <li><i class="fas fa-arrow-circle-right"></i>   <a href="way-interactive-convergence.com">    way-interactive-convergence.com</a></li>
+                    <li></li>
+                </ul>
+                 
+            </div>
+          
+        </nav>
+    </div><!-- End Mobile Menu -->
+    <!--Page Title-->
+    <section class="page-title centred">
+        <div class="pattern-layer">
+            <div class="pattern-1" style="background-image: url(assets/images/icons/pattern-21.png);"></div>
+            <div class="pattern-2" style="background-image: url(assets/images/icons/pattern-22.png);"></div>
+            <div class="pattern-3 float-bob-x" style="background-image: url(assets/images/icons/pattern-23.png);"></div>
+        </div>
+        <div class="bubble-box">
+            <div class="bubble bubble-1" style="background-image: url(assets/images/icons/bubble-14.png);"></div>
+            <div class="bubble bubble-2 rotate-me" style="background-image: url(assets/images/icons/bubble-15.png);"></div>
+            <div class="bubble bubble-3" style="background-image: url(assets/images/icons/bubble-16.png);"></div>
+            <div class="bubble bubble-4"></div>
+        </div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h1>Validation d'Inscription</h1>
+                <ul class="bread-crumb clearfix">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="inscription.html">Inscription</a></li>
+                    <li>Validation d'Inscription</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+
+
+    <!-- error-section -->
+    <section class="error-section centred">
+
+
+                 <!-- about-section -->
+    <section class="about-section about-page">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div id="image_block_01">
+                        <div class="image-box js-tilt">
+                            <div class="pattern-layer-1 wow slideInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image: url(assets/images/icons/pattern-1.png);"></div>
+                            <div class="pattern-layer-2" data-wow-duration="1500ms" style="background-image: url(assets/images/icons/pattern-2.png);"></div>
+                            <figure class="image wow slideInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="assets/images/icons/dr-valid.png" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div id="content_block_01">
+                        <div class="content-box">
+                            <div class="sec-title wow fadeInDown animated" data-wow-delay="0ms" style="margin-top: 90px;">
+                               
+                                <h2>Félicitations !</h2>
+                                <p style="font-weight: bolder;font-size: larger;">Votre inscription a été réussie avec succès.</p>
+                
+                                <div class="notification">
+                                    <p><strong>Note :</strong> Si vous avez reçu votre mot de passe par Email, vous pouvez vous connecter immédiatement.</p>
+                                </div>
+                            </div>
+                           
+                            <div class="btn-box wow fadeInUp animated" data-wow-delay="300ms"><a href="https://dashboard.wic-doctor.com/login" class="theme-btn style-one"><i class="fas fa-user"></i>Se connecter</a></div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</section>
+
+
+</section>
+
+    <!-- error-section end -->
+
+
+
+    	<style>
+        .social-icons {
+    position: fixed;
+    top: 50%;
+    right: 10px; /* Positionné à droite */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 40px; /* Taille des icônes */
+    height: 40px;
+    border-radius: 50%; /* Pour un effet arrondi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet plus pro */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+    </style>
+    <!-- End Popup Login-->
+    <div class="social-icons" style="z-index: 9999;">
+        <a href="https://www.facebook.com/people/WIC-Doctor/61567242383619/?locale=fr_FR" target="_blank">
+            <img src="./assets/images/icons/fb.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/@WICDoctor" target="_blank">
+            <img src="./assets/images/icons/youtube.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/wic_doctor_tunisia/" target="_blank">
+            <img src="./assets/images/icons/insta.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/company/wic-doctor/posts/" target="_blank">
+            <img src="./assets/images/icons/linkidin.png" alt="Instagram">
+        </a>
+        <a href="https://x.com/WicDoctor" target="_blank">
+            <img src="./assets/images/icons/twitter.png" alt="Instagram">
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=21626311722&text&context=ARCA4kG0-ji3IZZVIl0SGy-pasvzA9NGu6rAMyFGkteYpSXEy5aiifugPiOP2mfw5L4BpCxqvb9uRbiVxMSkhC0EsNP8_hOi8YUDxIOg66_ulRmNB6d7nsPxbmi2nm1aGpD7yzr4G7e7XetamHR9ineByQ&source&app=facebook" target="_blank">
+            <img src="./assets/images/icons/whats.png" alt="Instagram">
+        </a>
+    </div>
+<!-- main-footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div id="starshine">
+                <div class="shine shine shine-1"></div>
+                <div class="shine shine shine-2"></div>
+            </div>
+            <div class="bg-layer" style="background-image: url(assets/images/icons/pattern-6.png);"></div>
+            <div class="auto-container">
+                <div class="widget-section">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <figure class="footer-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                                <div class="widget-content">
+                                    <ul class="clearfix">
+
+                                        
+                                       
+                                       
+                                       
+                                        
+                                        
+                                        
+                                        <li><i class="fas fa-map-marker-alt"></i>Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</li>
+                                        <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 53 926 192">+216 53 926 192</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13">+33 743 13 00 13</a></li>
+                                        <li><strong>Horaires d'ouverture :</strong><br />Lundi - Vendredi : 8H - 17H</li>
+                                        <li><i class="fas fa-envelope"></i>contact@wic-doctor.com</li>
+                                        <li><i class="fas fa-arrow-circle-right"></i>   <a href="https://fr.wiccrm.com/">  www.wic-doctor.com</a></li>
+                                        <li></li>
+                                    </ul>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <h3 class="widget-title">
+                                    <span>Liens</span>
+                                    <i></i>
+                                </h3>
+                                <div class="widget-content">
+                                    <ul class="links-list clearfix">
+                                        <li><a href="index.html">Accueil</a></li>
+                                        <li><a href="nos-services.html">Nos Services</a></li>
+                                        <li><a href="offres.html">Nos Offres</a></li>
+                                        <li><a href="inscription.html">Inscription</a></li>
+                                        <li><a href="https://fr.wiccrm.com/">Espace Patient</a></li>
+                                        <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                        <li><a href="blogs.html">Blogs</a></li>
+                                        <li><a href="parrainage.html">Parrainage</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="https://wic-doctor.com/contact.html">Contactez-nous</a></li>
+                                        <li><a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a></li>
+                                        <li><a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies & Parapharmacies</a></li>
+                                        <li><a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a></li>
+                                        <li><a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a></li>
+                                        <li><a href="Mention-légales.html">Mentions légales</a></li>
+                                        
+                                        <li><a href="Conditions-utilisation.html">Conditions d'utilisation</a></li>
+                                        <li><a href="Vente-en-ligne.html">Conditions générales de vente en ligne</a></li>
+                                       
+                                        <li><a href="Confidentialité-donées-personnelles.html">Politique de confidentialité des données personnelles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="auto-container">
+                <div class="copyright"><p> &copy; <span id="currentYear"></span>  Tous droits réservés par <a href="https://fr.wiccrm.com/">WIC Dr.</a></p></div>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+
+
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <span class="fa fa-arrow-up"></span>
+</button>
+
+
+<!-- jequery plugins -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/scrollbar.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/tilt.jquery.js"></script>
+<script src="assets/js/circle-progress.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
+
+<!-- main-js -->
+<script src="assets/js/script.js"></script>
+
+</body><!-- End of .page_wrapper -->
+</html>

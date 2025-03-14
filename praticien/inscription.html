@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <meta charset="utf-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '623852967108851');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Demande d'inscription | WIC Dr.</title>
+
+<!-- Fav Icon -->
+<link rel="icon" href="assets/images/wic-dr-logo.png" type="image/x-icon">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.min.css">
+   
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+<link href="assets/css/font-awesome-all.css" rel="stylesheet">
+<link href="assets/css/flaticon.css" rel="stylesheet">
+<link href="assets/css/owl.css" rel="stylesheet">
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet">
+<link href="assets/css/animate.css" rel="stylesheet">
+<link href="assets/css/imagebg.css" rel="stylesheet">
+<link href="assets/css/color.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/responsive.css" rel="stylesheet">
+<script src="assets/js/docderoulante.js"></script>
+<script src="assets/js/listspeciality.js"></script>
+
+<link rel="stylesheet" href="build/css/intlTelInput.css" />
+<link rel="stylesheet" href="build/css/demo.css" />
+
+<style>
+
+
+
+#error-msg {
+  color: red;
+}
+#valid-msg {
+  color: #00c900;
+}
+input.error {
+  border: 1px solid #ff7c7c;
+}
+.hide {
+  display: none;
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRK4SDDB4H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TRK4SDDB4H');
+</script>
+</head>
+    <!-- Your code -->
+
+<!-- page wrapper -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+       
+     
+       .button-float {
+           
+       position: fixed;
+       right: 20px;
+      
+       
+      
+       font-size: 16px;
+       cursor: pointer;
+       z-index: 1000;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       transition: all 0.3s ease;
+       }
+     
+       .button-float a {
+         text-decoration: none;
+         color: inherit;
+       }
+     
+       .button-float .menu-item {
+         display: flex;
+         align-items: center;
+         margin-left: 12px;
+         position: relative;
+       }
+     
+       .button-float .menu-item select {
+         border: none;
+         background: none;
+         font-size: 14px;
+         color: #333;
+         cursor: pointer;
+       }
+     
+       .button-float .menu-item select:focus {
+         outline: none;
+       }
+     
+       .button-float .divider {
+         margin: 0 8px;
+         color: #888;
+       }
+     
+       /* Animation clignotante au chargement */
+       @keyframes blink {
+         0%, 100% { opacity: 1; }
+         50% { opacity: 0.5; }
+       }
+     
+       #countrySelect, #languageSelect {
+         animation: blink 2s infinite;
+       }
+     </style>
+     
+     <div class="button-float">
+       <!-- Sélection du pays -->
+       <div class="menu-item">
+         <select id="countrySelect">
+           <option value="france">France</option>
+           <option value="tunisia">Tunisie</option>
+           <option value="italy">Italie</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Sélection de la langue -->
+       <div class="menu-item">
+         <select id="languageSelect">
+           <option value="fr">FR</option>
+         </select>
+       </div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Aide -->
+       <div class="menu-item"><a href="#">Aide</a></div>
+     
+       <!-- Séparateur -->
+       <div class="divider">|</div>
+     
+       <!-- Lien Connexion -->
+       <div class="menu-item"><a href="https://dashboard.wic-doctor.com/login">Connexion</a></div>
+     </div>
+     
+     <script>
+       const countrySelect = document.getElementById('countrySelect');
+       const languageSelect = document.getElementById('languageSelect');
+     
+       // Liens de redirection en fonction du pays sélectionné
+       const countryLinks = {
+         "france": "https://fr.wiccrm.com/inscription-professionnel/",
+         "tunisia": "https://wic-doctor.com/inscription-professionnel/",
+         "italy": "#"
+       };
+     
+       // Rediriger l'utilisateur lorsqu'il sélectionne un pays
+       countrySelect.addEventListener('change', function() {
+           console.log("changeeeeeeeeeeeeeeeee")
+         const selectedCountry = countrySelect.value;
+         if (countryLinks[selectedCountry]) {
+           window.location.href = countryLinks[selectedCountry];
+         }
+       });
+     
+       // Simulation de l'ouverture automatique du menu
+       window.addEventListener('DOMContentLoaded', () => {
+         setTimeout(() => {
+           countrySelect.style.animation = 'none';
+           languageSelect.style.animation = 'none';
+         }, 2000);
+       });
+     </script>
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- preloader -->
+
+
+
+    <!-- main header -->
+
+    <header class="main-header style-two">
+        <div class="auto-container">
+            <div class="header-upper">
+                <div class="outer-box clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                    </div>
+                    <div class="nav-box pull-right clearfix">
+                        <div class="menu-area pull-left">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                            </div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix" >
+                                        <li><a href="index.html">Accueil</a>
+                                           
+                                        </li> 
+                                        <li class="dropdown"><a href="nos-services.html"> Nos Services</a>
+                                            <ul>
+                                                <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                                <li><a href="teleconsultation.html">Téléconsultation</a></li>
+                                                <li><a href="Télésecretariat.html">Télésecrétariat Médical</a></li>
+                                                <li><a href="télésurveillance-médicale.html">Télésurveillance Médicale</a></li>
+                                                <li><a href="optimisation-communication.html">Communication internationale</a></li>
+                                                <li><a href="fibre-optique.html">Fibre Optique pour les Professionnels de Santé</a></li>
+                                                <li><a href="gestion-rdv.html">Gestion de Vos Rendez-vous en Ligne</a></li>
+                                                <li><a href="prescription-ia.html">Prescription en Ligne avec Aide à la Prescription IA</a></li>
+                                                <li><a href="téléexpertise-téléassistance.html">Télé-expertise et Télé-assistance Médicale</a></li>
+                                                <li><a href="SMS-rappel.html">SMS de Rappel pour Professionnels de Santé</a></li>
+                                                <li><a href="Sécurité-données.html">Sécurité des Données pour les Professionnels de Santé</a></li>
+                                                <li><a href="gestion-dossiers-medicaux.html">Gestion des Dossiers Médicaux en Ligne</a></li>
+                                                <li><a href="visibilite-seo.html">Visibilité SEO</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="offres.html">Nos Offres</a>
+                                         
+                                        </li>
+                                       
+                                        <li><a href="Télésecretariat.html">Télésecrétariat </a>
+                                        </li>        
+                                        
+                                        <li>                    
+                         
+                                            <a href="https://fr.wiccrm.com/" class="style-two"> </i>Espace Patient</a>
+                                
+                                        </li> 
+                                        <li class="current">                    
+                         
+                                            <a href="inscription.html" class="style-two"><i class="fas fa-user"> </i> Inscription</a>
+                                
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--sticky Header-->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <figure class="logo-box"><a href="index.html"><img src="assets/images/small-logo.png" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- main-header end -->
+
+     <!-- Mobile Menu  -->
+     <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+        <div class="close-btn"><i class="fas fa-times"></i></div>
+        
+        <nav class="menu-box">
+            <div class="nav-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt="" title=""></a></div>
+            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            <div class="contact-info">
+                <h4>Contactez Nous</h4>
+                <ul>
+                
+
+                    
+                    <li><i class="fas fa-map-marker-alt"></i> Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:+216 53 926 192"> +216 53 926 192</a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13"> +33 743 13 00 13</a></li>
+                   
+                    <li><i class="fas fa-envelope"></i><a href="mailto:contact@way-interactive-convergence.com"> contact@way-interactive-convergence.com</a></li>
+                    <li><i class="fas fa-arrow-circle-right"></i>   <a href="way-interactive-convergence.com">    way-interactive-convergence.com</a></li>
+                    <li></li>
+                </ul>
+                 
+            </div>
+          
+        </nav>
+    </div><!-- End Mobile Menu -->
+    <!--Page Title-->
+    <section class="page-title centred">
+        <div class="pattern-layer">
+            <div class="pattern-1" style="background-image: url(assets/images/icons/pattern-21.png);"></div>
+            <div class="pattern-2" style="background-image: url(assets/images/icons/pattern-22.png);"></div>
+            <div class="pattern-3 float-bob-x" style="background-image: url(assets/images/icons/pattern-23.png);"></div>
+        </div>
+        <div class="bubble-box">
+            <div class="bubble bubble-1" style="background-image: url(assets/images/icons/bubble-14.png);"></div>
+            <div class="bubble bubble-2 rotate-me" style="background-image: url(assets/images/icons/bubble-15.png);"></div>
+            <div class="bubble bubble-3" style="background-image: url(assets/images/icons/bubble-16.png);"></div>
+            <div class="bubble bubble-4"></div>
+        </div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h1>Rejoignez notre réseau de médecins</h1>
+                <ul class="bread-crumb clearfix">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li>Demande d'inscription</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--End Page Title-->
+
+
+    <!-- contact-section -->
+    <section class="contact-section bg-color-1">
+        <div class="auto-container">
+            <div class="sec-title centred">
+                <div class="title-two"><p><span>{</span>&nbsp;Demande d'inscription&nbsp;<span>}</span></p></div>
+                <h3>Inscrivez-vous en quelques étapes simples et commencez à bénéficier de nos solutions."</h3>
+            </div>
+            <div class="upper-content">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image-box wow slideInLeft animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="icon-box">
+                                <div class="iocn icon-1" style="background-image: url(assets/images/icons/icon-7.png);"></div>
+                                <div class="iocn icon-2 rotate-me" style="background-image: url(assets/images/icons/icon-8.png);"></div>
+                            </div>
+                            <figure class="image js-tilt"><img src="assets/images/inscription.png" alt=""></figure>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-6 col-md-12 col-sm-12 form-column">
+                   
+                    <form method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+                        <div class="row gy-4">
+              
+                            <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                            <input type="text" name="lastname" class="form-control" placeholder="Nom" required="svp changer">
+                            
+                            
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-4 form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Prénom" required="svp changer">
+                            
+                            
+                          </div>
+                          <div class="col-lg-12 col-md-6 col-sm-12 form-group">
+                            <select id="sexe"  class="form-control">
+                            
+                                <option value="">--  Vous êtes --</option>
+                                <option value="femme">Femme</option>
+                                <option value="homme">Homme</option>
+                            </select>
+                            </div>
+              
+                      <!--     <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                            <input type="tel" class="form-control" name="tel" placeholder="Numéro de téléphone" required="">
+                          </div> -->
+                          <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                            <input id="phone" class="form-control" name="phone" type="tel" placeholder="Numéro de téléphone" required="" />
+                           
+                            <span id="valid-msg" class="hide"></span>
+                            <span id="error-msg" class="hide"></span>
+                          </div>
+      
+                          <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Adresse email" required="">
+                          </div>
+                          <div class="col-lg-12 col-md-6 col-sm-12 form-group">
+                            <select id="country" onchange="updateProvinces()" class="form-control">
+                            
+                                <option value="">-- Sélectionnez un pays --</option>
+                                <option value="france">France</option>
+                                <option value="tunisie">Tunisie</option>
+                            </select>
+                            </div>
+                        
+                            <!-- Sélection de la province -->
+                            <div class="col-lg-12 col-md-6 col-sm-12 form-group">
+                            <select id="province" onchange="updateCities()" class="form-control">
+                                <option value="">-- Sélectionnez une régions administratives --</option>
+                            </select>
+                            </div>
+                        
+                            <!-- Sélection de la ville -->
+                            <div class="col-lg-12 col-md-6 col-sm-12 form-group">
+                            <select id="city" class="form-control">
+                                <option value="">-- Sélectionnez une ville --</option>
+                            </select>
+                            </div>
+              
+                          <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <select id="speciality" class="form-control" onchange="showSubOptions()"  disabled >
+                              <option value="" disabled selected hidden>Vous êtes ?</option>
+                                <option value="Docteur">Médecin</option>
+                                <option value="Pharmacie">Pharmacie</option>
+                                <option value="Banque de sang">Banque de sang</option>
+                                <option value="Parapharmacie">Parapharmacie</option>
+                                <option value="Ambulance privée">Ambulance privée</option>
+                                <option value="Infermieurie privée">Infermieurie privée</option>
+                                <option value="Clinique">Clinique</option>
+                                <option value="hopital">Hôpital</option>
+                                <option value="CentreDialyse">Centre de dialyse</option>
+                                <option value="CentreDialyse">Autre</option>
+              
+                            </select>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                            <div id="sub-options" style="display: none; margin-top: 10px;">
+                        <label for="options">Sélectionnez votre spécialité :</label>
+                        <select id="options" class="form-control" onchange="getSelectedId()">
+                            <option value="">-- Choisissez une spécialité --</option>
+                        </select>
+                        </div>
+                     </div>         
+                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                        <div id="sub-options2" style="display: none; margin-top: 10px;">
+                    <label for="options2">Sélectionnez votre spécialité :</label>
+                    <select id="options2" class="form-control" onchange="getSelectedId()">
+                        <option value="">-- Choisissez une spécialité --</option>
+                    </select>
+                    </div>
+                 </div>     
+  
+
+          
+
+              <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                <input type="text" name="adresse" class="form-control" placeholder="Adresse géographique" required="svp changer">
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                <input type="text" name="code" id="code" class="form-control" placeholder="Code de parrainage">
+              </div>
+
+  <!--             <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                <div id="sub-options" style="margin-top: 10px;">
+                  <select id="subpack" class="form-control">
+                      <option value="" disabled selected hidden>Choisir une offre</option>
+                      <option value="Sérénité Santé">Pack Sérénité Santé</option>
+                        <option value="Horizon Santé">Pack Horizon Santé</option>
+                        <option value="dermatologue">Pack Praticien Connecté</option>
+                   
+                        </select>
+                  
+              </div>
+      </div> -->
+                          <div class="col-md-12">
+                            <textarea class="form-control" name="message" rows="6" placeholder="Informations complémentaires" ></textarea>
+                          </div>
+              
+                         
+                       
+                          
+                          <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn" style="margin-top: 10px;">
+                            <button class="theme-btn style-four custom-button" type="submit" name="submit-form">
+                                <i class="fas fa-arrow-circle-right"></i> Envoyer votre demande </button>
+                       
+                          </div>
+              
+                        </div>
+                        <script src="logup.js"></script>
+                        
+                       
+                      </form><!-- End Contact Form -->
+
+    <script src="build/js/intlTelInputWithUtils.js"></script>
+                      </div>
+               
+                </div>
+            </div>
+            <div class="bottom-content">
+                <div class="col-lg-10 col-md-12 col-sm-12 offset-lg-1 inner-column">
+                    <div class="inner-box clearfix">
+                        <div class="single-item wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner">
+                                <div class="icon-box"><i class="fas fa-envelope-open"></i></div>
+                                
+                                <h4>Écrivez-nous <br> par e-mail </h4>
+                                <div class="text" style="font-size: medium">
+                                    <a href="mailto:partners@way-interactive-convergence.com">partners@way-interactive-convergence.com</a>
+                             
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-item wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="inner">
+                                <div class="icon-box"><i class="fas fa-home"></i></div>
+                                <h4>Notre adresse de bureau </h4>
+                                <div class="text">
+                                    <p>4, Rue Marconi 57070, Metz, France
+<br> <br> 
+                                        Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-item wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner">
+                                <div class="icon-box"><i class="fas fa-phone"></i></div>
+                                <h4>Appelez pour une assistance </h4>
+                                <div class="text">
+                                    <a href="tel:+33 743 13 00 13">
+                                        +33 743 13 00 13
+                                        
+                                        </a>
+                                    <a href="tel:+216 26 311 777">+216 26 311 777</a>
+                                    <a href="tel:+216 26 311 777">+216 53 926 192</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact-section end -->
+ <!-- about-section -->
+ <section class="about-section about-page" style="margin-top: 20px;">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div id="image_block_01">
+                    <div class="image-box js-tilt">
+                        <div class="pattern-layer-1 wow slideInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image: url(assets/images/icons/pattern-1.png);"></div>
+                        <div class="pattern-layer-2" data-wow-duration="1500ms" style="background-image: url(assets/images/icons/pattern-2.png);"></div>
+                        <figure class="image wow slideInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="assets/images/icons/dr-bien-2.png" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_01">
+                    <div class="content-box">
+                        <div class="sec-title wow fadeInDown animated" data-wow-delay="0ms">
+                            <div class="title-two"><p><span>{</span>&nbsp;Pourquoi nous ?&nbsp;<span>}</span></p></div>
+                            <h2>Découvrez comment nos solutions peuvent transformer votre quotidien professionnel</h2>
+                        </div>
+                       
+                        <div class="btn-box wow fadeInUp animated" data-wow-delay="300ms"><a href="offres.html" class="theme-btn style-four"><i class="fas fa-feather"></i>consultez nous offres</a></div>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<!-- about-section end -->
+
+    	<style>
+        .social-icons {
+    position: fixed;
+    top: 50%;
+    right: 10px; /* Positionné à droite */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 40px; /* Taille des icônes */
+    height: 40px;
+    border-radius: 50%; /* Pour un effet arrondi */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet plus pro */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+    </style>
+    <!-- End Popup Login-->
+    <div class="social-icons" style="z-index: 9999;">
+        <a href="https://www.facebook.com/people/WIC-Doctor/61567242383619/?locale=fr_FR" target="_blank">
+            <img src="./assets/images/icons/fb.png" alt="Facebook">
+        </a>
+        <a href="https://www.youtube.com/@WICDoctor" target="_blank">
+            <img src="./assets/images/icons/youtube.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/wic_doctor_tunisia/" target="_blank">
+            <img src="./assets/images/icons/insta.png" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com/company/wic-doctor/posts/" target="_blank">
+            <img src="./assets/images/icons/linkidin.png" alt="Instagram">
+        </a>
+        <a href="https://x.com/WicDoctor" target="_blank">
+            <img src="./assets/images/icons/twitter.png" alt="Instagram">
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=21626311722&text&context=ARCA4kG0-ji3IZZVIl0SGy-pasvzA9NGu6rAMyFGkteYpSXEy5aiifugPiOP2mfw5L4BpCxqvb9uRbiVxMSkhC0EsNP8_hOi8YUDxIOg66_ulRmNB6d7nsPxbmi2nm1aGpD7yzr4G7e7XetamHR9ineByQ&source&app=facebook" target="_blank">
+            <img src="./assets/images/icons/whats.png" alt="Instagram">
+        </a>
+    </div>
+<!-- main-footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div id="starshine">
+                <div class="shine shine shine-1"></div>
+                <div class="shine shine shine-2"></div>
+            </div>
+            <div class="bg-layer" style="background-image: url(assets/images/icons/pattern-6.png);"></div>
+            <div class="auto-container">
+                <div class="widget-section">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="logo-widget footer-widget wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <figure class="footer-logo"><a href="index.html"><img src="assets/images/wic-dr-logo.png" alt=""></a></figure>
+                                <div class="widget-content">
+                                    <ul class="clearfix">
+
+                                        
+                                       
+                                       
+                                       
+                                        
+                                        
+                                        
+                                        <li><i class="fas fa-map-marker-alt"></i>Immeuble Aicha - Avenue Hédi Nouira, 8000 Nabeul, Tunisie</li>
+                                        <li><i class="fas fa-map-marker-alt"></i> 4, rue Marconi - 57075 METZ Technopoles, FRANCE</li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 26 311 777"> +216 26 311 777</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:+216 53 926 192">+216 53 926 192</a></li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13">+33 743 13 00 13</a></li>
+                                        <li><strong>Horaires d'ouverture :</strong><br />Lundi - Vendredi : 8H - 17H</li>
+                                        <li><i class="fas fa-envelope"></i>contact@wic-doctor.com</li>
+                                        <li><i class="fas fa-arrow-circle-right"></i>   <a href="https://fr.wiccrm.com/">  www.wic-doctor.com</a></li>
+                                        <li></li>
+                                    </ul>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
+                            <div class="links-widget footer-widget wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <h3 class="widget-title">
+                                    <span>Liens</span>
+                                    <i></i>
+                                </h3>
+                                <div class="widget-content">
+                                    <ul class="links-list clearfix">
+                                        <li><a href="index.html">Accueil</a></li>
+                                        <li><a href="nos-services.html">Nos Services</a></li>
+                                        <li><a href="offres.html">Nos Offres</a></li>
+                                        <li><a href="inscription.html">Inscription</a></li>
+                                        <li><a href="https://fr.wiccrm.com/">Espace Patient</a></li>
+                                        <li><a href="medecine-douce.html">Médecine Douce</a></li>
+                                        <li><a href="blogs.html">Blogs</a></li>
+                                        <li><a href="parrainage.html">Parrainage</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="https://wic-doctor.com/contact.html">Contactez-nous</a></li>
+                                        <li><a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a></li>
+                                        <li><a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies & Parapharmacies</a></li>
+                                        <li><a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a></li>
+                                        <li><a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a></li>
+                                        <li><a href="Mention-légales.html">Mentions légales</a></li>
+                                        
+                                        <li><a href="Conditions-utilisation.html">Conditions d'utilisation</a></li>
+                                        <li><a href="Vente-en-ligne.html">Conditions générales de vente en ligne</a></li>
+                                       
+                                        <li><a href="Confidentialité-donées-personnelles.html">Politique de confidentialité des données personnelles</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="auto-container">
+                <div class="copyright"><p> &copy; <span id="currentYear"></span>  Tous droits réservés par <a href="https://fr.wiccrm.com/">WIC Dr.</a></p></div>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <span class="fa fa-arrow-up"></span>
+</button>
+
+
+<!-- jequery plugins -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/validation.js"></script>
+<script src="assets/js/jquery.fancybox.js"></script>
+<script src="assets/js/appear.js"></script>
+<script src="assets/js/scrollbar.js"></script>
+<script src="assets/js/isotope.js"></script>
+<script src="assets/js/parallax.min.js"></script>
+<script src="assets/js/tilt.jquery.js"></script>
+<script src="assets/js/circle-progress.js"></script>
+<script src="assets/js/jquery.countTo.js"></script>
+
+<!-- main-js -->
+<script src="assets/js/script.js"></script>
+<script src="script-tel.js"></script>
+<script>
+    // Fonction pour récupérer le paramètre 'code' dans l'URL
+    function getCodeFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('code'); // Récupère la valeur du paramètre 'code'
+    }
+
+    // Récupérer le code depuis l'URL et l'affecter au champ texte
+    const code = getCodeFromURL();
+    const codeInput = document.getElementById('code');
+    
+    if (code) {
+        codeInput.value = code; // Si le code est présent dans l'URL, le mettre dans le champ
+    } else {
+        codeInput.value = ''; // Si aucun code n'est trouvé, le champ reste vide
+    }
+</script>
+<script>
+    const provinces = {
+        france: ["Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Corse",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur",
+        "Guadeloupe",
+        "Guyane",
+        "La Réunion",
+        "Martinique",
+        "Mayotte"
+    ],
+        
+        tunisie: ["Ariana",
+        "Béja",
+        "Ben Arous",
+        "Bizerte",
+        "Gabès",
+        "Gafsa",
+        "Jendouba",
+        "Kairouan",
+        "Kasserine",
+        "Kébili",
+        "La Manouba",
+        "Le Kef",
+        "Mahdia",
+        "Médenine",
+        "Monastir",
+        "Nabeul",
+        "Sfax",
+        "Sidi Bouzid",
+        "Siliana",
+        "Sousse",
+        "Tataouine",
+        "Tozeur",
+        "Tunis",
+        "Zaghouan"]
+    };
+
+    const cities = {
+        "Auvergne-Rhône-Alpes": ["Lyon", "Saint-Étienne", "Grenoble", "Clermont-Ferrand", "Annecy"],
+    "Bourgogne-Franche-Comté": ["Dijon", "Besançon", "Belfort", "Auxerre", "Chalon-sur-Saône"],
+    "Bretagne": ["Rennes", "Brest", "Quimper", "Lorient", "Vannes"],
+    "Centre-Val de Loire": ["Orléans", "Tours", "Chartres", "Bourges", "Châteauroux"],
+    "Corse": ["Ajaccio", "Bastia", "Calvi", "Corte", "Porto-Vecchio"],
+    "Grand Est": ["Strasbourg", "Reims", "Metz", "Nancy", "Mulhouse"],
+    "Hauts-de-France": ["Lille", "Amiens", "Dunkerque", "Calais", "Roubaix"],
+    "Île-de-France": ["Paris", "Boulogne-Billancourt", "Saint-Denis", "Argenteuil", "Versailles"],
+    "Normandie": ["Rouen", "Caen", "Le Havre", "Évreux", "Cherbourg"],
+    "Nouvelle-Aquitaine": ["Bordeaux", "Limoges", "Pau", "La Rochelle", "Poitiers"],
+    "Occitanie": ["Toulouse", "Montpellier", "Nîmes", "Perpignan", "Albi"],
+    "Pays de la Loire": ["Nantes", "Angers", "Le Mans", "Saint-Nazaire", "Cholet"],
+    "Provence-Alpes-Côte d'Azur": ["Marseille", "Nice", "Toulon", "Aix-en-Provence", "Avignon"],
+    "Guadeloupe": ["Pointe-à-Pitre", "Basse-Terre", "Le Gosier", "Sainte-Anne", "Saint-François"],
+    "Guyane": ["Cayenne", "Kourou", "Saint-Laurent-du-Maroni", "Roura", "Matoury"],
+    "La Réunion": ["Saint-Denis", "Saint-Pierre", "Saint-Paul", "Le Tampon", "Saint-André"],
+    "Martinique": ["Fort-de-France", "Le Lamentin", "Schoelcher", "Le Robert", "Ducos"],
+    "Mayotte": ["Mamoudzou", "Dzaoudzi", "Koungou", "Bandraboua", "Sada"],
+    "Ariana": ["Ariana Ville", "Raoued", "Soukra", "Mnihla", "Kalaat El Andalous"],
+    "Béja": ["Béja Ville", "Medjez el-Bab", "Nefza", "Téboursouk", "Testour"],
+    "Ben Arous": ["Ben Arous", "Hammam-Lif", "Mégrine", "Mornag", "Radès"],
+    "Bizerte": ["Bizerte", "Menzel Bourguiba", "Ras Jebel", "Mateur", "Sejnane"],
+    "Gabès": ["Gabès Ville", "Métouia", "El Hamma", "Mareth", "Chenini Nahal"],
+    "Gafsa": ["Gafsa Ville", "Métlaoui", "Redeyef", "Mdhila", "El Ksar"],
+    "Jendouba": ["Jendouba Ville", "Bou Salem", "Tabarka", "Aïn Draham", "Fernana"],
+    "Kairouan": ["Kairouan Ville", "Hajeb El Ayoun", "Sbikha", "Bou Hajjla", "Nasrallah"],
+    "Kasserine": ["Kasserine Ville", "Sbeitla", "Fériana", "Thala", "Hassi El Ferid"],
+    "Kébili": ["Kébili Ville", "Douz", "Souk Lahad", "El Faouar", "Blidet"],
+    "La Manouba": ["Manouba Ville", "Douar Hicher", "Oued Ellil", "Tebourba", "Borj El Amri"],
+    "Le Kef": ["Le Kef Ville", "Dahmani", "Tajerouine", "Jerissa", "Sakiet Sidi Youssef"],
+    "Mahdia": ["Mahdia Ville", "Chebba", "Ksour Essef", "Bou Merdes", "El Jem"],
+    "Médenine": ["Médenine Ville", "Ben Gardane", "Zarzis", "Beni Khedache", "Sidi Makhlouf"],
+    "Monastir": ["Monastir Ville", "Jemmal", "Ksar Hellal", "Sahline", "Teboulba"],
+    "Nabeul": ["Nabeul Ville", "Hammamet", "Kelibia", "Korba", "Dar Chaabane"],
+    "Sfax": ["Sfax Ville", "Agareb", "Bir Ali Ben Khalifa", "El Hencha", "Mahrès"],
+    "Sidi Bouzid": ["Sidi Bouzid Ville", "Regueb", "Meknassy", "Jilma", "Cebbala"],
+    "Siliana": ["Siliana Ville", "El Krib", "Bou Arada", "Gaâfour", "Bargou"],
+    "Sousse": ["Sousse Ville", "Akouda", "Hammam Sousse", "Kalaa Kebira", "Msaken"],
+    "Tataouine": ["Tataouine Ville", "Bir Lahmar", "Ghomrassen", "Dehiba", "Smar"],
+    "Tozeur": ["Tozeur Ville", "Nefta", "Degache", "Tameghza", "Hazoua"],
+    "Tunis": ["Tunis Centre", "Le Bardo", "La Marsa", "Carthage", "Sidi Hassine"],
+    "Zaghouan": ["Zaghouan Ville", "El Fahs", "Nadhour", "Bir Mcherga", "Saouaf"]
+    };
+
+    function updateProvinces() {
+        const countrySelect = document.getElementById("country");
+        const provinceSelect = document.getElementById("province");
+        const citySelect = document.getElementById("city");
+        const selectedCountry = countrySelect.value;
+
+        provinceSelect.innerHTML = '<option value="">-- Sélectionnez une province --</option>';
+        citySelect.innerHTML = '<option value="">-- Sélectionnez une ville --</option>';
+
+        if (selectedCountry && provinces[selectedCountry]) {
+            provinces[selectedCountry].forEach(province => {
+                const option = document.createElement("option");
+                option.value = province;
+                option.textContent = province;
+                provinceSelect.appendChild(option);
+            });
+        }
+    }
+
+
+    function updateCities() {
+        const provinceSelect = document.getElementById("province");
+        const citySelect = document.getElementById("city");
+        const selectedProvince = provinceSelect.value;
+
+        citySelect.innerHTML = '<option value="">-- Sélectionnez une ville --</option>';
+
+        if (selectedProvince && cities[selectedProvince]) {
+            cities[selectedProvince].forEach(city => {
+                const option = document.createElement("option");
+                option.value = city;
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+        }
+    }
+</script>
+
+<script>
+
+
+    // URL de la requête GET pour récupérer les données de la base de données
+    const url = "https://wic-doctor.com:3004/specialties"; 
+    const url2 ="https://wic-doctor.com:3004/specialtiesfrance" ;
+
+    // Fonction pour récupérer les données et les afficher dans le select
+    async function fetchOptions() {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            // Récupérer l'élément <select> où afficher les options
+            const selectElement = document.getElementById("options");
+   
+
+            // Ajouter les options dynamiquement
+           data.forEach(option => {
+            // Parsing de la propriété 'name' de la réponse
+            const parsedName = JSON.parse(option.name);
+            const nameInFrench = parsedName.fr;  // Accéder à "Gastro-Entérologue"
+
+            const optionElement = document.createElement("option");
+           
+            optionElement.value = option.id;
+            optionElement.textContent = nameInFrench;  // Utiliser le nom en français
+            selectElement.appendChild(optionElement);
+        });
+    } catch (error) {
+        console.error("Erreur lors de la récupération des options : ", error);
+    }
+
+    try {
+            const response = await fetch(url2);
+            const data = await response.json();
+
+            // Récupérer l'élément <select> où afficher les options
+            const selectElement = document.getElementById("options2");
+            
+           
+
+            // Ajouter les options dynamiquement
+           data.forEach(option => {
+            // Parsing de la propriété 'name' de la réponse
+            const parsedName = JSON.parse(option.name);
+            const nameInFrench = parsedName.fr;  // Accéder à "Gastro-Entérologue"
+
+            const optionElement = document.createElement("option");
+            optionElement.value = option.id;
+            optionElement.textContent = nameInFrench;  // Utiliser le nom en français
+            selectElement.appendChild(optionElement);
+        });
+    } catch (error) {
+        console.error("Erreur lors de la récupération des options : ", error);
+    }
+    }
+
+
+   
+    // Fonction pour obtenir l'ID de l'option sélectionnée
+    function getSelectedId() {
+        const selectedOption = document.getElementById("options").value;
+        const selectedOption2 = document.getElementById("options2").value;
+        if (selectedOption) {
+            console.log("ID sélectionné : " + selectedOption);
+        }
+        if (selectedOption2) {
+            console.log("ID sélectionné : " + selectedOption2);
+        }
+    }
+
+    // Appeler la fonction pour récupérer les options dès le chargement de la page
+    window.onload = fetchOptions;
+</script>
+<script>
+    // Sélectionner les éléments
+    const input1 = document.getElementById('country');
+    
+    const input2 = document.getElementById('speciality');
+
+
+    // Ajouter un événement 'blur' pour le premier champ
+    input1.addEventListener('change', function() {
+      
+        input2.disabled = false;
+    });
+    const input = document.getElementById("phone");
+  const iti = window.intlTelInput(input, {
+    // allowDropdown: false,
+    // autoPlaceholder: "off",
+    // containerClass: "test",
+    // countryOrder: ["jp", "kr"],
+    // countrySearch: false,
+    // customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+    //   return "e.g. " + selectedCountryPlaceholder;
+    // },
+    // dropdownContainer: document.querySelector('#custom-container'),
+    // excludeCountries: ["us"],
+    // fixDropdownWidth: false,
+    // formatAsYouType: false,
+    // formatOnDisplay: false,
+    // geoIpLookup: function(callback) {
+    //   fetch("https://ipapi.co/json")
+    //     .then(function(res) { return res.json(); })
+    //     .then(function(data) { callback(data.country_code); })
+    //     .catch(function() { callback(); });
+    // },
+    // hiddenInput: () => ({ phone: "phone_full", country: "country_code" }),
+    // i18n: { 'de': 'Deutschland' },
+    initialCountry: "tn",
+    // loadUtils: () => import("/build/js/utils.js"), // leading slash (and http-server) required for this to work in chrome
+    // nationalMode: false,
+    // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+    // placeholderNumberType: "MOBILE",
+    // showFlags: false,
+    // separateDialCode: true,
+    // strictMode: true,
+    // useFullscreenPopup: true,
+    // validationNumberTypes: null,
+  });
+  window.iti = iti; // useful for testing
+
+   const button = document.querySelector("#btn");
+  const errorMsg = document.querySelector("#error-msg");
+  const validMsg = document.querySelector("#valid-msg");
+  const errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"]; 
+
+  const reset = () => {
+    input.classList.remove("error");
+    errorMsg.innerHTML = "";
+    validMsg.innerHTML = "";
+    errorMsg.classList.add("hide");
+    validMsg.classList.add("hide");
+  };
+
+  const showError = (msg) => {
+    input.classList.add("error");
+    errorMsg.innerHTML = msg;
+    errorMsg.classList.remove("hide");
+  };
+
+  input.addEventListener('change', function() {
+    reset();
+    if (!input.value.trim()) {
+      showError("Required");
+    } else if (iti.isValidNumber()) {
+      validMsg.innerHTML = "Valid number: " + iti.getNumber();
+      validMsg.classList.remove("hide");
+      
+      console.log('Valeur envoyée get get Number:', iti.getNumber());
+  //save data
+  localStorage.clear();
+localStorage.setItem('phone', iti.getNumber())
+
+//get data
+let phone = localStorage.getItem('phone');
+console.log(phone);
+
+    } else {
+      const errorCode = iti.getValidationError();
+      const msg = errorMap[errorCode] || "Numéro Invalide";
+      showError(msg);
+    }
+  });
+
+  // on keyup / change flag: reset
+  input.addEventListener('change', reset);
+  input.addEventListener('keyup', reset);
+    
+</script>
+<!-- 
+
+<script>
+  const phone = document.querySelector("#phone");
+  const iti = window.intlTelInput(phone, {
+    // allowDropdown: false,
+    // autoPlaceholder: "off",
+    // containerClass: "test",
+    // countryOrder: ["jp", "kr"],
+    // countrySearch: false,
+    // customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+    //   return "e.g. " + selectedCountryPlaceholder;
+    // },
+    // dropdownContainer: document.querySelector('#custom-container'),
+    // excludeCountries: ["us"],
+    // fixDropdownWidth: false,
+    // formatAsYouType: false,
+    // formatOnDisplay: false,
+    // geoIpLookup: function(callback) {
+    //   fetch("https://ipapi.co/json")
+    //     .then(function(res) { return res.json(); })
+    //     .then(function(data) { callback(data.country_code); })
+    //     .catch(function() { callback(); });
+    // },
+    // hiddenInput: () => ({ phone: "phone_full", country: "country_code" }),
+    // i18n: { 'de': 'Deutschland' },
+    initialCountry: "tn",
+    // loadUtils: () => import("/build/js/utils.js"), // leading slash (and http-server) required for this to work in chrome
+    // nationalMode: false,
+    // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+    // placeholderNumberType: "MOBILE",
+    // showFlags: false,
+    // separateDialCode: true,
+    // strictMode: true,
+    // useFullscreenPopup: true,
+    // validationNumberTypes: null,
+  });
+  window.iti = iti; // useful for testing
+
+   const button = document.querySelector("#btn");
+  const errorMsg = document.querySelector("#error-msg");
+  const validMsg = document.querySelector("#valid-msg");
+  const errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"]; 
+
+  const reset = () => {
+    input.classList.remove("error");
+    errorMsg.innerHTML = "";
+    validMsg.innerHTML = "";
+    errorMsg.classList.add("hide");
+    validMsg.classList.add("hide");
+  };
+
+  const showError = (msg) => {
+    input.classList.add("error");
+    errorMsg.innerHTML = msg;
+    errorMsg.classList.remove("hide");
+  };
+
+  phone.addEventListener('change', function() {
+    reset();
+    if (!input.value.trim()) {
+      showError("Required");
+    } else if (iti.isValidNumber()) {
+      validMsg.innerHTML = "Valid number: " + iti.getNumber();
+      validMsg.classList.remove("hide");
+      
+      console.log('Valeur envoyée get get Number:', iti.getNumber());
+
+    } else {
+      const errorCode = iti.getValidationError();
+      const msg = errorMap[errorCode] || "Numéro Invalide";
+      showError(msg);
+    }
+  });
+
+  // on keyup / change flag: reset
+  input.addEventListener('change', reset);
+  input.addEventListener('keyup', reset);
+</script>
+ -->
+<script src="build/js/intlTelInputWithUtils.js"></script> 
+</body><!-- End of .page_wrapper -->
+</html>
