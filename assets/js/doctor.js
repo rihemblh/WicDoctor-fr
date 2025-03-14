@@ -301,7 +301,6 @@ function createCarouselblogs(data) {
 								</figure>
 								<div class="lower-content">
 									<ul class="post-info clearfix">
-										<li>${item.catégorie}</li>
 										<li>${item.date}</li>
 									</ul>
 									<h3 style ="font-size: 20px;"><a href="${href}">${limiterDixMots(item.titre)}</a></h3>

@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Récupérer les données depuis l'API et créer les <optgroup>
-  fetch('https://wic-doctor.com:3004/specialtiesfrance')
+ /*  fetch('https://wic-doctor.com:3004/specialtiesfrance')
     .then(response => {
       if (!response.ok) {
         throw new Error('Erreur lors de la récupération des catégories');
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Ajouter l'<optgroup> au <select>
       selectclinic.appendChild(optgroupclinic);
 
-    });
+    }); */
 
   // Variables pour stocker les valeurs sélectionnées
 
