@@ -707,9 +707,12 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 <div class="container">
 <div class="row d-flex">
 <div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center">
-							Copyright © 2024 WIC DOCTOR All
-							rights reserved.
+							Copyright © <span id="current-year"></span> WIC DOCTOR All rights reserved.
 						</div>
+						
+						<script>
+							document.getElementById("current-year").textContent = new Date().getFullYear();
+						</script>
 </div>
 </div>
 </div>
