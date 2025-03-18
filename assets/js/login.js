@@ -245,7 +245,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                                 if (data.message == "Rendez-vous inséré avec succès") {
                                     alert("🎉 Votre rendez-vous a été confirmé !\n\nVeuillez consulter votre email / Téléphone pour plus de détails.\n\nMerci de votre confiance !");
                                     sessionStorage.removeItem("rendezvous")
-                                    window.location.href = 'https://fr.wiccrm.com/profil.html'; // Rediriger vers la page 2
+                                    window.location.href = 'https://wic-doctor.com/france/profil.html'; // Rediriger vers la page 2
 
                                 }
                             })
@@ -256,7 +256,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                                 console.error('Erreur :', error);
                                 alert("Une erreur est survenue lors de la prise de rendez-vous. Veuillez réessayer plus tard.")
                                 sessionStorage.removeItem("rendezvous")
-                                window.location.href = 'https://fr.wiccrm.com/profil.html'; // Rediriger vers la page 2
+                                window.location.href = 'https://wic-doctor.com/france/profil.html'; // Rediriger vers la page 2
                             });
                     }
                     else {
@@ -275,7 +275,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                                 if (data.message == "Rendez-vous inséré avec succès") {
                                     alert("🎉 Votre demande de téléconsultation a été envoyée !\n\nVeuillez consulter votre email / Téléphone pour plus de détails.\n\nMerci de votre confiance !");
                                     sessionStorage.removeItem("rendezvousClinic")
-                                    window.location.href = 'https://fr.wiccrm.com/profil.html'; // Rediriger vers la page 2
+                                    window.location.href = 'https://wic-doctor.com/france/profil.html'; // Rediriger vers la page 2
 
                                 }
 
@@ -284,7 +284,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                                 console.error('Erreur :', error);
                             });
                     }
-                    //window.location.href = 'https://fr.wiccrm.com/profil.html'; // Rediriger vers la page 2
+                    //window.location.href = 'https://wic-doctor.com/france/profil.html'; // Rediriger vers la page 2
                 }
             }
             else if (sessionStorage.getItem('rendezvousClinic')) {
@@ -313,7 +313,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                         if (data.message == "Rendez-vous inséré avec succès") {
                             alert("🎉 Votre rendez-vous a été confirmé !\n\nVeuillez consulter votre email / Téléphone pour plus de détails.\n\nMerci de votre confiance !");
                             sessionStorage.removeItem("rendezvousClinic")
-                            window.location.href = 'https://fr.wiccrm.com/profil.html'; // Rediriger vers la page 2
+                            window.location.href = 'https://wic-doctor.com/france/profil.html'; // Rediriger vers la page 2
 
                         }
                     })
@@ -329,7 +329,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
                 // Disable the button
                 button.disabled = false;
                 alert('Connexion réussie!');
-                window.location.href = 'https://fr.wiccrm.com/profil.html'; // Rediriger vers la page 2
+                window.location.href = 'https://wic-doctor.com/france/profil.html'; // Rediriger vers la page 2
             }
 
         } else {

@@ -24,7 +24,7 @@ console.log("email: ",email)
             // Assuming data.link contains the reset link
             alert('Un lien de réinitialisation de votre mot de passe a été envoyé à votre adresse e-mail: ' + email);
             console.log(data); // Log the response for debugging
-            window.location.href="https://fr.wiccrm.com/login.html"
+            window.location.href="https://wic-doctor.com/france/login.html"
 
         } catch (error) {
             console.error('Error:', error);

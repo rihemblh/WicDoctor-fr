@@ -10,7 +10,7 @@ function decryptData(cipherText) {
     const bytes = CryptoJS.AES.decrypt(cipherText, secretKey);
     return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 }
-var currentPath = "https://fr.wiccrm.com/";
+var currentPath = "https://wic-doctor.com/france/";
 console.log("currentPath: ",currentPath)
 let url = currentPath
 const indexPosition = url.indexOf("index");
@@ -231,8 +231,8 @@ function GetDetailsDoctor(doctorecrypted,typeRDV,aleatoire){
 	doc=decryptData(doctorecrypted)
 	sessionStorage.setItem("status", "add")
 	sessionStorage.setItem("rdv", typeRDV)
-	console.log("url: ",`https://fr.wiccrm.com/medecin/tunisie/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(doc.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${JSON.parse(doc.name).fr.replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
-	window.location.href = `https://fr.wiccrm.com/medecin/tunisie/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(doc.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${JSON.parse(doc.name).fr.replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
+	console.log("url: ",`https://wic-doctor.com/france/medecin/tunisie/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(doc.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${JSON.parse(doc.name).fr.replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`)
+	window.location.href = `https://wic-doctor.com/france/medecin/tunisie/${JSON.parse(doc.gouvernorat).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(doc.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${JSON.parse(doc.name).fr.replace(/\s+/g, '-').toLowerCase()}-${doc.aleatoire}.html`; // Rediriger vers la page 2
    // window.location.href = 'prise-de-rendez-vous.html'; // Rediriger vers la page 2
 }
 

@@ -10,7 +10,7 @@ function decryptData(cipherText) {
 	const bytes = CryptoJS.AES.decrypt(cipherText, secretKey);
 	return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 }
-var currentPath = "https://fr.wiccrm.com/";
+var currentPath = "https://wic-doctor.com/france/";
 //console.log("currentPath: ", currentPath)
 let url = currentPath
 const indexPosition = url.indexOf("index");
@@ -161,7 +161,7 @@ function createCarouselDoctors(data) {
 		const photos = item.doctor_photo || "assets/images/media/doctors/doctor.png";
 		//console.log("********************************************************photots doc: ", photos)
 		const carouselItem = ` 	<div class="card mb-0" >
-	<a class="text-dark" onclick="GetDetailsDoctor('${encryptedData}',0,${item.aleatoire})" href="https://fr.wiccrm.com/medecin/france/${JSON.parse(item.Département).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(item.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(item.name).replace(/\s+/g, '-').toLowerCase()}-${item.aleatoire}.html">
+	<a class="text-dark" onclick="GetDetailsDoctor('${encryptedData}',0,${item.aleatoire})" href="https://wic-doctor.com/france/medecin/france/${JSON.parse(item.Département).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(item.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(item.name).replace(/\s+/g, '-').toLowerCase()}-${item.aleatoire}.html">
 		<div class="card-body padding-body" style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); border-radius: 15px;">
 			<div class="team-section text-center" style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); border-radius: 15px;padding-top: 10%;">
 				<div class="team-img">
@@ -250,7 +250,7 @@ function GetDetailsDoctor(doctorecrypted, typeRDV, aleatoire) {
 	item = decryptData(doctorecrypted)
 	sessionStorage.setItem("status", "add")
 	sessionStorage.setItem("rdv", typeRDV)
-	window.location.href = `https://fr.wiccrm.com/medecin/france/${JSON.parse(item.Département).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(item.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(item.name).replace(/\s+/g, '-').toLowerCase()}-${item.aleatoire}.html`; // Rediriger vers la page 2
+	window.location.href = `https://wic-doctor.com/france/medecin/france/${JSON.parse(item.Département).fr.replace(/\s+/g, '-').toLowerCase()}/${JSON.parse(item.specialities[0].name).fr.replace(/\s+/g, '-').toLowerCase()}/dr-${getDoctorName(item.name).replace(/\s+/g, '-').toLowerCase()}-${item.aleatoire}.html`; // Rediriger vers la page 2
 	// window.location.href = 'prise-de-rendez-vous.html'; // Rediriger vers la page 2
 }
 

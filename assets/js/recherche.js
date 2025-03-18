@@ -448,7 +448,7 @@ function Deconexion() {
       sessionStorage.removeItem('auth');
       sessionStorage.removeItem('rendezvous');
 
-      window.location.href = 'https://fr.wiccrm.com/'; // Rediriger vers la page 2
+      window.location.href = 'https://wic-doctor.com/france/'; // Rediriger vers la page 2
     })
     .catch(error => {
       console.error('Erreur :', error);
@@ -494,7 +494,7 @@ function RechercheDoctor() {
   var ListeDoctors
   var apiurlSearch = "https://wic-doctor.com:3004/doctorsadd?"
   var objectTitle = {}
-  let currentPath = "https://fr.wiccrm.com/"
+  let currentPath = "https://wic-doctor.com/france/"
   ////console.log("currentPath: ", currentPath)
   sessionStorage.setItem('path', encryptData(currentPath))
   if (specialtyId != "") {

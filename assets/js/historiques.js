@@ -113,7 +113,7 @@ if (authData) {
 
 } else {
     alert("Authentification requise. Veuillez vous connecter.");
-    window.location.href="https://fr.wiccrm.com/login.html"
+    window.location.href="https://wic-doctor.com/france/login.html"
 }
 function EditAppointment(id , appointmentid) {
     console.log("id doctor: ", id)
