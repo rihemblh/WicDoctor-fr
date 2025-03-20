@@ -34,9 +34,9 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description"
-		content="Découvrez les spécificités de notre plateforme WIC Doctor qui vous permet de réserver des rdv et consulter votre médecin en ligne">
+		content="WIC Dr. : solutions pour praticiens - téléconsultation, télésecrétariat, télésurveillance, fibre optique, sécurité des données, SMS de rappel, gestion RDV, dossiers médicaux, SEO">
 	<meta name="author" content="Spruko Technologies Private Limited">
-	<meta name="title" content="WIC Doctor : RDV et Télémédecine">
+	<meta name="title" content="Solution Praticien">
 
 	<!-- Favicon -->
 	<link rel="icon" alt="WIC Doctor" href="assets/images/brand/favicon.png" type="image/x-icon">
@@ -67,129 +67,135 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 </head>
 
 <body>
-<!-- Inclure la bibliothèque d'icônes Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <!-- Inclure la bibliothèque d'icônes Material Icons -->
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
- <style>
-	
+	  <style>
+		  .button-float {
   
-	.button-float {
-		
-    position: fixed;
-    right: 20px;
-   
-    
-   
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-	}
+			  position: fixed;
+			  right: 20px;
   
-	.button-float a {
-	  text-decoration: none;
-	  color: inherit;
-	}
   
-	.button-float .menu-item {
-	  display: flex;
-	  align-items: center;
-	  margin-left: 12px;
-	  position: relative;
-	}
   
-	.button-float .menu-item select {
-	  border: none;
-	  background: none;
-	  font-size: 14px;
-	  color: #333;
-	  cursor: pointer;
-	}
+			  font-size: 16px;
+			  cursor: pointer;
+			  z-index: 1000;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  transition: all 0.3s ease;
+		  }
   
-	.button-float .menu-item select:focus {
-	  outline: none;
-	}
+		  .button-float a {
+			  text-decoration: none;
+			  color: inherit;
+		  }
   
-	.button-float .divider {
-	  margin: 0 8px;
-	  color: #888;
-	}
+		  .button-float .menu-item {
+			  display: flex;
+			  align-items: center;
+			  margin-left: 12px;
+			  position: relative;
+		  }
   
-	/* Animation clignotante au chargement */
-	@keyframes blink {
-	  0%, 100% { opacity: 1; }
-	  50% { opacity: 0.5; }
-	}
+		  .button-float .menu-item select {
+			  border: none;
+			  background: none;
+			  font-size: 14px;
+			  color: #333;
+			  cursor: pointer;
+		  }
   
-	#countrySelect, #languageSelect {
-	  animation: blink 2s infinite;
-	}
-  </style>
+		  .button-float .menu-item select:focus {
+			  outline: none;
+		  }
   
-  <div class="button-float">
-	<!-- Sélection du pays -->
-	<div class="menu-item">
-	  <select id="countrySelect">
-		<option value="france">France</option>
-		<option value="tunisia">Tunisie</option>
-		<option value="italy">Italie</option>
-	  </select>
-	</div>
+		  .button-float .divider {
+			  margin: 0 8px;
+			  color: #888;
+		  }
   
-	<!-- Séparateur -->
-	<div class="divider">|</div>
+		  /* Animation clignotante au chargement */
+		  @keyframes blink {
   
-	<!-- Sélection de la langue -->
-	<div class="menu-item">
-	  <select id="languageSelect">
-		<option value="fr">FR</option>
-	  </select>
-	</div>
+			  0%,
+			  100% {
+				  opacity: 1;
+			  }
   
-	<!-- Séparateur -->
-	<div class="divider">|</div>
+			  50% {
+				  opacity: 0.5;
+			  }
+		  }
   
-	<!-- Lien Aide -->
-	<div class="menu-item"><a href="https://wic-doctor.com/france/FAQ.html">Aide</a></div>
+		  #countrySelect,
+		  #languageSelect {
+			  animation: blink 2s infinite;
+		  }
+	  </style>
   
-	<!-- Séparateur -->
-	<div class="divider">|</div>
+	  <div class="button-float">
+		  <!-- Sélection du pays -->
+		  <div class="menu-item">
+			  <select id="countrySelect">
+				<option value="tunisia">Tunisie</option>
+				  <option value="france">France</option>
+				  <option value="italy">Italie</option>
+			  </select>
+		  </div>
   
-	<!-- Lien Connexion -->
-	<div class="menu-item"><a href="https://wic-doctor.com/france/login.html">Connexion</a></div>
-  </div>
+		  <!-- Séparateur -->
+		  <div class="divider">|</div>
   
-  <script>
-	const countrySelect = document.getElementById('countrySelect');
-	const languageSelect = document.getElementById('languageSelect');
+		  <!-- Sélection de la langue -->
+		  <div class="menu-item">
+			  <select id="languageSelect">
+				  <option value="fr">FR</option>
+			  </select>
+		  </div>
   
-	// Liens de redirection en fonction du pays sélectionné
-	const countryLinks = {
-	  "france": "https://wic-doctor.com/france",
-	  "tunisia": "https://wic-doctor.com",
-	  "italy": "#"
-	};
+		  <!-- Séparateur -->
+		  <div class="divider">|</div>
   
-	// Rediriger l'utilisateur lorsqu'il sélectionne un pays
-	countrySelect.addEventListener('change', function() {
-		console.log("changeeeeeeeeeeeeeeeee")
-	  const selectedCountry = countrySelect.value;
-	  if (countryLinks[selectedCountry]) {
-		window.location.href = countryLinks[selectedCountry];
-	  }
-	});
+		  <!-- Lien Aide -->
+		  <div class="menu-item"><a href="https://wic-doctor.com/FAQ.html">Aide</a></div>
   
-	// Simulation de l'ouverture automatique du menu
-	window.addEventListener('DOMContentLoaded', () => {
-	  setTimeout(() => {
-		countrySelect.style.animation = 'none';
-		languageSelect.style.animation = 'none';
-	  }, 2000);
-	});
-  </script>
+		  <!-- Séparateur -->
+		  <div class="divider">|</div>
+  
+		  <!-- Lien Connexion -->
+		  <div class="menu-item"><a href="https://wic-doctor.com/login.html">Connexion</a></div>
+	  </div>
+  
+	  <script>
+		  const countrySelect = document.getElementById('countrySelect');
+		  const languageSelect = document.getElementById('languageSelect');
+  
+		  // Liens de redirection en fonction du pays sélectionné
+		  const countryLinks = {
+			  "france": "https://wic-doctor.com/france",
+			  "tunisia": "https://wic-doctor.com",
+			  "italy": "#"
+		  };
+  
+		  // Rediriger l'utilisateur lorsqu'il sélectionne un pays
+		  countrySelect.addEventListener('change', function () {
+			  console.log("changeeeeeeeeeeeeeeeee")
+			  const selectedCountry = countrySelect.value;
+			  if (countryLinks[selectedCountry]) {
+				  window.location.href = countryLinks[selectedCountry];
+			  }
+		  });
+  
+		  // Simulation de l'ouverture automatique du menu
+		  window.addEventListener('DOMContentLoaded', () => {
+			  setTimeout(() => {
+				  countrySelect.style.animation = 'none';
+				  languageSelect.style.animation = 'none';
+			  }, 2000);
+		  });
+	  </script>
 
 
 	<!--Loader-->
@@ -226,7 +232,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 										<li class=" "><a href="index.html">Accueil</a>
 
 										</li>
-										<li><a href="https://wic-doctor.com/france/qui-sommes-nous.html">WIC Dr.</a></li>
+										<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
 										<li class=" current dropdown">
 											<a href="#">Nos Solutions</a>
 											<ul class="megamenu">
@@ -234,34 +240,34 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 													<img src="./assets/images/media/photos/medecin-solution.png"
 														alt="Logo Praticiens" />
 													<a
-														href="https://wic-doctor.com/france/nos-solutions-praticien.html">Praticiens</a>
+														href="https://wic-doctor.com/nos-solutions-praticien.html">Praticiens</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/patient-solution.png"
 														alt="Logo Patients" />
 													<a
-														href="https://wic-doctor.com/france/nos-solutions-patient.html">Patients</a>
+														href="https://wic-doctor.com/nos-solutions-patient.html">Patients</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/Télémédecine-soltion.png"
 														alt="Logo Télémédecine" />
-													<a href="https://wic-doctor.com/france/Telemedecine.html">Télémédecine</a>
+													<a href="https://wic-doctor.com/Telemedecine.html">Télémédecine</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/technologie-solution.png"
 														alt="Logo Technologie" />
-													<a href="https://wic-doctor.com/france/technologies-de-pointe.html">Technologie
+													<a href="https://wic-doctor.com/technologies-de-pointe.html">Technologie
 														de pointe</a>
 												</li>
 											</ul>
 										</li>
 										<li class="dropdown">
-											<a href="https://wic-doctor.com/france/partenaire.html">Partenaire WIC Dr</a>
+											<a href="https://wic-doctor.com/partenaire.html">Partenaire WIC Dr</a>
 											<ul>
-												<li><a href="https://wic-doctor.com/france/partenaire.html">Partenaire</a>
+												<li><a href="https://wic-doctor.com/partenaire.html">Partenaire</a>
 												</li>
 												<li><a
-														href="https://wic-doctor.com/france/collaborateur.html">Collaborateur</a>
+														href="https://wic-doctor.com/collaborateur.html">Collaborateur</a>
 												</li>
 												<li><a href="https://green-telecom.fr/">Télésecrétariat
 													</a>
@@ -272,20 +278,20 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 												href="https://wic-doctor.com/france/inscription-professionnel/offres.html">Nos
 												Tarifs</a></li>
 										<li class=" dropdown">
-											<a href="https://wic-doctor.com/france/pathologies.html">Soins des patients</a>
+											<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
 											<ul>
-												<li><a href="https://wic-doctor.com/france/pathologies.html">Pathologies</a>
+												<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a>
 												</li>
-												<li><a href="https://wic-doctor.com/france/intervention.html">Interventions</a>
+												<li><a href="https://wic-doctor.com/intervention.html">Interventions</a>
 												</li>
 												<li><a
-														href="https://wic-doctor.com/france/diagnostiques.html">Diagnostics</a>
+														href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a>
 												</li>
 											</ul>
 										</li>
 										
 										</li>
-										<li class=""><a href="https://wic-doctor.com/france/contact.html">Contact</a></li>
+										<li class=""><a href="https://wic-doctor.com/contact.html">Contact</a></li>
 										<li>
 											<div class="menu-right-content pull-left" id="Login">
 												<div class="avatar-initial rounded-circle me-2" id="userAvatar"
@@ -293,7 +299,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 												<ul class="dropdown-menu dropdown-menu-end"
 													aria-labelledby="userAvatar">
 													<li><a class="dropdown-item profile"
-															href="https://wic-doctor.com/france/profil.html">Mon Profil</a>
+															href="https://wic-doctor.com/profil.html">Mon Profil</a>
 													</li>
 													<li>
 														<hr class="dropdown-divider">
@@ -360,10 +366,10 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 		</div>
 		<div class="auto-container">
 			<div class="content-box">
-				<h1>Nos Solutions</h1>
+				<h1>Solution Praticien</h1>
 				<ul class="bread-crumb clearfix">
 					<li><a href="index.html">Accueil</a></li>
-					<li>Nos solutions</li>
+					<li>Solution Praticien</li>
 				</ul>
 			</div>
 		</div>
@@ -387,7 +393,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
         <div class="auto-container">
             <div class="sec-title centred wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms">
                
-                <h2>Nos solutions pour les praticiens</h2>
+                <h2>Services Numériques pour les Professionnels de Santé</h2>
               
             </div>
 
@@ -403,21 +409,21 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                 <div class="inner-box">
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/fichier-et-dossier.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus">Téléconsultation </a></h3>
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/teleconsultation.html">Téléconsultation </a></h3>
                                     <div class="text">
                                        
                                     </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/teleconsultation.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                             <div class="service-block-two wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/calendar.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus">Télésecrétariat Médical</a></h3>
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/Télésecretariat.html">Télésecrétariat Médical</a></h3>
                                     <div class="text">
                                         </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/Télésecretariat.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                            
@@ -432,22 +438,22 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                 <div class="inner-box" style="background: -webkit-linear-gradient(0deg, #0cffeb, #5bddb6 50%) !important;">
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/discussion.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus">Télésurveillance Médicale</a></h3>
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/télésurveillance-médicale.html">Télésurveillance Médicale</a></h3>
                                     <div class="text">
                                               </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/télésurveillance-médicale.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                             <div class="service-block-two wow " data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="inner-box" style="background: -webkit-linear-gradient(0deg, #81f38b, #13c50d 50%) !important;">
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus">Télé-expertise et Télé-assistance Médicale
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/téléexpertise-téléassistance.html">Télé-expertise et Télé-assistance Médicale
                                     </a></h3>
                                     <div class="text">
                                     
                                     </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/téléexpertise-téléassistance.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                           
@@ -460,11 +466,11 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/discussion.png" alt="image"></figure>
                                     <!--ICI-->
-                                    <h3><a href="#savoirplus">Fibre Optique pour les Professionnels de Santé
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/fibre-optique.html">Fibre Optique pour les Professionnels de Santé
                                     </a></h3>
                                     <div class="text">
                                               </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/fibre-optique.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                             <div class="service-block-two wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -472,11 +478,11 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt="image"></figure>
                                     <!--ICI-->
-                                    <h3><a href="#savoirplus">Sécurité des Données pour les Professionnels de Santé</a></h3>
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/Sécurité-données.html">Sécurité des Données pour les Professionnels de Santé</a></h3>
                                     <div class="text">
                                     
                                     </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/Sécurité-données.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                           
@@ -493,12 +499,12 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                 <div class="inner-box">
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/fichier-et-dossier.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus">Communication internationale
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/optimisation-communication.html">Communication internationale
                                     </a></h3>
                                     <div class="text">
                                        
                                     </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/optimisation-communication.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                             <div class="service-block-two wow slideInLeft" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -506,10 +512,10 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                     <!--ICI-->
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/calendar.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus">SMS de Rappel pour Professionnels de Santé </a></h3>
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/SMS-rappel.html">SMS de Rappel pour Professionnels de Santé </a></h3>
                                     <div class="text">
                                         </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/SMS-rappel.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                            
@@ -523,24 +529,24 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                 <div class="inner-box" style="background: -webkit-linear-gradient(0deg, #0cffeb, #5bddb6 50%) !important;">
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/fichier-et-dossier.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus"> Gestion de Vos Rendez-vous en Ligne
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/gestion-rdv.html"> Gestion de Vos Rendez-vous en Ligne
 
                                     </a></h3>
                                     <div class="text">
                                        
                                     </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/gestion-rdv.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                             <div class="service-block-two wow " data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="inner-box" style="background: -webkit-linear-gradient(0deg, #81f38b, #13c50d 50%) !important;">
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/calendar.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus">Gestion des Dossiers Médicaux en Ligne
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/gestion-dossiers-medicaux.html">Gestion des Dossiers Médicaux en Ligne
                                     </a></h3>
                                     <div class="text">
                                         </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/gestion-dossiers-medicaux.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                            
@@ -556,22 +562,22 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/discussion.png" alt="image"></figure>
                                     <!--ICI-->
-                                    <h3><a href="#savoirplus">Prescription en Ligne avec Aide à la Prescription IA
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/prescription-ia.html">Prescription en Ligne avec Aide à la Prescription IA
                                     </a></h3>
                                     <div class="text">
                                               </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/prescription-ia.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                             <div class="service-block-two wow slideInRight" data-wow-delay="00ms" data-wow-duration="1500ms">
                                 <div class="inner-box">
                                     <div class="pattern-layer" style="background-image: url(assets/images/icons/pattern-9.png);"></div>
                                     <figure class="icon-box"><img src="assets/images/icons/ampoule.png" alt="image"></figure>
-                                    <h3><a href="#savoirplus">Visibilité SEO </a></h3>
+                                    <h3><a href="https://wic-doctor.com/france/inscription-professionnel/visibilite-seo.html">Visibilité SEO </a></h3>
                                     <div class="text">
                                     
                                     </div>
-                                    <div class="link"><a href="#savoirplus">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
+                                    <div class="link"><a href="https://wic-doctor.com/france/inscription-professionnel/visibilite-seo.html">Plus d'infos<i class="fas fa-angle-double-right"></i></a></div>
                                 </div>
                             </div>
                           
@@ -648,17 +654,17 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/france/qui-sommes-nous.html">Qui sommes-nous ?</a>
+									<a href="https://wic-doctor.com/qui-sommes-nous.html">Qui sommes-nous ?</a>
 								</li>
 								<li>
 									<a href="javascript:;">Témoignages</a>
 								</li>
 
 								<li>
-									<a href="https://wic-doctor.com/france/FAQ.html">FAQ</a>
+									<a href="https://wic-doctor.com/FAQ.html">FAQ</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/france/contact.html">Contactez-nous</a>
+									<a href="https://wic-doctor.com/contact.html">Contactez-nous</a>
 								</li>
 
 							</ul>
@@ -669,18 +675,18 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 							<div class="clearfix"></div>
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/france/medecin/tous.html">Professionnels de santé</a>
+									<a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a>
 								</li>
-								<!-- <li>
-									<a href="https://wic-doctor.com/france/pharmacies/pharmacie.html">Pharmacies &
+								<li>
+									<a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies &
 										Parapharmacies</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/france/Cliniques/tous.html">Cliniques</a>
+									<a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/france/Laboratoires/tous.html">Laboratoires</a>
-								</li> -->
+									<a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a>
+								</li>
 
 							</ul>
 						</div>
@@ -689,16 +695,16 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/france/pathologies.html">Pathologies</a>
+									<a href="https://wic-doctor.com/pathologies.html">Pathologies</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/france/diagnostiques.html">Diagnostics</a>
+									<a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/france/intervention.html">Interventions</a>
+									<a href="https://wic-doctor.com/intervention.html">Interventions</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/france/journal-medical.html">Journal Médical</a>
+									<a href="https://wic-doctor.com/journal-medical.html">Journal Médical</a>
 								</li>
 								<!-- <li>
 									<a href="javascript:;">Forum Médical</a>
@@ -717,17 +723,17 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 							<div class="clearfix"></div>
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/france/Conditions-Générales-de-Vente.html">Conditions
+									<a href="https://wic-doctor.com/Conditions-Générales-de-Vente.html">Conditions
 										générales de vente en ligne</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/france/Conditions-utilisation.html">Conditions
+									<a href="https://wic-doctor.com/Conditions-utilisation.html">Conditions
 										d'utilisation</a>
 									</a>
 								</li>
 								<li>
 									<a
-										href="https://wic-doctor.com/france/Politique-de-confidentialité-et-d_utilisation-pour-les-sous-traitants.html">Politique
+										href="https://wic-doctor.com/Politique-de-confidentialité-et-d_utilisation-pour-les-sous-traitants.html">Politique
 										de confidentialité des données personnelles</a>
 									</a>
 								</li>
@@ -736,7 +742,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 									</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/france/Mentions-légales.html">Mentions légales</a>
+									<a href="https://wic-doctor.com/Mentions-légales.html">Mentions légales</a>
 								</li>
 								<!-- <li>
 									<a href="javascript:;">Support technique</a>
@@ -773,12 +779,9 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 				<div class="container">
 					<div class="row d-flex">
 						<div class="col-lg-12 col-sm-12 mt-3 mb-3 text-center">
-							Copyright © <span id="current-year"></span> WIC DOCTOR All rights reserved.
+							Copyright © 2024 WIC DOCTOR All
+							rights reserved.
 						</div>
-						
-						<script>
-							document.getElementById("current-year").textContent = new Date().getFullYear();
-						</script>
 					</div>
 				</div>
 			</div>
