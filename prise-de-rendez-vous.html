@@ -109,10 +109,17 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 	#countrySelect, #languageSelect {
 	  animation: blink 2s infinite;
 	}
+@media (max-width: 640px) {
+   #choix {
+	   display: none;
+   }
+}
   </style>
   
   <div class="button-float">
 	<!-- Sélection du pays -->
+	<div class="menu-item" id="choix" style="cursor: default;"><p style="font-size: 14px "><i>Choisissez le pays :</i></p></div>
+
 	<div class="menu-item">
 	  <select id="countrySelect">
 		<option value="france">France</option>
