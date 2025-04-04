@@ -63,136 +63,200 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 </head>
 
 <body>
-<!-- Inclure la bibliothèque d'icônes Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Inclure la bibliothèque Bootstrap pour les modales -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
- <style>
-	
-  
+<style>
 	.button-float {
-		
-    position: fixed;
-    right: 20px;
-   
-    
-   
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+		position: absolute;
+		right: 20px;
+		font-size: 16px;
+		cursor: pointer;
+		z-index: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		color: #fff !important;
+		border-radius: 10px;
+		padding: 0px 20px 0px 20px;
 	}
-  
-	.button-float a {
-	  text-decoration: none;
-	  color: inherit;
-	}
-  
-	.button-float .menu-item {
-	  display: flex;
-	  align-items: center;
-	  margin-left: 12px;
-	  position: relative;
-	}
-  
-	.button-float .menu-item select {
-	  border: none;
-	  background: none;
-	  font-size: 14px;
-	  color: #333;
-	  cursor: pointer;
-	}
-  
-	.button-float .menu-item select:focus {
-	  outline: none;
-	}
-  
-	.button-float .divider {
-	  margin: 0 8px;
-	  color: #888;
-	}
-  
-	/* Animation clignotante au chargement */
-	@keyframes blink {
-	  0%, 100% { opacity: 1; }
-	  50% { opacity: 0.5; }
-	}
-  
-	#countrySelect, #languageSelect {
-	  animation: blink 2s infinite;
-	}
-@media (max-width: 640px) {
-   #choix {
-	   display: none;
-   }
-}
-  </style>
-  
-  <div class="button-float">
-	<!-- Sélection du pays -->
-	<div class="menu-item" id="choix" style="cursor: default;"><p style="font-size: 14px "><i>Choisissez le pays :</i></p></div>
 
-	<div class="menu-item">
-	  <select id="countrySelect">
-		<option value="france">France</option>
-		<option value="tunisia">Tunisie</option>
-		<option value="italy">Italie</option>
-	  </select>
+	.button-float a {
+		text-decoration: none;
+		
+		color: #fff;
+	}
+
+	.menu-item {
+		display: flex;
+		align-items: center;
+		margin-left: 12px;
+		position: relative;
+		color: #fff;
+	}
+
+	.divider {
+		margin: 0 20px 0 0px;
+		color: #fff;
+	}
+
+	.flag-icon {
+		width: 20px;
+		height: 14px;
+		margin-right: 5px;
+	}
+
+	@media (max-width: 640px) {
+		#choix {
+			display: none;
+		}
+	}
+</style>
+
+<div class="button-float">
+	<div id="choix" style="cursor: default;">
+		<p style="font-size: 14px;color: #fff;font-weight: 700;"><i>Pays :</i></p>
 	</div>
-  
-	<!-- Séparateur -->
-	<div class="divider">|</div>
-  
-	<!-- Sélection de la langue -->
-	<div class="menu-item">
-	  <select id="languageSelect">
-		<option value="fr">FR</option>
-	  </select>
+	<div>
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#countryModal">
+			<img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> <span
+				id="country-text">France</span>
+			<svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true" focusable="false" class="dl-icon dl-button-right-icon dl-icon-small"
+				data-design-system="oxygen" data-design-system-component="Icon"
+				data-icon-name="regular/chevron-down">
+				<path
+					d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.57.57 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796">
+				</path>
+			</svg>
+
+		</button>
 	</div>
-  
-	<!-- Séparateur -->
 	<div class="divider">|</div>
-  
-	<!-- Lien Aide -->
-	<div class="menu-item"><a href="https://wic-doctor.com/france/FAQ.html">Aide</a></div>
-  
-	<!-- Séparateur -->
-	<div class="divider">|</div>
-  
-	<!-- Lien Connexion -->
-	<div class="menu-item"><a href="https://wic-doctor.com/france/login.html">Connexion</a></div>
-  </div>
-  
-  <script>
-	const countrySelect = document.getElementById('countrySelect');
-	const languageSelect = document.getElementById('languageSelect');
-  
-	// Liens de redirection en fonction du pays sélectionné
-	const countryLinks = {
-	  "france": "https://wic-doctor.com/france",
-	  "tunisia": "https://wic-doctor.com",
-	  "italy": "https://wic-doctor.com/italie"
-	};
-  
-	// Rediriger l'utilisateur lorsqu'il sélectionne un pays
-	countrySelect.addEventListener('change', function() {
-		console.log("changeeeeeeeeeeeeeeeee")
-	  const selectedCountry = countrySelect.value;
-	  if (countryLinks[selectedCountry]) {
-		window.location.href = countryLinks[selectedCountry];
-	  }
+	<div id="choix" style="cursor: default;">
+		<p style="font-size: 14px;color: #fff;font-weight: 700;"><i>Langue :</i></p>
+	</div>
+	<div>
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#languageModal">
+			<i  class="bi bi-translate"></i> <span id="language-text">Français</span>
+			<svg style="color: #fff;" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true" focusable="false" class="dl-icon dl-button-right-icon dl-icon-small"
+				data-design-system="oxygen" data-design-system-component="Icon"
+				data-icon-name="regular/chevron-down">
+				<path
+					d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.57.57 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796">
+				</path>
+			</svg>
+		</button>
+	</div>
+	<div id="choix" class="divider" style="margin: 0 8px;">|</div>
+	<div id="choix">
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#helpModal">Aide</button>
+	</div>
+	<div id="choix" class="divider" style="margin: 0 8px;">|</div>
+	<div id="choix"><a href="https://wic-doctor.com/login.html">Connexion</a></div>
+</div>
+
+<!-- Modal Pays -->
+<div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">Choisissez le pays dans lequel vous souhaitez trouver des soignants et prendre des rendez-vous :</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<ul class="list-group">
+					<li class="list-group-item country-option" data-country="tunisia">
+						<a href="http://wic-doctor.com"><img src="https://flagcdn.com/w40/tn.png" class="flag-icon" alt="Tunisie"> Tunisie</a>
+					</li>
+					<li class="list-group-item country-option" data-country="france">
+						<a href="https://wic-doctor.com/france/"><img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> France</a>
+					</li>
+					<li class="list-group-item country-option" data-country="italy">
+						<a href="https://wic-doctor.com/italie/"><img src="https://flagcdn.com/w40/it.png" class="flag-icon" alt="Italie"> Italie</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Langue -->
+<div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">Choisissez la langue dans laquelle vous souhaitez utiliser wic-doctor</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<ul class="list-group">
+					<li class="list-group-item language-option" data-language="français">Français</li>
+					<!-- <li class="list-group-item language-option" data-language="anglais">Anglais</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Aide -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">ChoisissezBesoin d'aide ?</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Consultez notre <a href="https://wic-doctor.com/france/FAQ.html">FAQ</a> pour plus d'informations.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// Mise à jour du pays sélectionné
+	document.querySelectorAll('.country-option').forEach(item => {
+		item.addEventListener('click', function () {
+			const country = this.getAttribute('data-country');
+			const countryNames = {
+				"france": "France",
+				"tunisia": "Tunisie",
+				"italy": "Italie"
+			};
+			const countryFlags = {
+				"france": "https://flagcdn.com/w40/fr.png",
+				"tunisia": "https://flagcdn.com/w40/tn.png",
+				"italy": "https://flagcdn.com/w40/it.png"
+			};
+
+			if (countryNames[country]) {
+				document.getElementById('selected-country').textContent = countryNames[country];
+				document.getElementById('country-text').textContent = countryNames[country];
+				document.querySelector('.btn-light img').src = countryFlags[country];
+			}
+		});
 	});
-  
-	// Simulation de l'ouverture automatique du menu
-	window.addEventListener('DOMContentLoaded', () => {
-	  setTimeout(() => {
-		countrySelect.style.animation = 'none';
-		languageSelect.style.animation = 'none';
-	  }, 2000);
+
+	// Mise à jour de la langue sélectionnée
+	document.querySelectorAll('.language-option').forEach(item => {
+		item.addEventListener('click', function () {
+			const language = this.getAttribute('data-language');
+			const languageNames = {
+				"français": "Français",
+				"anglais": "Anglais"
+			};
+
+			if (languageNames[language]) {
+				document.getElementById('selected-language').textContent = languageNames[language];
+				document.getElementById('language-text').textContent = languageNames[language];
+			}
+		});
 	});
-  </script>
+</script>
 <!--Loader-->
 <div id="global-loader">
 	<img alt="image" class="loader-img" src="./../assets/images/loader.svg">

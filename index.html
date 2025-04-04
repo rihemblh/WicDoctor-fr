@@ -81,350 +81,198 @@
 </head>
 
 <body>
-<!-- Inclure la bibliothèque d'icônes Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Inclure la bibliothèque Bootstrap pour les modales -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-<!-- <style>
-  /* Style pour le bouton flottant (plus fin et raffiné) */
-  .floating-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    color: #007bff;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    font-family: 'Arial', sans-serif;
-  }
+	<style>
+		.button-float {
+			position: absolute;
+			right: 20px;
+			font-size: 16px;
+			cursor: pointer;
+			z-index: 1000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.3s ease;
+			background-color: #fff;
+			border-radius: 10px;
+			padding: 0px 20px 0px 20px;
+		}
 
-  .floating-button:hover {
-    background-color: #f8f8f8;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  }
+		.button-float a {
+			text-decoration: none;
+			color: inherit;
+		}
 
-  .floating-button span {
-    font-size: 16px;
-    margin-left: 8px;
-  }
+		.menu-item {
+			display: flex;
+			align-items: center;
+			margin-left: 12px;
+			position: relative;
+		}
 
-  /* Liste des pays avec drapeaux */
-  .country-icons {
-    position: fixed;
-    top: 70px;
-    right: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 999;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    transform: translateY(-10px);
-    max-height: 200px;
-    width: 160px;
-    overflow-y: auto;
-  }
+		.divider {
+			margin: 0 20px 0 0px;
+			color: #888;
+		}
 
-  .country-icons.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
+		.flag-icon {
+			width: 20px;
+			height: 14px;
+			margin-right: 5px;
+		}
 
-  /* Style pour chaque icône de pays */
-  .country-icons .icon {
-    display: flex;
-    align-items: center;
-    padding: 6px 12px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, padding 0.2s ease;
-    border-radius: 10px;
-    font-size: 14px;
-    color: #333;
-  }
+		@media (max-width: 640px) {
+			#choix {
+				display: none;
+			}
+		}
+	</style>
 
-  .country-icons .icon:hover {
-    background-color: #f2f2f2;
-    padding-left: 16px;
-  }
+	<div class="button-float">
+		<div id="choix" style="cursor: default;">
+			<p style="font-size: 14px;color: #18176a;font-weight: 700;"><i>Pays :</i></p>
+		</div>
+		<div>
+			<button class="btn" data-bs-toggle="modal" data-bs-target="#countryModal">
+				<img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="Tunisie"> <span
+					id="country-text">France</span>
+				<svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true" focusable="false" class="dl-icon dl-button-right-icon dl-icon-small"
+					data-design-system="oxygen" data-design-system-component="Icon"
+					data-icon-name="regular/chevron-down">
+					<path
+						d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.57.57 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796">
+					</path>
+				</svg>
 
-  .country-icons .icon.selected {
-    background-color: #007bff;
-    color: white;
-  }
-
-  .country-icons .icon img {
-    width: 16px;
-    height: 12px;
-    margin-right: 8px;
-  }
-
-  /* Animation du bouton flottant */
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-/* Version mobile : afficher seulement l'icône */
-@media (max-width: 768px) {
-    /* Cacher le texte uniquement dans la version mobile */
-    .floating-button span.text {
-      display: none;
-    }
-	#france{
-		display: none;
-	}
-
-    /* Afficher l'icône seulement sur mobile */
-    .floating-button span.icon {
-      display: inline-block;
-    }
-  }
-
-</style>
-
-<button class="floating-button" id="toggleButton" style="font-weight: 600;color: #053178
-;">
-  <span class="material-icons">location_on</span>
-  <span id="france">France</span>
-</button>
-
-<div class="country-icons" id="countryIcons" style="z-index: 9999;">
-  <div class="icon selected" id="fr">
-    <img src="https://flagcdn.com/w20/fr.png" alt="France"><span>France</span>
-  </div>
-  <div class="icon" id="tn">
-    <img src="https://flagcdn.com/w20/tn.png" alt="Tunisie"><span>Tunisie</span>
-  </div>
-
-</div>
-
-<script>
-  const toggleButton = document.getElementById('toggleButton');
-  const countryIcons = document.getElementById('countryIcons');
-
-  // Fonction pour afficher la liste des pays
-  function showCountryIcons() {
-    countryIcons.classList.add('show');
-    document.addEventListener('click', handleClickOutside);
-  }
-
-  // Fonction pour cacher la liste des pays
-  function hideCountryIcons() {
-    countryIcons.classList.remove('show');
-    document.removeEventListener('click', handleClickOutside);
-  }
-
-  // Fonction pour vérifier le clic à l'extérieur
-  function handleClickOutside(event) {
-    if (!countryIcons.contains(event.target) && event.target !== toggleButton) {
-      hideCountryIcons();
-    }
-  }
-
-  // Clignotement du bouton flottant au chargement
-  window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      toggleButton.style.animation = 'none'; // Arrêter l'animation après 2 secondes
-    }, 2000);
-
-    // Affiche la liste des pays automatiquement au départ
-    showCountryIcons();
-
-    // Cache la liste après 5 secondes si l'utilisateur n'interagit pas
-    setTimeout(() => {
-      hideCountryIcons();
-    }, 5000);
-  });
-
-  // Gestion du clic sur le bouton flottant, texte ou icône
-  toggleButton.addEventListener('click', () => {
-    if (countryIcons.classList.contains('show')) {
-      hideCountryIcons();
-    } else {
-      showCountryIcons();
-    }
-  });
-
-  // Gestion du clic sur le texte ou l'icône à l'intérieur du bouton
-  toggleButton.querySelectorAll('span').forEach(span => {
-    span.addEventListener('click', (e) => {
-      e.stopPropagation();  // Empêche la propagation de l'événement pour que le clic sur le texte ou l'icône n'arrête pas l'affichage de la liste.
-      if (countryIcons.classList.contains('show')) {
-        hideCountryIcons();
-      } else {
-        showCountryIcons();
-      }
-    });
-  });
-
-  // Gestion de la sélection d'un pays (redirection avec JavaScript)
-  document.querySelectorAll('.country-icons .icon').forEach(icon => {
-    icon.addEventListener('click', function() {
-      // Retirer la sélection de tous les pays
-      document.querySelectorAll('.country-icons .icon').forEach(item => {
-        item.classList.remove('selected');
-      });
-      this.classList.add('selected');
-
-      // Mettre à jour le bouton flottant avec le pays sélectionné
-      const selectedCountry = this.querySelector('span').textContent;
-      toggleButton.querySelector('span:last-child').textContent = selectedCountry;
-      
-      // Définir les liens pour chaque pays
-      const countryLinks = {
-        "France": "https://wic-doctor.com/france",
-        "Tunisie": "https://wic-doctor.com",
-       
-      };
-
-      // Rediriger vers le lien associé au pays sélectionné
-      window.location.href = countryLinks[selectedCountry];
-    });
-  });
-</script>
- -->
- <style>
-	
-  
-	.button-float {
-		
-    position: fixed;
-    right: 20px;
-   
-    
-   
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-	}
-  
-	.button-float a {
-	  text-decoration: none;
-	  color: inherit;
-	}
-  
-	.button-float .menu-item {
-	  display: flex;
-	  align-items: center;
-	  margin-left: 12px;
-	  position: relative;
-	}
-  
-	.button-float .menu-item select {
-	  border: none;
-	  background: none;
-	  font-size: 14px;
-	  color: #333;
-	  cursor: pointer;
-	}
-  
-	.button-float .menu-item select:focus {
-	  outline: none;
-	}
-  
-	.button-float .divider {
-	  margin: 0 8px;
-	  color: #888;
-	}
-  
-	/* Animation clignotante au chargement */
-	@keyframes blink {
-	  0%, 100% { opacity: 1; }
-	  50% { opacity: 0.5; }
-	}
-  
-	#countrySelect, #languageSelect {
-	  animation: blink 2s infinite;
-	}
-@media (max-width: 640px) {
-   #choix {
-	   display: none;
-   }
-}
-  </style>
-  
-  <div class="button-float">
-	<!-- Sélection du pays -->
-	<div class="menu-item" id="choix" style="cursor: default;"><p style="font-size: 14px "><i>Choisissez le pays :</i></p></div>
-
-	<div class="menu-item">
-	  <select id="countrySelect">
-		<option value="france">France</option>
-		<option value="tunisia">Tunisie</option>
-		<option value="italy">Italie</option>
-	  </select>
+			</button>
+		</div>
+		<div class="divider">|</div>
+		<div id="choix" style="cursor: default;">
+			<p style="font-size: 14px;color: #18176a;font-weight: 700;"><i>Langue :</i></p>
+		</div>
+		<div>
+			<button class="btn" data-bs-toggle="modal" data-bs-target="#languageModal">
+				<i class="bi bi-translate"></i> <span id="language-text">Français</span>
+				<svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true" focusable="false" class="dl-icon dl-button-right-icon dl-icon-small"
+					data-design-system="oxygen" data-design-system-component="Icon"
+					data-icon-name="regular/chevron-down">
+					<path
+						d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.57.57 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796">
+					</path>
+				</svg>
+			</button>
+		</div>
+		<div id="choix" class="divider" style="margin: 0 8px;">|</div>
+		<div id="choix">
+			<button class="btn" data-bs-toggle="modal" data-bs-target="#helpModal">Aide</button>
+		</div>
+		<div id="choix" class="divider" style="margin: 0 8px;">|</div>
+		<div id="choix"><a href="https://wic-doctor.com/login.html">Connexion</a></div>
 	</div>
-  
-	<!-- Séparateur -->
-	<div class="divider">|</div>
-  
-	<!-- Sélection de la langue -->
-	<div class="menu-item">
-	  <select id="languageSelect">
-		<option value="fr">FR</option>
-	  </select>
+
+	<!-- Modal Pays -->
+	<div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" style="font-size: 16px;">Choisissez le pays dans lequel vous souhaitez trouver des professionnels de santé et prendre des rendez-vous</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<ul class="list-group">
+						<li class="list-group-item country-option" data-country="tunisia">
+							<a href="http://wic-doctor.com"><img src="https://flagcdn.com/w40/tn.png" class="flag-icon" alt="Tunisie"> Tunisie</a>
+						</li>
+						<li class="list-group-item country-option" data-country="france">
+							<a href="https://wic-doctor.com/france/"><img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> France</a>
+						</li>
+						<li class="list-group-item country-option" data-country="italy">
+							<a href="https://wic-doctor.com/italie/"><img src="https://flagcdn.com/w40/it.png" class="flag-icon" alt="Italie"> Italie</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
-  
-	<!-- Séparateur -->
-	<div class="divider">|</div>
-  
-	<!-- Lien Aide -->
-	<div class="menu-item"><a href="https://wic-doctor.com/france/FAQ.html">Aide</a></div>
-  
-	<!-- Séparateur -->
-	<div class="divider">|</div>
-  
-	<!-- Lien Connexion -->
-	<div class="menu-item"><a href="https://wic-doctor.com/france/login.html">Connexion</a></div>
-  </div>
-  
-  <script>
-	const countrySelect = document.getElementById('countrySelect');
-	const languageSelect = document.getElementById('languageSelect');
-  
-	// Liens de redirection en fonction du pays sélectionné
-	const countryLinks = {
-	  "france": "https://wic-doctor.com/france",
-	  "tunisia": "https://wic-doctor.com",
-	  "italy": "https://wic-doctor.com/italie"
-	};
-  
-	// Rediriger l'utilisateur lorsqu'il sél ectionne un pays
-	countrySelect.addEventListener('change', function() {
-		console.log("changeeeeeeeeeeeeeeeee")
-	  const selectedCountry = countrySelect.value;
-	  if (countryLinks[selectedCountry]) {
-		window.location.href = countryLinks[selectedCountry];
-	  }
-	});
-  
-	// Simulation de l'ouverture automatique du menu
-	window.addEventListener('DOMContentLoaded', () => {
-	  setTimeout(() => {
-		countrySelect.style.animation = 'none';
-		languageSelect.style.animation = 'none';
-	  }, 2000);
-	});
-  </script>
+
+	<!-- Modal Langue -->
+	<div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" style="font-size: 16px;">Choisissez la langue dans laquelle vous souhaitez utiliser wic-doctor</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<ul class="list-group">
+						<li class="list-group-item language-option" data-language="français">Français</li>
+						<!-- <li class="list-group-item language-option" data-language="anglais">Anglais</li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Aide -->
+	<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" style="font-size: 16px;">ChoisissezBesoin d'aide ?</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Consultez notre <a href="https://wic-doctor.com/FAQ.html">FAQ</a> pour plus d'informations.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Mise à jour du pays sélectionné
+		document.querySelectorAll('.country-option').forEach(item => {
+			item.addEventListener('click', function () {
+				const country = this.getAttribute('data-country');
+				const countryNames = {
+					"france": "France",
+					"tunisia": "Tunisie",
+					"italy": "Italie"
+				};
+				const countryFlags = {
+					"france": "https://flagcdn.com/w40/fr.png",
+					"tunisia": "https://flagcdn.com/w40/tn.png",
+					"italy": "https://flagcdn.com/w40/it.png"
+				};
+
+				if (countryNames[country]) {
+					document.getElementById('selected-country').textContent = countryNames[country];
+					document.getElementById('country-text').textContent = countryNames[country];
+					document.querySelector('.btn-light img').src = countryFlags[country];
+				}
+			});
+		});
+
+		// Mise à jour de la langue sélectionnée
+		document.querySelectorAll('.language-option').forEach(item => {
+			item.addEventListener('click', function () {
+				const language = this.getAttribute('data-language');
+				const languageNames = {
+					"français": "Français",
+					"anglais": "Anglais"
+				};
+
+				if (languageNames[language]) {
+					document.getElementById('selected-language').textContent = languageNames[language];
+					document.getElementById('language-text').textContent = languageNames[language];
+				}
+			});
+		});
+	</script>
   
 	<!-- main header -->
 	<header class="main-header">
