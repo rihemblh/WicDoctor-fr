@@ -57,133 +57,200 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 
 <!-- page wrapper -->
 <body class="boxed_wrapper">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Inclure la bibliothèque Bootstrap pour les modales -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-    <style>
-       
-     
-       .button-float {
-           
-       position: fixed;
-       right: 20px;
-      
-       
-      
-       font-size: 16px;
-       cursor: pointer;
-       z-index: 1000;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       transition: all 0.3s ease;
-       }
-     
-       .button-float a {
-         text-decoration: none;
-         color: inherit;
-       }
-     
-       .button-float .menu-item {
-         display: flex;
-         align-items: center;
-         margin-left: 12px;
-         position: relative;
-       }
-     
-       .button-float .menu-item select {
-         border: none;
-         background: none;
-         font-size: 14px;
-         color: #333;
-         cursor: pointer;
-       }
-     
-       .button-float .menu-item select:focus {
-         outline: none;
-       }
-     
-       .button-float .divider {
-         margin: 0 8px;
-         color: #888;
-       }
-     
-       /* Animation clignotante au chargement */
-       @keyframes blink {
-         0%, 100% { opacity: 1; }
-         50% { opacity: 0.5; }
-       }
-     
-       #countrySelect, #languageSelect {
-         animation: blink 2s infinite;
+<style>
+	.button-float {
+		position: absolute;
+		right: 20px;
+		font-size: 16px;
+		cursor: pointer;
+		z-index: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		color: #fff !important;
+		border-radius: 10px;
+		padding: 0px 20px 0px 20px;
 	}
-@media (max-width: 640px) {
-   #choix {
-	   display: none;
-   }
-}
-     </style>
-     
-     <div class="button-float">
-       <!-- Sélection du pays -->
-       <div class="menu-item">
-         <select id="countrySelect">
-           <option value="france">France</option>
-           <option value="tunisia">Tunisie</option>
-           <option value="italy">Italie</option>
-         </select>
-       </div>
-     
-       <!-- Séparateur -->
-       <div class="divider">|</div>
-     
-       <!-- Sélection de la langue -->
-       <div class="menu-item">
-         <select id="languageSelect">
-           <option value="fr">FR</option>
-         </select>
-       </div>
-     
-       <!-- Séparateur -->
-       <div class="divider">|</div>
-     
-       <!-- Lien Aide -->
-       <div class="menu-item"><a href="https://wic-doctor.com/france/inscription-professionnel/faq.html">Aide</a></div>
-     
-       <!-- Séparateur -->
-       <div class="divider">|</div>
-     
-       <!-- Lien Connexion -->
-       <div class="menu-item"><a href="https://dashboard.wic-doctor.com/login">Connexion</a></div>
-     </div>
-     
-     <script>
-       const countrySelect = document.getElementById('countrySelect');
-       const languageSelect = document.getElementById('languageSelect');
-     
-       // Liens de redirection en fonction du pays sélectionné
-       const countryLinks = {
-         "france": "https://wic-doctor.com/france/inscription-professionnel/",
-         "tunisia": "https://wic-doctor.com/inscription-professionnel/",
-         "italy": "https://wic-doctor.com/italie/inscription-professionnel/"
-       };
-     
-       // Rediriger l'utilisateur lorsqu'il sélectionne un pays
-       countrySelect.addEventListener('change', function() {
-           console.log("changeeeeeeeeeeeeeeeee")
-         const selectedCountry = countrySelect.value;
-         if (countryLinks[selectedCountry]) {
-           window.location.href = countryLinks[selectedCountry];
-         }
-       });
-     
-       // Simulation de l'ouverture automatique du menu
-       window.addEventListener('DOMContentLoaded', () => {
-         setTimeout(() => {
-           countrySelect.style.animation = 'none';
-           languageSelect.style.animation = 'none';
-         }, 2000);
-       });
-     </script>
+
+	.button-float a {
+		text-decoration: none;
+		
+		color: #fff;
+	}
+
+	.menu-item {
+		display: flex;
+		align-items: center;
+		margin-left: 12px;
+		position: relative;
+		color: #fff;
+	}
+
+	.divider {
+		margin: 0 20px 0 0px;
+		color: #fff;
+	}
+
+	.flag-icon {
+		width: 20px;
+		height: 14px;
+		margin-right: 5px;
+	}
+
+	@media (max-width: 640px) {
+		#choix {
+			display: none;
+		}
+	}
+</style>
+
+<div class="button-float">
+	<div id="choix" style="cursor: default;">
+		<p style="font-size: 14px;color: #fff;font-weight: 700;"><i>Pays :</i></p>
+	</div>
+	<div>
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#countryModal">
+			<img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> <span
+				id="country-text">France</span>
+			<svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true" focusable="false" class="dl-icon dl-button-right-icon dl-icon-small"
+				data-design-system="oxygen" data-design-system-component="Icon"
+				data-icon-name="regular/chevron-down">
+				<path
+					d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.57.57 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796">
+				</path>
+			</svg>
+
+		</button>
+	</div>
+	<div class="divider">|</div>
+	<div id="choix" style="cursor: default;">
+		<p style="font-size: 14px;color: #fff;font-weight: 700;"><i>Langue :</i></p>
+	</div>
+	<div>
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#languageModal">
+			<i  class="bi bi-translate"></i> <span id="language-text">Français</span>
+			<svg style="color: #fff;" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true" focusable="false" class="dl-icon dl-button-right-icon dl-icon-small"
+				data-design-system="oxygen" data-design-system-component="Icon"
+				data-icon-name="regular/chevron-down">
+				<path
+					d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.57.57 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796">
+				</path>
+			</svg>
+		</button>
+	</div>
+	<div id="choix" class="divider" style="margin: 0 8px;">|</div>
+	<div id="choix">
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#helpModal">Aide</button>
+	</div>
+	<div id="choix" class="divider" style="margin: 0 8px;">|</div>
+	<div id="choix"><a href="https://wic-doctor.com/login.html">Connexion</a></div>
+</div>
+
+<!-- Modal Pays -->
+<div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">Choisissez le pays dans lequel vous souhaitez trouver des soignants et prendre des rendez-vous :</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<ul class="list-group">
+					<li class="list-group-item country-option" data-country="tunisia">
+						<a href="http://wic-doctor.com"><img src="https://flagcdn.com/w40/tn.png" class="flag-icon" alt="Tunisie"> Tunisie</a>
+					</li>
+					<li class="list-group-item country-option" data-country="france">
+						<a href="https://wic-doctor.com/"><img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> France</a>
+					</li>
+					<li class="list-group-item country-option" data-country="italy">
+						<a href="https://wic-doctor.com/italie/"><img src="https://flagcdn.com/w40/it.png" class="flag-icon" alt="Italie"> Italie</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Langue -->
+<div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">Choisissez la langue dans laquelle vous souhaitez utiliser wic-doctor</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<ul class="list-group">
+					<li class="list-group-item language-option" data-language="français">Français</li>
+					<!-- <li class="list-group-item language-option" data-language="anglais">Anglais</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Aide -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">ChoisissezBesoin d'aide ?</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Consultez notre <a href="https://wic-doctor.com/FAQ.html">FAQ</a> pour plus d'informations.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// Mise à jour du pays sélectionné
+	document.querySelectorAll('.country-option').forEach(item => {
+		item.addEventListener('click', function () {
+			const country = this.getAttribute('data-country');
+			const countryNames = {
+				"france": "France",
+				"tunisia": "Tunisie",
+				"italy": "Italie"
+			};
+			const countryFlags = {
+				"france": "https://flagcdn.com/w40/fr.png",
+				"tunisia": "https://flagcdn.com/w40/tn.png",
+				"italy": "https://flagcdn.com/w40/it.png"
+			};
+
+			if (countryNames[country]) {
+				document.getElementById('selected-country').textContent = countryNames[country];
+				document.getElementById('country-text').textContent = countryNames[country];
+				document.querySelector('.btn-light img').src = countryFlags[country];
+			}
+		});
+	});
+
+	// Mise à jour de la langue sélectionnée
+	document.querySelectorAll('.language-option').forEach(item => {
+		item.addEventListener('click', function () {
+			const language = this.getAttribute('data-language');
+			const languageNames = {
+				"français": "Français",
+				"anglais": "Anglais"
+			};
+
+			if (languageNames[language]) {
+				document.getElementById('selected-language').textContent = languageNames[language];
+				document.getElementById('language-text').textContent = languageNames[language];
+			}
+		});
+	});
+</script>
 
     <!-- preloader -->
     <div class="preloader"></div>
@@ -242,7 +309,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                        
                                         <li>                    
                          
-                                            <a href="https://wic-doctor.com/france/" class="style-two"> </i>Espace Patient</a>
+                                            <a href="https://wic-doctor.com/" class="style-two"> </i>Espace Patient</a>
                                 
                                         </li> 
                                         <li>                    
@@ -522,7 +589,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                         <li><i class="fas fa-phone"></i><a href="tel:++33 743 13 00 13">+33 743 13 00 13</a></li>
                                         <li><strong>Horaires d'ouverture :</strong><br />Lundi - Vendredi : 8H - 17H</li>
                                         <li><i class="fas fa-envelope"></i>contact@wic-doctor.com</li>
-                                        <li><i class="fas fa-arrow-circle-right"></i>   <a href="https://wic-doctor.com/france/">  www.wic-doctor.com</a></li>
+                                        <li><i class="fas fa-arrow-circle-right"></i>   <a href="https://wic-doctor.com/">  www.wic-doctor.com</a></li>
                                         <li></li>
                                     </ul>
                                   
@@ -541,7 +608,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
                                         <li><a href="nos-services.html">Nos Services</a></li>
                                         <li><a href="offres.html">Nos Offres</a></li>
                                         <li><a href="inscription.html">Inscription</a></li>
-                                        <li><a href="https://wic-doctor.com/france/">Espace Patient</a></li>
+                                        <li><a href="https://wic-doctor.com/">Espace Patient</a></li>
                                         <li><a href="medecine-douce.html">Médecine Douce</a></li>
                                         <li><a href="blogs.html">Blogs</a></li>
                                         <li><a href="parrainage.html">Parrainage</a></li>
@@ -568,7 +635,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
         </div>
         <div class="footer-bottom text-center">
             <div class="auto-container">
-                <div class="copyright"><p> &copy; <span id="currentYear"></span>  Tous droits réservés par <a href="https://wic-doctor.com/france/">WIC Dr.</a></p></div>
+                <div class="copyright"><p> &copy; <span id="currentYear"></span>  Tous droits réservés par <a href="https://wic-doctor.com/">WIC Dr.</a></p></div>
             </div>
         </div>
     </footer>

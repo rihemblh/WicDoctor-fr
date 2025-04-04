@@ -67,132 +67,200 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
  <!-- Inclure la bibliothèque d'icônes Material Icons -->
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	  <style>
-		  .button-float {
-  
-			  position: fixed;
-			  right: 20px;
-  
-  
-  
-			  font-size: 16px;
-			  cursor: pointer;
-			  z-index: 1000;
-			  display: flex;
-			  align-items: center;
-			  justify-content: center;
-			  transition: all 0.3s ease;
-		  }
-  
-		  .button-float a {
-			  text-decoration: none;
-			  color: inherit;
-		  }
-  
-		  .button-float .menu-item {
-			  display: flex;
-			  align-items: center;
-			  margin-left: 12px;
-			  position: relative;
-		  }
-  
-		  .button-float .menu-item select {
-			  border: none;
-			  background: none;
-			  font-size: 14px;
-			  color: #333;
-			  cursor: pointer;
-		  }
-  
-		  .button-float .menu-item select:focus {
-			  outline: none;
-		  }
-  
-		  .button-float .divider {
-			  margin: 0 8px;
-			  color: #888;
-		  }
-  
-		  /* Animation clignotante au chargement */
-		  @keyframes blink {
-  
-			  0%,
-			  100% {
-				  opacity: 1;
-			  }
-  
-			  50% {
-				  opacity: 0.5;
-			  }
-		  }
-  
-		  #countrySelect,
-		  #languageSelect {
-			  animation: blink 2s infinite;
-		  }
-	  </style>
-  
-	  <div class="button-float">
-		  <!-- Sélection du pays -->
-		  <div class="menu-item">
-			  <select id="countrySelect">
-				<option value="tunisia">Tunisie</option>
-				  <option value="france">France</option>
-				  <option value="italy">Italie</option>
-			  </select>
-		  </div>
-  
-		  <!-- Séparateur -->
-		  <div class="divider">|</div>
-  
-		  <!-- Sélection de la langue -->
-		  <div class="menu-item">
-			  <select id="languageSelect">
-				  <option value="fr">FR</option>
-			  </select>
-		  </div>
-  
-		  <!-- Séparateur -->
-		  <div class="divider">|</div>
-  
-		  <!-- Lien Aide -->
-		  <div class="menu-item"><a href="https://wic-doctor.com/FAQ.html">Aide</a></div>
-  
-		  <!-- Séparateur -->
-		  <div class="divider">|</div>
-  
-		  <!-- Lien Connexion -->
-		  <div class="menu-item"><a href="https://wic-doctor.com/login.html">Connexion</a></div>
-	  </div>
-  
-	  <script>
-		  const countrySelect = document.getElementById('countrySelect');
-		  const languageSelect = document.getElementById('languageSelect');
-  
-		  // Liens de redirection en fonction du pays sélectionné
-		  const countryLinks = {
-			  "france": "https://wic-doctor.com/france",
-			  "tunisia": "https://wic-doctor.com",
-			  "italy": "https://wic-doctor.com/italie"
-		  };
-  
-		  // Rediriger l'utilisateur lorsqu'il sélectionne un pays
-		  countrySelect.addEventListener('change', function () {
-			  console.log("changeeeeeeeeeeeeeeeee")
-			  const selectedCountry = countrySelect.value;
-			  if (countryLinks[selectedCountry]) {
-				  window.location.href = countryLinks[selectedCountry];
-			  }
-		  });
-  
-		  // Simulation de l'ouverture automatique du menu
-		  window.addEventListener('DOMContentLoaded', () => {
-			  setTimeout(() => {
-				  countrySelect.style.animation = 'none';
-				  languageSelect.style.animation = 'none';
-			  }, 2000);
-		  });
-	  </script>
+	 <!-- Inclure la bibliothèque Bootstrap pour les modales -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+<style>
+	.button-float {
+		position: absolute;
+		right: 20px;
+		font-size: 16px;
+		cursor: pointer;
+		z-index: 1000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+		color: #fff !important;
+		border-radius: 10px;
+		padding: 0px 20px 0px 20px;
+	}
+
+	.button-float a {
+		text-decoration: none;
+		
+		color: #fff;
+	}
+
+	.menu-item {
+		display: flex;
+		align-items: center;
+		margin-left: 12px;
+		position: relative;
+		color: #fff;
+	}
+
+	.divider {
+		margin: 0 20px 0 0px;
+		color: #fff;
+	}
+
+	.flag-icon {
+		width: 20px;
+		height: 14px;
+		margin-right: 5px;
+	}
+
+	@media (max-width: 640px) {
+		#choix {
+			display: none;
+		}
+	}
+</style>
+
+<div class="button-float">
+	<div id="choix" style="cursor: default;">
+		<p style="font-size: 14px;color: #fff;font-weight: 700;"><i>Pays :</i></p>
+	</div>
+	<div>
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#countryModal">
+			<img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> <span
+				id="country-text">France</span>
+			<svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true" focusable="false" class="dl-icon dl-button-right-icon dl-icon-small"
+				data-design-system="oxygen" data-design-system-component="Icon"
+				data-icon-name="regular/chevron-down">
+				<path
+					d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.57.57 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796">
+				</path>
+			</svg>
+
+		</button>
+	</div>
+	<div class="divider">|</div>
+	<div id="choix" style="cursor: default;">
+		<p style="font-size: 14px;color: #fff;font-weight: 700;"><i>Langue :</i></p>
+	</div>
+	<div>
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#languageModal">
+			<i  class="bi bi-translate"></i> <span id="language-text">Français</span>
+			<svg style="color: #fff;" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+				aria-hidden="true" focusable="false" class="dl-icon dl-button-right-icon dl-icon-small"
+				data-design-system="oxygen" data-design-system-component="Icon"
+				data-icon-name="regular/chevron-down">
+				<path
+					d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.57.57 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796">
+				</path>
+			</svg>
+		</button>
+	</div>
+	<div id="choix" class="divider" style="margin: 0 8px;">|</div>
+	<div id="choix">
+		<button style="color: #fff;" class="btn" data-bs-toggle="modal" data-bs-target="#helpModal">Aide</button>
+	</div>
+	<div id="choix" class="divider" style="margin: 0 8px;">|</div>
+	<div id="choix"><a href="https://wic-doctor.com/login.html">Connexion</a></div>
+</div>
+
+<!-- Modal Pays -->
+<div class="modal fade" id="countryModal" tabindex="-1" aria-labelledby="countryModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">Choisissez le pays dans lequel vous souhaitez trouver des soignants et prendre des rendez-vous :</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<ul class="list-group">
+					<li class="list-group-item country-option" data-country="tunisia">
+						<a href="http://wic-doctor.com"><img src="https://flagcdn.com/w40/tn.png" class="flag-icon" alt="Tunisie"> Tunisie</a>
+					</li>
+					<li class="list-group-item country-option" data-country="france">
+						<a href="https://wic-doctor.com/france/"><img src="https://flagcdn.com/w40/fr.png" class="flag-icon" alt="France"> France</a>
+					</li>
+					<li class="list-group-item country-option" data-country="italy">
+						<a href="https://wic-doctor.com/italie/"><img src="https://flagcdn.com/w40/it.png" class="flag-icon" alt="Italie"> Italie</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Langue -->
+<div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">Choisissez la langue dans laquelle vous souhaitez utiliser wic-doctor</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<ul class="list-group">
+					<li class="list-group-item language-option" data-language="français">Français</li>
+					<!-- <li class="list-group-item language-option" data-language="anglais">Anglais</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Aide -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" style="font-size: 16px;">ChoisissezBesoin d'aide ?</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>Consultez notre <a href="https://wic-doctor.com/france/FAQ.html">FAQ</a> pour plus d'informations.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// Mise à jour du pays sélectionné
+	document.querySelectorAll('.country-option').forEach(item => {
+		item.addEventListener('click', function () {
+			const country = this.getAttribute('data-country');
+			const countryNames = {
+				"france": "France",
+				"tunisia": "Tunisie",
+				"italy": "Italie"
+			};
+			const countryFlags = {
+				"france": "https://flagcdn.com/w40/fr.png",
+				"tunisia": "https://flagcdn.com/w40/tn.png",
+				"italy": "https://flagcdn.com/w40/it.png"
+			};
+
+			if (countryNames[country]) {
+				document.getElementById('selected-country').textContent = countryNames[country];
+				document.getElementById('country-text').textContent = countryNames[country];
+				document.querySelector('.btn-light img').src = countryFlags[country];
+			}
+		});
+	});
+
+	// Mise à jour de la langue sélectionnée
+	document.querySelectorAll('.language-option').forEach(item => {
+		item.addEventListener('click', function () {
+			const language = this.getAttribute('data-language');
+			const languageNames = {
+				"français": "Français",
+				"anglais": "Anglais"
+			};
+
+			if (languageNames[language]) {
+				document.getElementById('selected-language').textContent = languageNames[language];
+				document.getElementById('language-text').textContent = languageNames[language];
+			}
+		});
+	});
+</script>
 
 
 	<!--Loader-->
@@ -229,7 +297,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 										<li class=" "><a href="index.html">Accueil</a>
 
 										</li>
-										<li><a href="https://wic-doctor.com/qui-sommes-nous.html">WIC Dr.</a></li>
+										<li><a href="https://wic-doctor.com/france/qui-sommes-nous.html">WIC Dr.</a></li>
 										<li class=" current dropdown">
 											<a href="#">Nos Solutions</a>
 											<ul class="megamenu">
@@ -237,34 +305,34 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 													<img src="./assets/images/media/photos/medecin-solution.png"
 														alt="Logo Praticiens" />
 													<a
-														href="https://wic-doctor.com/nos-solutions-praticien.html">Praticiens</a>
+														href="https://wic-doctor.com/france/nos-solutions-praticien.html">Praticiens</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/patient-solution.png"
 														alt="Logo Patients" />
 													<a
-														href="https://wic-doctor.com/nos-solutions-patient.html">Patients</a>
+														href="https://wic-doctor.com/france/nos-solutions-patient.html">Patients</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/Télémédecine-soltion.png"
 														alt="Logo Télémédecine" />
-													<a href="https://wic-doctor.com/Telemedecine.html">Télémédecine</a>
+													<a href="https://wic-doctor.com/france/Telemedecine.html">Télémédecine</a>
 												</li>
 												<li>
 													<img src="./assets/images/media/photos/technologie-solution.png"
 														alt="Logo Technologie" />
-													<a href="https://wic-doctor.com/technologies-de-pointe.html">Technologie
+													<a href="https://wic-doctor.com/france/technologies-de-pointe.html">Technologie
 														de pointe</a>
 												</li>
 											</ul>
 										</li>
 										<li class="dropdown">
-											<a href="https://wic-doctor.com/partenaire.html">Partenaire WIC Dr</a>
+											<a href="https://wic-doctor.com/france/partenaire.html">Partenaire WIC Dr</a>
 											<ul>
-												<li><a href="https://wic-doctor.com/partenaire.html">Partenaire</a>
+												<li><a href="https://wic-doctor.com/france/partenaire.html">Partenaire</a>
 												</li>
 												<li><a
-														href="https://wic-doctor.com/collaborateur.html">Collaborateur</a>
+														href="https://wic-doctor.com/france/collaborateur.html">Collaborateur</a>
 												</li>
 												<li><a href="https://green-telecom.fr/">Télésecrétariat
 													</a>
@@ -275,20 +343,20 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 												href="https://wic-doctor.com/france/inscription-professionnel/offres.html">Nos
 												Tarifs</a></li>
 										<li class=" dropdown">
-											<a href="https://wic-doctor.com/pathologies.html">Soins des patients</a>
+											<a href="https://wic-doctor.com/france/pathologies.html">Soins des patients</a>
 											<ul>
-												<li><a href="https://wic-doctor.com/pathologies.html">Pathologies</a>
+												<li><a href="https://wic-doctor.com/france/pathologies.html">Pathologies</a>
 												</li>
-												<li><a href="https://wic-doctor.com/intervention.html">Interventions</a>
+												<li><a href="https://wic-doctor.com/france/intervention.html">Interventions</a>
 												</li>
 												<li><a
-														href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a>
+														href="https://wic-doctor.com/france/diagnostiques.html">Diagnostics</a>
 												</li>
 											</ul>
 										</li>
 										
 										</li>
-										<li class=""><a href="https://wic-doctor.com/contact.html">Contact</a></li>
+										<li class=""><a href="https://wic-doctor.com/france/contact.html">Contact</a></li>
 										<li>
 											<div class="menu-right-content pull-left" id="Login">
 												<div class="avatar-initial rounded-circle me-2" id="userAvatar"
@@ -296,7 +364,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 												<ul class="dropdown-menu dropdown-menu-end"
 													aria-labelledby="userAvatar">
 													<li><a class="dropdown-item profile"
-															href="https://wic-doctor.com/profil.html">Mon Profil</a>
+															href="https://wic-doctor.com/france/profil.html">Mon Profil</a>
 													</li>
 													<li>
 														<hr class="dropdown-divider">
@@ -651,17 +719,17 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/qui-sommes-nous.html">Qui sommes-nous ?</a>
+									<a href="https://wic-doctor.com/france/qui-sommes-nous.html">Qui sommes-nous ?</a>
 								</li>
 								<li>
 									<a href="javascript:;">Témoignages</a>
 								</li>
 
 								<li>
-									<a href="https://wic-doctor.com/FAQ.html">FAQ</a>
+									<a href="https://wic-doctor.com/france/FAQ.html">FAQ</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/contact.html">Contactez-nous</a>
+									<a href="https://wic-doctor.com/france/contact.html">Contactez-nous</a>
 								</li>
 
 							</ul>
@@ -672,17 +740,17 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 							<div class="clearfix"></div>
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/medecin/tous.html">Professionnels de santé</a>
+									<a href="https://wic-doctor.com/france/medecin/tous.html">Professionnels de santé</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/pharmacies/pharmacie.html">Pharmacies &
+									<a href="https://wic-doctor.com/france/pharmacies/pharmacie.html">Pharmacies &
 										Parapharmacies</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/Cliniques/tous.html">Cliniques</a>
+									<a href="https://wic-doctor.com/france/Cliniques/tous.html">Cliniques</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/Laboratoires/tous.html">Laboratoires</a>
+									<a href="https://wic-doctor.com/france/Laboratoires/tous.html">Laboratoires</a>
 								</li>
 
 							</ul>
@@ -692,16 +760,16 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto mt-0">
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/pathologies.html">Pathologies</a>
+									<a href="https://wic-doctor.com/france/pathologies.html">Pathologies</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/diagnostiques.html">Diagnostics</a>
+									<a href="https://wic-doctor.com/france/diagnostiques.html">Diagnostics</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/intervention.html">Interventions</a>
+									<a href="https://wic-doctor.com/france/intervention.html">Interventions</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/journal-medical.html">Journal Médical</a>
+									<a href="https://wic-doctor.com/france/journal-medical.html">Journal Médical</a>
 								</li>
 								<!-- <li>
 									<a href="javascript:;">Forum Médical</a>
@@ -720,17 +788,17 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 							<div class="clearfix"></div>
 							<ul class="list-unstyled mb-0">
 								<li>
-									<a href="https://wic-doctor.com/Conditions-Générales-de-Vente.html">Conditions
+									<a href="https://wic-doctor.com/france/Conditions-Générales-de-Vente.html">Conditions
 										générales de vente en ligne</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/Conditions-utilisation.html">Conditions
+									<a href="https://wic-doctor.com/france/Conditions-utilisation.html">Conditions
 										d'utilisation</a>
 									</a>
 								</li>
 								<li>
 									<a
-										href="https://wic-doctor.com/Politique-de-confidentialité-et-d_utilisation-pour-les-sous-traitants.html">Politique
+										href="https://wic-doctor.com/france/Politique-de-confidentialité-et-d_utilisation-pour-les-sous-traitants.html">Politique
 										de confidentialité des données personnelles</a>
 									</a>
 								</li>
@@ -739,7 +807,7 @@ src="https://www.facebook.com/tr?id=623852967108851&ev=PageView&noscript=1"
 									</a>
 								</li>
 								<li>
-									<a href="https://wic-doctor.com/Mentions-légales.html">Mentions légales</a>
+									<a href="https://wic-doctor.com/france/Mentions-légales.html">Mentions légales</a>
 								</li>
 								<!-- <li>
 									<a href="javascript:;">Support technique</a>
